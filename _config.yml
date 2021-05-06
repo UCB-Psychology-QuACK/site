@@ -4,7 +4,6 @@ title: QuACK
 email: sample@domain.com
 twitter_username: twitter
 
-
-# build settings
+# Build settings
 markdown: kramdown
-them: minima
+theme: minima
