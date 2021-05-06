@@ -1,0 +1,10 @@
+# basic options
+
+title: QuACK
+email: sample@domain.com
+twitter_username: twitter
+
+
+# build settings
+markdown: kramdown
+them: minimal-mistakes-jekyll
