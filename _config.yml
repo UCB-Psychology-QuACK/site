@@ -7,4 +7,4 @@ twitter_username: twitter
 
 # build settings
 markdown: kramdown
-them: minimal-mistakes-jekyll
+them: minima
