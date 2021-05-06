@@ -1,8 +1,6 @@
 ---
 layout: page
-title: About Us
+title: about
 ---
 
-Add bios here
-
-
+About us page
