@@ -6,4 +6,4 @@ twitter_username: twitter
 
 # Build settings
 markdown: kramdown
-theme: alembic-jekyll-theme
+remote_theme: alembic-jekyll-theme
