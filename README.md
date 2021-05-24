@@ -1,7 +1,5 @@
-# Welcome!
 
-
-Learn more about QuACK here
+Learn more about QuACK [here](https://github.com/wvoorhies/sample_webpage/tree/main/about/about.md)
 
 ## Summer R bootcamp[]
 Learn more about our summer bootcamp
