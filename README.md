@@ -2,7 +2,7 @@
 
 
 
-Learn more about QuACK [here](https://github.com/wvoorhies/sample_webpage/tree/main/about)
+Learn more about QuACK [here](https://github.com/wvoorhies/sample_webpage/main/about/about.md)
 
 # R courses
 
