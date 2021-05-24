@@ -4,6 +4,7 @@
 
 Learn more about QuACK [here](https://wvoorhies.github.io/sample_webpage/about/about)
 
+[R_logo](Rlogo.png)
 # R courses
 
 ### Summer R bootcamp
