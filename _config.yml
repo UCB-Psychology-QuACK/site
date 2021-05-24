@@ -10,3 +10,5 @@ remote_theme: mmistakes/minimal-mistakes@4.23.0
 logo: quack.png
 show_downloads: true
 
+
+theme: jekyll-theme-cayman
