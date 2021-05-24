@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "QuACK 2020"
 ---
 
