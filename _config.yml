@@ -5,7 +5,7 @@ description: Quantitative analysis and coding knowledge (UCB, Psychology)
 
 # Build settings
 markdown: kramdown
-theme: "mmistakes/minimal-mistakes@4.23.0"
+theme: mmistakes/minimal-mistakes@4.23.0
 
 logo: quack.png
 show_downloads: true
