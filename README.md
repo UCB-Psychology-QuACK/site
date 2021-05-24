@@ -1,4 +1,12 @@
-# Home
+# Welcome!
 
 
-Coming soon. A page for the course "Programming in R for behavioral science"
+Learn more about QuACK here
+
+## Summer R bootcamp[]
+Learn more about our summer bootcamp
+
+## QuACK 2020 materials
+Find materials from our most recent semester long introductory programming workshop
+
+## Past QuACK materials
