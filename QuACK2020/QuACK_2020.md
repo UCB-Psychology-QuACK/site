@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "QuACK 2020"
-permalink: https://github.com/wvoorhies/sample_webpage/tree/main/QuACK_2020
 ---
 
 
