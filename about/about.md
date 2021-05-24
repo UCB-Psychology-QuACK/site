@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "About"
-permalink: https://wvoorhies.github.io/sample_webpage/about
 ---
 
 ## About Us
