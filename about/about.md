@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "About"
 ---
 ![image](bww-4.jpeg)
