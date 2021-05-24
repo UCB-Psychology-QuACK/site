@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "QuACK 2020"
 ---
 
@@ -20,15 +20,6 @@ QuACK is a data-analysis workshop series for incoming psychology grads, created 
   
   **Goal 2:** Create an inclusive, supportive, and positive space for learning quantitative and coding skills; contribute to cohort’s community building!
    
-
----
-layout: page
-title: " QuACK 2020 workshop"
-permalink: https://wvoorhies.github.io/sample_webpage/QuACK2020
----
-
-
-
   
 ## 2020 Schedule
 **Tuesdays 5:15-7:15 pm (PST)**
