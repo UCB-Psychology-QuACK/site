@@ -2,10 +2,12 @@
 
 
 
+QuACK is a grad student initiative to teach foundational programming and data skills to grad students, RAs and Post-bacs in the psychology department
 Learn more about QuACK [here](https://wvoorhies.github.io/sample_webpage/about/about)
 
-![image](Rlogo.png)
 # R courses
+![image](Rlogo.png)
+
 
 ### Summer R bootcamp
 Learn more about our 4 session summer bootcamp
