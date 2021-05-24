@@ -1,9 +1,12 @@
 # basic options
 
-title: QuACK
-email: sample@domain.com
-twitter_username: twitter
+title: Quantitative analysis and coding knowledge (UCB, Psychology)
+description: Welcome to QuAcK. Find helpful materials for learning R for behavioral science! 
 
 # Build settings
 markdown: kramdown
-remote_theme: alembic-jekyll-theme
+theme: jekyll-theme-minimal
+
+logo: [Location of the logo]
+show_downloads: true
+
