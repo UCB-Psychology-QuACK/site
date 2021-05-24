@@ -7,9 +7,10 @@ Learn more about QuACK [here](https://wvoorhies.github.io/sample_webpage/about/a
 # R courses
 
 ### Summer R bootcamp
-Learn more about our summer bootcamp
-
+Learn more about our 4 session summer bootcamp
 ### QuACK 2020 materials
-Find materials from our most recent semester long introductory programming workshop
+Find materials from our most recent semester long [introductory programming workshop](https://wvoorhies.github.io/sample_webpage/QuACK_2020)
 
 ### Past QuACK materials
+
+**interested in learning more?** Take our class next fall!
