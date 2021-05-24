@@ -7,6 +7,6 @@ description: Welcome to QuAcK. Find helpful materials for learning R for behavio
 markdown: kramdown
 theme: jekyll-theme-minimal
 
-logo: [Location of the logo]
+logo: logo.png
 show_downloads: true
 
