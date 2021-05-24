@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "About"
 ---
 ![image](bww-4.jpeg)
