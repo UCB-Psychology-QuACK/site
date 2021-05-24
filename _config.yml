@@ -1,12 +1,12 @@
 # basic options
 
-title: Quantitative analysis and coding knowledge (UCB, Psychology)
-description: Welcome to QuAcK. Find helpful materials for learning R for behavioral science! 
+title: QuACK
+description: Quantitative analysis and coding knowledge (UCB, Psychology)
 
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-minimal
 
-logo: logo.png
+logo: quack.png
 show_downloads: true
 
