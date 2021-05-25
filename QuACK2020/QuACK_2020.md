@@ -18,6 +18,7 @@ Follow the links below to access lessons, worksheets, and answer keys.
 
 ## 2020 Schedule
 *If you are new to R we recommend working through the topics in order*
+
 |  Week | Topic | Agenda | 
 | ------|-------|------- |
 | Week 1| [Intro to R & Programming](https://github.com/UCB-Psychology-QuACK/week1_introR),[<a href="img/QuACK_Week1_Intro.pdf">slides</a>]|Datatypes; Operators; Vectors & Indexing; Levels & Factors|
