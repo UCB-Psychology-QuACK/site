@@ -2,10 +2,11 @@
 ![image](code.jpeg)
 
 # Welcome to QuACK 
-QuACK is a grad student initiative to teach foundational programming and data skills to grad students, RAs and Post-bacs in the psychology department
+QuACK is a UC Berkeley Psychology grad student initiative. We teach foundational programming and data skills to grad student, RAs, and Post-bacs in the community.
+
 Learn more about QuACK [here](https://wvoorhies.github.io/sample_webpage/about/about)
 
-# R courses:
+# Learn R
 Find materials for our R courses below
 
 ### Summer R bootcamp
