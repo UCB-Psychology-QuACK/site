@@ -17,7 +17,7 @@
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
         
         {% if site.logo %}
-         <a href="https://ucb-psychology-quack.github.io/site/"> <img src="{{site.logo | relative_url}}" alt="Logo" /> </a>
+         <h1><a <a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }} <img src="{{site.logo | relative_url}}" alt="Logo" /></a></h1>
         {% endif %}
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
