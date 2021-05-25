@@ -12,8 +12,8 @@ Find materials for our R courses below
 
 ### [Summer R bootcamp](https://ucb-psychology-quack.github.io/site/summer_bootcamp/bootcamp)
 Learn more about our upcoming 4 session summer bootcamp for RAs, post-bacs and grads
-### [QuACK 2020 materials](https://ucb-psychology-quack.github.io/site/QuACK2020/QuACK_2020)
-Find materials from our most recent introductory programming workshop. 
+### [QuACK 2020 workshop](https://ucb-psychology-quack.github.io/site/QuACK2020/QuACK_2020)
+Find materials from our most recent introductory 13-week programming workshop. 
 <br />
 <br />
 <br />
