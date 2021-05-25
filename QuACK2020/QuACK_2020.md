@@ -5,12 +5,6 @@ title: "QuACK 2020 workshop materials"
 
 ![img](r.jpeg)
 
- *UC Berkeley, Psychology*
- 
-
-**2020 Coordinators:** [Elena Leib](https://bungelab.berkeley.edu/graduate-students/) & [Willa Voorhies](https://cnl.berkeley.edu/people/willa-voorhies/)
-
-
 ## Welcome to QuACK workshop 2020! 
 QuACK is a data-analysis workshop series for incoming psychology grads, created by and taught by Psych grads!
 Follow the links below to access lessons, worksheets, and answer keys. 
