@@ -13,8 +13,7 @@ Goal 1: Give incoming students foundational skills in data analysis and R.
 Goal 2: Create an inclusive, supportive, and positive space for learning quantitative and coding skills; contribute to cohort’s community building!
 
 # About Us
-QuACK's current coorinators and instructors are Elena Leib (Ph.D candidate, Psychology) and Willa Voorhies (Ph.D candidate, Psychology)
+<img src="Elena.png" alt="Elena" width="100"/> [Elena Leib](https://bungelab.berkeley.edu/graduate-students/)(Ph.d Candidate, Psychology)
 
 
-  * [Elena Leib](https://bungelab.berkeley.edu/graduate-students/)    
-  * [Willa Voorhies](https://cnl.berkeley.edu/people/willa-voorhies/)
+<img src="biopic (1).png" alt="Willa" width="100" /> [Willa Voorhies](https://cnl.berkeley.edu/people/willa-voorhies/)(Ph.dCandidate, Psychology)
