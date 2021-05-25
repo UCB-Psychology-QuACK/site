@@ -1,6 +1,7 @@
 
 ![image](code.jpeg)
 
+
 # Welcome to QuACK 
 QuACK is a UC Berkeley Psychology grad student initiative. We teach foundational programming and data skills to grad students, RAs, and Post-bacs in the community.
 
