@@ -9,11 +9,10 @@ Learn more about QuACK [here](https://wvoorhies.github.io/sample_webpage/about/a
 ## Learn R
 Find materials for our R courses below
 
-### Summer R bootcamp
-Learn more about our 4 session [summer bootcamp](https://wvoorhies.github.io/sample_webpage/summer_bootcamp/bootcamp)
-
-### QuACK 2020 materials
-Find materials from our most recent [introductory programming workshop](https://wvoorhies.github.io/sample_webpage/QuACK2020/QuACK_2020). 
+### [Summer R bootcamp](https://wvoorhies.github.io/sample_webpage/summer_bootcamp/bootcamp)
+Learn more about our upcoming 4 session summer bootcamp for RAs, post-bacs and grads
+### [QuACK 2020 materials](https://wvoorhies.github.io/sample_webpage/QuACK2020/QuACK_2020)
+Find materials from our most recent introductory programming workshop. 
 <br />
 <br />
 <br />
