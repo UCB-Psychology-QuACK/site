@@ -4,7 +4,7 @@ layout: post
 
 ![img](r.jpeg)
 
-## Welcome to QuACK workshop 2020! 
+## QuACK 2020 workshop materials 
 QuACK is a data-analysis workshop series for incoming psychology grads, created by and taught by Psych grads!
 Follow the links below to access lessons, worksheets, and answer keys. 
 
