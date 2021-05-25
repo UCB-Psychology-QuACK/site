@@ -3,6 +3,7 @@ layout: pages
 title: "QuACK 2020"
 ---
 
+![img](r.jpeg)
 
  *UC Berkeley, Psychology*
  
