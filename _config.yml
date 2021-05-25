@@ -1,6 +1,6 @@
 title: QuACK
 logo: quack.png
 description: Quantitative analysis and coding knowledge
-show_downloads: true
+show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
