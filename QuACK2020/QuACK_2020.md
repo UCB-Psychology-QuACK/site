@@ -13,11 +13,11 @@ title: "QuACK 2020 workshop materials"
 
 ## Welcome to QuACK workshop 2020! 
 QuACK is a data-analysis workshop series for incoming psychology grads, created by and taught by Psych grads!
+Follow the links below to access lessons, worksheets, and answer keys. 
 
-  
+
 ## 2020 Schedule
-**Tuesdays 5:15-7:15 pm (PST)**
-
+*If you are new to R we recommend working through the topics in order*
 |  Week | Topic | Agenda | 
 | ------|-------|------- |
 | Week 1| [Intro to R & Programming](https://github.com/UCB-Psychology-QuACK/week1_introR),[<a href="img/QuACK_Week1_Intro.pdf">slides</a>]|Datatypes; Operators; Vectors & Indexing; Levels & Factors|
