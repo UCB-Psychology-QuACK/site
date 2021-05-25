@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "QuACK 2020 workshop materials"
 ---
 
 ![img](r.jpeg)
