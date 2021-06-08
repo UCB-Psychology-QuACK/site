@@ -10,4 +10,4 @@ Follow along with our weekly course videos and practice exercises from our summe
 | Session 3|Cleaning and organizing dataframes| | | |
 | Session 4|Data Visualization| | | |
 
-#### [<- back to bootcamp home](https://ucb-psychology-quack.github.io/site/summer_bootcamp/bootcamp)
+#### [<- back to bootcamp home](https://ucb-psychology-quack.github.io/site/summer_bootcamp/)
