@@ -19,3 +19,6 @@ This bootcamp will meet virtually for 1.5 hours weekly in July (Dates and times 
 
 ## Observer track
 If you can't attend the session in real time you can follow along by accessing our demo videos and practice exercises [here](https://ucb-psychology-quack.github.io/site/summer_bootcamp/materials).
+
+
+[<- Back](https://ucb-psychology-quack.github.io/site)
