@@ -4,7 +4,7 @@ title: "Programming and Data Skills summer Bootcamp"
 ---
 
 # Summer Bootcamp
-This is a four-session programming and data skills bootcamp in July 2021. This bootcamp is open to all RAs, post-bacs, and lab managers in the Berkeley Psychology department. Graduate students are also welcome to attend. The bootcamp will focus on teaching key skills in R for data organization and visualization aimed at the level of RAs and post-bacs. Each week will consist of a short lesson and demonstration followed by hands-on practice in small groups with a real dataset. Throughout the workshop we will facilitate discussions around reproducible research and transparent data practices. 
+This is a four-session programming and data skills bootcamp in July 2021. we will focus on teaching key skills in R for data organization and visualization aimed at the level of RAs and post-bacs (graduate students are also welcome). Each week will consist of a short lesson and demonstration followed by hands-on practice in small groups with a real dataset. Throughout the workshop we will facilitate discussions around reproducible research and transparent data practices. 
 
 **Core Goals:** 1) Provide hands-on training in fundamental programming and data skills with real data and 2) Build an inclusive, supportive and positive space for learning and teaching quantitative skills in the community. 
 
