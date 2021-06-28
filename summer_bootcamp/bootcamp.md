@@ -8,9 +8,6 @@ This is a four-session programming and data skills bootcamp in July 2021. we wil
 
 **Core Goals:** 1) Provide hands-on training in fundamental programming and data skills with real data and 2) Build an inclusive, supportive and positive space for learning and teaching quantitative skills in the community. 
 
-### [Sign up here!](https://forms.gle/H6NfktWWY7qZ8A6YA)
-
-
 ### Open science and accessibility
 We are committed to open science and we make all of our resources and teaching materials freely available. We will be posting all the videos and practice exercises from each session below. Additionally we recommend joining our [piazza page](piazza.com/berkeley/summer2021/psychbootcamp) to continue the conversation between sessions and after the bootcamp has ended!  
 
