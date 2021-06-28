@@ -9,7 +9,7 @@ We will not be teaching any statistics in this workshop. However, this course wi
 #### 2) I’m not sure I can attend at this time. Will the sessions be recorded?
 
 
-Yes! The sessions will be recorded and posted on our website along with the practice materials. We know that some people have time conflicts with class or are in a different time zone, etc., and we want everyone to be able to access these materials and learn R! We are working to make the asynchronous experience as engaging as possible. We will be posting our materials each week and encourage you to join our [piazza page](https://piazza.com/berkeley/summer2021/psych000/home) to participate in offline discussions. 
+Yes! The sessions will be recorded and posted on our website along with the practice materials. We know that some people have time conflicts with class or are in a different time zone, etc., and we want everyone to be able to access these materials and learn R! We are working to make the asynchronous experience as engaging as possible. We will be posting our materials each week and encourage you to join our [piazza page](piazza.com/berkeley/summer2021/psychbootcamp) to participate in offline discussions. 
 
  That said, we encourage everyone to attend the live sessions if possible to get the most out of the workshops. The sessions are interactive and involve hands-on practice with real data. We also hope that this is a community-building experience and will be a great way for you to meet other people in the department.
 
