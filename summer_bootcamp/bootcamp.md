@@ -3,8 +3,8 @@ layout: default
 title: "Programming and Data Skills summer Bootcamp"
 ---
 
-# Summer Bootcamp
-This is a four-session programming and data skills bootcamp in July 2021. We will focus on teaching key skills in R for data organization and visualization. 
+## Welcome to our Programming and Data Skills summer Bootcamp!
+This hands-on four session bootcamp will focus on teaching fundemental data skills in R with an emphasis on good data and coding practicies. The bootcamp is open to all RAs and post-bacs in the department. Graduate students are welcome too! 
 
 **Core Goals:** 
 1) Provide hands-on training in fundamental programming and data skills with real data.
