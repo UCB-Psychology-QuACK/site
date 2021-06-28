@@ -20,10 +20,10 @@ Each session will start with a live demo focusing on fundemental data skills. Pa
 
 |  Week | Topic | demo  |  practice | slides| 
 | ------|-------|------- |  ------|-------|
-| Session 1|Get started with R| | | |
-| Session 2|Accessing and reading data| | | |
-| Session 3|Cleaning and organizing dataframes| | | |
-| Session 4|Data Visualization| | | |
+| July 6: Session 1|Get started with R| | | |
+| July 13: Session 2|Accessing and reading data| | | |
+| July 20: Session 3|Cleaning and organizing dataframes| | | |
+| July 27: Session 4|Data Visualization| | | |
 
 Access the full printable schedule [here](2021_bootcampschedule.png)
 
