@@ -9,6 +9,7 @@ This hands-on four session bootcamp will focus on teaching fundemental data skil
 
 #### Core Goals:
 1) Provide hands-on training in fundamental programming and data skills with real data.
+
 2) Build an inclusive, supportive and positive space for learning and teaching quantitative skills in the community. 
 
 This bootcamp is open to all RAs and post-bacs in the department (Graduate students are also welcome). 
