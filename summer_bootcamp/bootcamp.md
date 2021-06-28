@@ -10,15 +10,26 @@ This is a four-session programming and data skills bootcamp in July 2021. we wil
 
 ### [Sign up here!](https://forms.gle/H6NfktWWY7qZ8A6YA)
 
-## Interactive track
-This bootcamp will meet virtually for 1.5 hours weekly in July (Dates and times TBD). Each session will start with a live demo focusing on fundemental data skills. Participants will then work together in small groups to apply these skills to real world data. Finally we will finish each session with a group discussion centering around challenges you faced working with the data and ways to address and overcome these challenges. 
+
+### Open science and accessibility
+We are committed to open science and we make all of our resources and teaching materials freely available. We will be posting all the videos and practice exercises from each session below. Additionally we recommend joining our [piazza page](piazza.com/berkeley/summer2021/psychbootcamp) to continue the conversation between sessions and after the bootcamp has ended!  
+
+See our [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp/FAQs) for more info on participating asynchronously.
 
 ### weekly schedule
-![image](2021_bootcampschedule.png)
 
+We will meet virtually for 1.5 hours weekly on Tuesday in July from 12-1:30pm PST. 
+Each session will start with a live demo focusing on fundemental data skills. Participants will then work together in small groups to apply these skills to real world data. Finally we will finish each session with a group discussion centering around challenges you faced working with the data and ways to address and overcome these challenges
 
-## Observer track
-If you can't attend the session in real time you can follow along by accessing our demo videos and practice exercises [here](https://ucb-psychology-quack.github.io/site/summer_bootcamp/materials).
+|  Week | Topic | demo  |  practice | slides| 
+| ------|-------|------- |  ------|-------|
+| Session 1|Get started with R| | | |
+| Session 2|Accessing and reading data| | | |
+| Session 3|Cleaning and organizing dataframes| | | |
+| Session 4|Data Visualization| | | |
 
+Access the full printable schedule [here](2021_bootcampschedule.png)
+
+### [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp/FAQs)
 
 [<- Back](https://ucb-psychology-quack.github.io/site)
