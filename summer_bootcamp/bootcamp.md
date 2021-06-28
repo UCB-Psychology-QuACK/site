@@ -12,7 +12,7 @@ This hands-on four session bootcamp will focus on teaching fundemental data skil
 
 2) Build an inclusive, supportive and positive space for learning and teaching quantitative skills in the community. 
 
-This bootcamp is open to all RAs and post-bacs in the department (Graduate students are also welcome). 
+*This bootcamp is open to all RAs and post-bacs in the department (Graduate students are also welcome). *
 
 ### Open science and accessibility
 We are committed to open science and we make all of our resources and teaching materials freely available. We will be posting all the videos and practice exercises from each session below. Additionally we recommend joining our [piazza page](piazza.com/berkeley/summer2021/psychbootcamp) to continue the conversation between sessions and after the bootcamp has ended!  
