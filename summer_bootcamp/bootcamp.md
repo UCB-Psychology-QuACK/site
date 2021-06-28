@@ -8,7 +8,7 @@ title: "Programming and Data Skills summer Bootcamp"
 This hands-on four session bootcamp will focus on teaching fundemental data skills in R with an emphasis on good data and coding practicies. 
 
 #### Core Goals:
-1) Provide hands-on training in fundamental programming and data skills with real data.
+1) Provide hands-on training in fundamental programming and data skills with real data.  
 
 2) Build an inclusive, supportive and positive space for learning and teaching quantitative skills in the community. 
 
