@@ -18,5 +18,8 @@ Yes! The sessions will be recorded and posted on our website along with the prac
 
 Yes they do! If you are not able to attend a session one week, we encourage you to catch up by watching the recording and completing the practice in order to get the most out of the next session. Again, we encourage everyone to attend all the sessions live if possible.
 
+#### 4) Is it too late to join? 
+No! Send us an [email](mailto:wvoorhies@berkeley.edu) and we will add you to our listerv! 
+
 
 #### [<- back to bootcamp home](https://ucb-psychology-quack.github.io/site/summer_bootcamp/bootcamp)
