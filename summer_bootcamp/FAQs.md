@@ -13,8 +13,7 @@ Yes! The sessions will be recorded and posted on our website along with the prac
 
  That said, we encourage everyone to attend the live sessions if possible to get the most out of the workshops. The sessions are interactive and involve hands-on practice with real data. We also hope that this is a community-building experience and will be a great way for you to meet other people in the department.
 
- #### 3) Do the sessions build on one another?
-
+#### 3) Do the sessions build on one another?
 Yes they do! If you are not able to attend a session one week, we encourage you to catch up by watching the recording and completing the practice in order to get the most out of the next session. Again, we encourage everyone to attend all the sessions live if possible.
 
 #### 4) Is it too late to join? 
