@@ -45,7 +45,7 @@ Please download the practice materials **before each session**. We will be shari
 See our [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp/FAQs) for more info on the workshop and what to do if you miss a session. 
 
 ### Participating asynchronously 
-Each week we will post a recording of the session as well as all of the materials you need to follow along. See the materials guide for more details. Additionally, we recommend joining our [piazza page](https://piazza.com/class/kqgzwi37jc6c) to continue the conversation between sessions and after the bootcamp has ended!  
+Each week we will post a recording of the session as well as all of the materials you need to follow along. See the [materials guide](https://github.com/UCB-Psychology-QuACK/site/blob/main/summer_bootcamp/bootcamp.md#materials-guide) for more details. Additionally, we recommend joining our [piazza page](https://piazza.com/class/kqgzwi37jc6c) to continue the conversation between sessions and after the bootcamp has ended!  
 
 
 
