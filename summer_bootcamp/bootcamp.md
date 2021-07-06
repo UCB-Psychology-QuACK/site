@@ -24,7 +24,7 @@ Each session will start with a live demo focusing on fundemental data skills. Pa
 
 |  Week | Topic | demo  |  practice | slides|session materials packet|
 | ------|-------|------- |  ------|-------|-------|
-| Session 1 (July 6) |Get started with R| | | | |
+| Session 1 (July 6) |Get started with R| | | |[s1_materials](session_1.zip) |
 | Session 2 (July 13) |Accessing and reading data| | | | |
 | Session 3 (July 20)|Cleaning and organizing dataframes| | | | |
 | Session 4 (July 27) |Data Visualization| | | | |
