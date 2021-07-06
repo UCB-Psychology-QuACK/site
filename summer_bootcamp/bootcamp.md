@@ -30,8 +30,13 @@ Access the full printable schedule [here](2021_bootcampschedule.png)
 
 ### Materials guide
 We are committed to open science and we make all of our resources and teaching materials freely available for offline learning.
-* **Practice materials**: These include all starter code, data, and prompts for independent and/or group work. This will be available before each session. 
-* **Live demo script**: Each session will begin with a demo where we introduce some fundemental skills and key concepts. We will share this code after each session.
+
+**Data**: We will be using the same dataset throughout the bootcamp. You can find the data in the session 1 practice materials.   
+
+Each week we will post some additional materials: 
+
+* **Practice materials**: This will include any starter code and prompts for the independent and/or group work. The best way to learn to program is to practice! So if you are participating asynchronously, we encourage you to try the practice work on your own and use [piazza](https://piazza.com/class/kqgzwi37jc6c) to share any comments or ask questions you might have! 
+* **Live demo script**: Each session will begin with a demo where we introduce some fundemental skills and key concepts that will help you with the practice materials. We will post these after each session. 
 * **Slides**: Any slides used will be made available for download after the session. 
 * **Recording**: We will be recording all of our sessions. If you miss a session we encourage you to watch the recording! 
 
@@ -40,7 +45,7 @@ Please download the practice materials **before each session**. We will be shari
 See our [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp/FAQs) for more info on the workshop and what to do if you miss a session. 
 
 ### Participating asynchronously 
-Each week we will be providing a recording of the session as well as all of the materials you need to follow along. See the materials guide for more details. Additionally, we recommend joining our [piazza page](https://piazza.com/class/kqgzwi37jc6c) to continue the conversation between sessions and after the bootcamp has ended!  
+Each week we will post a recording of the session as well as all of the materials you need to follow along. See the materials guide for more details. Additionally, we recommend joining our [piazza page](https://piazza.com/class/kqgzwi37jc6c) to continue the conversation between sessions and after the bootcamp has ended!  
 
 
 
