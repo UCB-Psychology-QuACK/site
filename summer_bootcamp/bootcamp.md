@@ -30,7 +30,7 @@ Access the full printable schedule [here](2021_bootcampschedule.png)
 
 ### Materials guide
 We are committed to open science and we make all of our resources and teaching materials freely available for offline learning.
-* **Practice materials**: These include all starter code, data, and questions or prompts used in independent and/or group work. This will be available before each session. 
+* **Practice materials**: These include all starter code, data, and prompts for independent and/or group work. This will be available before each session. 
 * **Live demo script**: Each session will begin with a demo where we introduce some fundemental skills and key concepts. We will share this code after each session.
 * **Slides**: Any slides used will be made available for download after the session. 
 * **Recording**: We will be recording all of our sessions. If you miss a session we encourage you to watch the recording! 
