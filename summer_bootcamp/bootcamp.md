@@ -22,9 +22,9 @@ See our [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp/FAQs)
 We will meet virtually for 1.5 hours weekly on Tuesdays, in July from 12-1:30pm PST. 
 Each session will start with a live demo focusing on fundemental data skills. Participants will then work together in small groups to apply these skills to real world data. Finally we will finish each session with a group discussion centering around challenges you faced working with the data and ways to address and overcome these challenges
 
-|  Week | Topic | demo  |  practice | slides|session materials packet|
+|  Week | Topic | recording |  slides | practice materials | live demo script |
 | ------|-------|------- |  ------|-------|-------|
-| Session 1 (July 6) |Get started with R| | | |[s1_materials](session_1.zip) |
+| Session 1 (July 6) |Get started with R| |[s1_slides](summer-bootcamp_session1.pdf)| [s1_materials](session_1.zip) | [s1_demo-script](My_first_script.R)|
 | Session 2 (July 13) |Accessing and reading data| | | | |
 | Session 3 (July 20)|Cleaning and organizing dataframes| | | | |
 | Session 4 (July 27) |Data Visualization| | | | |
