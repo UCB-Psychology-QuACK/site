@@ -4,13 +4,13 @@ title: "Programming and Data Skills Summer Bootcamp"
 ---
 
 ## Programming and Data Skills Bootcamp
-#### Welcome to UC Berkeley Psychology Department's summer bootcamp! 
+### Welcome to UC Berkeley Psychology Department's summer bootcamp! 
 This hands-on four session bootcamp will focus on teaching fundemental data skills in R with an emphasis on good data and coding practicies. This bootcamp is open to all RAs and post-bacs in the department. Graduate students are also welcome to attend.
 
-#### Instructors
+### Instructors
 The bootcamp is developed and taught by [Elena Leib](https://bungelab.berkeley.edu/graduate-students/) and [Willa Voorhies](https://cnl.berkeley.edu/people/willa-voorhies/), who are 4th year PhD students in the department.
 
-#### Core Goals:
+### Core Goals
 1) Provide hands-on training in fundamental programming and data skills with real data.  
 
 2) Build an inclusive, supportive and positive space for learning and teaching quantitative skills in the community. 
