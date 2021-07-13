@@ -25,7 +25,7 @@ Each session will start with a live demo focusing on fundemental data skills. We
 |  Week | Topic | practice materials |live demo script |slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
 | Session 1 (July 6) |Get started with R|[s1_materials](session_1.zip) | [s1_demo-script](My_first_script.R)|[s1_slides](summer-bootcamp_session1.pdf)| [intro](https://berkeley.box.com/s/eighm3dmxtkk5qu515md888kmr0a73oo). [s1_recording](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)|
-| Session 2 (July 13) |Accessing and reading data| | | | |
+| Session 2 (July 13) |Accessing and reading data|[s2_materials](session_2.zip) | | | |
 | Session 3 (July 20)|Cleaning and organizing dataframes| | | | |
 | Session 4 (July 27) |Data Visualization| | | | |
 
