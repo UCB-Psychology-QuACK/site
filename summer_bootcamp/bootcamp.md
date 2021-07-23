@@ -22,11 +22,11 @@ We will meet virtually for 1.5 hours weekly on Tuesdays, in July from 12-1:30pm 
 Each session will start with a live demo focusing on fundemental data skills. We will then work independently and in groups to apply these skills to real data. Finally we will finish each session with a group discussion centering around challenges you faced working with the data and ways to address and overcome these challenges. 
 
 
-|  Week | Topic | practice materials |live demo script |slides | recording | 
+|  Week | Topic | practice materials |live demo script & answer key |slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
 | Session 1 (July 6) |Get started with R|[s1_materials](session_1.zip) | [s1_demo-script](My_first_script.R)|[s1_slides](summer-bootcamp_session1.pdf)| [intro](https://berkeley.box.com/s/eighm3dmxtkk5qu515md888kmr0a73oo) [s1_recording](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)|
 | Session 2 (July 13) |Accessing and reading data|[s2_materials](session_2.zip)|[s2_demo-script](s2_starter_code_key.R)|[s2_slides](summer-bootcamp_session2.pdf)|[s2_recording](https://berkeley.box.com/s/vg5vvwawqj17gld60u7o7aos9llj1331)|
-| Session 3 (July 20)|Cleaning and organizing dataframes|[s3_materials](session_3.zip)| | |[s3 recording](https://berkeley.box.com/s/ul2bu6od737tcs2a8iz8m57y9mwda92y)|
+| Session 3 (July 20)|Cleaning and organizing dataframes|[s3_materials](session_3.zip)| [s3_demo-script](s3_starter_code_key.R)| |[s3 recording](https://berkeley.box.com/s/ul2bu6od737tcs2a8iz8m57y9mwda92y)|
 | Session 4 (July 27) |Data Visualization| | | | |
 
 Access the full printable schedule [here](2021_bootcampschedule.png)
@@ -39,7 +39,7 @@ We are committed to open science and we make all of our resources and teaching m
 Each week we will post some additional materials: 
 
 * **Practice materials**: This will include any starter code and prompts for the independent and/or group work. The best way to learn to program is to practice! So if you are participating asynchronously, we encourage you to try the practice work on your own and use [piazza](https://piazza.com/class/kqgzwi37jc6c) to share any comments or ask questions you might have! 
-* **Live demo script**: Each session will begin with a demo where we introduce some fundemental skills and key concepts that will help you with the practice materials. We will post these after each session. 
+* **Live demo script**: Each session will begin with a demo where we introduce some fundemental skills and key concepts that will help you with the practice materials. We will post these after each session. This will also include answer keys for the group activity if applicable. 
 * **Slides**: Any slides used will be made available for download after the session. 
 * **Recording**: We will be recording all of our sessions. If you miss a session we encourage you to watch the recording! 
 
