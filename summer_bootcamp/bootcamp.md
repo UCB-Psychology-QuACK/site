@@ -24,10 +24,10 @@ Each session will start with a live demo focusing on fundemental data skills. We
 
 |  Week | Topic | practice materials |live demo script & answer key |slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
-| Session 1 (July 6) |Get started with R|[s1_materials](session_1.zip) | [s1_demo-script](My_first_script.R)|[s1_slides](summer-bootcamp_session1.pdf)| [intro](https://berkeley.box.com/s/eighm3dmxtkk5qu515md888kmr0a73oo) [s1_recording](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)|
+| Session 1 (July 6) |Get started with R|[s1_materials](session_1.zip) | [s1_demo-script](My_first_script.R)|[s1_slides](summer-bootcamp_session1.pdf)| [intro](https://berkeley.box.com/s/eighm3dmxtkk5qu515md888kmr0a73oo).  [s1_recording](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)|
 | Session 2 (July 13) |Accessing and reading data|[s2_materials](session_2.zip)|[s2_demo-script](s2_starter_code_key.R)|[s2_slides](summer-bootcamp_session2.pdf)|[s2_recording](https://berkeley.box.com/s/vg5vvwawqj17gld60u7o7aos9llj1331)|
 | Session 3 (July 20)|Cleaning and organizing dataframes|[s3_materials](session_3.zip)| [s3_demo-script](s3_starter_code_key.R)| [s3_slides](summer-bootcamp_session3.pdf)|[s3_recording](https://berkeley.box.com/s/ul2bu6od737tcs2a8iz8m57y9mwda92y)|
-| Session 4 (July 27) |Data Visualization|[s4_materials](session_4.zip) | | | |
+| Session 4 (July 27) |Data Visualization|[s4_materials](session_4.zip) |[s4_demo-script](s4_warmup_livedemo_key.R). [group_activity_key](s4_group-activity_key.zip). [s4_reshaping_tutorial](s4_data_reshaping_key.R)|[s4_slides](summer-bootcamp_session4.pdf)|[s4_recording](https://berkeley.app.box.com/file/841969113060) [s4_reshaping_tutorial](https://berkeley.app.box.com/file/840110159845) |
 
 Access the full printable schedule [here](2021_bootcampschedule.png)
 
