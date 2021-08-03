@@ -1,0 +1,423 @@
+---
+title: "Session 4 Group Activity Key"
+author: "Elena Leib & Willa Voorhies"
+date: "July 27, 2021"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Question 1: Set up script
+Open an R script and load the covid_attitudes_clean.csv data.  
+Make sure to load the tidyverse library at the start of your script: library(tidyverse), and set
+options(stringsAsFactors = FALSE).
+
+```{r, message = FALSE, warning = FALSE}
+## Load packages and set options ##
+library(tidyverse)
+options(stringsAsFactors = FALSE)
+
+## Read in data ##
+covid_clean <- read.csv("covid_attitudes_clean.csv")
+
+```
+
+ 
+ 
+# Question 2: Recreate the plot
+
+## Key
+First, we need to get our data ready to plot:    
+1. We need to remove participants who answered "definitely not" to Q35. (Notice that the data say "defintely not", which is spelled wrong! So we need to make sure we spell it that way when we filter the data!)
+  
+2. We need to change "probably_not" to say "probably"  
+  
+3. We also need to make Q35 into a factor and order the levels from definitely to probably not (if we don't set the levels, then they won't be in the correct order, R will default them to alphabetical order)
+
+```{r}
+# Set up data frame for plot
+df_q35.plot <- covid_clean %>%
+  # Remove "definitely not" answers (defintely spelled wrong!)
+  filter(Q35.take_vaccine. != "defintely not") %>%
+  # Change probably_not
+  mutate(
+    Q35.take_vaccine. = case_when(
+      Q35.take_vaccine. == "probably_not" ~ "probably not",
+      TRUE ~ Q35.take_vaccine.
+    ),
+    # Make Q35 into a factor
+    Q35.take_vaccine. = factor(
+      Q35.take_vaccine.,
+      levels = c("definitely",
+                 "probably", 
+                 "unsure", 
+                 "probably not")
+    )
+  )  
+
+```
+ 
+Next, set up our ggplot with the data frame and aesthetics. In order to color the boxplots, we need to add a fill argument. Since we want them to be filled just by factor level of Q35, we put that as the fill argument.  
+ 
+```{r, fig.align = 'center'}
+ggplot(df_q35.plot, aes(x = Q35.take_vaccine., 
+                        y = Q101.confidence_in_authority, 
+                        fill = Q35.take_vaccine.)) +
+  # Add the boxplots
+  geom_boxplot() +
+  # Change the theme to classic for a simplistic and clean look
+  theme_classic() + 
+  # Change the x-axis label
+  xlab("willingness to take a vaccine") + 
+  # Change the y-axis label
+  ylab("confidence in authority") +
+  # Change the fill of the boxplots
+  scale_fill_brewer(palette = "Dark2") +
+  # Get rid of the legend on the plot (set it equal to "none" or "NULL")
+  theme(legend.position = "none")
+
+```
+ 
+ 
+And voila! We have recreated the plot!
+  
+We want to note that the final product of beautiful, clean code that you see here was not written perfectly the first time or even in this order! We would bet that NO ONE would write this code perfectly on the first go.  
+  
+The key is to iterate! Write some code, run it, see if it works, and then add something else, run it, and then keep going!  
+  
+Another tip is to break down the big problem into little ones to solve one step at a time.  
+ 
+ 
+## Solution Breakdown and Logic
+Here is an example of Elena's thought process as she worked on recreating Willa's plot:
+
+#### 1. Get the ggplot() set up with the correct x and y-axes, and add a geom_boxplot. Run the code and see what is there:
+
+```{r, fig.align = 'center'}
+ggplot(covid_clean, aes(x = Q35.take_vaccine., 
+                        y = Q101.confidence_in_authority)) +
+         geom_boxplot()
+
+```
+ 
+#### 2. I noticed that there are 5 boxplots, but the goal graph only has 4. This means I need to remove the observations that say "definitely not" from the graph. The best way to do this is to filter those rows out of the data using the tidyverse function by the same name. I also noticed that my Q35 levels are in a different order than the ones in the goal plot. This suggests that I need to make Q35 a factor, and set the order of the levels using the levels = c(...) argument. I also notice that "probably not" has an underscore that I want to remove. To do all this, I made a new data frame that I will use just for this plot. Full disclosure, I built this up incrementally as well! It took me a little while to realize that "defintely not" was spelled wrong, and I kept getting weird NAs in my data from setting the levels to a name that didn't match the actual data. Eventually, I figured that out!
+
+```{r}
+df_q35.plot <- covid_clean %>%
+  filter(Q35.take_vaccine. != "defintely not") %>%
+  drop_na(Q35.take_vaccine.) %>%
+  mutate(
+    Q35.take_vaccine. = case_when(
+      Q35.take_vaccine. == "probably_not" ~ "probably not",
+      TRUE ~ Q35.take_vaccine.
+    ),
+    Q35.take_vaccine. = factor(
+      Q35.take_vaccine.,
+      levels = c("definitely",
+                 "probably",
+                 "unsure",
+                 "probably not")
+    )
+  ) 
+
+
+```
+
+*** See below for more on what happens if you spell "definitely" correctly and it doesn't match what is in the data. 
+
+ 
+ 
+  
+#### 3. Next, I replotted using this new data frame:
+
+```{r, fig.align = 'center'}
+ggplot(df_q35.plot, aes(x = Q35.take_vaccine., 
+                        y = Q101.confidence_in_authority)) +
+  geom_boxplot()
+
+```
+
+ 
+
+Excellent, now we are getting somewhere!  
+  
+ 
+ 
+
+#### 4. Next, I changed the theme, and the axis labels in one go, so my code looked like this:
+```{r, fig.align = 'center'}
+ggplot(df_q35.plot, aes(x = Q35.take_vaccine., 
+                        y = Q101.confidence_in_authority)) +
+  # Add the boxplots
+  geom_boxplot() +
+  # Change the theme to classic for a simplistic and clean look
+  theme_classic() + 
+  # Change the x-axis label
+  xlab("willingness to take a vaccine") + 
+  # Change the y-axis label
+  ylab("confidence in authority")
+
+```
+
+ 
+ 
+
+#### 5. Now, I'm ready to add some color! I added + scale_fill_brewer(palette = "Dark2") and ran the code below. However, when I ran it, nothing changed color!
+
+```{r, fig.align = 'center'}
+ggplot(df_q35.plot, aes(x = Q35.take_vaccine., 
+                        y = Q101.confidence_in_authority)) +
+  # Add the boxplots
+  geom_boxplot() +
+  # Change the theme to classic for a simplistic and clean look
+  theme_classic() + 
+  # Change the x-axis label
+  xlab("willingness to take a vaccine") + 
+  # Change the y-axis label
+  ylab("confidence in authority") +
+  # Change the fill of the boxplots
+  scale_fill_brewer(palette = "Dark2")
+
+```
+
+ 
+
+Urgggg. I had to think, hmmm why wasn't it working? I thought maybe I hadn't typed in the argument correctly, so I looked up the help file for scale_fill_brewer. Also, sometimes it wants scale_color_brewer, not the fill one, so I tried that, too.  
+  
+ 
+ 
+
+#### 6. After neither of those worked, I realized that ggplot didn't know __what__ I was trying to fill! It can't read my mind that I want it to fill the boxplots. I need to tell it what to fill, and I want to fill each boxplot by what its label is. So I want to fill by Q35. Therefore, I added a fill argument to aes in the original ggplot call and ran the code:
+
+```{r, fig.align = 'center'}
+ggplot(df_q35.plot, aes(x = Q35.take_vaccine., 
+                        y = Q101.confidence_in_authority, 
+                        fill = Q35.take_vaccine.)) +
+  # Add the boxplots
+  geom_boxplot() +
+  # Change the theme to classic for a simplistic and clean look
+  theme_classic() + 
+  # Change the x-axis label
+  xlab("willingness to take a vaccine") + 
+  # Change the y-axis label
+  ylab("confidence in authority") +
+  # Change the fill of the boxplots
+  scale_fill_brewer(palette = "Dark2")
+
+```
+
+ 
+
+It worked yay!  
+  
+ 
+ 
+
+#### 7. Now that I got the fill to work by adding a fill argument to aes, it created a legend for me, and I don't want a legend! (Note that adding fill or color arguments to aes will ALWAYS create a legend for you!) So I needed to add a line of code to remove the legend.
+
+```{r, fig.align = 'center'}
+ggplot(df_q35.plot, aes(x = Q35.take_vaccine., 
+                        y = Q101.confidence_in_authority, 
+                        fill = Q35.take_vaccine.)) +
+  # Add the boxplots
+  geom_boxplot() +
+  # Change the theme to classic for a simplistic and clean look
+  theme_classic() + 
+  # Change the x-axis label
+  xlab("willingness to take a vaccine") + 
+  # Change the y-axis label
+  ylab("confidence in authority") +
+  # Change the fill of the boxplots
+  scale_fill_brewer(palette = "Dark2") +
+  # Get rid of the legend on the plot (set it equal to "none" or "NULL")
+  theme(legend.position = "none")
+
+```
+
+ 
+ 
+
+#### 8. After I ran this code, I checked it against the example in the group activity and saw that it looks the same! So we are done! And I did a little dance -- whooo! Great work!
+  
+ 
+ 
+
+*** Following up from step 2: What happens if you spell "definitely" correctly and it doesn't match what is in the data
+
+```{r, fig.align = 'center'}
+df_q35.plot_badDef <- covid_clean %>% 
+  # I spelled definitely correct here, but it doesn't match what's in the data,
+  # so nothing gets filtered out (this is why it is important to check your code
+  # line by line and make sure when you filter something out, it is really
+  # filtering!)
+  filter(Q35.take_vaccine. != "definitely not") %>% 
+  drop_na(Q35.take_vaccine.) %>% 
+  mutate(Q35.take_vaccine. = 
+           case_when(Q35.take_vaccine. == "probably_not" ~ "probably not",
+                     TRUE ~ Q35.take_vaccine.),
+         # I don't have a factor level for "defintely not" which is still in the data, so it just becomes NA
+         Q35.take_vaccine. = factor(Q35.take_vaccine., 
+                                    levels = c("definitely", 
+                                               "probably", 
+                                               "unsure", 
+                                               "probably not"))) 
+
+# If we try to plot it, look what happens now, there are NAs!
+ggplot(df_q35.plot_badDef, aes(x = Q35.take_vaccine., 
+                               y = Q101.confidence_in_authority)) +
+  # Add the boxplots
+  geom_boxplot()
+
+```
+
+ 
+
+If you are getting NAs after you make something a factor, it is almost always because something went wrong in that process. And often the error is spelling something wrong when setting the levels of the factor.  
+  
+This is a good lesson in making sure your code is doing what you think it is doing! After you filter something, check to be sure it is actually filtered out!
+  
+ 
+ 
+
+# Question 3
+
+Here are some ways you could explore the example questions with graphs.
+
+ 
+ 
+
+#### 1. Does the belief that scientists understand covid vary with community?
+
+```{r, fig.align = 'center'}
+ggplot(covid_clean, aes(x = factor(Q84.community, 
+                                   levels = c("rural area", 
+                                              "suburb", 
+                                              "small city/town", 
+                                              "large city")), 
+                        y = Q16.Belief_scientists_understand_covid, 
+                        fill = Q84.community)) +
+  geom_violin() +
+  geom_boxplot(color = "black", width = .1) +
+  theme_classic() +
+  xlab("community") +
+  ylab("Belief that scientists understand covid") +
+  theme(legend.position = "none")
+
+```
+
+Again, this was made in an iterative fashion! For example, at the end we added boxplots, and also decided to order the levels of community in order to go from smallest to largest.  
+
+ 
+ 
+
+#### 2. Does attention to news relate to confidence in the US government? Is this true for all age groups?
+
+```{r, fig.align = 'center'}
+ggplot(covid_clean, aes(x = Q10.rank_attention_to_news, 
+                        y = Q14.confidence_us_government)) +
+  geom_point() + 
+  geom_smooth(method = "lm") + 
+  facet_wrap(~Q40.age) +
+  theme_bw() +
+  xlab("Attention to news (1-10)") +
+  ylab("Confidence in U.S. Gov't (1-10)")
+
+```
+
+ 
+ 
+
+#### 3. How do age and community relate to willingness to take a vaccine?
+
+```{r, fig.align = 'center'}
+df_plot_takeVax <- covid_clean %>% 
+  # Fix the known issues with the Q35 column
+  mutate(Q35.take_vaccine. = 
+           case_when(Q35.take_vaccine. == "defintely not" ~ "definitely not",
+                     Q35.take_vaccine. == "probably_not" ~ "probably not",
+                     TRUE ~ Q35.take_vaccine.),
+         # Make Q35 into a factor and order the levels
+         Q35.take_vaccine. = factor(Q35.take_vaccine., 
+                                    levels = c("definitely", 
+                                               "probably", 
+                                               "unsure", 
+                                               "probably not", 
+                                               "definitely not")),
+         # Make Q84 intoa  factor and order the levels
+         Q84.community = factor(Q84.community, 
+                                levels = c("rural area", 
+                                           "suburb", 
+                                           "small city/town", 
+                                           "large city"))) %>% 
+  # Remove age groups that have less than 10 participants!
+  group_by(Q40.age) %>% 
+  filter(n() > 10) %>% 
+  # Remove communities that have less than 10 participants
+  group_by(Q84.community) %>% 
+  filter(n() > 50) %>% 
+  ungroup()
+
+```
+
+ 
+
+First, I tried it this way, with just community to see what it looked like.
+
+ 
+
+```{r, fig.align = 'center'}
+ggplot(df_plot_takeVax, aes(x = Q35.take_vaccine., fill = Q84.community)) +
+  geom_bar(position = "dodge")
+
+```
+
+ 
+
+Then, I decided I wanted to facet by community, and have side by side bars for age.
+
+ 
+
+```{r, fig.align = 'center'}
+ggplot(df_plot_takeVax, aes(x = Q35.take_vaccine., fill = Q40.age)) +
+  geom_bar(position = "dodge") +
+  facet_wrap(~Q84.community) +
+  theme_classic() +
+  xlab("Willingness to take vaccine")
+
+```
+
+ 
+
+This is not the most beautiful plot (i.e., I wouldn't put it in publication), but for a cursory exploration of your data, it will do! I thought this would be the easiest for comparison. However, depending on what comparisons you are interested in, you could have plotted community side-by-side and faceted by age range. Or you could have picked only a few key age ranges of interest to look at.  
+  
+ 
+ 
+
+#### 4. How does education level relate to belief that scientists understand covid?
+```{r, fig.align = 'center'}
+df_plot_ed <- covid_clean %>% 
+  # Remove education levels that have less than 10 people
+  group_by(Q74.education) %>% 
+  filter(n() > 10) %>% 
+  ungroup() %>% 
+  # Make education into a factor, and order the levels by ed level
+  mutate(Q74.education = factor(Q74.education, levels = c("highschool graduate", "some college", "2 year degree", " 4 year degree", "professional degree", "doctorate")))
+  
+ggplot(df_plot_ed, aes(x = Q74.education, 
+                       y = Q16.Belief_scientists_understand_covid, 
+                       fill = Q74.education)) +
+  geom_violin() + 
+  theme_classic() +
+  xlab("Education") +
+  ylab("Beleif that scientists understand covid") +
+  theme(legend.position = "none")
+
+```
+
