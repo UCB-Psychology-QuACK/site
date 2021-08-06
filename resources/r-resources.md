@@ -28,10 +28,10 @@ There's a multitude of resources for learning R out there. So many, in fact, tha
 ### Tidyverse and ggplot2 Resources
 * [Tidyverse Style Guide](https://style.tidyverse.org/)
 * [ggplot Book](https://ggplot2-book.org/)
-* [ggplot Flipbook](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1): Cool flipbook where as you scroll, you add layers onto your ggplot: code on the left and plot on the right to see how when you add lines of code your plot changes (*Note*: Code is not necessarily in the order generally used, but in an order to show how the plots are built up and what each line does)
-* See Tidyverse's [*learn*](https://www.tidyverse.org/learn/) page for more
+* [ggplot Flipbook](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1): Cool flipbook where as you scroll, you add layers onto your ggplot: code on the left and plot on the right to see how when you add lines of code your plot changes (*Note*: Code is not necessarily in the order generally used, but in an order to show how the plots are built up and what each line does).
+* [STDA](http://www.sthda.com/english/wiki/ggplot2-essentials): Easy, step-by-step guides for ggplot and much more. 
 * [Tidy Tuesday](https://www.tidytuesday.com/): A podcast and community activity for learning R in real-world contexts (Also see twitter resources below). 
-
+* See Tidyverse's [*learn*](https://www.tidyverse.org/learn/) page for more
 
 ### R "Cheat Sheets"
 * [Data wrangling with dplyr and tidyr](https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
