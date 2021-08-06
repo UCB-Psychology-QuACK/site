@@ -15,10 +15,10 @@ Goal 2: Build an inclusive, supportive, and positive space for learning quantita
 Goal 3: Create open access learning materials 
 
 # About Us
-<img src="Elena.png" alt="Elena" width="100"/> [Elena Leib](https://bungelab.berkeley.edu/graduate-students/)(Ph.d Candidate, Psychology)
+<img src="Elena.png" alt="Elena" width="100"/> [Elena Leib](https://bungelab.berkeley.edu/graduate-students/)(Ph.D. Candidate, Psychology)
 
 
-<img src="biopic (1).png" alt="Willa" width="100" /> [Willa Voorhies](https://cnl.berkeley.edu/people/willa-voorhies/)(Ph.dCandidate, Psychology)
+<img src="biopic (1).png" alt="Willa" width="100" /> [Willa Voorhies](https://cnl.berkeley.edu/people/willa-voorhies/)(Ph.D. Candidate, Psychology)
 
 
 [contact us]()
