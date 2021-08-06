@@ -30,6 +30,7 @@ There's a multitude of resources for learning R out there. So many, in fact, tha
 * [ggplot Book](https://ggplot2-book.org/)
 * [ggplot Flipbook](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1): Cool flipbook where as you scroll, you add layers onto your ggplot: code on the left and plot on the right to see how when you add lines of code your plot changes (*Note*: Code is not necessarily in the order generally used, but in an order to show how the plots are built up and what each line does)
 * See Tidyverse's [*learn*](https://www.tidyverse.org/learn/) page for more
+* [Tidy Tuesday](https://www.tidytuesday.com/): A podcast and community activity for learning R in real-world contexts. 
 
 
 ### R "Cheat Sheets"
@@ -42,12 +43,13 @@ There's a multitude of resources for learning R out there. So many, in fact, tha
 * [Hadley Wickham](http://hadley.nz/), [@hadleywickham](https://twitter.com/hadleywickham): Chief Scientist at RStudio, and an Adjunct Professor of Statistics at the University of Auckland, Stanford University, and Rice University, excellent R teacher who has written books on it and helped develop tidyverse packages
 * [Allison Horst](https://www.allisonhorst.com/), [@allison_horst](https://twitter.com/allison_horst): Assistant Teaching Professor at the Bren School of Environmental Science and Management at UC Santa Barbara, where she teaches statistics, data analysis, and science communication, and an amazing artist who created illustrations depicting how many tidyverse functions work! https://github.com/allisonhorst/stats-illustrations
 * [Danielle Navarro](https://djnavarro.net/), [@djnavarro](https://twitter.com/djnavarro): Computational cognitive scientist, and data science teacher, she has great materials on her [YouTube channel](https://www.youtube.com/c/DanielleNavarro77)
-* Twitter accounts to follow:
+* Twitter accounts  to follow:
   * [@R4DScommunity](https://twitter.com/R4DScommunity), which hosts #TidyTuesday, a short and fun weekly data project in R for the R4DS community to do!
   * [@RLangTip](https://twitter.com/RLangTip)
   * [@RLadiesGlobal](https://twitter.com/RLadiesGlobal) and [@WeAreRLadies](https://twitter.com/WeAreRLadies)
   * [@rfortherest](https://twitter.com/rfortherest)
   * [@rstatsmemes](https://twitter.com/rstatsmemes)
+
 
 
 
