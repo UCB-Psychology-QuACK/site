@@ -30,7 +30,7 @@ There's a multitude of resources for learning R out there. So many, in fact, tha
 * [ggplot Book](https://ggplot2-book.org/)
 * [ggplot Flipbook](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1): Cool flipbook where as you scroll, you add layers onto your ggplot: code on the left and plot on the right to see how when you add lines of code your plot changes (*Note*: Code is not necessarily in the order generally used, but in an order to show how the plots are built up and what each line does)
 * See Tidyverse's [*learn*](https://www.tidyverse.org/learn/) page for more
-* [Tidy Tuesday](https://www.tidytuesday.com/): A podcast and community activity for learning R in real-world contexts. 
+* [Tidy Tuesday](https://www.tidytuesday.com/): A podcast and community activity for learning R in real-world contexts (Also see twitter resources below). 
 
 
 ### R "Cheat Sheets"
