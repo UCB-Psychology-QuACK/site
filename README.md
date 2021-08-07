@@ -18,4 +18,4 @@ Find materials from our most recent introductory 13-week programming workshop.
 <br />
 **Interested in learning more?** Take our class next fall!
 
-Not what you're looking for? Try some of these [other amazing R resources!]() 
+Not what you're looking for? Try some of these [other amazing R resources!](https://ucb-psychology-quack.github.io/site/resources/resources) 
