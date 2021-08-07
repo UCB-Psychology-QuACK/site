@@ -54,7 +54,7 @@ Each week we will post a recording of the session as well as all of the material
 
 ### [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp/FAQs)
 
-#### Ready to learn more?
+### Ready to learn more?
 [Check out these other R-resources](https://ucb-psychology-quack.github.io/site/resources/r-resources)
 
 [<- Back](https://ucb-psychology-quack.github.io/site)
