@@ -9,7 +9,7 @@ There's a multitude of resources for learning R out there. So many, in fact, tha
 
 
 ### R Workshops and Bootcamps
-* [D-Lab](https://dlab.berkeley.edu/): Berkeley's center for all things data, including resources, professional development, and assistance. They offer trainings in a variety of technical skills, including R and Python. They offer frequent workshops (sign up for their newsletter for updates), and they also post all of their materials on GitHub: https://github.com/dlab-berkeley. They have a variety of levels of workshops on R, including:
+* [D-Lab](https://dlab.berkeley.edu/): Berkeley's center for all things data, including resources, professional development, and assistance. They offer trainings in a variety of technical skills, including R and Python. They offer frequent workshops (sign up for their newsletter for updates), and they also post all of their [materials on GitHub](https://github.com/dlab-berkeley). They have a variety of levels of workshops on R, including:
   * R Fundamentals: Parts 1-4 (no prior knowledge assumed)
   * R Data Wrangling and Manipulation
   * R Visualization
