@@ -53,7 +53,7 @@ Access the full printable schedule [here](https://docs.google.com/document/d/1Bz
 We are committed to open science and we make all of our resources and teaching materials freely available for offline learning.
 
 Each week we will be posting the following materials:
-* **Practice materials**: This will include any starter code and prompts for the independent and/or group work. The best way to learn to program is to practice! So if you are participating asynchronously or if you miss a session, we encourage you to try the practice work on your own and use the slack channel to share any comments or ask questions you might have! 
+* **Practice materials**: Please download the practice material before each session. This will include any starter code and prompts for the independent and/or group work. The best way to learn to program is to practice! So if you are participating asynchronously or if you miss a session, we encourage you to try the practice work on your own and use the slack channel to share any comments or ask questions you might have! 
 * **Live demo script**: Each session will begin with a demo where we introduce some fundemental skills and key concepts that will help you with the practice materials. We will post these after each session. This will also include answer keys for the group activity if applicable. 
 * **Slides**: Any slides used will be made available for download after the session. 
 * **Recording**: We will be recording all of our sessions. If you miss a session we encourage you to watch the recording! 
