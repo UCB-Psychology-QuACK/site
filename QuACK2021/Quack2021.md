@@ -7,7 +7,7 @@ title: "QuACK 2021"
 ### Welcome to QuACK 2021!
 This semester-long workshop is for grad students and student researchers, by grad students. We will focus on teaching fudemental programming skills in R to prepare you for research and data anlysis. The workshop also helps prepare first-year PhD students for Psych 205: Data analysis. 
 
-**Register for the workshop through CalCentral:**
+**Register for the workshop through [CalCentral](https://calcentral.berkeley.edu/dashboard):**
 * Course Number: 14167
 * Select 2 credits (since it is 2 hours a week)
 * Select to take the class Pass/No Pass
