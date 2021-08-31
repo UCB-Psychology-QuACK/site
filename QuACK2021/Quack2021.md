@@ -42,8 +42,8 @@ As you will see the sessions build on eachother. If you miss a session, we encou
 | Week 8 (10/19) |Loops cont. & Random sampling|||||
 | Week 9 (10/26) |Functions|||||
 | Week 10 (11/2) |Flex week|||||
-| Week 11 (11/9) |Discussion topic:Open science & data sharing|||||
-| Week 12 (11/16) |Discussion topic:Biases in statistics and psych science|||||
+| Week 11 (11/9) |Discussion topic: Open science & data sharing|||||
+| Week 12 (11/16) |Discussion topic: Biases in statistics and psych science|||||
 | Week 13 (11/23) |Thanksgiving Week *No class*|||||
 | Week 14 (11/30) |Review and celebrate|||||
 
