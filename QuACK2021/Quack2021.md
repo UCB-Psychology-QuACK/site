@@ -5,7 +5,7 @@ title: "QuACK 2021"
 ## Quantitative Analysis and Coding Knowledge (QuACk) course page
 
 ### Welcome to QuACK 2021!
-This semester-long course is for grad students, by grad students. We will focus on teaching fudemental programming skills in R to prepare you for research and data anlysis. The workshop also helps prepare first-year PhD students for Psych 205: Data analysis. 
+This semester-long course is for grad students and student researchers, by grad students. We will focus on teaching fudemental programming skills in R to prepare you for research and data anlysis. The workshop also helps prepare first-year PhD students for Psych 205: Data analysis. 
 
 Register for the workshop through CalCentral:
 * Course Number: 14167
