@@ -18,7 +18,7 @@ Goal 3: Create open access learning materials
 
 <img src="Elena.png" alt="Elena" width="100"/> [Elena Leib](https://bungelab.berkeley.edu/graduate-students/)(Ph.D. Candidate, Psychology). 
 
-Elena is a 4th year in the Berkeley Psychology graduate program in the Developmental area. She has several years of teaching experience including as a graduate student intructor for both graduate and undergraduate statistics courses. She also co-created the [Psychology Summer Programming and Data skills bootcamp]((https://ucb-psychology-quack.github.io/site/summer_bootcamp/bootcamp). This is her third year teaching QuACK.
+Elena is a 4th year in the Berkeley Psychology graduate program in the Developmental area. She has several years of teaching experience including as a graduate student intructor for both graduate and undergraduate statistics courses. She also co-created the [Psychology Summer Programming and Data skills bootcamp](https://ucb-psychology-quack.github.io/site/summer_bootcamp/bootcamp). This is her third year teaching QuACK.
 
 
 <img src="biopic (1).png" alt="Willa" width="100" /> [Willa Voorhies](https://cnl.berkeley.edu/people/willa-voorhies/)(Ph.D. Candidate, Psychology). 
