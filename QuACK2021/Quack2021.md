@@ -69,7 +69,7 @@ No experience is expected or required! We are going to build up the foundational
 We will not be teaching statistics in this workshop. However, this course will set you up nicely for a statistics course by giving you hands-on experience working with real data in R and the fundemental programming skills that are required for statistical analyses. 
 
 #### What is the time commitment for this course? 
-This is a semester long workshop that meets once a week for 2 hours. There are no required assignments or homework. However, learning to program requires lots of hands on practive so we encourage everyone to to work through the provided practice problems and/or practice applying the skills you learn to your own research throughout the semester. 
+This is a semester long workshop that meets once a week for 2 hours. There are no required assignments or homework. However, learning to program requires lots of hands on practive. We encourage everyone to to work through the provided practice problems and/or practice applying the skills to your own research throughout the semester. 
 
 #### I can't attend in person. Is there a virtual option? 
 Unfortunately we are not able to offer a live virtual option this year. However, each week we will post all of the materials (practice questions, demos, answer keys etc.) and a recording of the live session for those who want to follow along asynchronously. 
