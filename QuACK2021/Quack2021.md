@@ -28,7 +28,7 @@ We will meet weekly on **Tuesdays from 5pm - 7pm PST in BWW 1214**.
 
 Each session will start with a live demo focusing on fundemental data skills. We will then work independently and in groups to apply these skills to real data. Finally we will finish each session with a group discussion centering around challenges you faced working with the data and ways to address and overcome these challenges. 
 
-As you will see the sessions build on eachother. If you miss a session, we encourage you to watch the recording and try the practice problems on your own. 
+As you will see the sessions build on each other. If you miss a session, we encourage you to watch the recording and try the practice problems on your own. 
 
 |  Week | Topic | practice materials |live demo script & answer key |slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
