@@ -8,7 +8,7 @@ QuACK is a UC Berkeley Psychology grad student initiative. We teach foundational
 
 ## Learn R
 Find materials for our R courses below
-### [QuACK 2021 workshop](https://github.com/UCB-Psychology-QuACK/site/blob/main/QuACK2021/Quack2021.md)
+### [QuACK 2021 workshop](https://github.com/UCB-Psychology-QuACK/site/blob/main/QuACK2021/Quack2021)
 QuACK is back! Find the schedule and materials for our most recent semester-long programming workshop!
 ### [Programming and Data Skills summer bootcamp](https://ucb-psychology-quack.github.io/site/summer_bootcamp/bootcamp)
 Learn more about our upcoming 4 session summer bootcamp for RAs, post-bacs and grads
