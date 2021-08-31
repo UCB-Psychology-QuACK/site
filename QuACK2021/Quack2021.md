@@ -12,7 +12,7 @@ Register for the workshop through CalCentral:
 * Select 2 credits (since it is 2 hours a week)
 * Select to take the class Pass/No Pass
 
-*See the FAQs below for more info*
+*See the [FAQs](#faqs) below for more info*
 
 ### Instructors
 The course is developed and taught by [Elena Leib](https://bungelab.berkeley.edu/graduate-students/) and [Willa Voorhies](https://cnl.berkeley.edu/people/willa-voorhies/), who are 4th year PhD students in the department.
