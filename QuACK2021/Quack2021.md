@@ -24,7 +24,7 @@ The course is developed and taught by [Elena Leib](https://bungelab.berkeley.edu
 
 ### Schedule
 
-We will meet weekly on Tuesdays from 5pm - 7pm PST. 
+We will meet weekly on **Tuesdays from 5pm - 7pm PST in BWW 1214**. 
 
 Each session will start with a live demo focusing on fundemental data skills. We will then work independently and in groups to apply these skills to real data. Finally we will finish each session with a group discussion centering around challenges you faced working with the data and ways to address and overcome these challenges. 
 
