@@ -15,7 +15,7 @@ This semester-long workshop is for PhD students by PhD students. We will focus o
 *See the [FAQs](#faqs) below for more info*
 
 ### Instructors
-The course is developed and taught by [Elena Leib](https://bungelab.berkeley.edu/graduate-students/) and [Willa Voorhies](https://cnl.berkeley.edu/people/willa-voorhies/), who are 4th year PhD students in the department.
+The course is developed and taught by [Elena Leib](https://ucb-psychology-quack.github.io/site/about/about) and [Willa Voorhies](https://ucb-psychology-quack.github.io/site/about/about), who are 4th year PhD students in the department.
 
 ### Core Goals
 1) Provide hands-on training in fundamental programming and data skills with real data.  
