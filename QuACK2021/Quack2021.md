@@ -48,7 +48,9 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 14 (11/30) |Review and celebrate|||||
 
 Access the full printable schedule [here](https://docs.google.com/document/d/1BzSO37m0SL8qZeeBr6nMYjbv1hK_MTV1YcMHZAEfLNM/edit?usp=sharing)
-* There was an issue with this recording but very similar content was covered in Week 1 of our summer bootcamp. 
+
+*There was an issue with this recording but very similar content was covered in Week 1 of our summer bootcamp. 
+
 ### Materials guide
 We are committed to open science and we make all of our resources and teaching materials freely available for offline learning.
 
