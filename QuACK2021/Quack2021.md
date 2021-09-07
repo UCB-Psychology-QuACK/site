@@ -32,8 +32,8 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 
 |  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
-| Week 1 (8/31) |Intro to R & Programming|[s1_practice_problem](Week1_Practice.pdf)|[s1_demo_key](week1_key.R)|[s1_slides](QuACK_Week1_intro.pdf)|see [s1_bootcamp](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)*|
-| Week 2 (9/7) |Working directories and reading in data|||||
+| Week 1 (8/31) |Intro to R & Programming|[s1_materials](Week1_Practice.pdf)|[s1_demo_key](week1_key.R)|[s1_slides](QuACK_Week1_intro.pdf)|see [s1_bootcamp](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)*|
+| Week 2 (9/7) |Working directories and reading in data|[s2_materials](Week2.zip)||||
 | Week 3 (9/14) |Intro to the tidyverse and data wrangling - Part 1|||||
 | Week 4 (9/21)|Data wrangling - Part 2|||||
 | Week 5 (9/28) |Intro to data visualization (ggplot) - Part 1|||||
