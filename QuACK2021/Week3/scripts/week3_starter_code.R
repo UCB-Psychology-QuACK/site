@@ -19,7 +19,15 @@ options(stringsAsFactors = FALSE)
 
 
 
-# Bonus: 3) How many penguins were measured in each year?
+# 3) How many penguins were measured in each year?
+
+
+
+# 4) What is the value in the 4th column of the 10th row?
+
+
+
+# 5) How much does the penguin in the 5th row weigh?
 
 
 
