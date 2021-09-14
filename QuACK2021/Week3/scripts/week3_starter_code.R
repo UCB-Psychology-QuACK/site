@@ -3,11 +3,6 @@
 # Elena Leib & Willa Voorhies
 
 
-
-#### Set options ####
-options(stringsAsFactors = FALSE)
-
-
 #### Warm-up ####
 
 # 1) Load in the penguins data set
@@ -54,14 +49,14 @@ options(stringsAsFactors = FALSE)
 
 
 # This is what we want our data to look like after we do these processing steps:
-penguins_endResult <- read.csv("../data/penguins_endResult.csv")
+penguins_endResult <- read.csv("../data/penguins_clean.csv")
 View(penguins_endResult)
 
 
 #### Select ####
 # Select only our columns of interest: penguin, species, island, bill_length_mm,
-# bill_depth_mm, sex, year
-# We remove flipper_lengh_mm and body_mass_g
+# bill_depth_mm, body_mass_g, sex, year
+# We remove flipper_lengh_mm 
 
 
 
