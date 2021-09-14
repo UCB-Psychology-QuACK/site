@@ -21,9 +21,19 @@ summary(penguins$body_mass_g)
 
 
 
-# Bonus: 3) How many penguins were measured in each year?
+# 3) How many penguins were measured in each year?
 penguins$year <- factor(penguins$year)
 summary(penguins$year)
+
+
+# 4) What is the value in the 4th column of the 10th row?
+penguins[10, 4]
+
+
+# 5) How much does the penguin in the 5th row weigh?
+# A few ways to do this!
+penguins$body_mass_g[5]
+
 
 
 
