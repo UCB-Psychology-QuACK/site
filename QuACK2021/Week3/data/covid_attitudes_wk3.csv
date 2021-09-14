@@ -1,0 +1,409 @@
+sub_ID,Q6_consent,Q8_covid_info,Q9_covid_knowledge,Q10_rank_attention_to_news,Q13_1_trust_doctor_news,Q13_trust_hospital_news,Q13_trust_cdc_news,Q13_trust_government_news,Q14_confidence_us_government,Q16_Belief_scientists_understand_covid,Q17_concerned_outbreak,Q18_likely_to_catch_covid,Q20_ability_to_protect_self,Q21_expected_symptom_severity,Q101_confidence_in_authority,Q23_risk_exaggerated,Q27_wearing_mask,Q35_take_vaccine_,Q40_age,Q40_age_bin,Q41_gender,Q74_education,Q84_community,Q43_health_1_5_,Q39_flu_vaccine,Q44_contact_covid,Q85_pre_exisiting_conditions,Q92_friends_family_preexisiting_conditions
+2,1,A lot,A little,6,FALSE,FALSE,TRUE,FALSE,6,5,A little,29,50,4,46,somewhat disagree,sick people,definitely,31,30-34,f,doctorate,large city,3,TRUE,unsure,no,no
+7,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,5,6, A moderate amount,40,61,3,60,somewhat disagree,sick people,probably,28,25-29,f, 4 year degree,large city,3,TRUE,unsure,yes,yes
+11,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,6,5, A moderate amount,81,59,2,34,somewhat disagree,sick people,definitely,23,20-24,f, 4 year degree,large city,4,TRUE,no,no,yes
+14,1,A lot,A lot,9,FALSE,FALSE,FALSE,FALSE,2,8,A little,37,89,2,10,strongly disagree,sick people,definitely,34,30-34,f,professional degree,suburb,5,TRUE,unsure,no,no
+15,1, A moderate amount, A moderate amount,5,FALSE,FALSE,TRUE,FALSE,8,7,A little,2,50,2,95,strongly agree,sick people,probably,35,35-39,m,doctorate,large city,5,TRUE,no,no,yes
+18,1, A moderate amount,NA,6,FALSE,FALSE,TRUE,FALSE,5,8, A moderate amount,9,82,3,61,somewhat disagree,sick people,probably,47,45-49,m,doctorate,large city,3,TRUE,no,yes,no
+19,1,A lot, A moderate amount,10,FALSE,FALSE,TRUE,FALSE,7,8,A little,40,50,3,61,somewhat disagree,sick people,definitely,45,45-49,f,doctorate,small city/town,3,TRUE,no,no,no
+23,1,A lot,A lot,9,FALSE,FALSE,TRUE,FALSE,3,8, A moderate amount,60,70,3,50,strongly disagree,sick people,definitely,37,35-39,m,doctorate,large city,4,TRUE,unsure,no,unsure
+24,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,3,6,A little,75,30,3,35,somewhat disagree,sick people,definitely,19,18-19,f,some college,suburb,3,TRUE,unsure,no,no
+28,1,A lot,A lot,8,FALSE,FALSE,FALSE,FALSE,4,7,A lot,78,38,3,30,strongly disagree,sick people,definitely,32,30-34,f,doctorate,large city,5,TRUE,no,no,no
+29,1,A lot, A moderate amount,9,TRUE,FALSE,TRUE,FALSE,1,7,A little,5,75,2,31,somewhat disagree,sick people,definitely,49,45-49,m,professional degree,small city/town,5,TRUE,no,no,no
+30,1,A lot, A moderate amount,7,FALSE,TRUE,TRUE,FALSE,3,5, A moderate amount,85,70,3,80,strongly agree,sick people,probably,30,30-34,f,professional degree,suburb,5,TRUE,yes,no,yes
+33,1,A lot, A moderate amount,9,TRUE,FALSE,TRUE,FALSE,1,7, A moderate amount,35,85,3,50,somewhat disagree,sick people,unsure,56,55-59,m,doctorate,suburb,4,FALSE,no,yes,no
+36,1,A lot,A lot,10,FALSE,FALSE,FALSE,FALSE,1,9,A little,50,80,4,10,strongly disagree,sick people,definitely,59,55-59,m,doctorate,suburb,5,FALSE,unsure,yes,yes
+40,1, A moderate amount,A little,7,FALSE,FALSE,TRUE,FALSE,1,6,A little,70,70,3,40,strongly disagree,sick people,definitely,32,30-34,f,professional degree,suburb,4,TRUE,no,no,yes
+42,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,6,7,A little,68,80,3,76,strongly disagree,sick people,definitely,61,60-64,m,doctorate,large city,4,TRUE,no,yes,unsure
+45,1, A moderate amount,A little,4,FALSE,FALSE,TRUE,FALSE,4,5,A little,75,57,4,53,strongly disagree,everyone,definitely,24,20-24,m,some college,suburb,3,FALSE,no,no,unsure
+51,1, A moderate amount, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,4,7,A little,50,50,3,30,somewhat disagree,sick people,definitely,46,45-49,f, 4 year degree,suburb,3,TRUE,unsure,no,no
+53,1,A lot,A lot,9,FALSE,FALSE,FALSE,FALSE,6,8, A moderate amount,60,90,2,30,strongly disagree,sick people,definitely,31,30-34,f,doctorate,suburb,5,FALSE,unsure,no,no
+54,1, A moderate amount,A little,7,FALSE,FALSE,TRUE,FALSE,4,7, A moderate amount,40,81,3,30,somewhat disagree,sick people,probably,39,35-39,f,professional degree,suburb,2,TRUE,no,yes,yes
+56,1,A lot, A moderate amount,10,FALSE,FALSE,TRUE,FALSE,1,8, A moderate amount,53,63,3,12,strongly disagree,sick people,definitely,49,45-49,f,doctorate,large city,5,TRUE,unsure,no,yes
+57,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,NA,2,8, A moderate amount,80,61,3,70,strongly disagree,no one/no mask evidence,probably,35,35-39,m,doctorate,small city/town,3,FALSE,no,no,yes
+58,1,A lot,A lot,8,FALSE,FALSE,FALSE,FALSE,4,7, A moderate amount,65,90,3,84,somewhat disagree,sick people,probably,53,50-54,f,doctorate,small city/town,5,FALSE,unsure,no,no
+59,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,3,8,A little,30,80,3,70,somewhat disagree,sick people,probably,47,45-49,f,doctorate,suburb,4,TRUE,unsure,no,unsure
+62,1,A lot,A lot,9,FALSE,FALSE,FALSE,FALSE,4,6,Not at all,30,58,3,38,somewhat disagree,sick people,definitely,31,30-34,m,doctorate,small city/town,4,TRUE,no,no,unsure
+63,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,1,7, A moderate amount,5,66,2,78,strongly agree,sick people,defintely not,60,60-64,f,highschool graduate,large city,4,FALSE,no,no,no
+64,1,A lot,A lot,8,FALSE,FALSE,FALSE,FALSE,2,8,A little,20,79,2,49,somewhat disagree,sick people,probably,41,40-44,f,professional degree,large city,3,FALSE,no,no,no
+65,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,5,6, A moderate amount,40,50,2,30,somewhat disagree,sick people,probably_not,51,50-54,f, 4 year degree,large city,4,FALSE,no,no,no
+66,1,A lot,A little,9,FALSE,FALSE,TRUE,FALSE,2,9, A moderate amount,30,80,3,35,strongly disagree,sick people,probably,49,45-49,m,doctorate,suburb,3,TRUE,no,no,no
+69,1,A lot,A little,10,FALSE,FALSE,TRUE,FALSE,2,2,A little,50,49,2,48,somewhat disagree,sick people,unsure,44,40-44,f,highschool graduate,suburb,3,TRUE,yes,no,yes
+70,1,A little,A little,2,TRUE,TRUE,TRUE,TRUE,4,2, A moderate amount,14,18,3,26,strongly agree,everyone,definitely,18,18-19,f,2 year degree,small city/town,4,FALSE,no,unsure,unsure
+71,1, A moderate amount, A moderate amount,8,TRUE,FALSE,TRUE,FALSE,0,7,A little,85,70,3,10,somewhat disagree,sick people,probably_not,43,40-44,f,doctorate,suburb,2,FALSE,unsure,yes,yes
+75,1,A lot, A moderate amount,3,FALSE,FALSE,TRUE,FALSE,7,6,A little,NA,70,2,65,strongly agree,sick people,definitely,66,65-69,m,2 year degree,small city/town,4,TRUE,no,unsure,no
+76,1,A lot,A lot,6,FALSE,FALSE,TRUE,FALSE,6,7, A moderate amount,10,70,2,45,strongly agree,sick people,definitely,19,18-19,f,some college,small city/town,3,FALSE,no,no,yes
+77,1, A moderate amount, A moderate amount,8,TRUE,FALSE,TRUE,FALSE,4,7, A moderate amount,19,80,3,50,strongly disagree,sick people,definitely,32,30-34,f,doctorate,large city,5,FALSE,no,no,yes
+81,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,TRUE,4,6,A little,60,75,4,40,somewhat disagree,everyone,probably,18,18-19,m,highschool graduate,small city/town,3,TRUE,no,yes,yes
+89,1,A lot, A moderate amount,9,FALSE,FALSE,FALSE,FALSE,7,8,A lot,65,65,2,50,strongly disagree,sick people,definitely,39,35-39,m, 4 year degree,suburb,4,TRUE,no,no,yes
+94,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,1,6, A moderate amount,71,60,3,30,strongly disagree,sick people,definitely,37,35-39,f,doctorate,suburb,3,TRUE,no,unsure,unsure
+95,1, A moderate amount, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,4,6, A moderate amount,60,70,2,60,somewhat disagree,everyone,definitely,23,20-24,m,some college,suburb,4,FALSE,no,no,unsure
+96,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,6,5, A moderate amount,52,40,3,80,strongly disagree,sick people,probably,26,25-29,m,some college,small city/town,3,FALSE,unsure,no,no
+97,1,A little,A little,3,FALSE,FALSE,TRUE,FALSE,0,5, A moderate amount,78,31,4,0,strongly disagree,no one/no mask evidence,definitely,24,20-24,m,some college,suburb,3,FALSE,unsure,no,yes
+98,1, A moderate amount, A moderate amount,5,FALSE,FALSE,TRUE,FALSE,3,5, A moderate amount,21,40,2,29,strongly agree,sick people,probably_not,24,20-24,f,some college,suburb,2,FALSE,unsure,no,no
+101,1,A lot,A lot,10,FALSE,FALSE,FALSE,FALSE,2,3, A moderate amount,76,70,2,21,strongly disagree,everyone,probably,24,20-24,f, 4 year degree,small city/town,4,TRUE,no,no,yes
+102,1,A lot,A lot,10,FALSE,FALSE,FALSE,FALSE,0,3,A little,5,60,3,1,strongly disagree,sick people,probably,33,30-34,m, 4 year degree,large city,4,FALSE,no,no,no
+109,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,2,6,Not at all,51,73,1,50,strongly disagree,sick people,definitely,30,30-34,f,doctorate,large city,3,TRUE,no,no,yes
+115,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,TRUE,4,6, A moderate amount,15,64,2,0,NA,sick people,definitely,19,18-19,f,some college,small city/town,3,FALSE,no,no,no
+122,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,5,1,A little,50,100,2,9,somewhat disagree,sick people,unsure,27,25-29,f, 4 year degree,suburb,4,FALSE,no,no,yes
+123,1,A lot,A little,5,FALSE,FALSE,TRUE,FALSE,5,8,A little,19,73,3,26,strongly agree,sick people,probably,22,20-24,f,some college,suburb,2,FALSE,no,unsure,no
+129,1, A moderate amount,A little,7,FALSE,FALSE,TRUE,FALSE,6,5, A moderate amount,10,70,5,80,somewhat disagree,everyone,probably_not,29,25-29,f,some college,suburb,4,FALSE,no,no,no
+130,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,1,5,A little,50,50,3,30,strongly disagree,sick people,probably,20,20-24,m, 4 year degree,suburb,4,FALSE,no,no,unsure
+136,1, A moderate amount,A little,3,FALSE,FALSE,TRUE,FALSE,5,5,A lot,75,70,3,60,somewhat disagree,sick people,unsure,27,25-29,f,some college,rural area,2,FALSE,unsure,yes,no
+137,1,A lot,A lot,8,TRUE,FALSE,FALSE,TRUE,5,10, A moderate amount,92,50,3,35,strongly disagree,sick people,definitely,20,20-24,f,some college,suburb,1,TRUE,no,yes,no
+143,1,A lot,A lot,10,FALSE,TRUE,TRUE,FALSE,0,10,A lot,80,100,2,100,strongly agree,sick people,definitely,35,35-39,f,some college,large city,4,TRUE,yes,no,prefer not to say
+145,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,0,1,A lot,2,72,3,0,somewhat disagree,sick people,definitely,24,20-24,f,some college,suburb,3,FALSE,no,no,yes
+146,1,A lot,A little,8,FALSE,FALSE,FALSE,FALSE,1,6,A little,40,72,2,26,strongly disagree,sick people,definitely,26,25-29,f,professional degree,small city/town,4,TRUE,no,no,yes
+148,1,A lot, A moderate amount,7,TRUE,FALSE,TRUE,FALSE,8,8, A moderate amount,19,81,5,86,somewhat disagree,sick people,definitely,19,18-19,f,highschool graduate,suburb,2,TRUE,no,yes,no
+154,1,A lot,A lot,10,FALSE,FALSE,FALSE,FALSE,2,6, A moderate amount,86,60,2,8,strongly disagree,sick people,definitely,43,40-44,f,doctorate,small city/town,4,TRUE,no,no,yes
+155,1,A lot,A little,5,FALSE,FALSE,FALSE,FALSE,1,4, A moderate amount,50,30,2,40,strongly agree,sick people,probably_not,29,25-29,f, 4 year degree,suburb,2,FALSE,no,no,unsure
+157,1,A lot, A moderate amount,10,FALSE,FALSE,TRUE,TRUE,8,5,A lot,57,50,3,12,strongly disagree,sick people,definitely,20,20-24,f, 4 year degree,suburb,3,TRUE,no,no,yes
+158,1,A lot,A lot,10,FALSE,FALSE,FALSE,FALSE,1,7,A little,100,50,2,50,strongly disagree,sick people,definitely,35,35-39,m,doctorate,suburb,4,TRUE,yes,no,yes
+160,1, A moderate amount, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,8,5, A moderate amount,5,90,2,65,strongly agree,sick people,probably,23,20-24,m,highschool graduate,small city/town,4,FALSE,unsure,no,yes
+163,1, A moderate amount,A little,5,FALSE,FALSE,TRUE,FALSE,0,6,A little,11,74,2,11,somewhat disagree,sick people,probably,18,18-19,f,some college,suburb,3,TRUE,no,no,yes
+171,1,A lot, A moderate amount,10,TRUE,TRUE,TRUE,TRUE,10,9, A moderate amount,93,81,5,92,strongly disagree,sick people,definitely,22,20-24,f, 4 year degree,suburb,3,TRUE,unsure,yes,yes
+173,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,10,5, A moderate amount,1,95,2,19,somewhat disagree,sick people,probably,39,35-39,f,doctorate,suburb,4,FALSE,no,no,no
+174,1, A moderate amount, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,5,9,A little,55,55,3,61,somewhat disagree,sick people,definitely,36,35-39,m,doctorate,large city,3,TRUE,unsure,no,yes
+180,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,6,9, A moderate amount,71,73,3,67,strongly disagree,sick people,definitely,50,50-54,f,doctorate,large city,5,FALSE,unsure,no,yes
+181,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,7,8, A moderate amount,69,58,3,36,strongly disagree,sick people,definitely,32,30-34,f,professional degree,small city/town,3,TRUE,no,no,yes
+182,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,4,6,A lot,40,71,2,50,strongly disagree,sick people,probably,NA,NA,m,doctorate,small city/town,4,FALSE,no,no,yes
+183,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,3,2,A lot,40,60,3,10,strongly disagree,sick people,definitely,22,20-24,f,some college,suburb,4,TRUE,no,no,yes
+187,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,0,5,A lot,80,100,4,0,strongly disagree,sick people,definitely,44,40-44,f,professional degree,rural area,3,TRUE,no,yes,no
+188,1,A lot, A moderate amount,6,FALSE,FALSE,FALSE,FALSE,3,5, A moderate amount,70,70,3,30,strongly disagree,sick people,definitely,25,25-29,f,professional degree,rural area,3,TRUE,unsure,yes,yes
+189,1, A moderate amount, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,2,5,A lot,90,71,3,48,strongly disagree,sick people,definitely,34,30-34,m,professional degree,small city/town,4,TRUE,no,no,yes
+190,1,A lot,A lot,8,FALSE,FALSE,TRUE,FALSE,5,7, A moderate amount,98,99,3,85,strongly disagree,sick people,definitely,40,40-44,f,professional degree,large city,3,TRUE,unsure,yes,yes
+192,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,7,7,A little,0,100,1,50,strongly disagree,sick people,unsure,45,45-49,f, 4 year degree,suburb,5,FALSE,unsure,no,yes
+193,1,A lot,A little,5,FALSE,FALSE,FALSE,FALSE,1,6,A little,61,60,2,81,strongly agree,sick people,defintely not,28,25-29,f, 4 year degree,small city/town,3,FALSE,yes,no,unsure
+194,1, A moderate amount, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,2,7, A moderate amount,28,61,4,39,somewhat disagree,sick people,probably,36,35-39,f,professional degree,small city/town,4,FALSE,unsure,no,yes
+196,1,A lot, A moderate amount,10,TRUE,FALSE,TRUE,FALSE,5,6,Not at all,80,65,2,50,somewhat disagree,sick people,probably,30,30-34,f,doctorate,large city,3,TRUE,no,no,yes
+199,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,3,7, A moderate amount,30,65,3,55,strongly disagree,sick people,definitely,21,20-24,f,professional degree,large city,3,TRUE,no,no,yes
+202,1,A lot,A little,8,FALSE,FALSE,FALSE,FALSE,5,7, A moderate amount,50,100,3,90,strongly disagree,sick people,probably,35,35-39,f,professional degree,suburb,5,TRUE,unsure,no,yes
+203,1, A moderate amount,A little,4,TRUE,FALSE,TRUE,FALSE,0,4,A little,30,80,3,20,somewhat disagree,everyone,definitely,20,20-24,f,professional degree,small city/town,4,TRUE,no,no,yes
+204,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,3,4, A moderate amount,60,71,2,66,somewhat disagree,sick people,definitely,18,18-19,f,some college,small city/town,3,TRUE,yes,no,unsure
+207,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,7,9, A moderate amount,76,86,3,35,strongly disagree,sick people,definitely,18,18-19,m,some college,large city,4,TRUE,no,yes,yes
+209,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,6,8, A moderate amount,58,63,2,79,somewhat disagree,sick people,probably,34,30-34,f, 4 year degree,large city,3,FALSE,no,no,yes
+210,1,A lot, A moderate amount,10,FALSE,FALSE,FALSE,FALSE,4,4,A lot,60,49,2,50,somewhat disagree,sick people,probably,52,50-54,f,doctorate,small city/town,5,FALSE,no,no,no
+211,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,2,5,A little,60,61,3,30,strongly disagree,sick people,probably,46,45-49,f,doctorate,small city/town,4,FALSE,yes,yes,yes
+213,1, A moderate amount,A little,2,FALSE,FALSE,TRUE,FALSE,5,4, A moderate amount,8,98,2,68,somewhat disagree,sick people,definitely,18,18-19,m,some college,large city,4,TRUE,yes,no,no
+215,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,2,8,A lot,51,84,3,41,somewhat disagree,sick people,definitely,56,55-59,m,2 year degree,small city/town,3,TRUE,no,no,no
+216,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,5,8, A moderate amount,65,30,2,77,somewhat disagree,sick people,definitely,33,30-34,f,doctorate,small city/town,4,FALSE,no,no,yes
+217,1, A moderate amount, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,5,7,A lot,85,95,2,20,somewhat disagree,sick people,unsure,46,45-49,f,professional degree,suburb,3,FALSE,no,yes,yes
+218,1,A lot, A moderate amount,9,TRUE,TRUE,TRUE,FALSE,0,4, A moderate amount,85,55,3,16,strongly disagree,sick people,probably,33,30-34,m,doctorate,large city,3,FALSE,unsure,unsure,unsure
+220,1,A lot, A moderate amount,8,TRUE,FALSE,FALSE,FALSE,6,1,A little,10,95,2,5,strongly agree,sick people,probably,62,60-64,m,some college,suburb,4,FALSE,no,no,no
+221,1, A moderate amount, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,3,5,A little,20,50,3,60,strongly agree,sick people,probably,34,30-34,f,professional degree,suburb,4,FALSE,no,no,yes
+222,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,0,6, A moderate amount,50,90,3,50,strongly disagree,sick people,definitely,36,35-39,f, 4 year degree,small city/town,4,TRUE,no,no,yes
+223,1,A lot,A lot,9,FALSE,FALSE,FALSE,FALSE,2,7,Not at all,66,75,3,20,strongly disagree,sick people,definitely,30,30-34,m,professional degree,suburb,4,TRUE,no,no,unsure
+230,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,1,5,A little,25,60,2,40,strongly disagree,sick people,definitely,29,25-29,f, 4 year degree,large city,4,FALSE,unsure,no,yes
+231,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,5,8,A lot,75,33,2,37,strongly disagree,sick people,definitely,23,20-24,f,some college,small city/town,5,TRUE,no,no,yes
+232,1,A lot, A moderate amount,9,FALSE,FALSE,FALSE,FALSE,2,3, A moderate amount,75,80,2,10,strongly disagree,sick people,probably,37,35-39,m,doctorate,suburb,5,TRUE,unsure,no,yes
+234,1, A moderate amount,A little,3,FALSE,FALSE,FALSE,FALSE,4,3,A lot,5,92,2,11,strongly agree,sick people,probably_not,26,25-29,f,2 year degree,suburb,3,FALSE,no,yes,yes
+235,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,5,6,A lot,70,74,3,50,strongly disagree,sick people,probably,32,30-34,f, 4 year degree,small city/town,3,FALSE,no,no,unsure
+240,1,A lot,A lot,9,FALSE,FALSE,TRUE,FALSE,5,6,A lot,51,76,1,42,strongly agree,everyone,definitely,19,18-19,m,highschool graduate,suburb,4,TRUE,no,no,yes
+241,1,A lot, A moderate amount,10,FALSE,FALSE,TRUE,FALSE,4,9, A moderate amount,48,84,4,51,somewhat disagree,sick people,definitely,19,18-19,f,2 year degree,large city,2,FALSE,no,no,no
+243,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,3,7,A lot,69,89,5,18,strongly disagree,sick people,definitely,29,25-29,f,doctorate,small city/town,2,TRUE,no,yes,yes
+244,1, A moderate amount, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,1,9, A moderate amount,52,86,4,42,strongly disagree,sick people,definitely,64,60-64,f,some college,suburb,2,TRUE,no,yes,yes
+245,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,2,7,A little,22,73,4,21,somewhat disagree,sick people,probably,26,25-29,f,professional degree,suburb,3,FALSE,no,no,yes
+247,1, A moderate amount, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,2,6, A moderate amount,35,67,3,31,strongly disagree,sick people,definitely,39,35-39,f,doctorate,suburb,4,TRUE,no,no,no
+249,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,3,7, A moderate amount,70,40,2,5,somewhat disagree,sick people,definitely,38,35-39,f,doctorate,suburb,5,TRUE,no,no,no
+250,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,3,8, A moderate amount,21,95,2,40,strongly disagree,sick people,definitely,60,60-64,f,doctorate,rural area,5,TRUE,no,no,no
+251,1,A lot,A little,7,FALSE,FALSE,TRUE,FALSE,2,5,A lot,65,50,3,0,strongly disagree,sick people,probably,28,25-29,f, 4 year degree,small city/town,2,TRUE,no,yes,no
+252,1,A lot,A lot,8,TRUE,FALSE,TRUE,FALSE,1,5,A little,51,70,2,15,strongly disagree,sick people,definitely,39,35-39,f,doctorate,small city/town,3,TRUE,no,yes,yes
+254,1,A lot, A moderate amount,5,FALSE,FALSE,TRUE,FALSE,2,6, A moderate amount,30,100,2,50,somewhat disagree,sick people,probably_not,29,25-29,f, 4 year degree,suburb,4,FALSE,no,no,no
+256,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,5,5,A lot,50,50,2,43,strongly disagree,sick people,definitely,21,20-24,f,some college,suburb,3,FALSE,no,no,yes
+258,1,A lot,A lot,8,FALSE,FALSE,TRUE,FALSE,10,8,A little,75,100,3,65,somewhat disagree,sick people,definitely,21,20-24,m,some college,suburb,4,TRUE,no,no,yes
+260,1,A lot, A moderate amount,9,FALSE,FALSE,FALSE,FALSE,2,9, A moderate amount,70,70,3,10,strongly agree,sick people,definitely,55,55-59,f,doctorate,suburb,4,TRUE,no,no,yes
+264,1,A lot,A little,7,TRUE,TRUE,FALSE,FALSE,0,6, A moderate amount,33,70,3,41,strongly disagree,sick people,probably,21,20-24,f, 4 year degree,suburb,3,TRUE,unsure,no,no
+266,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,4,6,A little,35,90,2,50,strongly disagree,sick people,definitely,23,20-24,f,professional degree,large city,5,TRUE,no,no,yes
+269,1,A lot,A lot,8,TRUE,TRUE,TRUE,FALSE,1,3, A moderate amount,75,88,3,30,strongly disagree,sick people,definitely,21,20-24,f,some college,suburb,4,TRUE,unsure,yes,yes
+271,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,4,2,A little,90,70,2,10,somewhat disagree,sick people,definitely,19,18-19,f,some college,suburb,4,TRUE,no,no,yes
+273,1,A lot, A moderate amount,6,FALSE,FALSE,FALSE,FALSE,2,6,A lot,10,94,2,40,strongly disagree,sick people,definitely,23,20-24,f,some college,suburb,3,TRUE,no,no,no
+274,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,3,6, A moderate amount,56,70,4,55,somewhat disagree,everyone,definitely,19,18-19,nb,some college,rural area,2,TRUE,no,yes,yes
+278,1,A lot, A moderate amount,4,FALSE,FALSE,TRUE,FALSE,2,8,A lot,8,92,3,71,somewhat disagree,everyone,definitely,24,20-24,f,highschool graduate,suburb,4,TRUE,unsure,no,no
+280,1,A lot, A moderate amount,9,FALSE,FALSE,FALSE,FALSE,4,7, A moderate amount,82,51,3,51,strongly disagree,sick people,probably,22,20-24,m,some college,large city,3,FALSE,unsure,unsure,yes
+281,1,A lot, A moderate amount,9,TRUE,FALSE,TRUE,FALSE,0,7,A little,52,84,3,83,somewhat disagree,sick people,definitely,43,40-44,f,doctorate,suburb,4,TRUE,no,no,no
+283,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,5,8, A moderate amount,51,70,4,50,somewhat disagree,sick people,definitely,44,40-44,f,doctorate,small city/town,4,FALSE,no,no,yes
+288,1,A lot,A little,8,FALSE,FALSE,TRUE,FALSE,7,6, A moderate amount,61,81,2,30,strongly disagree,sick people,definitely,20,20-24,f, 4 year degree,small city/town,3,TRUE,no,no,unsure
+291,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,2,8,A lot,80,100,3,66,strongly disagree,sick people,definitely,20,20-24,m,2 year degree,suburb,2,FALSE,no,yes,yes
+292,1, A moderate amount, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,8,5, A moderate amount,63,83,3,61,somewhat disagree,sick people,probably,64,60-64,f,some college,suburb,3,TRUE,no,yes,yes
+294,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,1,4,A little,91,50,2,2,somewhat disagree,sick people,definitely,47,45-49,f,doctorate,suburb,5,TRUE,unsure,no,yes
+296,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,5,5,Not at all,22,63,3,35,strongly disagree,sick people,definitely,38,35-39,f,professional degree,suburb,5,TRUE,no,no,yes
+298,1, A moderate amount,A little,7,FALSE,FALSE,FALSE,FALSE,4,6,A little,50,70,3,40,somewhat disagree,everyone,definitely,27,25-29,m, 4 year degree,suburb,3,FALSE,unsure,yes,yes
+300,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,3,7,A lot,71,91,2,10,strongly disagree,everyone,definitely,19,18-19,f,some college,suburb,3,TRUE,no,no,no
+301,1, A moderate amount, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,6,7, A moderate amount,80,55,3,60,strongly disagree,sick people,probably,63,60-64,f,some college,small city/town,2,FALSE,no,yes,yes
+302,1,A lot,A little,5,TRUE,TRUE,TRUE,FALSE,3,5, A moderate amount,51,73,3,42,somewhat disagree,sick people,definitely,29,25-29,f,professional degree,small city/town,4,FALSE,no,no,unsure
+303,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,0,3, A moderate amount,90,35,3,20,somewhat disagree,sick people,unsure,22,20-24,f, 4 year degree,rural area,3,Unsure,yes,no,unsure
+304,1, A moderate amount, A moderate amount,6,TRUE,TRUE,TRUE,FALSE,8,6,A lot,70,40,3,70,somewhat disagree,sick people,definitely,37,35-39,m, 4 year degree,suburb,3,TRUE,no,no,yes
+305,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,5,4,A lot,70,70,4,70,somewhat disagree,sick people,definitely,72,70-74,m,doctorate,small city/town,3,TRUE,no,yes,yes
+306,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,0,3, A moderate amount,71,63,3,22,strongly disagree,sick people,definitely,44,40-44,f,doctorate,large city,3,TRUE,no,no,no
+307,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,1,9, A moderate amount,100,80,2,80,somewhat disagree,sick people,definitely,21,20-24,m,highschool graduate,suburb,3,TRUE,unsure,no,no
+308,1, A moderate amount, A moderate amount,7,TRUE,FALSE,FALSE,FALSE,3,7,A lot,80,64,2,27,strongly disagree,sick people,definitely,46,45-49,nb,doctorate,large city,4,TRUE,no,no,yes
+312,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,3,5, A moderate amount,63,59,4,34,strongly disagree,everyone,definitely,56,55-59,m,doctorate,suburb,4,TRUE,unsure,no,yes
+315,1,A lot,A lot,10,FALSE,FALSE,FALSE,FALSE,3,7,A little,51,72,2,10,strongly disagree,sick people,definitely,43,40-44,f,doctorate,large city,4,TRUE,no,no,yes
+318,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,3,8, A moderate amount,50,60,3,50,somewhat disagree,sick people,probably,49,45-49,f,doctorate,suburb,3,FALSE,unsure,yes,yes
+322,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,2,5, A moderate amount,50,80,3,20,somewhat disagree,sick people,probably,43,40-44,f,some college,suburb,4,FALSE,no,no,yes
+323,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,5,8,A lot,31,79,2,72,strongly disagree,sick people,probably,52,50-54,f,doctorate,suburb,4,TRUE,no,no,yes
+324,1,A lot, A moderate amount,9,FALSE,FALSE,FALSE,FALSE,0,5,A little,50,70,2,0,strongly disagree,everyone,definitely,40,40-44,f,doctorate,large city,3,FALSE,no,no,yes
+327,1,A lot,A little,9,FALSE,FALSE,FALSE,FALSE,6,4,A little,48,50,4,24,somewhat disagree,sick people,unsure,41,40-44,f,some college,rural area,3,FALSE,no,no,yes
+330,1, A moderate amount, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,5,6,A little,20,43,3,12,somewhat disagree,sick people,definitely,44,40-44,f,2 year degree,suburb,5,TRUE,no,no,no
+332,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,TRUE,8,6,A little,20,69,3,53,strongly disagree,sick people,definitely,19,18-19,f,some college,large city,3,FALSE,no,no,yes
+340,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,0,7,A lot,11,31,2,68,strongly disagree,sick people,definitely,33,30-34,f, 4 year degree,suburb,3,TRUE,no,no,unsure
+345,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,3,8,A little,30,90,3,70,somewhat disagree,no one/no mask evidence,probably,52,50-54,f, 4 year degree,suburb,5,FALSE,no,no,yes
+347,1,A lot,A little,5,FALSE,FALSE,FALSE,FALSE,5,5, A moderate amount,5,80,2,70,strongly agree,no one/no mask evidence,probably,42,40-44,f,professional degree,suburb,5,FALSE,no,no,no
+348,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,1,7,A little,61,74,3,25,strongly disagree,sick people,definitely,53,50-54,f,some college,suburb,3,TRUE,no,yes,yes
+356,1,A lot,A lot,8,FALSE,FALSE,TRUE,FALSE,8,8,A little,3,80,3,50,strongly disagree,sick people,definitely,48,45-49,m,doctorate,large city,4,TRUE,no,no,no
+357,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,1,7,A lot,83,81,2,70,somewhat disagree,sick people,definitely,36,35-39,f, 4 year degree,small city/town,5,FALSE,no,no,no
+358,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,1,5, A moderate amount,40,70,3,7,strongly disagree,sick people,definitely,33,30-34,f,doctorate,small city/town,3,TRUE,no,no,yes
+361,1,A lot, A moderate amount,10,FALSE,FALSE,TRUE,FALSE,0,8, A moderate amount,90,30,3,20,strongly disagree,sick people,definitely,48,45-49,f,2 year degree,suburb,4,TRUE,unsure,no,yes
+362,1,A little,A little,2,TRUE,FALSE,FALSE,FALSE,0,5,A lot,50,100,4,2,strongly agree,sick people,defintely not,23,20-24,f,some college,large city,3,FALSE,unsure,no,yes
+364,1,A little, A moderate amount,3,FALSE,FALSE,TRUE,FALSE,4,3, A moderate amount,100,62,2,34,somewhat disagree,everyone,probably,23,20-24,m,some college,suburb,3,TRUE,yes,no,yes
+365,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,3,5,A little,60,51,3,29,somewhat disagree,sick people,definitely,28,25-29,f, 4 year degree,small city/town,3,TRUE,no,no,no
+368,1,A lot, A moderate amount,8,TRUE,FALSE,TRUE,FALSE,3,9, A moderate amount,67,90,3,31,somewhat disagree,sick people,definitely,50,50-54,f,doctorate,suburb,4,TRUE,no,no,yes
+369,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,4,6, A moderate amount,49,85,2,50,somewhat disagree,sick people,definitely,42,40-44,f,professional degree,suburb,4,FALSE,no,no,yes
+374,1,A lot, A moderate amount,10,FALSE,FALSE,TRUE,FALSE,6,7, A moderate amount,69,90,4,29,somewhat disagree,sick people,definitely,70,70-74,f,2 year degree,rural area,4,TRUE,no,yes,yes
+380,1, A moderate amount, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,2,6,A little,47,85,2,8,strongly disagree,sick people,definitely,39,35-39,f,highschool graduate,suburb,3,FALSE,unsure,no,yes
+415,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,7,7,A little,5,83,2,28,somewhat disagree,sick people,unsure,22,20-24,f,highschool graduate,suburb,4,FALSE,no,no,no
+416,1, A moderate amount,A little,3,FALSE,FALSE,FALSE,FALSE,7,8,A little,29,61,2,81,strongly agree,sick people,probably,63,60-64,f, 4 year degree,rural area,3,FALSE,no,yes,no
+419,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,0,5, A moderate amount,10,95,2,55,strongly disagree,no one/no mask evidence,definitely,44,40-44,f,doctorate,suburb,5,TRUE,no,no,yes
+424,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,2,5, A moderate amount,61,61,3,20,strongly disagree,sick people,definitely,51,50-54,m,doctorate,small city/town,5,TRUE,no,no,yes
+426,1, A moderate amount, A moderate amount,7,TRUE,FALSE,TRUE,FALSE,2,6, A moderate amount,70,70,3,29,strongly disagree,sick people,definitely,39,35-39,f,doctorate,large city,3,TRUE,no,no,yes
+427,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,4,9, A moderate amount,85,100,3,66,strongly disagree,sick people,definitely,19,18-19,m,highschool graduate,small city/town,3,TRUE,unsure,no,no
+428,1,A lot,A lot,8,FALSE,FALSE,TRUE,FALSE,2,7,A lot,33,80,2,20,strongly disagree,sick people,definitely,19,18-19,m,less than highschool,suburb,3,TRUE,no,no,yes
+432,1, A moderate amount, A moderate amount,4,TRUE,TRUE,TRUE,FALSE,2,8,A lot,68,81,5,50,somewhat disagree,sick people,definitely,18,18-19,f,some college,small city/town,1,TRUE,no,yes,yes
+433,1,A lot, A moderate amount,10,TRUE,TRUE,TRUE,FALSE,2,4, A moderate amount,100,90,3,9,strongly disagree,sick people,definitely,18,18-19,f,some college,small city/town,3,TRUE,unsure,no,no
+435,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,6,5, A moderate amount,50,90,4,51,strongly disagree,sick people,probably,19,18-19,f,highschool graduate,small city/town,3,TRUE,no,yes,no
+439,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,3,5,A lot,25,50,4,60,strongly disagree,sick people,definitely,22,20-24,f, 4 year degree,suburb,3,FALSE,no,yes,yes
+440,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,4,7, A moderate amount,2,97,2,15,somewhat disagree,sick people,unsure,18,18-19,f,highschool graduate,large city,3,TRUE,no,no,yes
+443,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,4,6,Not at all,50,70,3,60,somewhat disagree,sick people,definitely,20,20-24,f,some college,suburb,3,FALSE,no,yes,yes
+449,1,A lot,A little,7,FALSE,FALSE,FALSE,FALSE,0,10,A lot,93,48,3,29,somewhat disagree,sick people,definitely,26,25-29,f,professional degree,small city/town,2,TRUE,no,no,no
+450,1,A lot, A moderate amount,10,FALSE,FALSE,TRUE,FALSE,0,7,A lot,47,70,2,20,strongly disagree,sick people,definitely,35,35-39,f,doctorate,suburb,4,TRUE,unsure,no,yes
+451,1,A lot,A lot,10,FALSE,FALSE,FALSE,FALSE,1,7,A lot,70,59,4,25,strongly disagree,sick people,definitely,35,35-39,f,doctorate,large city,1,TRUE,no,yes,yes
+455,1,A little,Nothing at all,4,FALSE,FALSE,TRUE,FALSE,5,4,A little,50,71,3,70,strongly disagree,sick people,definitely,19,18-19,m,some college,small city/town,2,TRUE,unsure,yes,yes
+458,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,TRUE,4,7,A little,17,79,3,50,somewhat disagree,sick people,probably,19,18-19,f,some college,small city/town,4,FALSE,no,no,unsure
+460,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,3,5, A moderate amount,50,60,3,35,somewhat disagree,sick people,probably,23,20-24,f,professional degree,small city/town,4,TRUE,no,no,no
+462,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,4,7,A lot,10,100,2,14,somewhat disagree,sick people,definitely,44,40-44,f,professional degree,large city,4,TRUE,no,no,no
+464,1,A lot, A moderate amount,5,FALSE,FALSE,TRUE,FALSE,1,5,A lot,51,50,3,48,somewhat disagree,sick people,definitely,19,18-19,f,some college,suburb,3,TRUE,unsure,no,yes
+465,1, A moderate amount, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,4,7, A moderate amount,50,69,3,75,somewhat disagree,sick people,probably,37,35-39,m,professional degree,large city,3,FALSE,no,unsure,unsure
+469,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,1,5, A moderate amount,50,100,3,29,strongly disagree,sick people,definitely,46,45-49,f,doctorate,suburb,4,TRUE,unsure,no,yes
+470,1, A moderate amount, A moderate amount,5,FALSE,FALSE,TRUE,FALSE,7,7, A moderate amount,70,100,2,48,somewhat disagree,everyone,definitely,19,18-19,m,some college,small city/town,1,TRUE,yes,yes,yes
+471,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,0,4, A moderate amount,19,100,3,20,strongly disagree,sick people,unsure,31,30-34,f,professional degree,large city,5,TRUE,no,no,yes
+478,1,A lot, A moderate amount,9,FALSE,FALSE,FALSE,FALSE,9,7,Not at all,76,88,4,64,strongly disagree,sick people,probably,72,70-74,f, 4 year degree,suburb,4,TRUE,no,yes,no
+483,1,A lot, A moderate amount,9,FALSE,FALSE,FALSE,FALSE,1,5,A little,90,50,3,12,strongly disagree,sick people,definitely,34,30-34,f,professional degree,large city,2,TRUE,no,yes,yes
+485,1,A lot, A moderate amount,6,TRUE,FALSE,TRUE,FALSE,3,3, A moderate amount,60,70,3,20,somewhat disagree,sick people,definitely,21,20-24,m, 4 year degree,small city/town,4,FALSE,no,no,no
+487,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,3,4, A moderate amount,45,80,2,50,somewhat disagree,sick people,definitely,34,30-34,f, 4 year degree,large city,3,FALSE,no,no,no
+488,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,6,8, A moderate amount,71,20,2,62,somewhat disagree,sick people,probably,31,30-34,m,professional degree,small city/town,3,TRUE,no,no,yes
+490,1,A little,A little,5,FALSE,FALSE,TRUE,FALSE,5,7, A moderate amount,10,79,3,70,somewhat disagree,no one/no mask evidence,definitely,45,45-49,f,professional degree,small city/town,3,FALSE,no,no,yes
+491,1,A lot,A little,8,FALSE,FALSE,FALSE,FALSE,0,7,A lot,60,50,3,14,strongly disagree,sick people,definitely,47,45-49,f,doctorate,suburb,4,FALSE,unsure,no,yes
+492,1,A lot,A little,7,FALSE,FALSE,FALSE,FALSE,0,3, A moderate amount,10,30,2,80,somewhat disagree,sick people,definitely,24,20-24,f,professional degree,large city,3,TRUE,no,no,no
+494,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,0,3,A little,69,71,2,2,strongly disagree,sick people,definitely,42,40-44,f,doctorate,suburb,4,TRUE,no,no,yes
+533,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,3,4, A moderate amount,91,71,6,9,strongly disagree,everyone,definitely,60,60-64,f, 4 year degree,large city,2,TRUE,unsure,yes,yes
+535,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,8,7,A lot,50,100,2,35,strongly disagree,sick people,definitely,26,25-29,f,professional degree,small city/town,3,FALSE,no,no,yes
+536,1, A moderate amount, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,7,3, A moderate amount,67,90,4,89,somewhat disagree,sick people,definitely,42,40-44,f,professional degree,suburb,3,FALSE,unsure,no,yes
+537,1, A moderate amount, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,5,7,A lot,53,66,3,29,strongly disagree,sick people,definitely,62,60-64,f,highschool graduate,suburb,3,FALSE,no,no,yes
+538,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,3,5,A little,66,71,3,20,strongly disagree,sick people,probably,30,30-34,f, 4 year degree,suburb,3,TRUE,yes,yes,yes
+539,1,A lot, A moderate amount,4,FALSE,FALSE,FALSE,FALSE,2,5,A little,10,69,3,10,strongly agree,no one/no mask evidence,definitely,33,30-34,f,2 year degree,large city,3,TRUE,no,no,no
+540,1,A lot, A moderate amount,6,FALSE,FALSE,FALSE,FALSE,5,7,A little,46,73,2,54,somewhat disagree,sick people,probably,27,25-29,f, 4 year degree,small city/town,4,TRUE,no,no,yes
+546,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,5,5, A moderate amount,50,95,5,40,strongly disagree,everyone,definitely,20,20-24,f,some college,suburb,4,FALSE,unsure,yes,yes
+547,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,2,8,A little,60,100,3,30,strongly disagree,everyone,definitely,19,18-19,f,some college,suburb,4,FALSE,unsure,no,yes
+552,1,A lot,A little,7,TRUE,TRUE,TRUE,FALSE,3,7,A lot,30,90,2,20,strongly disagree,sick people,unsure,22,20-24,m,some college,suburb,3,FALSE,yes,no,no
+564,1,A lot,A little,9,TRUE,FALSE,FALSE,FALSE,6,4,A lot,64,60,3,40,strongly disagree,sick people,definitely,28,25-29,f,some college,suburb,4,TRUE,no,no,yes
+572,1,A lot,A little,6,FALSE,FALSE,FALSE,FALSE,4,6,A lot,70,100,3,10,somewhat disagree,everyone,definitely,18,18-19,f,highschool graduate,suburb,4,Unsure,yes,yes,unsure
+573,1,A lot, A moderate amount,4,FALSE,FALSE,FALSE,TRUE,5,8, A moderate amount,25,80,3,75,strongly agree,sick people,probably,18,18-19,f,some college,small city/town,3,TRUE,unsure,no,no
+577,1, A moderate amount,A little,6,TRUE,TRUE,TRUE,FALSE,3,6,A lot,20,85,3,45,somewhat disagree,sick people,probably,18,18-19,m,highschool graduate,small city/town,4,TRUE,no,no,unsure
+579,1,A lot, A moderate amount,6,FALSE,TRUE,TRUE,TRUE,8,7, A moderate amount,5,100,3,75,strongly disagree,sick people,probably_not,22,20-24,f,2 year degree,suburb,5,FALSE,no,no,yes
+580,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,5,7,A lot,89,79,2,50,strongly disagree,sick people,probably,18,18-19,m,some college,suburb,3,FALSE,unsure,no,prefer not to say
+581,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,TRUE,8,10,A lot,50,85,2,75,somewhat disagree,sick people,definitely,19,18-19,f,some college,small city/town,4,FALSE,no,no,unsure
+583,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,2,8,A lot,78,71,2,10,strongly disagree,no one/no mask evidence,definitely,19,18-19,f,some college,small city/town,4,TRUE,unsure,no,no
+586,1,A lot,A little,7,FALSE,TRUE,TRUE,FALSE,3,5, A moderate amount,30,70,2,50,somewhat disagree,everyone,unsure,23,20-24,m,some college,suburb,3,FALSE,no,no,no
+587,1, A moderate amount,A little,5,FALSE,FALSE,FALSE,FALSE,4,8,A lot,30,72,2,49,somewhat disagree,everyone,definitely,24,20-24,m,some college,large city,3,FALSE,no,no,yes
+588,1,A lot, A moderate amount,7,TRUE,FALSE,TRUE,FALSE,4,7,A lot,56,55,3,47,somewhat disagree,sick people,definitely,22,20-24,f,some college,large city,3,FALSE,yes,no,yes
+595,1, A moderate amount, A moderate amount,7,TRUE,TRUE,FALSE,FALSE,7,9,A lot,72,100,3,81,strongly agree,everyone,definitely,22,20-24,m,2 year degree,small city/town,5,TRUE,yes,no,yes
+596,1,A lot, A moderate amount,5,FALSE,FALSE,TRUE,FALSE,2,6,A little,55,86,5,30,strongly disagree,sick people,definitely,20,20-24,f,some college,small city/town,3,TRUE,no,yes,yes
+597,1,A lot,A lot,7,FALSE,FALSE,FALSE,FALSE,3,8, A moderate amount,3,96,1,75,strongly agree,sick people,definitely,24,20-24,f,some college,small city/town,4,Unsure,no,no,unsure
+598,1,A lot,A little,5,FALSE,FALSE,TRUE,FALSE,2,3,A lot,51,86,3,16,somewhat disagree,sick people,definitely,24,20-24,f,some college,suburb,3,TRUE,no,no,no
+600,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,3,7, A moderate amount,60,75,3,40,somewhat disagree,everyone,definitely,21,20-24,m,some college,small city/town,1,FALSE,unsure,yes,yes
+601,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,4,5, A moderate amount,20,65,2,17,strongly disagree,everyone,definitely,19,18-19,f,some college,small city/town,4,TRUE,no,no,yes
+602,1, A moderate amount, A moderate amount,7,FALSE,FALSE,FALSE,TRUE,5,6,A lot,15,52,3,39,somewhat disagree,everyone,unsure,19,18-19,m,highschool graduate,small city/town,3,TRUE,no,no,no
+605,1,A lot,A lot,8,FALSE,FALSE,TRUE,FALSE,0,6, A moderate amount,70,51,3,19,strongly disagree,sick people,defintely not,42,40-44,f,some college,small city/town,4,TRUE,yes,no,yes
+609,1,A lot,A little,5,FALSE,FALSE,FALSE,FALSE,1,5, A moderate amount,50,100,3,15,strongly disagree,sick people,definitely,18,18-19,f,some college,small city/town,2,TRUE,no,no,yes
+611,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,1,8, A moderate amount,0,100,1,54,strongly disagree,sick people,definitely,19,18-19,f,some college,suburb,3,TRUE,no,no,no
+615,1,A lot,A little,5,FALSE,FALSE,TRUE,FALSE,1,3,A lot,90,90,3,20,strongly disagree,sick people,definitely,21,20-24,f,2 year degree,large city,2,FALSE,no,no,unsure
+616,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,4,7,A little,20,87,2,100,strongly disagree,sick people,definitely,19,18-19,f,some college,suburb,4,TRUE,unsure,no,yes
+621,1,A lot, A moderate amount,9,FALSE,FALSE,FALSE,FALSE,8,5,A lot,45,90,2,81,strongly disagree,NA,probably,20,20-24,f,some college,suburb,5,TRUE,no,no,no
+622,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,4,5, A moderate amount,60,100,5,40,strongly disagree,sick people,definitely,19,18-19,m,less than highschool,suburb,2,TRUE,unsure,yes,yes
+623,1,A lot,A little,8,FALSE,TRUE,TRUE,FALSE,3,5, A moderate amount,30,75,4,35,strongly disagree,sick people,definitely,19,18-19,m,some college,suburb,4,TRUE,unsure,yes,unsure
+624,1,A lot,A lot,9,FALSE,FALSE,TRUE,FALSE,8,7, A moderate amount,75,90,3,50,somewhat disagree,everyone,definitely,28,25-29,m,some college,small city/town,3,FALSE,no,yes,yes
+626,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,7,7,A lot,80,70,2,50,strongly disagree,sick people,definitely,18,18-19,f,some college,suburb,5,TRUE,no,no,no
+627,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,3,7,A lot,90,90,3,20,strongly disagree,sick people,probably,22,20-24,f,some college,large city,2,Unsure,yes,unsure,yes
+628,1,A lot, A moderate amount,10,FALSE,FALSE,TRUE,FALSE,7,6,A lot,30,80,3,0,strongly disagree,sick people,definitely,18,18-19,m,highschool graduate,small city/town,5,FALSE,no,no,yes
+629,1,A lot,A lot,9,FALSE,FALSE,TRUE,TRUE,6,5,A little,31,100,3,25,strongly disagree,sick people,definitely,26,25-29,f,2 year degree,small city/town,4,TRUE,unsure,no,yes
+631,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,5,3, A moderate amount,50,100,5,35,strongly disagree,sick people,probably,18,18-19,f,some college,suburb,2,TRUE,no,yes,yes
+642,1, A moderate amount,A little,7,FALSE,FALSE,FALSE,FALSE,5,4,A lot,3,85,3,56,strongly agree,everyone,definitely,19,18-19,f,highschool graduate,suburb,5,FALSE,unsure,yes,unsure
+645,1,A lot,A little,4,FALSE,FALSE,TRUE,FALSE,2,5, A moderate amount,30,70,4,50,strongly disagree,everyone,definitely,18,18-19,f,some college,small city/town,2,TRUE,yes,no,unsure
+648,1,A lot,A lot,10,TRUE,FALSE,TRUE,FALSE,6,10, A moderate amount,38,100,3,31,strongly disagree,everyone,probably,27,25-29,m, 4 year degree,rural area,5,FALSE,no,no,unsure
+649,1,A lot, A moderate amount,4,FALSE,FALSE,TRUE,FALSE,7,8, A moderate amount,40,40,2,60,strongly disagree,everyone,definitely,19,18-19,f,some college,suburb,3,TRUE,no,no,yes
+650,1,A lot,A little,6,FALSE,TRUE,TRUE,FALSE,3,7, A moderate amount,50,72,2,51,strongly disagree,sick people,unsure,24,20-24,f, 4 year degree,suburb,2,TRUE,no,no,no
+654,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,2,6, A moderate amount,25,75,3,50,strongly disagree,sick people,definitely,39,35-39,f,doctorate,small city/town,5,TRUE,no,no,unsure
+655,1, A moderate amount, A moderate amount,5,FALSE,FALSE,TRUE,FALSE,5,7,Not at all,20,93,2,70,somewhat disagree,sick people,definitely,22,20-24,f,some college,small city/town,3,TRUE,unsure,no,yes
+659,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,5,5,A lot,20,100,3,20,strongly disagree,sick people,definitely,19,18-19,f,some college,small city/town,4,FALSE,no,no,no
+660,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,1,7,Not at all,60,100,2,82,strongly disagree,sick people,definitely,22,20-24,f,professional degree,small city/town,4,TRUE,no,no,yes
+662,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,7,6, A moderate amount,51,80,3,60,strongly disagree,sick people,definitely,54,50-54,f,some college,large city,4,TRUE,no,no,yes
+663,1, A moderate amount, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,5,5,A lot,30,70,4,50,somewhat disagree,sick people,probably,64,60-64,f,some college,small city/town,3,TRUE,no,yes,yes
+664,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,3,6, A moderate amount,29,71,3,21,strongly disagree,sick people,definitely,62,60-64,f,professional degree,suburb,3,TRUE,unsure,no,yes
+665,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,4,3,A lot,27,90,3,30,somewhat disagree,everyone,definitely,24,20-24,f,some college,small city/town,3,TRUE,unsure,no,yes
+666,1,A lot,A lot,9,FALSE,FALSE,TRUE,FALSE,5,6,A lot,59,45,3,60,strongly disagree,sick people,definitely,20,20-24,f, 4 year degree,suburb,4,TRUE,no,no,yes
+667,1,A lot, A moderate amount,8,TRUE,FALSE,TRUE,FALSE,6,7, A moderate amount,10,89,3,47,strongly disagree,everyone,definitely,20,20-24,f,some college,small city/town,4,TRUE,no,no,yes
+674,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,1,9,A lot,70,87,3,63,strongly disagree,no one/no mask evidence,definitely,23,20-24,f,some college,large city,4,TRUE,unsure,no,yes
+675,1,A lot, A moderate amount,8,TRUE,TRUE,TRUE,FALSE,2,7,A lot,10,89,3,59,somewhat disagree,everyone,definitely,24,20-24,f,some college,suburb,4,TRUE,no,no,yes
+676,1,A lot, A moderate amount,8,TRUE,TRUE,TRUE,FALSE,4,8, A moderate amount,50,100,2,70,somewhat disagree,sick people,definitely,22,20-24,f,highschool graduate,suburb,4,TRUE,no,no,no
+677,1,A lot, A moderate amount,5,TRUE,TRUE,TRUE,FALSE,4,6,A lot,20,41,2,41,somewhat disagree,everyone,definitely,24,20-24,f, 4 year degree,suburb,4,FALSE,no,no,no
+678,1,A lot,A lot,9,FALSE,FALSE,TRUE,FALSE,3,8,A lot,24,86,4,71,strongly disagree,sick people,probably,24,20-24,f, 4 year degree,small city/town,3,FALSE,no,no,no
+681,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,2,9, A moderate amount,75,100,2,50,somewhat disagree,sick people,definitely,22,20-24,f,some college,suburb,3,TRUE,unsure,unsure,yes
+682,1, A moderate amount,A little,5,FALSE,FALSE,TRUE,FALSE,6,6,A lot,50,100,3,37,somewhat disagree,sick people,definitely,18,18-19,f,some college,suburb,4,FALSE,no,no,yes
+683,1, A moderate amount, A moderate amount,9,FALSE,TRUE,TRUE,FALSE,7,6, A moderate amount,70,88,3,55,strongly disagree,sick people,definitely,18,18-19,f,some college,suburb,4,FALSE,no,yes,yes
+690,1, A moderate amount, A moderate amount,4,TRUE,TRUE,FALSE,FALSE,2,3, A moderate amount,8,77,2,31,somewhat disagree,sick people,probably,19,18-19,f,some college,suburb,4,TRUE,unsure,no,prefer not to say
+698,1,A lot,A lot,9,FALSE,FALSE,TRUE,FALSE,7,4,A lot,82,60,3,30,strongly disagree,sick people,definitely,24,20-24,f,some college,suburb,4,TRUE,unsure,no,yes
+704,1, A moderate amount,A little,6,FALSE,FALSE,FALSE,TRUE,5,8,A lot,29,80,3,59,strongly disagree,sick people,probably,22,20-24,m,highschool graduate,suburb,2,FALSE,unsure,no,unsure
+705,1, A moderate amount,A little,6,FALSE,FALSE,FALSE,FALSE,5,5,A lot,62,71,3,40,somewhat disagree,everyone,definitely,19,18-19,f,2 year degree,suburb,3,FALSE,unsure,no,no
+706,1, A moderate amount,A little,7,FALSE,FALSE,FALSE,FALSE,1,5, A moderate amount,58,100,3,47,strongly disagree,sick people,unsure,19,18-19,f,some college,suburb,3,Unsure,no,no,unsure
+710,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,5,5, A moderate amount,25,90,3,70,somewhat disagree,everyone,probably,22,20-24,m,highschool graduate,small city/town,3,FALSE,unsure,no,no
+713,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,8,6, A moderate amount,40,80,3,60,somewhat disagree,everyone,definitely,18,18-19,f,some college,small city/town,4,TRUE,no,no,no
+715,1, A moderate amount, A moderate amount,5,FALSE,FALSE,FALSE,FALSE,4,5,A lot,25,60,2,27,strongly disagree,sick people,definitely,21,20-24,f, 4 year degree,rural area,4,TRUE,no,no,yes
+716,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,6,4,A lot,50,65,2,55,strongly disagree,sick people,definitely,24,20-24,f, 4 year degree,small city/town,4,TRUE,unsure,no,yes
+717,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,7,4,A lot,57,70,3,30,strongly disagree,sick people,definitely,19,18-19,f,some college,suburb,5,TRUE,no,no,yes
+723,1,A lot,A lot,7,TRUE,FALSE,TRUE,FALSE,5,6, A moderate amount,70,100,3,70,somewhat disagree,everyone,definitely,21,20-24,m,some college,large city,5,FALSE,yes,no,yes
+731,1,A lot,A lot,8,FALSE,FALSE,TRUE,FALSE,1,4, A moderate amount,68,64,3,50,strongly disagree,sick people,definitely,19,18-19,f,some college,rural area,5,TRUE,no,no,yes
+732,1, A moderate amount, A moderate amount,4,TRUE,FALSE,TRUE,FALSE,0,1, A moderate amount,44,64,2,33,strongly disagree,everyone,definitely,19,18-19,m,some college,suburb,2,TRUE,yes,no,yes
+734,1,A lot,A lot,7,FALSE,TRUE,FALSE,FALSE,4,4,A lot,50,70,2,69,somewhat disagree,everyone,definitely,19,18-19,f,some college,suburb,4,TRUE,no,no,yes
+739,1,A lot, A moderate amount,10,FALSE,FALSE,TRUE,FALSE,5,5,A lot,61,100,2,60,strongly disagree,everyone,definitely,18,18-19,f,some college,small city/town,3,FALSE,unsure,yes,unsure
+740,1, A moderate amount, A moderate amount,5,FALSE,FALSE,TRUE,FALSE,8,6,A lot,50,90,3,78,strongly disagree,sick people,definitely,47,45-49,f, 4 year degree,rural area,3,TRUE,no,no,yes
+741,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,4,6,A little,30,70,2,70,strongly disagree,everyone,definitely,59,55-59,m,professional degree,small city/town,5,TRUE,no,no,yes
+746,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,4,4,A lot,50,60,3,30,somewhat disagree,sick people,definitely,24,20-24,f,some college,suburb,4,TRUE,unsure,no,no
+747,1,A lot, A moderate amount,9,TRUE,FALSE,TRUE,FALSE,5,8,A lot,37,94,4,41,strongly disagree,sick people,definitely,78,75-79,f,some college,small city/town,4,TRUE,no,yes,yes
+748,1,A lot, A moderate amount,6,FALSE,FALSE,FALSE,FALSE,5,7,A lot,50,70,3,71,somewhat disagree,sick people,probably,47,45-49,f,professional degree,small city/town,5,TRUE,unsure,no,unsure
+749,1, A moderate amount,A little,4,FALSE,FALSE,FALSE,FALSE,5,5,A lot,30,40,3,30,strongly disagree,everyone,probably,20,20-24,f,some college,small city/town,3,FALSE,no,no,no
+754,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,7,5, A moderate amount,33,79,4,43,strongly disagree,everyone,probably,44,40-44,f, 4 year degree,small city/town,4,FALSE,unsure,yes,no
+755,1,A lot, A moderate amount,8,FALSE,TRUE,TRUE,FALSE,0,3,A little,35,77,3,17,somewhat disagree,everyone,definitely,32,30-34,m,2 year degree,suburb,4,FALSE,no,no,yes
+758,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,5,5, A moderate amount,60,62,3,57,strongly disagree,everyone,definitely,48,45-49,f,professional degree,small city/town,3,TRUE,yes,yes,yes
+760,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,6,5, A moderate amount,30,60,4,50,somewhat disagree,everyone,unsure,24,20-24,f,highschool graduate,small city/town,3,FALSE,no,yes,yes
+765,1,A lot, A moderate amount,4,FALSE,FALSE,FALSE,FALSE,3,3, A moderate amount,31,100,4,11,strongly disagree,everyone,unsure,24,20-24,f, 4 year degree,large city,3,FALSE,no,no,yes
+769,1,A lot,A little,7,FALSE,FALSE,TRUE,FALSE,0,3,A little,18,66,2,13,somewhat disagree,sick people,defintely not,25,25-29,f, 4 year degree,large city,3,FALSE,no,yes,yes
+774,1, A moderate amount, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,5,4,A lot,15,40,3,60,somewhat disagree,everyone,probably,21,20-24,m,some college,rural area,4,FALSE,no,no,yes
+775,1, A moderate amount,A little,4,TRUE,FALSE,FALSE,FALSE,6,7, A moderate amount,30,70,4,50,somewhat disagree,everyone,unsure,18,18-19,f,highschool graduate,large city,3,FALSE,no,unsure,yes
+776,1,A lot, A moderate amount,5,FALSE,FALSE,TRUE,FALSE,5,5,A little,55,100,3,70,somewhat disagree,sick people,probably,22,20-24,f,some college,suburb,3,TRUE,no,yes,yes
+779,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,6,7,A lot,62,80,3,50,strongly disagree,sick people,definitely,59,55-59,f,professional degree,small city/town,4,TRUE,no,no,yes
+780,1, A moderate amount, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,3,5, A moderate amount,32,67,3,15,somewhat disagree,everyone,probably,29,25-29,f, 4 year degree,small city/town,3,FALSE,no,no,yes
+790,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,2,7,A lot,30,60,1,25,strongly disagree,everyone,definitely,23,20-24,f,some college,suburb,4,FALSE,unsure,no,yes
+795,1,A little,Nothing at all,0,FALSE,FALSE,FALSE,FALSE,0,7, A moderate amount,0,75,3,3,strongly disagree,sick people,probably,23,20-24,f,some college,small city/town,3,FALSE,no,no,unsure
+799,1, A moderate amount,A little,6,FALSE,FALSE,TRUE,FALSE,6,9,A lot,15,65,2,60,somewhat disagree,sick people,probably,19,18-19,m,some college,small city/town,4,TRUE,no,no,yes
+800,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,4,6, A moderate amount,30,70,3,27,strongly disagree,everyone,definitely,23,20-24,f,some college,suburb,4,FALSE,unsure,no,yes
+804,1,A lot,A lot,9,FALSE,FALSE,TRUE,FALSE,4,5,A lot,72,60,3,50,somewhat disagree,everyone,probably,21,20-24,f,some college,suburb,3,FALSE,no,no,yes
+805,1,A lot,A lot,8,FALSE,TRUE,TRUE,FALSE,5,7,A lot,61,70,4,38,strongly disagree,sick people,defintely not,54,50-54,m, 4 year degree,suburb,4,FALSE,no,no,yes
+806,1,A lot, A moderate amount,5,FALSE,FALSE,TRUE,FALSE,1,7, A moderate amount,10,75,3,50,strongly disagree,everyone,definitely,22,20-24,m,highschool graduate,small city/town,3,TRUE,no,no,no
+810,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,5,5,A lot,45,72,3,19,strongly disagree,everyone,definitely,19,18-19,f,some college,small city/town,4,TRUE,no,no,yes
+812,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,9,7,A lot,46,46,5,67,strongly disagree,everyone,probably,21,20-24,f,some college,suburb,3,FALSE,unsure,yes,yes
+814,1,A lot,A lot,10,TRUE,TRUE,TRUE,FALSE,5,7,A little,50,100,5,81,strongly disagree,everyone,definitely,20,20-24,f,some college,suburb,5,TRUE,yes,yes,yes
+816,1,A lot, A moderate amount,6,FALSE,FALSE,FALSE,FALSE,5,6, A moderate amount,55,51,3,39,strongly disagree,everyone,definitely,18,18-19,f,some college,suburb,4,TRUE,no,no,no
+821,1,A lot, A moderate amount,10,FALSE,FALSE,FALSE,FALSE,5,4,A lot,16,72,4,13,strongly disagree,everyone,probably_not,30,30-34,f,some college,suburb,3,FALSE,no,no,yes
+824,1, A moderate amount, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,6,9, A moderate amount,6,96,2,57,strongly disagree,sick people,definitely,27,25-29,f,2 year degree,small city/town,4,FALSE,no,no,no
+830,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,7,7, A moderate amount,86,95,3,70,strongly disagree,everyone,definitely,21,20-24,f,highschool graduate,small city/town,4,TRUE,no,no,no
+831,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,2,6,A lot,60,72,3,46,strongly disagree,everyone,definitely,22,20-24,f,some college,large city,3,FALSE,unsure,no,yes
+832,1, A moderate amount, A moderate amount,7,TRUE,FALSE,TRUE,FALSE,6,5, A moderate amount,71,62,3,60,somewhat disagree,everyone,definitely,41,40-44,m,doctorate,suburb,3,TRUE,no,no,yes
+833,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,1,4,A little,58,87,3,50,somewhat disagree,everyone,definitely,18,18-19,f,highschool graduate,suburb,4,TRUE,no,no,yes
+839,1, A moderate amount, A moderate amount,7,FALSE,TRUE,TRUE,FALSE,2,5, A moderate amount,25,75,3,15,somewhat disagree,everyone,definitely,24,20-24,f,some college,small city/town,3,TRUE,no,yes,yes
+842,1, A moderate amount,A little,6,FALSE,FALSE,TRUE,FALSE,2,7,A little,50,100,1,44,strongly disagree,everyone,definitely,20,20-24,f,highschool graduate,small city/town,3,FALSE,unsure,no,yes
+845,1, A moderate amount,A little,2,TRUE,FALSE,TRUE,FALSE,1,8,A lot,29,50,3,29,strongly agree,everyone,probably,22,20-24,f, 4 year degree,rural area,4,TRUE,no,no,yes
+846,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,TRUE,8,8, A moderate amount,71,50,2,71,strongly disagree,everyone,definitely,54,50-54,f, 4 year degree,suburb,5,TRUE,no,no,yes
+847,1, A moderate amount,A little,3,FALSE,FALSE,TRUE,FALSE,4,6, A moderate amount,20,70,2,60,somewhat disagree,everyone,probably,20,20-24,f,2 year degree,small city/town,3,TRUE,no,unsure,yes
+849,1,A lot,A lot,7,FALSE,FALSE,FALSE,FALSE,0,3,A lot,10,62,2,81,strongly disagree,everyone,probably,19,18-19,f,some college,suburb,4,Unsure,no,no,yes
+850,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,5,7,A lot,10,90,2,50,somewhat disagree,everyone,definitely,19,18-19,f,highschool graduate,suburb,4,FALSE,no,no,yes
+851,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,8,7,A lot,35,95,3,55,strongly disagree,everyone,unsure,21,20-24,f,some college,small city/town,3,FALSE,no,no,yes
+852,1, A moderate amount, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,4,8,Not at all,70,70,5,23,strongly disagree,everyone,definitely,21,20-24,f,some college,small city/town,3,FALSE,no,unsure,yes
+853,1, A moderate amount, A moderate amount,5,TRUE,FALSE,TRUE,FALSE,5,3,A little,100,100,1,60,somewhat disagree,sick people,probably_not,39,35-39,f,professional degree,suburb,5,FALSE,no,no,no
+856,1, A moderate amount, A moderate amount,3,TRUE,FALSE,TRUE,FALSE,7,8, A moderate amount,40,70,4,71,somewhat disagree,sick people,probably,18,18-19,m,some college,suburb,4,TRUE,no,no,yes
+858,1, A moderate amount, A moderate amount,7,FALSE,FALSE,FALSE,TRUE,7,5, A moderate amount,30,70,3,70,somewhat disagree,everyone,definitely,35,35-39,f, 4 year degree,small city/town,3,TRUE,no,no,yes
+860,1,A lot,A lot,7,FALSE,FALSE,TRUE,FALSE,1,5, A moderate amount,92,91,2,9,strongly disagree,everyone,definitely,21,20-24,f, 4 year degree,large city,5,TRUE,yes,no,yes
+861,1, A moderate amount, A moderate amount,5,TRUE,TRUE,FALSE,FALSE,5,3, A moderate amount,29,73,2,40,strongly disagree,everyone,probably,22,20-24,f,some college,suburb,4,FALSE,no,no,yes
+866,1, A moderate amount, A moderate amount,3,FALSE,FALSE,TRUE,FALSE,5,9,A lot,3,85,2,72,strongly agree,sick people,unsure,24,20-24,m, 4 year degree,small city/town,4,TRUE,no,no,yes
+871,1, A moderate amount, A moderate amount,5,TRUE,FALSE,TRUE,FALSE,6,4, A moderate amount,10,55,3,42,somewhat disagree,everyone,definitely,21,20-24,f,2 year degree,small city/town,3,TRUE,no,no,yes
+872,1, A moderate amount, A moderate amount,4,TRUE,FALSE,TRUE,FALSE,7,5,A little,69,98,3,51,somewhat disagree,sick people,definitely,18,18-19,f,some college,suburb,3,FALSE,no,no,yes
+873,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,1,5,A lot,1,95,2,30,strongly disagree,everyone,probably,23,20-24,f,some college,small city/town,4,TRUE,no,no,no
+876,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,10,10,A little,70,90,6,60,strongly disagree,everyone,definitely,19,18-19,f,some college,rural area,3,FALSE,no,yes,yes
+878,1, A moderate amount,A little,3,FALSE,FALSE,TRUE,FALSE,7,7, A moderate amount,61,81,3,71,somewhat disagree,everyone,probably,23,20-24,f,some college,small city/town,3,FALSE,no,no,no
+879,1,A lot, A moderate amount,5,FALSE,TRUE,TRUE,FALSE,0,6,A lot,61,43,3,8,somewhat disagree,everyone,probably,19,18-19,nb,some college,small city/town,2,FALSE,no,unsure,yes
+882,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,1,0, A moderate amount,40,90,4,10,strongly disagree,everyone,definitely,18,18-19,f,highschool graduate,small city/town,2,FALSE,no,yes,yes
+884,1,A lot,A lot,10,TRUE,TRUE,TRUE,FALSE,10,6, A moderate amount,50,100,5,72,strongly disagree,everyone,unsure,22,20-24,f,some college,suburb,2,TRUE,yes,yes,yes
+887,1, A moderate amount, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,3,5, A moderate amount,50,77,3,35,somewhat disagree,everyone,probably,18,18-19,f, 4 year degree,large city,2,TRUE,unsure,no,no
+889,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,8,4, A moderate amount,50,100,3,75,somewhat disagree,everyone,definitely,24,20-24,f,highschool graduate,suburb,5,TRUE,no,no,yes
+890,1,A lot,A lot,10,FALSE,TRUE,TRUE,FALSE,3,5,A little,100,80,3,30,somewhat disagree,everyone,probably_not,19,18-19,f,some college,suburb,4,FALSE,yes,no,yes
+892,1,A little,Nothing at all,6,FALSE,FALSE,TRUE,FALSE,3,6,A lot,29,29,1,30,strongly disagree,everyone,definitely,20,20-24,f, 4 year degree,small city/town,2,TRUE,yes,unsure,unsure
+894,1,A lot, A moderate amount,10,FALSE,FALSE,FALSE,FALSE,4,8, A moderate amount,71,81,3,40,strongly disagree,everyone,definitely,36,35-39,f, 4 year degree,large city,3,TRUE,no,yes,yes
+895,1, A moderate amount,A little,5,FALSE,FALSE,TRUE,TRUE,6,6, A moderate amount,5,99,2,50,somewhat disagree,everyone,definitely,23,20-24,f,some college,suburb,4,FALSE,no,no,unsure
+896,1, A moderate amount,A little,4,FALSE,FALSE,TRUE,FALSE,3,4,A lot,20,80,4,35,somewhat disagree,everyone,definitely,24,20-24,f, 4 year degree,small city/town,4,TRUE,no,yes,yes
+897,1,A lot, A moderate amount,8,TRUE,FALSE,TRUE,FALSE,1,9,Not at all,20,70,2,75,strongly disagree,everyone,definitely,20,20-24,m,2 year degree,large city,5,TRUE,unsure,no,yes
+900,1, A moderate amount, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,7,7,A little,50,70,3,75,somewhat disagree,everyone,unsure,54,50-54,f,some college,suburb,3,FALSE,unsure,no,yes
+901,1, A moderate amount,A lot,8,FALSE,FALSE,TRUE,FALSE,2,5,A lot,72,52,2,9,strongly agree,everyone,definitely,58,55-59,m,some college,rural area,3,FALSE,no,no,yes
+902,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,5,7,A lot,80,60,3,60,strongly disagree,sick people,definitely,32,30-34,f, 4 year degree,small city/town,3,TRUE,unsure,no,yes
+903,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,1,5, A moderate amount,71,19,3,10,strongly disagree,everyone,probably,53,50-54,f,highschool graduate,suburb,3,FALSE,unsure,unsure,yes
+904,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,8,10, A moderate amount,5,100,5,100,strongly disagree,everyone,definitely,58,55-59,f, 4 year degree,small city/town,4,TRUE,no,yes,yes
+905,1,A lot, A moderate amount,8,FALSE,TRUE,TRUE,FALSE,4,7, A moderate amount,100,85,3,42,strongly disagree,everyone,definitely,21,20-24,f, 4 year degree,suburb,4,FALSE,no,yes,yes
+907,1, A moderate amount, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,2,9, A moderate amount,20,72,3,41,somewhat disagree,everyone,probably,33,30-34,f,professional degree,suburb,4,TRUE,no,no,yes
+908,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,0,5,A little,0,0,2,30,somewhat disagree,everyone,definitely,29,25-29,f,highschool graduate,small city/town,3,TRUE,no,unsure,unsure
+911,1, A moderate amount, A moderate amount,6,TRUE,FALSE,TRUE,FALSE,3,5,A lot,40,90,5,15,strongly disagree,everyone,unsure,33,30-34,f,some college,suburb,2,FALSE,no,yes,yes
+912,1,A little,A little,6,FALSE,FALSE,TRUE,FALSE,6,5,A lot,70,60,5,60,somewhat disagree,everyone,unsure,52,50-54,f,2 year degree,suburb,3,FALSE,yes,yes,yes
+915,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,3,7, A moderate amount,75,70,2,35,somewhat disagree,everyone,definitely,20,20-24,f, 4 year degree,small city/town,4,FALSE,yes,no,no
+916,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,TRUE,4,10,A lot,80,85,4,20,strongly disagree,everyone,definitely,22,20-24,m,some college,small city/town,2,TRUE,yes,yes,yes
+917,1,A lot,A little,8,TRUE,FALSE,FALSE,FALSE,6,7,A lot,50,80,3,75,somewhat disagree,everyone,probably_not,28,25-29,f,highschool graduate,rural area,3,FALSE,no,no,yes
+918,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,4,4,A lot,1,100,6,40,strongly disagree,everyone,definitely,69,65-69,f,some college,suburb,4,FALSE,no,yes,no
+919,1,A lot, A moderate amount,9,FALSE,FALSE,FALSE,FALSE,5,5, A moderate amount,88,90,6,65,strongly disagree,everyone,definitely,49,45-49,f,some college,rural area,1,TRUE,no,yes,yes
+921,1,A lot,A lot,10,FALSE,FALSE,FALSE,FALSE,0,6,A lot,53,100,4,57,strongly disagree,everyone,definitely,59,55-59,f, 4 year degree,small city/town,3,FALSE,no,no,yes
+922,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,6,9,A little,28,89,4,77,strongly disagree,everyone,definitely,21,20-24,f,some college,suburb,3,FALSE,no,no,yes
+923,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,6,5, A moderate amount,60,94,3,40,somewhat disagree,everyone,definitely,21,20-24,f,some college,small city/town,4,FALSE,no,no,yes
+924,1, A moderate amount, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,5,5, A moderate amount,10,90,2,60,somewhat disagree,everyone,definitely,35,35-39,f, 4 year degree,suburb,3,FALSE,no,no,yes
+925,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,2,6, A moderate amount,56,82,5,15,somewhat disagree,everyone,definitely,22,20-24,f, 4 year degree,small city/town,4,TRUE,unsure,yes,yes
+927,1,A lot,A lot,1,TRUE,TRUE,TRUE,FALSE,1,6,A little,57,80,4,84,strongly disagree,everyone,definitely,58,55-59,f,professional degree,suburb,3,FALSE,no,unsure,yes
+928,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,8,6,A lot,20,80,2,70,somewhat disagree,everyone,definitely,34,30-34,f,doctorate,suburb,5,FALSE,no,no,yes
+930,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,10,7,A lot,50,61,5,50,strongly disagree,everyone,definitely,62,60-64,f,some college,small city/town,5,TRUE,no,yes,yes
+931,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,4,7, A moderate amount,NA,100,5,60,strongly disagree,everyone,definitely,18,18-19,m,some college,suburb,2,FALSE,no,no,yes
+933,1,A lot, A moderate amount,9,FALSE,FALSE,TRUE,FALSE,4,3,A little,80,50,3,70,somewhat disagree,everyone,definitely,45,45-49,f, 4 year degree,suburb,4,TRUE,no,no,yes
+935,1,A lot, A moderate amount,7,FALSE,TRUE,FALSE,FALSE,3,3, A moderate amount,80,70,4,25,strongly disagree,everyone,unsure,46,45-49,f,some college,suburb,1,TRUE,unsure,yes,yes
+936,1,A lot,A lot,6,FALSE,FALSE,FALSE,FALSE,1,7, A moderate amount,90,64,3,55,strongly disagree,everyone,definitely,19,18-19,m,some college,suburb,3,TRUE,unsure,no,yes
+938,1,A lot, A moderate amount,7,TRUE,TRUE,TRUE,FALSE,2,5,A little,30,100,3,75,strongly disagree,everyone,probably,23,20-24,f,some college,small city/town,5,TRUE,no,no,yes
+942,1,A lot,A lot,8,FALSE,FALSE,TRUE,FALSE,5,7,A little,30,92,2,71,strongly disagree,everyone,unsure,57,55-59,m, 4 year degree,suburb,5,TRUE,no,no,yes
+944,1, A moderate amount, A moderate amount,6,TRUE,TRUE,TRUE,FALSE,3,9, A moderate amount,8,75,3,19,strongly disagree,everyone,definitely,18,18-19,m,some college,suburb,4,TRUE,unsure,no,no
+945,1, A moderate amount,A little,6,FALSE,FALSE,TRUE,FALSE,1,5,A little,28,80,4,40,strongly disagree,everyone,definitely,19,18-19,f,highschool graduate,small city/town,3,TRUE,no,no,yes
+947,1,A lot,A lot,7,TRUE,FALSE,TRUE,FALSE,0,7,A lot,30,100,3,13,somewhat disagree,everyone,definitely,19,18-19,nb,some college,rural area,5,FALSE,no,no,no
+948,1,A lot,A little,8,FALSE,FALSE,FALSE,TRUE,2,5, A moderate amount,5,93,3,20,somewhat disagree,everyone,defintely not,18,18-19,f,some college,large city,5,FALSE,no,no,no
+949,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,5,7, A moderate amount,13,95,4,53,strongly disagree,everyone,definitely,19,18-19,f,highschool graduate,large city,3,FALSE,no,no,no
+951,1, A moderate amount, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,5,6,A little,13,82,3,51,somewhat disagree,everyone,probably,18,18-19,f,some college,suburb,4,TRUE,no,no,no
+954,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,TRUE,5,8, A moderate amount,75,90,5,48,strongly disagree,sick people,definitely,18,18-19,f,some college,suburb,2,TRUE,no,yes,yes
+955,1,A lot, A moderate amount,10,FALSE,FALSE,TRUE,FALSE,7,7,A lot,50,79,2,71,strongly disagree,everyone,definitely,20,20-24,f,some college,large city,5,FALSE,no,no,yes
+956,1, A moderate amount,A little,5,FALSE,FALSE,TRUE,FALSE,1,7,A lot,48,70,2,9,strongly disagree,everyone,definitely,19,18-19,f,some college,suburb,4,FALSE,yes,no,unsure
+957,1,A lot,A little,5,FALSE,FALSE,FALSE,FALSE,3,5,A little,0,50,1,18,strongly agree,everyone,unsure,20,20-24,f,highschool graduate,large city,5,FALSE,no,no,unsure
+958,1, A moderate amount, A moderate amount,6,FALSE,FALSE,FALSE,FALSE,5,10,A lot,50,100,3,71,strongly disagree,sick people,definitely,23,20-24,f,highschool graduate,suburb,3,FALSE,no,yes,unsure
+960,1, A moderate amount,A little,6,FALSE,FALSE,TRUE,FALSE,1,4,A little,36,100,3,11,strongly disagree,everyone,probably,19,18-19,f,NA,NA,NA,NA,NA,NA,NA
+965,1, A moderate amount, A moderate amount,4,FALSE,FALSE,TRUE,FALSE,6,3,A lot,60,50,4,30,somewhat disagree,everyone,definitely,18,18-19,f,some college,small city/town,3,TRUE,no,no,no
+966,1,A lot, A moderate amount,6,FALSE,FALSE,FALSE,FALSE,5,9, A moderate amount,83,71,3,45,strongly disagree,sick people,probably,18,18-19,f,some college,large city,3,TRUE,yes,no,yes
+967,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,4,6, A moderate amount,30,80,3,60,strongly disagree,everyone,definitely,30,30-34,m, 4 year degree,large city,4,TRUE,unsure,no,yes
+972,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,4,4,A lot,70,81,3,51,somewhat disagree,everyone,probably,44,40-44,m,some college,suburb,3,TRUE,unsure,no,no
+973,1, A moderate amount, A moderate amount,5,FALSE,FALSE,TRUE,FALSE,2,4,Not at all,40,77,4,33,strongly disagree,everyone,probably,18,18-19,f,some college,suburb,4,FALSE,no,no,no
+978,1,A lot, A moderate amount,7,FALSE,FALSE,FALSE,FALSE,3,8, A moderate amount,30,70,2,70,somewhat disagree,everyone,definitely,34,30-34,f,professional degree,large city,4,TRUE,no,no,yes
+979,1,A lot, A moderate amount,10,FALSE,FALSE,FALSE,FALSE,5,7,A lot,80,100,3,50,strongly disagree,everyone,definitely,48,45-49,f,professional degree,large city,4,TRUE,no,no,yes
+980,1,A lot, A moderate amount,10,NA,NA,NA,NA,2,8,A lot,86,75,6,71,strongly disagree,everyone,definitely,46,45-49,f,professional degree,suburb,2,TRUE,no,yes,yes
+981,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,2,7,A lot,51,71,3,40,strongly disagree,everyone,definitely,71,70-74,f,professional degree,large city,2,TRUE,no,yes,no
+983,1,A lot, A moderate amount,10,FALSE,FALSE,FALSE,FALSE,5,8,A lot,75,57,5,31,strongly disagree,everyone,definitely,56,55-59,f, 4 year degree,suburb,3,TRUE,no,unsure,yes
+984,1,A lot, A moderate amount,7,FALSE,FALSE,TRUE,FALSE,6,6,A lot,35,80,5,49,strongly disagree,everyone,definitely,48,45-49,f, 4 year degree,small city/town,3,FALSE,no,yes,yes
+985,1, A moderate amount, A moderate amount,9,FALSE,FALSE,FALSE,FALSE,0,7, A moderate amount,30,82,4,51,strongly disagree,everyone,unsure,65,65-69,f, 4 year degree,rural area,3,FALSE,unsure,no,yes
+988,1,A lot,A lot,10,FALSE,FALSE,TRUE,FALSE,5,7, A moderate amount,91,85,3,50,strongly disagree,everyone,definitely,19,18-19,f,some college,large city,4,FALSE,no,no,yes
+989,1,A lot, A moderate amount,6,FALSE,FALSE,TRUE,FALSE,4,3,A lot,48,78,4,36,strongly disagree,everyone,probably,41,40-44,f,some college,large city,2,TRUE,unsure,unsure,unsure
+993,1,A lot, A moderate amount,9,FALSE,FALSE,FALSE,TRUE,8,7,A lot,30,100,3,80,strongly disagree,everyone,definitely,18,18-19,m,some college,large city,5,TRUE,no,no,yes
+994,1, A moderate amount, A moderate amount,5,FALSE,FALSE,FALSE,FALSE,1,1,A lot,3,81,5,20,somewhat disagree,everyone,probably_not,24,20-24,f,some college,large city,3,FALSE,yes,yes,yes
+995,1,A lot, A moderate amount,8,FALSE,FALSE,TRUE,FALSE,2,5, A moderate amount,55,71,4,31,strongly disagree,everyone,definitely,35,35-39,f,professional degree,small city/town,3,FALSE,no,no,yes
+996,1,A lot, A moderate amount,10,TRUE,FALSE,FALSE,FALSE,1,6,A lot,30,60,3,30,somewhat disagree,everyone,definitely,66,65-69,m,professional degree,small city/town,3,TRUE,no,no,no
+997,1,A lot,A lot,10,FALSE,FALSE,FALSE,FALSE,3,6,Not at all,63,85,3,10,strongly disagree,everyone,unsure,26,25-29,f,professional degree,large city,3,FALSE,no,no,unsure
+998,1,A lot, A moderate amount,8,FALSE,FALSE,FALSE,FALSE,0,5,A lot,6,82,1,11,strongly agree,sick people,defintely not,39,35-39,m,doctorate,suburb,5,FALSE,yes,no,no
+999,1,A lot, A moderate amount,5,FALSE,FALSE,FALSE,FALSE,2,7,A lot,70,85,3,40,strongly disagree,everyone,definitely,28,25-29,nb, 4 year degree,suburb,3,TRUE,no,no,yes
+1000,1, A moderate amount,A little,4,FALSE,TRUE,TRUE,FALSE,2,6,A little,70,60,3,40,somewhat disagree,everyone,probably,27,25-29,f, 4 year degree,suburb,3,FALSE,no,unsure,yes
+1005,1, A moderate amount,A little,6,FALSE,FALSE,FALSE,FALSE,6,4, A moderate amount,75,60,3,49,somewhat disagree,everyone,definitely,27,25-29,m, 4 year degree,large city,4,TRUE,unsure,no,yes
+1013,1,A lot,A little,5,FALSE,FALSE,FALSE,FALSE,3,6,A little,5,60,3,52,strongly disagree,everyone,definitely,19,18-19,f,highschool graduate,rural area,4,FALSE,no,no,unsure
+1015,1,A lot, A moderate amount,9,TRUE,FALSE,TRUE,FALSE,4,7, A moderate amount,42,69,3,25,strongly disagree,everyone,unsure,30,30-34,f,2 year degree,rural area,5,TRUE,no,no,yes
+1017,1,A lot,A lot,8,FALSE,TRUE,FALSE,FALSE,6,7, A moderate amount,70,77,3,73,somewhat disagree,everyone,definitely,40,40-44,f, 4 year degree,suburb,4,TRUE,no,no,yes
