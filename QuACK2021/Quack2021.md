@@ -32,9 +32,9 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 
 |  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
-| Week 1 (8/31) |Intro to R & Programming|[s1_materials](Week1_Practice.pdf)|[s1_demo_key](week1_key.R)|[s1_slides](QuACK_Week1_intro.pdf)|see *[s1_bootcamp](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)*|
-| Week 2 (9/7) |Working directories and reading in data|[s2_materials](Week2.zip)|[s2_demo_key](week2_key.R)|*no slides*|[s2_recording](https://berkeley.box.com/s/5o3mr3igt8fkrk57vivzjzo5xpoto3vs)|
-| Week 3 (9/14) |Intro to the tidyverse and data wrangling - Part 1|[s3_materials](Week3.zip)||||
+| Week 1 (8/31) |Intro to R & Programming|[w1_materials](Week1_Practice.pdf)|[w1_demo_key](week1_key.R)|[w1_slides](QuACK_Week1_intro.pdf)|see *[s1_bootcamp](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)* *|
+| Week 2 (9/7) |Working directories and reading in data|[w2_materials](Week2.zip)|[w2_demo_key](week2_key.R)|*no slides*|[w2_recording](https://berkeley.box.com/s/5o3mr3igt8fkrk57vivzjzo5xpoto3vs)|
+| Week 3 (9/14) |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](Week3.zip)|[w3_demo_key](Week3/week3_key.R)||[w3_recording](https://berkeley.box.com/s/siyvlt2jqqdiks48gm7wvkg2ktltb7lb)|
 | Week 4 (9/21)|Data wrangling - Part 2|||||
 | Week 5 (9/28) |Intro to data visualization (ggplot) - Part 1|||||
 | Week 6 (10/5) |Data visualization - Part 2|||||
@@ -49,7 +49,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 
 Access the full printable schedule [here](https://docs.google.com/document/d/1BzSO37m0SL8qZeeBr6nMYjbv1hK_MTV1YcMHZAEfLNM/edit?usp=sharing)
 
-*There was an issue with this recording but very similar content was covered in Week 1 of our summer bootcamp. 
+*There was an issue with this recording but very similar content was covered in Week 1 of our summer bootcamp, so we are linking to this video instead. 
 
 ### Materials guide
 We are committed to open science and we make all of our resources and teaching materials freely available for offline learning.
