@@ -100,7 +100,7 @@ library(tidylog)
 
 ## Save the mean and sd and n for each species as a new dataframe called sum_stats_species 
 
-# Just like in mutate, we can customize our column names within the summarise() function.
+# We can customize our column names within the summarise() function.
 
 
 
