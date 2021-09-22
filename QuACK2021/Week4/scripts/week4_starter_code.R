@@ -13,12 +13,18 @@ library(tidylog)
 
 # 1. Load and view the penguins.csv 
 
-
+penguins <- read.csv('../data/penguins.csv')
 # 2.  Follow the steps we completed last week to create penguins_clean.csv. Do all of the steps in one pipe. 
 # Try to do as much as you can without looking back at last week's code!
 
   # i) remove the flipper_length_mm variable
-
+penguins_clean <- penguins %>% 
+  select(-flipper_length_mm) %>% 
+  filter(year == 2008) %>%
+  drop_na() %>% 
+  mutate(bill_sum = bill_length_mm + bill_depth_mm, 
+         sex = factor(sex))
+  
 
   # ii) Keep only the data from 2008
 
@@ -85,7 +91,10 @@ library(tidylog)
 
 
 # Real code:
-
+penguins_clean <- penguins_clean %>% 
+  mutate(species_updated = case_when(island=="Torgersen" & species == "Adelie" ~ "Happy Feet", 
+                                     TRUE ~ species))
+  
 
 
 # This kind of logic -- if/else (here renamed as case_when) is prominent
@@ -98,27 +107,52 @@ library(tidylog)
 # For example, we might want to see the mean and sd of body_mass  for each species of penguin. 
 # We can use the group_by() and summarise() functions to calculate stats on each group and save them as a new dataframe. 
 
-## Save the mean and sd and n for each species as a new dataframe called sum_stats_species 
+## Save the mean and sd  as a new dataframe called sum_stats_species 
+
+summary_stats <- penguins_clean %>% 
+  group_by(species) %>% 
+  summarise(mean(body_mass_g), sd(body_mass_g)) %>% 
+  ungroup()
+
+
 
 # We can customize our column names within the summarise() function.
 
-
+summary_stats <- penguins_clean %>% 
+  group_by(species) %>% 
+  summarise(mean = mean(body_mass_g), sd = sd(body_mass_g)) %>% 
+  ungroup()
 
 ## We can also group our data by mulitple categories. eg. by species AND island. 
+summary_stats <- penguins_clean %>% 
+  group_by(species, island) %>% 
+  summarise(mean = mean(body_mass_g), sd = sd(body_mass_g)) %>% 
+  ungroup()
 
 # We can use the n() function within summarise() to get the number or frequency in each group.
 # eg. Which island has the fewest Adelie penguins? 
 
-
+summary_stats <- penguins_clean %>% 
+  group_by(species, island) %>% 
+  summarise(mean = mean(body_mass_g), 
+            sd = sd(body_mass_g), 
+            freq = n()) %>% 
+  ungroup() 
 
 ## It looks like island may have an effect on penguin weight. Now that we know this, we might want to account for this in our data. 
 #  For example, lets create a new column with z-scored body_mass
 # To z-score our data : ( body_mass - mean(body_mass) ) / sd(body_mass)
 
+penguins_clean <- penguins_clean %>%
+  mutate(mass_zscored_sex = (body_mass_g - mean(body_mass_g)) / sd(body_mass_g)) %>% 
+  ungroup()
 
 
 # This isn't exactly what we want. We noted that weights seem to differ by island so lets normalize our data within island (ie we want to use the mean specific to the island the penguin is on). 
-
+penguins_clean <- penguins_clean %>%
+  group_by(sex) %>% 
+  mutate(mass_zscored_sex = (body_mass_g - mean(body_mass_g)) / sd(body_mass_g)) %>% 
+  ungroup()
 
 # This kind of idea is often useful in situations where you are creating standardized scores within age groups or populations of participants. 
 
