@@ -12,11 +12,18 @@ library(tidylog)
 #### Warm-up ####
 
 # 1. Load and view the penguins.csv 
+penguins <- read.csv("../data/penguins.csv")
+summary(penguins)
 
 
 # 2.  Follow the steps we completed last week to create penguins_clean.csv. Do all of the steps in one pipe. 
 # Try to do as much as you can without looking back at last week's code!
-
+penguins_clean <- penguins %>% 
+  select(-flipper_length_mm) %>% 
+  filter(year == 2008) %>% 
+  drop_na() %>% 
+  mutate(bill_sum = bill_length_mm + bill_depth_mm,
+         sex = factor(sex, levels = c("male", "female"))) 
   # i) remove the flipper_length_mm variable
 
 
@@ -48,6 +55,11 @@ library(tidylog)
 
 # Can you think of any examples?
 
+# Scores of anxiety in a column, make a new column that categorizes a continuous variable!
+
+# O
+
+# Continuous variable --> categorical one!
 
 
 
@@ -59,6 +71,8 @@ library(tidylog)
 
 # First in pseudocode:
 
+# If the penguin weight > mean(weight) --> "heavy"
+# If the penguin weight < mean(weight) --> "light"
 
 
 
@@ -75,17 +89,27 @@ library(tidylog)
 
 # Now in real code:
 
-
+penguins_clean <- penguins_clean %>% 
+  mutate(weight_cat = case_when(body_mass_g >= mean(body_mass_g) ~ "heavy",
+                                body_mass_g < mean(body_mass_g) ~ "light"))
 
 
 # Now imagine that there was a scientific breakthrough, and the species that you found on Torgerson that you thought was Adelie is actually a new species!
 
 # Pseudocode:
 
+# If island == Torgerson & species == Adelie --> newSpecies!
+# Else --> NOTHING (keep it the same)
 
 
 # Real code:
 
+penguins_updatedSpecies <- penguins_clean %>% 
+  mutate(species_updated = case_when(island == "Torgersen" 
+                                     & species == "Adelie" ~ "Happy Feet",
+                                     island == "Biscoe" & species == "Adelie" ~ "Tuxedo Kings",
+                                     # island == "Dream" & species == "Adelie" ~ NA_character_,
+                                     TRUE ~ species))
 
 
 # This kind of logic -- if/else (here renamed as case_when) is prominent
@@ -98,13 +122,30 @@ library(tidylog)
 # For example, we might want to see the mean and sd of body_mass  for each species of penguin. 
 # We can use the group_by() and summarise() functions to calculate stats on each group and save them as a new dataframe. 
 
-## Save the mean and sd and n for each species as a new dataframe called sum_stats_species 
+## Save the mean and sd and n for each species as a new dataframe called sum_stats_species
+
+summary_stats <- penguins_clean %>% 
+  group_by(species) %>% 
+  summarise(mean(body_mass_g),
+            sd(body_mass_g)) 
+
+
 
 # We can customize our column names within the summarise() function.
 
-
+summary_stats <- penguins_clean %>% 
+  group_by(species) %>% 
+  summarise(mean_mass = mean(body_mass_g),
+            sd_mass = sd(body_mass_g),
+            n = n()) 
 
 ## We can also group our data by mulitple categories. eg. by species AND island. 
+
+summary_stats <- penguins_clean %>% 
+  group_by(species, island) %>% 
+  summarise(mean_mass = mean(body_mass_g),
+            sd_mass = sd(body_mass_g),
+            n = n()) 
 
 # We can use the n() function within summarise() to get the number or frequency in each group.
 # eg. Which island has the fewest Adelie penguins? 
@@ -171,6 +212,7 @@ library(tidylog)
 # Let's try it with our penguins code!
 
 penguins_researcher <- read.csv("../data/penguins_researcher-info.csv")
+penguins_researcher_missing <- read.csv("../data/penguins_researcher-info_missingData.csv")
 
 # How many observations are there in this data frame?
 
@@ -192,8 +234,16 @@ penguins_researcher <- read.csv("../data/penguins_researcher-info.csv")
 
 
 
+
 ## Left join - penguins_clean + researcher ##
 
+penguins_clean.demo <- penguins_clean %>% 
+  left_join(penguins_researcher_missing, by = c("penguin", "island", "year"))
+
+# left_join(penguins_clean, penguins_researcher, by = c("penguin", "island", "year"))
+
+penguins_clean.demo_inner <- penguins_clean %>% 
+  inner_join(penguins_researcher_missing, by = c("penguin", "island", "year"))
 
 
 ## Right join - penguins_clean + researcher ##
