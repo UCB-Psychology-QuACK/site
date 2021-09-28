@@ -1,9 +1,25 @@
-#  Data visualization with ggplot
+# Data visualization with ggplot
 # Willa & Elena
 # 9/28/21
 
 ############### #### Warm-up #### ##################
 
+# From the practice questions last week:
+
+# 1. Load in world-happiness_2020.csv (what we worked with last week)
+
+
+# 2. Pick two variables and summarize them in a new data frame. Get the mean,
+# median, and sd.
+
+
+# 3. In another new data frame, get the mean, median, sd for these variables by
+# region.
+
+
+
+# 4. In a third new data frame, get the mean, median, sd for these variables by
+# region and population category.
 
 
 
