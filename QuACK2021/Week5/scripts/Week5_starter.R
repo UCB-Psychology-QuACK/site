@@ -4,7 +4,6 @@
 
 #### Set up and load packages #### 
 library(tidyverse)
-options(stringsAsFactors=FALSE)
 
 #### Warm-up  #### 
 
