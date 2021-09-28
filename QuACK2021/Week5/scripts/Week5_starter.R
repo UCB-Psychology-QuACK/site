@@ -7,12 +7,6 @@ library(tidyverse)
 
 #### Warm-up  #### 
 
-## 1. Load in penguins_wide dataset and view your data. Anything diffefrent you notice about the observations this time? 
-
-
-## 2 Use tidyverse commands to do the following data processing steps (use pipes to connect your commands). 
-    # 2a. Remove three columns: "bill_length_mm", "bill_depth_mm", "flipper_length_mm".
-    # 2b. Remove NAs from the dataset
 
 
 
