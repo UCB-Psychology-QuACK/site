@@ -78,7 +78,7 @@ options(stringsAsFactors=FALSE)
   
 
 
-#### Explore the relationship between body mass and bill depth  #### 
+## Explore the relationship between body mass and bill depth  ## 
 
 # create a ggplot object with our variables of interest
 
@@ -92,4 +92,5 @@ options(stringsAsFactors=FALSE)
 # There are two clear groups here. Given what we saw already about sex differences let's see if they group by sex?
 
 
+# Lets split the plot by sex using facet_wrap()
 
