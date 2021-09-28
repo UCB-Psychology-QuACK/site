@@ -12,7 +12,7 @@
 
 #### Read in our data ####
 
-penguins <- ('../data/penguins_clean.csv')
+penguins <- read.csv('../data/penguins_clean.csv')
 
 #### Explore our data with some simple plots ####
 
