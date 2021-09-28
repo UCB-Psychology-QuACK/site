@@ -12,11 +12,12 @@ library(tidylog)
 #### Warm-up ####
 
 # 1. Load and view the penguins.csv 
-
+ggplot(penguins_clean, aes(bill_depth_mm, bill_length_mm))+
+  geom_point(color = "dark blue") + 
+  theme_classic() 
 penguins <- read.csv('../data/penguins.csv')
 # 2.  Follow the steps we completed last week to create penguins_clean.csv. Do all of the steps in one pipe. 
 # Try to do as much as you can without looking back at last week's code!
-
   # i) remove the flipper_length_mm variable
 penguins_clean <- penguins %>% 
   select(-flipper_length_mm) %>% 
