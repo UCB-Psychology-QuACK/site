@@ -18,8 +18,7 @@ penguins <- read.csv('../data/penguins_clean.csv')
 
 ## 1. Look at body mass by species
 
-ggplot(penguins, aes(species, body_mass_g)) + 
-  geom_col()
+
 
 # Set up our ggplot and define our variables
 
@@ -30,6 +29,7 @@ ggplot(penguins, aes(species, body_mass_g)) +
 # Bar charts aren't the best way to look at data because it doesn't tell us much about individual data points or the distribution of data. 
 
 ## 2. Let's change the geometric representation of our data and use a boxplot. 
+
 
 
 # This gives us some more descriptive stats about the data but we still don't have a good feel for what the distribution of the data points look like.
