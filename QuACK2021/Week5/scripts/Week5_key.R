@@ -4,24 +4,52 @@
 library(tidyverse)
 library(tidylog)
 ############### #### Warm-up #### ##################
-
 # From the practice questions last week:
 
 # 1. Load in world-happiness_2020.csv (what we worked with last week)
 
+happiness <- read.csv("../data/world-happiness_2020.csv")
 
 # 2. Pick two variables and summarize them in a new data frame. Get the mean,
 # median, and sd.
 
+summary1 <- happiness %>% 
+  summarize(ladder.mean = mean(Ladder_score, na.rm = TRUE),
+            ladder.med = median(Ladder_score, na.rm = TRUE),
+            ladder.sd = sd(Ladder_score, na.rm = TRUE),
+            gen.mean = mean(Generosity, na.rm = TRUE),
+            gen.med = median(Generosity, na.rm = TRUE),
+            gen.sd = sd(Generosity, na.rm = TRUE))
+
+# mean(c(1, 2, 3, NA, 5), na.rm = TRUE)
 
 # 3. In another new data frame, get the mean, median, sd for these variables by
 # region.
+
+summary2 <- happiness %>% 
+  group_by(Regional_indicator) %>% 
+  summarize(ladder.mean = mean(Ladder_score, na.rm = TRUE),
+            ladder.med = median(Ladder_score, na.rm = TRUE),
+            ladder.sd = sd(Ladder_score, na.rm = TRUE),
+            gen.mean = mean(Generosity, na.rm = TRUE),
+            gen.med = median(Generosity, na.rm = TRUE),
+            gen.sd = sd(Generosity, na.rm = TRUE)) %>% 
+  ungroup()
 
 
 
 # 4. In a third new data frame, get the mean, median, sd for these variables by
 # region and population category.
 
+summary3 <- happiness %>% 
+  group_by(Regional_indicator, country_size) %>% 
+  summarize(ladder.mean = mean(Ladder_score, na.rm = TRUE),
+            ladder.med = median(Ladder_score, na.rm = TRUE),
+            ladder.sd = sd(Ladder_score, na.rm = TRUE),
+            gen.mean = mean(Generosity, na.rm = TRUE),
+            gen.med = median(Generosity, na.rm = TRUE),
+            gen.sd = sd(Generosity, na.rm = TRUE)) %>% 
+  ungroup()
 
 ############### #### Data Viz demo #### ##################
 
