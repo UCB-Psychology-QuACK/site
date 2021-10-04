@@ -2,7 +2,7 @@
 layout: default
 title: "QuACK 2021"
 ---
-## Quantitative Analysis and Coding Knowledge (QuACk) course page
+## Quantitative Analysis and Coding Knowledge (QuACK) course page
 
 ### Welcome to QuACK 2021!
 This semester-long workshop is for PhD students by PhD students. We will focus on teaching fudemental programming skills in R to prepare you for research and data anlysis. The workshop also helps prepare first-year PhD students for Psych 205: Data analysis. 
