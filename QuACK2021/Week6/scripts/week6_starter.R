@@ -4,53 +4,105 @@
 
 #### Set up and load packages #### 
 library(tidyverse)
+library(tidylog)
 options(stringsAsFactors=FALSE)
 
 #### Warm-up  #### 
 
-## 1. Load in penguins dataset and view your data. Anything diffefrent you notice about the observations this time? 
+## 1. Load in penguins dataset and view your data. Notice that this isn't the "clean" data set anymore!
+
+
+## 2. Remove all rows that have NAs, and make year and sex into a factors
 
 
 
-## 2 Use tidyverse commands to do the following data processing steps (use pipes to connect your commands). 
-# 2a. Remove two columns: "bill_length_mm", "bill_depth_mm".
-# 2b. Remove NAs from the dataset
+## 3. We said before that the year column tells you the year that the data were collected. But we haven't mentioned whether these data are cross-sectional or longitudinal. Which is it?
+## * Hint: one way you could do this is to use the tidyverse function arrange() (you can do ?arrange or Google it!). You could also do this using group_by!
 
 
 
 
-#### End of Warm-up ####
+
+
+
+## 4. Plot the relation between sex and body mass across year and species
+
+
+
+## 5. Suppose we wanted to plot the relation between body mass in 2007 and 2008
+## for each species. How would we do that?
+
+
+
+### End of Warm-up ###
 
 
 
 #### Data reshaping ####
 
-# The way our data is now, we can't make a violin plot that compares body mass
-# in 2007 to body mass in 2008!
+# It is handy that we can use year as a grouping variable!
+# However, A) This might not always be the way we want to organize our data, and
+# B) This isn't always how we *get* our data!
 
-# Why's that? It's because we have the data for each of those years in separate
-# columns. However, we want to GROUP by year, like we did for sex. And right
-# now, we don't have a variable (i.e., a column) that is good for grouping by year.
+# Let's explore this more.
 
-# The columns we have now, are good for an axis (e.g., y-axis in the previous
-# plot, or for making a scatter plot comparing 2007 to 2008)
+# Suppose we want to use body mass in 2007 as a predictor of the penguins body
+# mass in 2008. We aren't doing any statistics in this course, but you can get a
+# proxy for this by trying to plot the relation between body mass in 2007 and
+# 2008. You want body mass in 2007 on the x-axis, and body mass in 2008 on the
+# y-axis. However, as the data are now, this just isn't possible!
 
-# So, in order to group by year in our violin plot, we need to 'reshape' the data
-# This means that we need to change the way the rows and columns are so that we
-# have a column that is good for grouping by year.
-# In other words, we want to have a data frame that has a column that indicates
-# year, and a column that is for body mass. So there will now be two rows per
-# penguin: one row for 2007 and one row for 2008.
+# One **shape** of our data may not fit all the things we want to do with it!
 
+# This is where data "reshaping" comes in! When we reshape our data, we aren't
+# changing the values of it in any way. But we are changing how the data are
+# organized. In other words, we are changing the *dimensions* of our dataframe
+# (the number of rows and columns).
 
-# This is what we want our data to look like
+# Let's check out another "shape" for our data:
+penguins_wide <- read.csv("../data/penguins_wide.csv")
 
-
-
-# How do we get there?
-# We need to use a function called pivot_longer(), to pivot (i.e., reshape, rearrange) our data to be longer (i.e., have more rows)
-
+# What do you notice about this data frame compared to our original penguins
+# data frame?
 
 
-# We can "undo" what we just did, too! Using the sister function pivot_wider
+
+
+
+
+
+# Sometimes our data may come in this shape. And this isn't always useful,
+# because we may want to GROUP (or facet) by year, like we've done for other
+# categorical variables. And right now, we don't have a variable (i.e., a
+# column) that is good for grouping by year.
+
+
+# "Wider" format  --> increases # of columns and decreases # of rows
+# "Longer" format --> increases # of rows and decreases # of columns
+#   - Note: the truest "long" format would be only 2 columns! One for
+#   information type, and one for the value! But this wouldn't be very useful at
+#   all!
+
+
+# So how to we change the shape of our data?
+
+### Long to wide ###
+
+
+
+
+### Wide to long ###
+
+
+
+
+
+#### stat_summary ####
+
+# Sometimes you want to plot something that is aggregated over data with a function
+# For example, maybe you want to plot the mean of data
+
+
+
+
 
