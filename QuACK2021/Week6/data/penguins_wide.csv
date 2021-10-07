@@ -1,4 +1,4 @@
-"penguin","species","island","sex","bill_length_mm_2007","bill_length_mm_2008","bill_depth_mm_2007","bill_depth_mm_2008","flipper_length_mm_2007","flipper_length_mm_2008","body_mass_g_2007","body_mass_g_2008"
+"penguin","species","island","sex","bill_length_mm.2007","bill_length_mm.2008","bill_depth_mm.2007","bill_depth_mm.2008","flipper_length_mm.2007","flipper_length_mm.2008","body_mass_g.2007","body_mass_g.2008"
 "p1","Adelie","Torgersen","male",39.1,42.1,18.7,21.33,181,201,3750,3782.8
 "p2","Adelie","Torgersen","female",39.5,42.5,17.4,20.03,186,206,3800,3832.8
 "p3","Adelie","Torgersen","female",40.3,43.3,18,20.63,195,215,3250,3282.8
