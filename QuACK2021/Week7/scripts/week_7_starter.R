@@ -4,7 +4,7 @@
 
 ################### Warm up #########################
 
-#1.a. Create a vector called guest_list that contains the names "Willa", "Roya", "Elena"
+#1.a. Create a vector called guest_list that contains the names "Willa", "Elena", "Roya
 
 
 #1.b. Access the third element in the vector guest_list
