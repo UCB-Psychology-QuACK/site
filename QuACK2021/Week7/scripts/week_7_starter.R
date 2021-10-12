@@ -27,7 +27,16 @@ paste0("Today is ",  week_days[2])
 
 
 ################### For Loops #######################
-## We can use indexing to get elements of a vector. 
+
+# For loops use an index or iterator variable. Often called "i"
+# i exists within the scope of the loop
+# "i" will take on each value in a range. 
+
+for (i in 1:10){
+  print(i)
+}
+
+## Remember we have used indexing to get elements of a vector. 
 
 guest_list = c("Willa", "Roya", "Elena")
 
@@ -35,21 +44,23 @@ guest_list[1]
 guest_list[2]
 guest_list[3]
 
-## For loops build on this idea but allow us to iterate over the elements. 
+## We can use for loops build on this idea but allow us to iterate over the elements. 
 
-for (i in 1:3)(
-  print(guest_list[i])
-)
+for (i in 1:3){
+  
+ 
+}
 
-## For loops allow us to do more than access a vector
-# Let's use the power of the loop to personalize our message. 
+## Let's use the power of the loop to personalize our message. 
 # Change the for loop to print " Hi <guest name> I’m having a Halloween Party on 10/31! The party starts at 9pm. I hope to see you there!
 
-for (i in 1:length(guest_list))(
+message <- "I’m having a Halloween Party on 10/31! The party starts at 9pm. I hope to see you there!"
   
-
+for (i in 1:length(guest_list)){
   
-)
+  
+}
+  
 
   
 
@@ -58,17 +69,16 @@ for (i in 1:length(guest_list))(
 
 # lets include phone number at the top of our message
 
-for (i in 1:3)(
-
- 
+for (i in 1:3){
   
-)
+  
+}
 
 ## Lets save our custom messages in a new vector "sent"
 sent <- c()
 
-for (i in 1:3)(
-  
-  
-)
+for (i in 1:3){
 
+  }
+  
+  
