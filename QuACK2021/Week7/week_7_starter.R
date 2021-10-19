@@ -5,13 +5,13 @@
 ################### Warm up #########################
 
 #1.a. Create a vector called guest_list that contains the names "Willa", "Elena", "Roya
-
+guest_list = c("Willa", "Elena", "Roya")
 
 #1.b. Access the second element in the vector guest_list
 
 
 # 2a. Create a vector called phone_no that contains three phone numbers: (3459430876, 2067389942, 5482240381)
-
+phone_no = c(3459430876, 2067389942, 5482240381)
 
 # 2b. Access the second phone number in the list. 
 
