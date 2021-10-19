@@ -28,6 +28,8 @@ cond2 <- c("subj02", "subj03", "subj05", "subj06")
 library(tidyverse)
 # options(stringsAsFactors = FALSE)
 
+
+
 #### We can simulate the data collection process in R ####
 
 # Define our random variable with a function
