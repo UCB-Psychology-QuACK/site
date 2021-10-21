@@ -2,7 +2,7 @@
 layout: default
 title: "QuACK 2021"
 ---
-## Quantitative Analysis and Coding Knowledge (QuACk) course page
+## Quantitative Analysis and Coding Knowledge (QuACK) course page
 
 ### Welcome to QuACK 2021!
 This semester-long workshop is for PhD students by PhD students. We will focus on teaching fudemental programming skills in R to prepare you for research and data anlysis. The workshop also helps prepare first-year PhD students for Psych 205: Data analysis. 
@@ -32,14 +32,14 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 
 |  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
-| Week 1 (8/31) |Intro to R & Programming|[w1_materials](Week1_Practice.pdf)|[w1_demo_key](week1_key.R)|[w1_slides](QuACK_Week1_intro.pdf)|see *[s1_bootcamp](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)* *|
-| Week 2 (9/7) |Working directories and reading in data|[w2_materials](Week2.zip)|[w2_demo_key](week2_key.R)|*no slides*|[w2_recording](https://berkeley.box.com/s/5o3mr3igt8fkrk57vivzjzo5xpoto3vs)|
-| Week 3 (9/14) |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](Week3.zip)|[w3_demo_key](Week3/week3_key.R)|[w2_slides](Week3/docs/Week3_IntroTidyverse.pdf)|[w3_recording](https://berkeley.box.com/s/siyvlt2jqqdiks48gm7wvkg2ktltb7lb)|
-| Week 4 (9/21)|Data wrangling - Part 2|||||
-| Week 5 (9/28) |Intro to data visualization (ggplot) - Part 1|||||
-| Week 6 (10/5) |Data visualization - Part 2|||||
-| Week 7 (10/12) |Intro to loops|||||
-| Week 8 (10/19) |Loops cont. & Random sampling|||||
+| Week 1 (8/31) |Intro to R & Programming|[w1_materials](Week1_Practice.pdf)|[w1_key](week1_key.R)|[w1_slides](QuACK_Week1_intro.pdf)|see *[s1_bootcamp](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)* *|
+| Week 2 (9/7) |Working directories and reading in data|[w2_materials](Week2.zip)|[w2_key](week2_key.R)|*no slides*|[w2_recording](https://berkeley.box.com/s/5o3mr3igt8fkrk57vivzjzo5xpoto3vs)|
+| Week 3 (9/14) |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](Week3.zip)|[w3_key](Week3/scripts/week3_key.R)|[w3_slides](Week3/docs/Week3_IntroTidyverse.pdf)|[w3_recording](https://berkeley.box.com/s/siyvlt2jqqdiks48gm7wvkg2ktltb7lb)|
+| Week 4 (9/21)|Data wrangling - Part 2|[w4_materials](Week4.zip), updated [population.csv](data/population.csv) file!|[w4_key](Week4/scripts/week4_key.R)|*no slides*|[w4_recording](https://berkeley.box.com/s/ww4brab4y55z9ibxnf4egfnvbm3274d1)|
+| Week 5 (9/28) |Intro to data visualization (ggplot) - Part 1|[w5_materials](Week5.zip)|[w5_key](Week5/scripts/Week5_key.R), [w5_key.pdf with plots embedded](Week5/scripts/Week5_key.pdf)|*no slides*|[w5_recording](https://berkeley.box.com/s/stujgy2vcw11v8k2cci2q628p3k65jav)|
+| Week 6 (10/5) |Data visualization - Part 2|[w6_materials](Week6.zip)|[w6_key](Week6/scripts/week6_key.R)|*no slides*|[w6_recording](https://berkeley.box.com/s/ko7sz9kjlv3txh9a82kc4ezmicxdrk8a)|
+| Week 7 (10/12) |Intro to loops|[w7_materials](Week7.zip)|[w7_key](Week7/scripts/week_7_key.R)|[w7_slides](Week7/docs/QuACK_Week7_forLoops.pdf)||
+| Week 8 (10/19) |Loops cont. & Random sampling|[w8_materials](Week8.zip)||||
 | Week 9 (10/26) |Functions|||||
 | Week 10 (11/2) |Flex week|||||
 | Week 11 (11/9) |Discussion topic: Open science & data sharing|||||

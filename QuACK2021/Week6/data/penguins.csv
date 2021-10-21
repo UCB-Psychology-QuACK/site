@@ -112,7 +112,7 @@ p109,Chinstrap,Dream,52,19,197,4150,male,2007
 p1,Adelie,Torgersen,42.1,21.33,201,3782.8,male,2008
 p2,Adelie,Torgersen,42.5,20.03,206,3832.8,female,2008
 p3,Adelie,Torgersen,43.3,20.63,215,3282.8,female,2008
-p4,NA,NA,NA,NA,NA,NA,NA,2008
+p4,Adelie,Torgersen,NA,NA,NA,NA,NA,2008
 p5,Adelie,Torgersen,39.7,21.93,213,3482.8,female,2008
 p6,Adelie,Torgersen,42.3,23.23,210,3682.8,male,2008
 p7,Adelie,Torgersen,41.9,20.43,201,3657.8,female,2008

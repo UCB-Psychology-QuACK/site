@@ -14,10 +14,11 @@ library(tidylog)
 # 1. Load and view the penguins.csv 
 
 
+
 # 2.  Follow the steps we completed last week to create penguins_clean.csv. Do all of the steps in one pipe. 
 # Try to do as much as you can without looking back at last week's code!
-
   # i) remove the flipper_length_mm variable
+
 
 
   # ii) Keep only the data from 2008
@@ -87,7 +88,6 @@ library(tidylog)
 # Real code:
 
 
-
 # This kind of logic -- if/else (here renamed as case_when) is prominent
 # throughout all coding languages! We did it last week with filter, and now with
 # case_when. It will continue to come up!
@@ -98,13 +98,21 @@ library(tidylog)
 # For example, we might want to see the mean and sd of body_mass  for each species of penguin. 
 # We can use the group_by() and summarise() functions to calculate stats on each group and save them as a new dataframe. 
 
-## Save the mean and sd and n for each species as a new dataframe called sum_stats_species 
+## Save the mean and sd  as a new dataframe called sum_stats_species 
 
+
+
+<<<<<<< HEAD:QuACK2021/Week4/scripts/week4_starter_code.R
+=======
+
+
+>>>>>>> 3a17694dde8cdcd4c72130726c7c52d681af5efa:QuACK2021/Week4/scripts/week4_starter_code_class-Willa.R
 # We can customize our column names within the summarise() function.
 
 
 
 ## We can also group our data by mulitple categories. eg. by species AND island. 
+
 
 # We can use the n() function within summarise() to get the number or frequency in each group.
 # eg. Which island has the fewest Adelie penguins? 
@@ -117,8 +125,8 @@ library(tidylog)
 
 
 
-# This isn't exactly what we want. We noted that weights seem to differ by island so lets normalize our data within island (ie we want to use the mean specific to the island the penguin is on). 
 
+# This isn't exactly what we want. We noted that weights seem to differ by island so lets normalize our data within island (ie we want to use the mean specific to the island the penguin is on). 
 
 # This kind of idea is often useful in situations where you are creating standardized scores within age groups or populations of participants. 
 
