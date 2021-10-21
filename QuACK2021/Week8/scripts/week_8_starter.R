@@ -131,13 +131,13 @@ baby <- read.csv("../data/brainwavebabydata.csv")
 
 #### How reliable is our measure? ####
 
-# More realistically, we we can only collect one sample, or maybe up to a few.
+# More realistically, we can only collect one sample, or maybe up to a few.
 # Take our penguins for example.
 penguins <- read.csv("../data/penguins_clean.csv") # Only 2008 sample!
 
 
 # Suppose we want to know how reliable is our measure of interest (e.g., mean
-# body weight, relation between body weight and bill length, etc.). 
+# body weight, relation between body weight and bill length, etc.). What is the range of values the mean can take on?
 
 #     What is the *ideal* way to test this?
 
@@ -183,6 +183,10 @@ sd(penguins$body_mass_g)
 
 # This is called "Bootstrapping"!!! Sampling with replacement + computing some
 # metric of interest.
+
+
+# Bootstrapping is most commonly used to estimate error of a model. But there
+# are plenty of other uses for it!
 
 
 
