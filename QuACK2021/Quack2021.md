@@ -39,7 +39,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 5 (9/28) |Intro to data visualization (ggplot) - Part 1|[w5_materials](Week5.zip)|[w5_key](Week5/scripts/Week5_key.R), [w5_key.pdf with plots embedded](Week5/scripts/Week5_key.pdf)|*no slides*|[w5_recording](https://berkeley.box.com/s/stujgy2vcw11v8k2cci2q628p3k65jav)|
 | Week 6 (10/5) |Data visualization - Part 2|[w6_materials](Week6.zip)|[w6_key](Week6/scripts/week6_key.R)|*no slides*|[w6_recording](https://berkeley.box.com/s/ko7sz9kjlv3txh9a82kc4ezmicxdrk8a)|
 | Week 7 (10/12) |Intro to loops|[w7_materials](Week7.zip)|[w7_key](Week7/scripts/week_7_key.R)|[w7_slides](Week7/docs/QuACK_Week7_forLoops.pdf)||
-| Week 8 (10/19) |Loops cont. & Random sampling|[w8_materials](Week8.zip)|||[w8_slides](Week8/docs/Week8_for_loops_cont.pdf)|
+| Week 8 (10/19) |Loops cont. & Random sampling|[w8_materials](Week8.zip)|[w8_key](Week8/scripts/week_8_key.R)||[w8_slides](Week8/docs/Week8_for_loops_cont.pdf)|
 | Week 9 (10/26) |Functions|||||
 | Week 10 (11/2) |Flex week|||||
 | Week 11 (11/9) |Discussion topic: Open science & data sharing|||||
