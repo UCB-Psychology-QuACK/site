@@ -40,8 +40,8 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 6 (10/5) |Data visualization - Part 2|[w6_materials](Week6.zip)|[w6_key](Week6/scripts/week6_key.R)|*no slides*|[w6_recording](https://berkeley.box.com/s/ko7sz9kjlv3txh9a82kc4ezmicxdrk8a)|
 | Week 7 (10/12) |Intro to loops|[w7_materials](Week7.zip)|[w7_key](Week7/scripts/week_7_key.R), [w7_practice_key](Week7/scripts/week7_practice_key.R)|[w7_slides](Week7/docs/QuACK_Week7_forLoops.pdf)|[w7_recording](https://berkeley.box.com/s/kzyf7hqf8qcolspkhxuh1g8njfa50l63)|
 | Week 8 (10/19) |Loops cont. & Random sampling|[w8_materials](Week8.zip)|[w8_key](Week8/scripts/week_8_key.R)|[w8_slides](Week8/docs/Week8_for_loops_cont.pdf)|[w8_recording](https://berkeley.box.com/s/8g6ypulaoo3e41rs8zqxzu6p4k5sv91s)|
-| Week 9 (10/26) |Functions|||||
-| Week 10 (11/2) |Flex week|||||
+| Week 9 (10/26) |Resampling - Part 2|[w9_materials](Week9.zip)||||
+| Week 10 (11/2) |Functions|||||
 | Week 11 (11/9) |Discussion topic: Open science & data sharing|||||
 | Week 12 (11/16) |Discussion topic: Biases in statistics and psych science|||||
 | Week 13 (11/23) |Thanksgiving Week *No class*|||||
