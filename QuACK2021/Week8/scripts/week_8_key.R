@@ -262,6 +262,12 @@ abline(v = mean(baby$r1), col = "red")
 
 
 #### The Central Limit Theorem! ####
-# This was an intuitive proof of the central limit theorem! If you sample from your population enough times, then the MEAN of your *sample means* will approach the true mean of the population! The bigger your sample (sample_size) and the more times you sample (num_samples) then the better your approximation is!
+# This was an intuitive proof of the central limit theorem! If you randomly
+# sample from your population enough times and calculate some statistic on your
+# measure (e.g., mean height), then the distribution of the sample statistic
+# will approach a normal distribution and the MEAN of your sample statistic
+# (e.g., sample means) will approach the true statistic of the population! The
+# bigger your sample (sample_size) and the more times you sample (num_samples)
+# then the better your approximation is!
 
 
