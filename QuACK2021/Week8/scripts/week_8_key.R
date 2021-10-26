@@ -49,15 +49,16 @@ for(i in 1:length(subj)) {
 
 
 # 2. Look at the function rnorm() in the Help window (you can use ?rnorm()) or google it. What does rnorm do?
-
+?rnorm
 
 
 
 #####################################################
 
 #### Load libraries and set options ####
-library(tidyverse)
 # options(stringsAsFactors = FALSE)
+library(tidyverse)
+
 
 
 
@@ -104,11 +105,6 @@ hist(height)
 
 # Often, our samples are limited in size and we can only collect one sample...
 # maybe 2 or 3 if we are lucky! (in the real world)
-
-
-
-
-
 
 
 # Now imagine that Willa and Elena are magical wizards who happen to know the
@@ -185,11 +181,6 @@ mean(baby$r1)
 #   
 # }
   
-
-
-
-
-
 
 
 # What if we could take 100 samples of 10 babies? How does this value compare to
@@ -271,70 +262,6 @@ abline(v = mean(baby$r1), col = "red")
 
 
 #### The Central Limit Theorem! ####
-# This was an intuitive proof of the central limit theorem! If you sample enough times the MEAN fo your *sample means*. And it gets better when your samples get larger too!
+# This was an intuitive proof of the central limit theorem! If you sample from your population enough times, then the MEAN of your *sample means* will approach the true mean of the population! The bigger your sample (sample_size) and the more times you sample (num_samples) then the better your approximation is!
 
 
-#### How reliable is our measure? ####
-
-# More realistically, we we can only collect one sample, or maybe up to a few.
-# Take our penguins for example.
-penguins <- read.csv("../data/penguins_clean.csv") # Only 2008 sample!
-
-
-# Suppose we want to know how reliable is our measure of interest (e.g., mean
-# body weight, relation between body weight and bill length, etc.). 
-
-#     What is the *ideal* way to test this?
-
-
-#     What is a possible work-around?
-
-
-
-
-
-
-
-
-
-# We could take OUR SAMPLE and pretend it is the POPULATION and then sample *from
-# it*!!!
-
-
-# How reliable is the mean body mass?
-mean(penguins$body_mass_g)
-sd(penguins$body_mass_g)
-
-# In other words, how much would it vary across samples?
-
-# Ideally we would collect many many samples of penguins to do this. But... We can't. So the next best thing is to use our own data as if they were the whole population, and *sample from it*!!!
-
-# Key here is: SAMPLE WITH REPLACEMENT!
-
-
-# Let's sample 1000 times from our data and take the mean.
-
-
-
-
-# Plot our means
-
-
-
-# What is the mean and sd of our means?
-
-
-
-
-# This is called "Bootstrapping"!!! Sampling with replacement + computing some
-# metric of interest.
-
-
-
-#### Is the difference between two groups meaningful and reliable? ####
-
-mean(penguins[penguins$sex == "female",]$body_mass_g)
-mean(penguins[penguins$sex == "male",]$body_mass_g)
-
-
-# What are some ways that we could test whether this difference is reliable?
