@@ -17,6 +17,8 @@ baby_sample <- baby %>%
   sample_n(20)
 
 baby_sample <- baby[sample(x = 1:nrow(baby), size = 20),]
+penguin_sample <- penguin[sample(x = 1:nrow(penguins), size = nrow(penguins), replace = TRUE),]
+# df[rows,cols]
 
 # 2) Calculate the mean gyrification of the r2 region for your sample and save it as a new variable.
 
@@ -79,8 +81,6 @@ sd(means)
 # ^^ This is the Central Limit Theorem!
 
 
-# Bonus: What would the standard deviation of the sample means represent?
-
 
 # Let's look at this for the baby brain data:
 View(baby)
@@ -89,7 +89,7 @@ View(baby)
 # our entire population of babies!
 
 # Set resampling parameters
-sample_size <- 100
+sample_size <- 20
 num_samples <- 10000
 
 # For each sample:
@@ -113,11 +113,13 @@ print(paste("Estimated population mean for r2:", round(mean(means), 4)))
 print(paste("Our true population mean for r2:", round(mean(baby$r2), 4)))
 
 abline(v = mean(means), col = "blue")
-abline(v = mean(baby$r1), col = "red")
+abline(v = mean(baby$r2), col = "red")
 
 
 # If we were to do this again and draw samples of 100 10,000 times, then our
 # estimate would be even closer!
+
+# You can try that out by changing sample_size to 100 and running the code again.
 
 ###############################################################################X
 
@@ -175,9 +177,9 @@ sd(penguins$body_mass_g)
 # Goal: Resample 1000 times *from our data* and take the mean every time.
 
 # What do we need to do? (Pseudocode)
-# 1) Create a resampled data set, sample WITH REPLACEMENT
-# 2) Calculate the mean of body mass and save it
-# 3) Repeat
+# 1) Create a resampled data set, sampling WITH REPLACEMENT, sample size = nrow(penguins)
+# 2) Calculate the mean of body_weight_g and save it
+# 3) Repeat 1000 times
 
 
 # Code
@@ -192,6 +194,21 @@ for(i in 1:1000) {
   
 }
 
+# Could also do it this way to make our sample size and num_samples more flexible!
+# sample_size <- nrow(penguins)
+# num_samples <- 1000
+# 
+# means <- c()
+# for(i in 1:num_samples) {
+#   # 1) Take a sample WITH REPLACEMENT nrows(penguin) times
+#   p.resampled <- penguins %>%
+#     sample_n(sample_size, replace = TRUE)
+#   
+#   # 2) Calculate the mean body_weight_g of the sample (and save it!)
+#   means[i] <- mean(p.resampled$body_mass_g)
+# }
+
+
 # Plot our means
 hist(body_mass_means)
 
@@ -202,7 +219,19 @@ mean(penguins$body_mass_g)
 sd(body_mass_means)
 
 # What does the standard deviation tell you?
-# It tells you the expected variation in the mean due to sampling error!
+# It tells you the expected variation in the mean due to sampling error! In
+# other words, it tells you the variability in our means that is due to chance.
+# standard deviation of our sample means = standard error of our sampled mean
+
+# standard error is traditionally calculated from our own sample with this
+# formula: se = sd / sqrt(n)
+
+# Let's compare the standard error calculated this way with our bootstrapped
+# standard error:
+(se_formula <- sd(penguins$body_mass_g) / sqrt(nrow(penguins)))
+(se_bootstrapped <- sd(means))
+# The bootstrapped se is a more robust and rigorous statistic.
+
 
 # When we report any statistic, we need to always report error!
 # For example, our mean body mass is 4192.453 +/- 77.18 grams. 
@@ -213,13 +242,15 @@ sd(body_mass_means)
 (ub <- mean(penguins$body_mass_g) + 1.96 * sd(body_mass_means))
 print(paste("Based on our sample, we estimate that the mean body mass of the population of penguins is between", round(lb, 3), "and", round(ub, 3), "grams."))
 
-# OR
-print(paste0("We found that penguin body mass is ", round(mean(penguins$body_mass_g), 4), " grams (95% CI: [", round(lb, 3), ", ", round(ub, 3), "])."))
+# OR we could say:
+print(paste0("We found that penguin body mass is ", 
+             round(mean(penguins$body_mass_g), 4), 
+             " grams (95% CI: [", 
+             round(lb, 3), ", ", round(ub, 3), "])."))
 
 # 95% CI means that we estimate that 95% of random samples we draw from our
 # population will have mean body masses between the lower bound and upper bound
 # values.
-
 
 
 # This resampling technique is called "Bootstrapping"!!! Sampling with
@@ -227,15 +258,12 @@ print(paste0("We found that penguin body mass is ", round(mean(penguins$body_mas
 # some statistic of interest.
 
 
-
 ############### Is the difference between two groups meaningful? ###############
 # Find the body mass means for each group
 (f.mean <- with(penguins, mean(penguins[sex == "female",]$body_mass_g)))
 (m.mean <- with(penguins, mean(penguins[sex == "male",]$body_mass_g)))
 
-# (f.sd <- with(penguins, sd(penguins[sex == "female",]$body_mass_g)))
-# (m.sd <- with(penguins, sd(penguins[sex == "male",]$body_mass_g)))
-
+# You can do this with tidyverse, too!
 penguins %>%
   group_by(sex) %>%
   summarise(mean_body_mass = mean(body_mass_g))
@@ -255,66 +283,122 @@ ggplot(penguins, aes(x = sex, y = body_mass_g)) +
 
 
 # What are some ways that we could test whether this difference is reliable?
-#     - Sample from the population many times and test!
+#     - Sample from the population many times and test! <-- But that is not
+#     realistic
+
+# Other ways:
+#   - Could compare the error bars on the two categories? People definitely do
+#   that!
 
 
 # Here's another idea:
-# We randomly shuffle the labels of sex and see if the two groups are different or not. If the label is MEANINGFUL then there will be a difference in the original data but there will not be a difference in the shuffled data!
+# What if we randomly shuffle the labels of sex and check the difference between
+# the means of two groups over and over again?
+
+# If the label is MEANINGFUL, then there will be a difference in the means in
+# the original data but there will NOT be a difference in the shuffled data! In
+# other words, if the label is MEANINGFUL, then the difference in body mass
+# between the two groups in our original data should be really different
+# than(i.e., far away from) the distribution of differences that we get from
+# data sets with the sex labels shuffled.
 
 
-
+# Make a new data set called p.shuffled (for penguins.shuffled)
 p.shuffled <- penguins
-p.shuffled$sex <- sample(penguins$sex)
 
+# Randomly shuffle the sex column WITHOUT REPLACEMENT!
+p.shuffled$sex <- sample(penguins$sex)
+# (Don't want replacement because we want the same number of male and female
+# labels as in our original data set.)
+
+# Plot the difference
 ggplot(p.shuffled, aes(x = sex, y = body_mass_g)) +
   geom_violin(trim = FALSE) +
   stat_summary(fun = mean, geom = "point", size = 4) +
   stat_summary(fun = mean, geom = "line", aes(group = 1))
 
+# Calculate the means for each group
 f.mean_shuffled <- with(p.shuffled, mean(p.shuffled[sex == "female",]$body_mass_g))
 m.mean_shuffled <- with(p.shuffled, mean(p.shuffled[sex == "male",]$body_mass_g))
 
+# Calcualte the difference in the means and save it
 (mass.diff_shuffled <- (f.mean_shuffled - m.mean_shuffled)) 
 
-# f.sd_shuffled <- with(p.shuffled, sd(p.shuffled[sex == "female",]$body_mass_g))
-# m.sd_shuffled <- with(p.shuffled, sd(p.shuffled[sex == "male",]$body_mass_g))
+# Do this many times and see what happens! (Highlight the code and run it a
+# handful of times.)
 
 
-# Do this many times and see what happens!
-
+# Now let's make a for loop to do this more formally and to be able to plot a
+# distribution of the differences in the means.
 mass.diffs <- c()
 for(i in 1:1000) {
+  # Make a new data set called p.shuffled (for penguins.shuffled)
   p.shuffled <- penguins
+  
+  # Randomly shuffle the sex column WITHOUT REPLACEMENT!
   p.shuffled$sex <- sample(penguins$sex)
   
-  # ggplot(p.shuffled, aes(x = sex, y = body_mass_g)) +
-  #   geom_violin(trim = FALSE) +
-  #   stat_summary(fun = mean, geom = "point", size = 4) +
-  #   stat_summary(fun = mean, geom = "line", aes(group = 1))
-  
+  # Calculate the means for each group
   f.mean_shuffled <- with(p.shuffled, mean(p.shuffled[sex == "female",]$body_mass_g))
   m.mean_shuffled <- with(p.shuffled, mean(p.shuffled[sex == "male",]$body_mass_g))
   
+  # Calcualte the difference in the means and save it
   mass.diffs[i] <- (f.mean_shuffled - m.mean_shuffled)
 }
 
 
 # Plot all the differences in means
 hist(mass.diffs)
+
+# Add our sample mean to the plot
 abline(v = mass.diff_samp, col = "red", lwd = 3)
 
-# What percent of our shuffled samples had differences in means more extreme than our difference in means?
-sum(mass.diffs < mass.diff_samp) / length(mass.diffs)
+# Notice that we get a distribution centered around 0 and that there is *error*
+# (i.e., sampling error) around 0!
+
+# What percent of our shuffled samples had differences in means more extreme
+# than our difference in means?
+sum(mass.diffs < mass.diff_samp) / length(mass.diffs) * 100
+# This is our "p-value": the probability of getting a value at least as extreme
+# as the one we got in our data. But unlike p-values that we often see, we got
+# this one using a distribution that we generated from our own data! COOL!
 
 
-# This is called a permutation test!
-# Shuffle our labels WITHOUT REPLACEMENT! Calculate our test statistic, and do
-# it many times. Test whether the test statistic that we got is more extreme
-# than the distribution of test statistics from data sets with randomly shuffled
-# labels.
+# This process is called a permutation test! It is used to test whether groups
+# are reliably different by generating a null distribution from our own data!
+# Review of this process:
+# 1) Shuffle our labels WITHOUT REPLACEMENT! (This is the "null hypothesis",
+# that the labels don't matter/don't have an effect on our outcome measure!)
+# 2) Calculate some test statistic based on this shuffled data
+# 3) Do this many times to generate many test statistics
+# 4) Plot the distribution of these test statistics and see where the test
+# statistic from our sample falls compared with this "null distribution".
+# Specifically, we want to find the probability in this generated null
+# distribution of getting a test statistic at least as extreme as the one we
+# found in our sample
+
+#### Thought experiment: Control and treatment  ####
+# Here is a more psychology-ey example:
+# Does our treatment condition help people be less depressed than our control
+# condition?
+
+# DV: reported depression
+# IV: condition (control or treatment)
+
+# What would our process be?
+# 1) Randomly shuffle the condition labels for your sample
+# 2) Do that 10,000 times to get a distribution of differences between the groups
+# 3) Compare the difference between the two groups that we found in our
+# experiment with the distribution of differences that we found from randomly
+# shuffling the labels.
+# 4) If what we found in our sample is sufficiently far away from our generated
+# distribution (i.e., there are very few of our randomly shuffled samples that
+# generated differences at least as extreme as the one that we found), then we
+# can conclude that the treatment had an effect on depression levels!
 
 
-#### Practice ####
+
+#### Extra practice ####
 
 # Practice doing a permutation test with the happiness data.
 happiness <- read.csv("../data/world-happiness_2020.csv")
