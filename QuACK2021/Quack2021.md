@@ -41,11 +41,12 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 7 (10/12) |Intro to loops|[w7_materials](Week7.zip)|[w7_key](Week7/scripts/week_7_key.R), [w7_practice_key](Week7/scripts/week7_practice_key.R)|[w7_slides](Week7/docs/QuACK_Week7_forLoops.pdf)|[w7_recording](https://berkeley.box.com/s/kzyf7hqf8qcolspkhxuh1g8njfa50l63)|
 | Week 8 (10/19) |Loops cont. & Random sampling|[w8_materials](Week8.zip)|[w8_key](Week8/scripts/week_8_key.R)|[w8_slides](Week8/docs/Week8_for_loops_cont.pdf)|[w8_recording](https://berkeley.box.com/s/8g6ypulaoo3e41rs8zqxzu6p4k5sv91s)|
 | Week 9 (10/26) |Resampling - Part 2|[w9_materials](Week9.zip)|[w9_key](Week9/scripts/week_9_key.R)|*no slides*|[w9_recording](https://berkeley.box.com/s/ztkynsumva12fshm4f9rn8y60fal0gd0)|
-| Week 10 (11/2) |Functions|[w10_materials](week10.zip)||||
-| Week 11 (11/9) |Discussion topic: Open science & data sharing|||||
-| Week 12 (11/16) |Discussion topic: Biases in statistics and psych science|||||
-| Week 13 (11/23) |Thanksgiving Week *No class*|||||
-| Week 14 (11/30) |Review and celebrate|||||
+| Week 10 (11/2) |Functions|[w10_materials](week10.zip)|[w10_key](Week10/scripts/week10_key.R), [w10_practice_key](Week10/scripts/week10_practice_key.R)|[w10_slides](Week10/docs/Week10_functions.pdf)|[w10_recording](https://berkeley.box.com/s/b3nhr7japkj0dkehfq83ynafe9ot1bhy)|
+| Week 11 (11/9) |Review and prep for 205|||||
+| Week 12 (11/16) |Discussion topic: Open science & data sharing|||||
+| Week 13 (11/23) |Thanksgiving Week: *No class*|||||
+| Week 14 (11/30) |Discussion topic: Biases in statistics and psych science|||||
+| Week 15 (12/7) |Celebration! (*No formal class*)|||||
 
 Access the full printable schedule [here](https://docs.google.com/document/d/1BzSO37m0SL8qZeeBr6nMYjbv1hK_MTV1YcMHZAEfLNM/edit?usp=sharing)
 
