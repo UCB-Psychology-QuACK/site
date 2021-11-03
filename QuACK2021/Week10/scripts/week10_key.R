@@ -41,12 +41,12 @@ sd(means)
 
 # How could we make these steps more "flexible"?
 
+# Some answers from class:
+# - Set parameters for sample size and for # of samples
+# - Set if we want to sample with replacement or not!
 
 
-
-
-
-
+# We are going to do the first one!
 
 
 
@@ -85,8 +85,9 @@ bootstrap_bodyMass <- function(sample_size, num_samples) {
   return(means)
 }
 
-means <- bootstrap_bodyMass(100, 1000)
-hist(means)
+means_bodyMass <- bootstrap_bodyMass(sample_size = nrow(penguins), 
+                                     num_samples = 1000)
+hist(means_bodyMass)
 
 
 
@@ -109,8 +110,10 @@ bootstrap_bodyMass <- function(sample_size, num_samples, seed) {
   return(means)
 }
 
-means <- bootstrap_bodyMass(100, 1000, 1234)
-hist(means)
+means_bodyMass <- bootstrap_bodyMass(sample_size = nrow(penguins), 
+                                     num_samples = 1000,
+                                     seed = 1234)
+hist(means_bodyMass)
 
 # But what if I don't always want to pass it a seed? Right now, if I don't pass
 # it a seed, the entire function doesn't work! We've added flexibility, but
@@ -126,7 +129,8 @@ hist(means)
 # incorporate the change.
 
 bootstrap_bodyMass <- function(sample_size, num_samples, seed = NA) {
-  # Set the seed if one is passed in as an argument.
+  # If a value is given for seed, set a seed
+  # Otherwise, don't set a seed
   if(!is.na(seed)) {
     set.seed(seed)
   }
@@ -145,28 +149,38 @@ bootstrap_bodyMass <- function(sample_size, num_samples, seed = NA) {
   return(means)
 }
 
-means <- bootstrap_bodyMass(100, 1000, 1234)
-hist(means)
+# Check that it still works when I pass it a seed
+means_bodyMass <- bootstrap_bodyMass(sample_size = nrow(penguins), 
+                                     num_samples = 1000,
+                                     seed = 1234)
+hist(means_bodyMass)
+
+
+# Now check that it works when I don't pass a seed
+means_bodyMass2 <- bootstrap_bodyMass(sample_size = nrow(penguins), 
+                                     num_samples = 1000)
+hist(means_bodyMass2)
 
 
 
 
 # What other parts of this function would we want to make more flexible?
 
+# Some answers from class:
+# - Change what function it is calculating --> Not mean anymore!
+# - Calculate SEM for a different variable
+# - Use on a different data set, too!
 
-
-
-
-
-
-
+# We will do the second and third idea!
 
 
 # Maybe I don't only want to find the bootstrapped error of body_mass_g. Perhaps
-# I want the flexibility to find any of the variables I have!
+# I want the flexibility to find the bootstrapped SEM for any of the variables I
+# have!
 
 bootstrap_penguins <- function(variable, sample_size, num_samples, seed = NA) {
-  # Set the seed if one is passed in as an argument.
+  # If a value is given for seed, set a seed
+  # Otherwise, don't set a seed
   if(!is.na(seed)) {
     set.seed(seed)
   }
@@ -185,12 +199,19 @@ bootstrap_penguins <- function(variable, sample_size, num_samples, seed = NA) {
   return(means)
 }
 
-means <- bootstrap_penguins("body_mass_g", 100, 1000, 1234)
-hist(means, main = "body_mass_g")
+means_bodyMass <- bootstrap_penguins(variable = "body_mass_g",
+                                     sample_size = nrow(penguins), 
+                                     num_samples = 1000,
+                                     seed = 1234)
 
 # ^^ should give us the same as what we got before with the _bodyMass function!
-means <- bootstrap_bodyMass(100, 1000, 1234)
-hist(means)
+
+means_bodyMass_old <- bootstrap_bodyMass(sample_size = nrow(penguins), 
+                                         num_samples = 1000,
+                                         seed = 1234)
+
+hist(means_bodyMass)
+hist(means_bodyMass_old)
 
 # It does!
 
@@ -203,13 +224,13 @@ hist(means, main = "bill_length_mm")
 mean(penguins$bill_length_mm)
 mean(means)
 
-sd(penguins$bill_length_mm) / sqrt(nrow(penguins))
+sd(penguins$bill_length_mm) / sqrt(nrow(penguins)) # (formula for SEM)
 sd(means)
 # ^^ Looks good!
 
 
 
-# What if we wanted to do it with a different data set?
+# What if we wanted to calculate SEM with a different data set?
 # Load more data
 baby <- read.csv("../data/brainwavebabydata.csv")
 happiness <- read.csv("../data/world-happiness_2020.csv")
@@ -217,7 +238,8 @@ happiness <- read.csv("../data/world-happiness_2020.csv")
 
 
 bootstrap_SEM <- function(data, variable, sample_size, num_samples, seed = NA) {
-  # Set the seed if one is passed in as an argument.
+  # If a value is given for seed, set a seed
+  # Otherwise, don't set a seed
   if(!is.na(seed)) {
     set.seed(seed)
   }
@@ -236,13 +258,20 @@ bootstrap_SEM <- function(data, variable, sample_size, num_samples, seed = NA) {
   return(means)
 }
 
-means <- bootstrap_SEM(penguins, "body_mass_g", 100, 1000, 1234)
-hist(means, main = "body_mass_g")
+means_bodyMass <- bootstrap_SEM(penguins, variable = "body_mass_g",
+                                sample_size = nrow(penguins), 
+                                num_samples = 1000,
+                                seed = 1234)
 
 # ^^ should give us the same as what we got before with the _penguins function!
-means <- bootstrap_penguins("body_mass_g", 100, 1000, 1234)
-hist(means, main = "body_mass_g")
 
+means_bodyMass_old <- bootstrap_penguins(variable = "body_mass_g",
+                                         sample_size = nrow(penguins), 
+                                         num_samples = 1000,
+                                         seed = 1234)
+
+hist(means_bodyMass)
+hist(means_bodyMass_old)
 # It does!
 
 
@@ -277,13 +306,17 @@ bootstrap_SEM <- function(data, variable, sample_size, num_samples, seed = NA) {
   
   # Arguments:
   # data - a data frame that will be resampled
-  # variable - a string with the name of the variable (i.e., column) for which we want to estimate the
-  # standard error of the mean
-  # sample_size - a number indicating the number of rows we want to resample from our original data
-  # in each iteration. For bootstrapping, this number is usually the number of
-  # rows in the original data (i.e., nrow(data))
+  
+  # variable - a string with the name of the variable (i.e., column) for which
+  # we want to estimate the standard error of the mean
+  
+  # sample_size - a number indicating the number of rows we want to resample
+  # from our original data in each iteration. For bootstrapping, this number is
+  # usually the number of rows in the original data (i.e., nrow(data))
+  
   # num_samples - a number indicating the number of times that the original data
   # will be resampled (i.e., the number of iterations of the for loop)
+  
   # seed - an optional argument indicating the number to be used as the seed for
   # resampling. If not specified, defaults to NA and R will set a seed according
   # to its default procedure
@@ -291,7 +324,8 @@ bootstrap_SEM <- function(data, variable, sample_size, num_samples, seed = NA) {
   # Returns a vector of the sample means
   
   
-  # Set the seed if one is passed in as an argument.
+  # If a value is given for seed, set a seed
+  # Otherwise, don't set a seed
   if(!is.na(seed)) {
     set.seed(seed)
   }
