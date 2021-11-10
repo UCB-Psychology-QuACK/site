@@ -114,7 +114,6 @@ with(wisc_processed, table(grade, condition))
 write.csv(wisc_processed, file = "wisc_part1.csv", row.names = FALSE)
 
 #### Part 2 ####
-
 wisc_long <- wisc_processed %>% 
   
   # Pivot our data longer so we have one row per trial per participant
@@ -136,6 +135,8 @@ write.csv(wisc_long, file = "wisc_part2-1.csv", row.names = FALSE)
 
 # New data frame that has one row per participant and calculates their matrix score
 wisc_score <- wisc_long %>% 
+  # Only really need to group by pid, but grouping by the other columns will
+  # keep them in the data frame for use!
   group_by(pid, grade, condition, totalDuration, Q.score) %>% 
   summarise(score = sum(accuracy),
             totalTrials = n()) %>% 
