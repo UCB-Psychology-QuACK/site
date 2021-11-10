@@ -10,8 +10,8 @@ options(stringsAsFactors = FALSE)
 
 
 #### Load data ####
-wisc_raw <- read.csv("ARM_WISC-matrices_quack.csv")
-wisc_key <- read.csv("WISC_Matrices_key.csv")
+wisc_raw <- read.csv("wisc_raw.csv")
+wisc_key <- read.csv("wisc_key.csv")
 
 
 #### PART 1 ####
@@ -52,7 +52,7 @@ wisc_processed <- wisc_raw %>%
   # it in here to show that I checked. Might want to do this in two separate
   # steps if, for example, you need to report how many participants did not
   # finish the task.
-  filter(Progress == "100", Q_BallotBoxStuffing != 1) %>% # Could have also used Finished == "TRUE"
+  filter(Progress == "100", Q_BallotBoxStuffing != "1") %>% # Could have also used Finished == "TRUE"
   
   # Select only our columns of interest and rename them
   select(pid, grade, "condition" = cond, 
@@ -90,8 +90,8 @@ wisc_processed <- wisc_raw %>%
   # Make levels of condition meaningful! And fix the column types!!!!
   mutate(condition = case_when(condition == "0" ~ "control",
                                condition == "1" ~ "exp"),
-    across(.cols = c(contains("item"), pid, totalDuration), as.numeric),
-         across(.cols = c(grade, condition), as.factor))
+    across(.cols = c(contains("item"), pid, totalDuration, Q.score), as.numeric),
+    across(.cols = c(grade, condition), as.factor))
 
 
 
