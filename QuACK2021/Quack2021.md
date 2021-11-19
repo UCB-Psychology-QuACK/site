@@ -33,7 +33,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 |  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
 | Week 1 (8/31) |Intro to R & Programming|[w1_materials](Week1_Practice.pdf)|[w1_key](week1_key.R)|[w1_slides](QuACK_Week1_intro.pdf)|see *[s1_bootcamp](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)* *|
-| Week 2 (9/7) |Working directories and reading in data|[w2_materials](Week2.zip)|[w2_key](week2_key.R)|*no slides*|[w2_recording](https://berkeley.box.com/s/5o3mr3igt8fkrk57vivzjzo5xpoto3vs)|
+| Week 2 (9/7) |Working directories and reading in data|[w2_materials](Week2.zip)|[w2_key](week2_key.R)|*no slides*|[w2_recording](https://berkeley.box.com/s/inm9fxj0ro09ux70y31rbuouw5joe59u)|
 | Week 3 (9/14) |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](Week3.zip)|[w3_key](Week3/scripts/week3_key.R)|[w3_slides](Week3/docs/Week3_IntroTidyverse.pdf)|[w3_recording](https://berkeley.box.com/s/siyvlt2jqqdiks48gm7wvkg2ktltb7lb)|
 | Week 4 (9/21)|Data wrangling - Part 2|[w4_materials](Week4.zip), updated [population.csv](data/population.csv) file!|[w4_key](Week4/scripts/week4_key.R)|*no slides*|[w4_recording](https://berkeley.box.com/s/ww4brab4y55z9ibxnf4egfnvbm3274d1)|
 | Week 5 (9/28) |Intro to data visualization (ggplot) - Part 1|[w5_materials](Week5.zip)|[w5_key](Week5/scripts/Week5_key.R), [w5_key.pdf with plots embedded](Week5/scripts/Week5_key.pdf)|*no slides*|[w5_recording](https://berkeley.box.com/s/stujgy2vcw11v8k2cci2q628p3k65jav)|
