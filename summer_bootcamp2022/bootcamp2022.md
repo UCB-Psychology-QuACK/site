@@ -8,7 +8,7 @@ title: "Programming and Data Skills Bootcamp - Summer 2022"
 This hands-on four-session bootcamp will focus on teaching fundemental data skills in R with an emphasis on good data and coding practices. This bootcamp is open to all RAs and post-bacs in the department. Graduate students are also welcome to attend. Importantly, **no programming experience or R knowledge is expected or required**! Come as you are and learn!  
   
 ### Dates, time, and location
-**Dates**: 4 Wednesdays in July (7/6, 7/13, 7/20, and 7/27)   
+**Dates**: Wednesdays in July (7/6, 7/13, 7/20, and 7/27)   
 **Time**: 2-3:30pm  
 **Location**: Berkeley Way West, Room 3101 (conference room in the 3rd floor atrium)  
   
