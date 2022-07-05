@@ -29,7 +29,7 @@ The bootcamp is developed and taught by [Emily Rosenthal](https://hinshawsubdoma
 Each session will start with a live demo focusing on fundemental data skills. We will then work independently and in groups to apply these skills to real data. Finally, we will finish each session with a group discussion centering around the challenges faced while working with the data and ways to address and overcome them. 
 
 
-|  week | topic | practice materials |live demo script & answer key |slides | recording | 
+|  week &nbsp; &nbsp; &nbsp; &nbsp;| topic | practice materials |live demo script & answer key |slides | recording | 
 | --------------------|----------------------|------- |  ------|-------|-------|
 | Session 1<br />July 6 |Getting started with R|||||
 | Session 2<br />July 13|Accessing and reading data|||||
