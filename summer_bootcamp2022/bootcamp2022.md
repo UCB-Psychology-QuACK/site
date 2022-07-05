@@ -51,12 +51,12 @@ Each week we will post some additional materials:
 
 ### Participating in person
 Please download the practice materials **before each session**. We will be sharing all other materials after the session.
-See our [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp/FAQs) for more info on the workshop and what to do if you miss a session. 
+See our [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp2022/FAQs) for more info on the workshop and what to do if you miss a session. 
 
 ### Participating asynchronously 
 Each week we will post a recording of the session as well as all of the materials you need to follow along. See the [materials guide](https://github.com/UCB-Psychology-QuACK/site/blob/main/summer_bootcamp2022/bootcamp2022.md#materials-guide) for more details. 
 
-### [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp/FAQs)
+### [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp2022/FAQs)
 
 ### Ready to learn more?
 [Check out these other R-resources](https://ucb-psychology-quack.github.io/site/resources/r-resources)
