@@ -56,7 +56,7 @@ See our [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp2022/F
 ### Participating asynchronously 
 Each week we will post a recording of the session as well as all of the materials you need to follow along. See the [materials guide](https://github.com/UCB-Psychology-QuACK/site/blob/main/summer_bootcamp2022/bootcamp2022.md#materials-guide) for more details. 
 
-### [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp2022/FAQs)
+### [FAQ](https://ucb-psychology-quack.github.io/site/summer_bootcamp2022/FAQs)
 
 ### Ready to learn more?
 [Check out these other R-resources](https://ucb-psychology-quack.github.io/site/resources/r-resources)
