@@ -31,7 +31,7 @@ Each session will start with a live demo focusing on fundemental data skills. We
 
 | session | topic | practice materials |live demo script & answer key |slides | recording | 
 | -------- | ----------------------| ------- |  ------ | ------- | ------- |
-| July 6  |Getting started with R|||||
+| July 6  |Getting started with R|[s1_materials](../summer_bootcamp/session_1.zip)||||
 | July 13 |Accessing and reading data|||||
 | July 20 |Cleaning and organizing dataframes|||||
 | July 27 |Data visualization|||||
