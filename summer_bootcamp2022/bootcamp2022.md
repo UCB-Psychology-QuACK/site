@@ -34,7 +34,7 @@ Each session will start with a live demo focusing on fundemental data skills. We
 | July 6  |Getting started with R|[s1_materials](../summer_bootcamp/session_1.zip)|[s1_demo-script](session1/s1_my_first_script_2022.R)|[s1_slides](session1/s1_slides.pdf)|[s1_recording](https://berkeley.box.com/s/0f7xfiystn3f9l7q8jwik5e06ouogxzd)|
 | July 13 |Accessing and reading data|[s2_materials](session_2.zip)|[s2_demo-script & key](session2/Session2_key.r)|[s2_slides](session2/summer-bootcamp_slides_session2_2022.pdf)|[s2_recording](https://berkeley.box.com/s/m4lvf2odujhwn67uvoibkd4hc0agik1m)|
 | July 20 |Cleaning and organizing dataframes|[s3_materials](session_3.zip)|[s3_demo-script & key](session3/Sesion3_key_2022.R)|[s3_slides](session3/summer-bootcamp_session3_2022.pdf)|[s3_recording](https://berkeley.box.com/s/ywt9cl9wgmuvh0x12dbyxo35he5tyyqc)|
-| July 27 |Data visualization|[s4_materials](session_4.zip)||||
+| July 27 |Data visualization|[s4_materials](session_4.zip)|[s4_demo-script & key](s3_demo-script_keys.zip)||[s4_recording](https://drive.google.com/file/d/1I3DVz0w-e59KU-f56Y0ew6jgvKquVvyL/view?usp=sharing)|
 
 
 ### Materials guide
