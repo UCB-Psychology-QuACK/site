@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "QuACK 2021"
+title: "QuACK 2022"
 ---
 ## Quantitative Analysis and Coding Knowledge (QuACK) course page
 
@@ -24,7 +24,7 @@ The course is developed and taught by [Elena Leib](https://ucb-psychology-quack.
 
 ### Schedule
 
-We will meet weekly on **Tuesdays from 5pm - 7pm PST in BWW 1214**. 
+We will meet weekly on **Tuesdays from 5pm - 7pm PST in BWW 1211**.  First session August 30th!
 
 Each session will start with a live demo focusing on fundemental data skills. We will then work independently and in groups to apply these skills to real data. Finally, we will finish each session with a group discussion centering around challenges you faced working with the data and ways to address and overcome these challenges. 
 
@@ -32,25 +32,21 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 
 |  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
-| Week 1 (8/31) |Intro to R & Programming|[w1_materials](Week1_Practice.pdf)|[w1_key](week1_key.R)|[w1_slides](QuACK_Week1_intro.pdf)|see *[s1_bootcamp](https://berkeley.box.com/s/ma0qi93jsnnkeqw271yh1p53xh6tyyak)* *|
-| Week 2 (9/7) |Working directories and reading in data|[w2_materials](Week2.zip)|[w2_key](week2_key.R)|*no slides*|[w2_recording](https://berkeley.box.com/s/inm9fxj0ro09ux70y31rbuouw5joe59u)|
-| Week 3 (9/14) |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](Week3.zip)|[w3_key](Week3/scripts/week3_key.R)|[w3_slides](Week3/docs/Week3_IntroTidyverse.pdf)|[w3_recording](https://berkeley.box.com/s/siyvlt2jqqdiks48gm7wvkg2ktltb7lb)|
-| Week 4 (9/21)|Data wrangling - Part 2|[w4_materials](Week4.zip), updated [population.csv](data/population.csv) file!|[w4_key](Week4/scripts/week4_key.R)|*no slides*|[w4_recording](https://berkeley.box.com/s/ww4brab4y55z9ibxnf4egfnvbm3274d1)|
-| Week 5 (9/28) |Intro to data visualization (ggplot) - Part 1|[w5_materials](Week5.zip)|[w5_key](Week5/scripts/Week5_key.R), [w5_key.pdf with plots embedded](Week5/scripts/Week5_key.pdf)|*no slides*|[w5_recording](https://berkeley.box.com/s/stujgy2vcw11v8k2cci2q628p3k65jav)|
-| Week 6 (10/5) |Data visualization - Part 2|[w6_materials](Week6.zip)|[w6_key](Week6/scripts/week6_key.R)|*no slides*|[w6_recording](https://berkeley.box.com/s/ko7sz9kjlv3txh9a82kc4ezmicxdrk8a)|
-| Week 7 (10/12) |Intro to loops|[w7_materials](Week7.zip)|[w7_key](Week7/scripts/week_7_key.R), [w7_practice_key](Week7/scripts/week7_practice_key.R)|[w7_slides](Week7/docs/QuACK_Week7_forLoops.pdf)|[w7_recording](https://berkeley.box.com/s/kzyf7hqf8qcolspkhxuh1g8njfa50l63)|
-| Week 8 (10/19) |Loops cont. & Random sampling|[w8_materials](Week8.zip)|[w8_key](Week8/scripts/week_8_key.R)|[w8_slides](Week8/docs/Week8_for_loops_cont.pdf)|[w8_recording](https://berkeley.box.com/s/8g6ypulaoo3e41rs8zqxzu6p4k5sv91s)|
-| Week 9 (10/26) |Resampling - Part 2|[w9_materials](Week9.zip)|[w9_key](Week9/scripts/week_9_key.R)|*no slides*|[w9_recording](https://berkeley.box.com/s/ztkynsumva12fshm4f9rn8y60fal0gd0)|
-| Week 10 (11/2) |Functions|[w10_materials](week10.zip)|[w10_key](Week10/scripts/week10_key.R), [w10_practice_key](Week10/scripts/week10_practice_key.R)|[w10_slides](Week10/docs/Week10_functions.pdf)|[w10_recording](https://berkeley.box.com/s/b3nhr7japkj0dkehfq83ynafe9ot1bhy)|
-| Week 11 (11/9) |Putting it all together!|[w11_materials](Week12/Week12_practice.pdf)|[w11_key](Week11/week11_key.R)|*no slides*|[w11_recording](https://berkeley.box.com/s/vr3ycmqdilwmt89pv5i5kfoeci42hqva)|
-| Week 12 (11/16) |Discussion topic: Open science & data sharing|[w12_materials](Week12/Week12_practice.pdf)|*no live demo script; see w11_key part 3 for practice key*|*no slides*|[Intro to using RMarkdown](https://berkeley.box.com/s/d37e1quo6x3gd1dlva47dm9zbauebj7l)|
-| Week 13 (11/23) |Thanksgiving Week: *No class*|||||
-| Week 14 (11/30) |Discussion topic: Biases in statistics and psych science + Prep for 205|||||
-| Week 15 (12/7) |Celebration! (*No formal class*)|||||
+| Week 1 (8/30) |Intro to R & Programming|||||||
+| Week 2 (9/6) |Working directories and reading in data|||||||
+| Week 3 (9/13) |Intro to the tidyverse and data wrangling - Part 1|||||||
+| Week 4 (9/20)|Data wrangling - Part 2|||||||
+| Week 5 (9/26) |Intro to data visualization (ggplot) - Part 1|||||||
+| Week 6 (10/4) |Data visualization - Part 2|||||||
+| Week 7 (10/11) |Intro to loops|||||||
+|(Week8/docs/Week8_for_loops_cont.pdf)||||||
+| Week 10 (11/1) |Functions||||||
+| Week 11 (11/8) |Putting it all together!||||||
+| Week 12 (11/15) |Discussion topic or Flex||||||
+| Week 13 (11/22) |Thanksgiving Week: *No class*|||||
+| Week 14 (11/29) |Discussion topic:TBD|||||
+| Week 15 (12/6) |Celebration! (*No formal class*)|||||
 
-Access the full printable schedule [here](https://docs.google.com/document/d/1BzSO37m0SL8qZeeBr6nMYjbv1hK_MTV1YcMHZAEfLNM/edit?usp=sharing)
-
-*There was an issue with this recording but very similar content was covered in Week 1 of our summer bootcamp, so we are linking to this video instead. 
 
 ### Materials guide
 We are committed to open science and we make all of our resources and teaching materials freely available for offline learning.
@@ -64,7 +60,7 @@ Each week we will be posting the following materials:
 ### FAQs
 
 #### I can't attend all of the sessions. Should I still enroll? 
-If you plan to attend two or more sessions please enroll in the course. You will not be penalzied for missing sessions. However, we do encourage everyone to attend as many sessions as possible as the sessions build on eachother. It is also a great opportunity to get to know your cohort better! 
+You will not be penalzied for missing sessions. However, we do encourage everyone to attend as many sessions as possible as the sessions build on eachother. It is also a great opportunity to get to know your cohort better! 
 
 #### How much experience with programming, R, or statistics is expected?
 No experience is expected or required! We are going to build up the foundational skills you need to work with data in R. If you do have some past experience with R, this workshop will give you the chance to brush up on your skills and learn to apply them to real data. The goal is to give you the tools (and confidence!) to continue learning in your lab, on your own, and/or through other online tools. We will also share additional resources so you can keep learning R on your own.
