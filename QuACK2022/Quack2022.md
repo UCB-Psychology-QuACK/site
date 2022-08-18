@@ -17,7 +17,7 @@ The class takes a hands-on workshop style format focusing on using real data!
 *See the [FAQs](#faqs) below for more info*
 
 ### Instructors
-The course is developed and taught by [Elena Leib](https://ucb-psychology-quack.github.io/site/about/about) and [Willa Voorhies](https://ucb-psychology-quack.github.io/site/about/about), who are 4th year PhD students in the department.
+The course is developed and taught by [Elena Leib](https://ucb-psychology-quack.github.io/site/about/about) and [Willa Voorhies](https://ucb-psychology-quack.github.io/site/about/about), who are 5th year PhD students in the department.
 
 ### Core Goals
 1) Provide hands-on training in fundamental programming and data skills with real data.  
