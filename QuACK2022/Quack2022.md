@@ -38,15 +38,16 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 2 (9/6) |Working directories and reading in data|||||||
 | Week 3 (9/13) |Intro to the tidyverse and data wrangling - Part 1|||||||
 | Week 4 (9/20)|Data wrangling - Part 2|||||||
-| Week 5 (9/26) |Intro to data visualization (ggplot) - Part 1|||||||
+| Week 5 (9/27) |Intro to data visualization (ggplot) - Part 1|||||||
 | Week 6 (10/4) |Data visualization - Part 2|||||||
 | Week 7 (10/11) |Intro to loops|||||||
-|(Week8/docs/Week8_for_loops_cont.pdf)||||||
+| Week 8 (10/18) |Loops continued and random sampling|||||
+| Week 9 (10/25) |Random sampling - Part 2|||||
 | Week 10 (11/1) |Functions||||||
 | Week 11 (11/8) |Putting it all together!||||||
-| Week 12 (11/15) |Discussion topic or Flex||||||
+| Week 12 (11/15) |Discussion topic or flex week||||||
 | Week 13 (11/22) |Thanksgiving Week: *No class*|||||
-| Week 14 (11/29) |Discussion topic:TBD|||||
+| Week 14 (11/29) |Review and prep for 205|||||
 | Week 15 (12/6) |Celebration! (*No formal class*)|||||
 
 
