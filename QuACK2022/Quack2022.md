@@ -35,8 +35,8 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 |  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
 | Week 1 (8/30) |Intro to R & Programming|[w1_materials](week1/week1.zip)|[w1_key](week1/week1_key.R)|[w1_slides](week1/QuACK_Week1_Intro.pdf)|[w1_recording](week1/week1_recording.zip)|
-| Week 2 (9/6) |Working directories and reading in data|[w2_materials](week2/week2.zip)|[w2_key](week2/week2_key.R)|[w2_slides](week2/week2_slides.pdf)|[w2_recording ](https://berkeley.zoom.us/rec/share/rfMn9qSouxqGjUpMRdV6iCjB9PpN2aRJQPGH-cemXh7DEeY0NkVFG1q1txFu8rLr.yafZGE_4Nz8V2Pg7)<br>(passcode: w8*=8mt.)|
-| Week 3 (9/13) |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](week3/week3.zip)||||
+| Week 2 (9/6) |Working directories and reading in data|[w2_materials](week2/week2.zip)|[w2_key](week2/week2_key.R)|[w2_slides](week2/week2_slides.pdf)|[w2_recording](https://berkeley.zoom.us/rec/share/rfMn9qSouxqGjUpMRdV6iCjB9PpN2aRJQPGH-cemXh7DEeY0NkVFG1q1txFu8rLr.yafZGE_4Nz8V2Pg7)<br>(passcode: w8*=8mt.)|
+| Week 3 (9/13) |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](week3/week3.zip)|[w3_key](week3/week3_key.R)|[w3_slides](week3/week3_slides.pdf)|[w3_recording](https://berkeley.zoom.us/rec/share/ziVqnI2JU1rww9R5Rl5OXQ0eBD-xBd1-qZfSqirhCvdL3bUjMfSzUseZ8P-KomDb.sZmuVJNIVrQ8rcr4)<br>(passcode: 5tB0.p=$)|
 | Week 4 (9/20)|Data wrangling - Part 2|||||||
 | Week 5 (9/27) |Intro to data visualization (ggplot) - Part 1|||||||
 | Week 6 (10/4) |Data visualization - Part 2|||||||
