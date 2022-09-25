@@ -394,12 +394,12 @@ penguins_clean.demo_inner_missing <- penguins_clean %>%
 # 1) Load in world-happiness_2020.csv, which has the measures information about
 # each country. Look at the data frame, in particular the column names (use
 # colnames())
-happiness <- read.csv("../data/world-happiness_2020.csv")
+happiness <- read_csv("../data/world-happiness_2020.csv")
 colnames(happiness)
 
 # 2) Load in population.csv, which holds general information about each country
 # (e.g., population). Look at the data frame.
-population <- read.csv("../data/population.csv")
+population <- read_csv("../data/population.csv")
 
 
 # Do the next steps in one pipe:
@@ -417,17 +417,30 @@ population <- read.csv("../data/population.csv")
 
 
 happiness_clean <- happiness %>% 
+  # 3) Remove all "explain columns"
   select(-starts_with("Explained")) %>% #3
-  inner_join(population) %>% #4 - Following the question wording, you'd use left join. For the key, I'm using inner join to keep only countries that have population data (it seems like the countries that we don't have population data for are disputed/controversial areas, so maybe they are named something differently in the population data!)
+  
+  # 4) Join population information
+  # Following the question wording, you'd use left join. For the key, I'm using
+  # inner join to keep only countries that have population data (it seems like
+  # the countries that we don't have population data for are
+  # disputed/controversial areas, so maybe they are named something differently
+  # in the population data!)
+  inner_join(population) %>%
+  
+         # 5) Add a column that categorizes countries by size
   mutate(size_cat = factor(case_when(population >= 100000000 ~ "large",
                                      population <= 1000000 ~ "small",
                                      TRUE ~ "medium")), #5 --> added making it a factor as a bonus!
-         size_avg_cat = factor(case_when(population >= mean(population, na.rm = TRUE) ~ "above_avg",
-                                         population < mean(population, na.rm = TRUE) ~ "below_avg"))) %>% #6
+         
+         # 6) Create a new variable that categorizes countries as below average
+         # or above average for ladder score.
+         avg.ladder_cat = factor(case_when(Ladder_score >= mean(Ladder_score, na.rm = TRUE) ~ "above_avg",
+                                            Ladder_score < mean(Ladder_score, na.rm = TRUE) ~ "below_avg"))) %>%
   group_by(Regional_indicator) %>% #7
-  # Can use the same code as above, but now mean(population) is referring to the mean within a region!
-  mutate(size_avg_cat_byRegion = factor(case_when(population >= mean(population, na.rm = TRUE) ~ "above_avg",
-                                                  population < mean(population, na.rm = TRUE) ~ "below_avg"))) %>% 
+  # Can use the same code as above, but now mean(Ladder_score) is referring to the mean within a region!
+  mutate(avg.ladder_cat_byRegion = factor(case_when(Ladder_score >= mean(Ladder_score, na.rm = TRUE) ~ "above_avg",
+                                                    Ladder_score < mean(Ladder_score, na.rm = TRUE) ~ "below_avg"))) %>%  
   ungroup()
 
 
