@@ -3,7 +3,7 @@
 # 9/28/21
 
 ############### #### Warm-up #### ##################
-
+library(tidyverse)
 
 # From the practice questions last week:
 
@@ -54,12 +54,12 @@ penguins <- read.csv('../data/penguins_clean.csv')
 
 #### Explore our data with some simple plots ####
 
-## 1. how many of each species do we have? 
+## 1. how many observations of each species do we have? 
 
 # Set up our ggplot and define our variables
 
   
-  # Map the data to a bar object
+# Map the data to a bar object
   
 
 ### Q. Is this a reasonable way to view this data? Why or Why not? 
@@ -71,48 +71,58 @@ penguins <- read.csv('../data/penguins_clean.csv')
 # Set up our ggplot and define our variables
 
 
+
 # Map the data to a bar object.
 
 
 ### Q: What does this give us? 
 
+
+
 # Lets use "stat = summary" and "fun = mean" to plot the means
+
 
 
 ### Q: Are you happy with this plot? Why or Why not. 
 
 
+
+
 ## 3. Let's change the geometric representation of our data and use a boxplot. 
 
-
-  
-  # Map the data to a bar object.
  
 
 ### Q. What other information might we want to see? 
 
 
-# 4. Lets use a violin plot to visualize the data. Violin plots are a great way to visualize the distribution of your data. 
+## 4. Lets use a violin plot to visualize the data. Violin plots are a great way to visualize the distribution of your data. 
+
+  # Create a ggplot object
 
 
-  
-  # Map the data to a bar object.
+  # Map the data to a  violin
 
 
-# stop the ends from being trimmed. 
+  # stop the ends from being trimmed. 
 
 
-# Add a boxplot on top.
+  # Add a boxplot on top.
 
 
-# Notice that the species are ordered alphabetically. Can you make species into a factor and order it Gentoo, Chinstrap, Adelie
+  # Make the violins blue
+
+
+  # Instead let's color the plot by species
+
+
+# Notice that the species are ordered alphabetically. Can you make species into a factor and order it Gentoo, Chinstrap, Adelie 
+
+
+## 5. Now lets see if there are additional differences between sexes. 
 
 
 
-## 5. Now lets see if there are differences between sexes 
-
-
-# Now that we are happy with our plot choice, lets customize it further.
+## 6.Now that we are happy with our plot choice, lets customize it further.
 
 
   # change axis labels
@@ -122,17 +132,15 @@ penguins <- read.csv('../data/penguins_clean.csv')
   # change the y axis scale to start at 0 and end at 8000
 
 
-  # Make the violins blue and the box plots purple
 
+  #  Lets change the overallcolor scheme by adding a new object to your plot     called scale_fill_manual(). There are a few ways to do this. CHOOSE ONE
 
-  #  Lets change the overallcolor scheme by adding a new object to your plot called scale_fill_manual(). There are a few ways to do this. CHOOSE ONE
-
-      # i.Some color names are built in. Try running: scale_fill_manual(values = c("blue", "red"))
+      # i.Some color names are built in. Try running: scale_fill_manual(values =       c("blue", "red", "green"))
     
 
       # ii.We can give it hex values 
     
-      # (scale_fill_manual(values=c ("#999999", "#E69F00")))
+      # (scale_fill_manual(values=c ("#999999", "#E69F00"..)))
 
 
       # iii. We can use color palettes 
@@ -140,15 +148,15 @@ penguins <- read.csv('../data/penguins_clean.csv')
       #scale_fill_brewer(palette ="Dark2")
 
 
-  # change the overall theme (We'll talk about customizing the teme more next time. )
+    # change the overall theme (We'll talk about customizing the teme more next   time. )
 
 
-## 6. What is the relationship between bill depth and body mass? 
+#### 7. What is the relationship between bill depth and body mass? ####
+
+# set up the ggplot object 
 
 
-
-# map the data to a geometric object
-
+# map the data to a geometric object (How should we represent this data?)
 
 
 # Add a regression line
