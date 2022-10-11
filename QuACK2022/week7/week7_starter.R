@@ -37,7 +37,11 @@ paste0("Today is ",  week_days[2])
 # i exists within the scope of the loop
 # "i" will take on each value in a range. 
 
-# print the numbers 1 through 10 on separate lines
+# The : symbol let's us pick a range.
+
+1:3
+
+# print the numbers 1 through 3 on separate lines
 
 
 
@@ -53,7 +57,6 @@ guest_list[3]
 
 for (i in 1:3) {
   
-
 
 }
 
@@ -73,8 +76,11 @@ for (i in 1:3) {
 # Better to use 1:length(guest_list), which makes the length into a variable so
 # that it is not "hard-coded" in (i.e., not pre-determined), but rather based on
 # the number of guests in the current list.
+
 length(guest_list)
+
 1:length(guest_list)
+
 
 for(i in 1:length(guest_list)) {
   
@@ -91,7 +97,6 @@ message <- "I’m having a Halloween Party on 10/31! The party starts at 9pm. I 
 for () {
   
 
-  
   
 }
   
