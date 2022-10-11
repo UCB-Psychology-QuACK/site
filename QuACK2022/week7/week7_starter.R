@@ -37,7 +37,7 @@ paste0("Today is ",  week_days[2])
 # i exists within the scope of the loop
 # "i" will take on each value in a range. 
 
-# The : symbol let's us pick a range.
+# The : symbol let's us define a range
 
 1:3
 
