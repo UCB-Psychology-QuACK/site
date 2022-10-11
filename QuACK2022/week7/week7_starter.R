@@ -8,7 +8,8 @@
 # "Elena", "Roya"
 
 
-# 1.b. Access the second element in the vector guest_list
+# 1.b. Access the second element in the vector guest_list. 
+#HINT use indexing (bracket notation) to get the second element. If you don't remember how to index see Q.3 for a hint.
 
 
 # 2a. Create a vector called phone_no that contains three phone numbers:
@@ -53,6 +54,7 @@ guest_list[3]
 for (i in 1:3) {
   
 
+
 }
 
 # What if we add another guest to the list though? 
@@ -60,8 +62,12 @@ for (i in 1:3) {
 guest_list = c(guest_list, "Emily")
 
 # If we keep the same for loop from above, we won't get to the last person now!
-for(i in 1:3) {
+
+
+for (i in 1:3) {
+  
   print(guest_list[i])
+  
 }
 
 # Better to use 1:length(guest_list), which makes the length into a variable so
@@ -71,6 +77,7 @@ length(guest_list)
 1:length(guest_list)
 
 for(i in 1:length(guest_list)) {
+  
   print(guest_list[i])
 }
 # ^^ Much better!
@@ -83,6 +90,8 @@ message <- "I’m having a Halloween Party on 10/31! The party starts at 9pm. I 
   
 for () {
   
+
+  
   
 }
   
@@ -91,15 +100,15 @@ for () {
 
 # lets include phone number at the top of our message
 
-for (i in 1:length(guest_list)) {
+for () {
   
   
 }
 
 ## Lets save our custom messages in a new vector "sent"
-sent <- c()
 
-for (i in 1:length(guest_list)) {
+
+for () {
 
 }
   
