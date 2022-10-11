@@ -26,7 +26,9 @@ penguins_noNA_2 <- penguins %>%
   mutate(across(c(sex, year), factor))
 
 
-## 3. We said before that the year column tells you the year that the data were collected. But we haven't mentioned whether these data are cross-sectional or longitudinal. Which is it?
+## 3. We said before that the year column tells you the year that the data were
+## collected. But we haven't mentioned whether these data are cross-sectional or
+## longitudinal. Which is it?
 ## * Hint: one way you could do this is to use the tidyverse function arrange() (you can do ?arrange or Google it!). You could also do this using group_by!
 
 # Check with arrange, and inspect visually
@@ -50,7 +52,7 @@ table(penguins_count$n)
 ggplot(penguins_noNA, aes(x = sex, y = body_mass_g, fill = year)) +
   facet_wrap(~species) +
   geom_violin(trim = FALSE) +
-  theme_bw()
+  theme_classic()
 
 
 ## 5. Run the following code:
@@ -59,9 +61,12 @@ ggplot(penguins_noNA, aes(x = sex, y = body_mass_g)) +
   geom_violin(trim = FALSE) +
   stat_summary(fun.data = mean_se, geom = "errorbar", width = .1, size = .5) +
   stat_summary(fun = mean, geom = "point", size = 2) +
-  theme_bw()
+  theme_classic()
 
 ## What does stat_summary do?
+### Applies and plots a summary function, e.g., mean
+### You can set how mean is plotted by changing the geom, and within that you
+### can change the size, color, etc.
 
 
 ## Play around with the size and width arguments and see what changes in the plot
@@ -75,7 +80,7 @@ ggplot(penguins_noNA, aes(x = sex, y = body_mass_g, fill = species)) +
   geom_boxplot(width = .1) +
   stat_summary(fun.data = mean_se, geom = "errorbar", width = .1, size = 2) +
   stat_summary(fun = "mean", geom = "point", size = 3) +
-  theme_bw()
+  theme_classic()
 
 
 ## 6. Suppose we wanted to plot the relation between body mass in 2007 and 2008
@@ -86,12 +91,12 @@ ggplot(penguins_noNA, aes(x = sex, y = body_mass_g, fill = species)) +
 # predictive body mass in 2007 is of body mass in 2008?
 
 # We'd want something like this set up:
-# ggplot(penguins_noNA, aes(x = body_mass_g_2007, y = body_mass_g_2008)) +
+# ggplot(penguins_noNA, aes(x = body_mass_g.2007, y = body_mass_g.2008)) +
 #   geom_point() +
 #   geom_smooth(method = "lm")
 
 # However, as our data frame is now, we cannot make this plot!!! There is no
-# column "body_mass_g_2007"!
+# column "body_mass_g.2007"!
 
 
 
@@ -134,10 +139,10 @@ penguins_wide <- read.csv("../data/penguins_wide.csv")
 
 
 # And now we can make our plot that we couldn't make in the warm-up!
-ggplot(penguins_wide, aes(x = body_mass_g_2007, y = body_mass_g_2008)) +
+ggplot(penguins_wide, aes(x = body_mass_g.2007, y = body_mass_g.2008)) +
   facet_wrap(~species) +
   geom_point() +
-  geom_smooth(method = "lm")
+  theme_classic()
 
 
 # Sometimes our data may come in this shape. And this isn't always useful,
@@ -224,29 +229,41 @@ penguins_long_class <- penguins_wide %>%
                names_sep = "[.]")
 
 
-
-
 # How you use these functions depends a lot on how your columns are already
 # named and what exactly you are trying to do. There are a lot of arguments to
 # these functions, which gives you a lot of control and flexibility!!! But it
 # also makes it confusing to begin learning how to use.
 
 
-#### A simpler and more fleshed out example of using pivot_wider and pivot_longer ####
+#### Simpler penguin example from above with more explanations ####
 
-# Make a data set with only one of the variables of interest.
+
 
 ## Make wider ##
-penguins_smaller <- penguins_noNA %>% 
-  select(penguin, species, island, sex, year, body_mass_g)
-
-penguins_smaller_w <- penguins_smaller %>% 
-  pivot_wider(names_from = year, # Which column are the names (or "keys") that uniquely identified the rows coming from? Here, year uniquely identified each row.
-              values_from = body_mass_g, # Which column do we want to make "wider"? Here, it is body_mass_g
-              names_prefix = "body_mass_g.") # Since we are only giving it one values_from column, it will use whatever levels are in the names_from column. In this case, those values are numbers, so we need to provide a prefix for the column names!
+penguins_wider_ex2 <- penguins_long %>% 
+  # Keep only one of the longitudinal variables of interest - body_mass_g
+  select(penguin, species, island, sex, year, body_mass_g) %>% 
+  
+              # names_from: Which column are the names (or "keys") that uniquely identify
+              # the rows coming from? Here, year uniquely identifies each row
+              # because the data come from either 2007 or 2008.
+  pivot_wider(names_from = year, 
+              
+              # values_from: Which column do we want to make "wider"? In other
+              # words, where are we getting our values from for the new columns?
+              # Here, it is body_mass_g
+              values_from = body_mass_g, 
+              
+              # names_prefix: Since we are only giving it one values_from
+              # column, it will use whatever levels are in the names_from column
+              # as the names for the columns. In this case, those values are
+              # numbers and so we we would lose the information that says what
+              # those values refer to (body mass!). Therefore, we need to
+              # provide a prefix for the column names!
+              names_prefix = "body_mass_g.") 
 
 # Looking back at our more complex example from above:
-penguins_wide_class <- penguins %>% 
+penguins_wide_class2 <- penguins %>% 
   pivot_wider(names_from = year,
               values_from = c("bill_length_mm", "bill_depth_mm", 
                               "flipper_length_mm", "body_mass_g"),
@@ -258,15 +275,32 @@ penguins_wide_class <- penguins %>%
 
 
 ## Make longer ##
-penguins_smaller_l <- penguins_smaller_w %>% 
-  pivot_longer(cols = contains(c("2007", "2008")), # we could have also said cols = starts_with("body_mass_g") or contains("body_mass_g") also, but I used this because it lines up with the more complex example!
+penguins_longer_ex2 <- penguins_wider_ex2 %>% 
+  
+              # cols: We don't want sex, species, or island to pivot longer,
+              # only the body_mass_g columns, so need to select those. We could
+              # have also said cols = starts_with("body_mass_g") or
+              # contains("body_mass_g") also, but I used this because it lines
+              # up with the more complex example!
+  pivot_longer(cols = contains(c("2007", "2008")), 
+               
+               # names_to: what will the name of the new column be that will
+               # hold the names of the columns that are pivoting longer? In
+               # other words, what will the column be called that uniquely
+               # identifies the rows with the year 2007 or 2008?
                names_to = "year",
+               
+               # values_to: what will the name of the column be that has the
+               # values from the column that is pivoting longer?
                values_to = "body_mass_g")
 
-# When you run this though, notice that what used to be the column name (e.g., body_mass_g_2007) is now the value in the column year! And all the values went to the column that we named "body_mass_g". This is annoying, but we can fix it in a few ways.
+# When you run this though, notice that what used to be the column name (e.g.,
+# body_mass_g_2007) is now the value in the column year! And all the values went
+# to the column that we named "body_mass_g". This is annoying, but we can fix it
+# in a few ways.
 
 # First, we could add the names_prefix argument to get rid of it:
-penguins_smaller_l <- penguins_smaller_w %>% 
+penguins_longer_ex2 <- penguins_wider_ex2 %>% 
   pivot_longer(cols = contains(c("2007", "2008")),
                names_to = "year",
                names_prefix = "body_mass_g.",
@@ -289,7 +323,7 @@ penguins_smaller_l <- penguins_smaller_w %>%
 # argument that indicates what is separating these two pieces of information,
 # which in our case is a "."
   
-penguins_smaller_l2 <- penguins_smaller_w %>% 
+penguins_longer_ex3 <- penguins_wider_ex2 %>% 
   pivot_longer(cols = contains(c("2007", "2008")),
                names_to = c(".value", "year"),
                names_sep = "[.]")
@@ -298,71 +332,13 @@ penguins_smaller_l2 <- penguins_smaller_w %>%
 # too! We can use this same code for any number of columns that are in this
 # format, such as our more complex example from above!
 
-penguins_longer <- penguins_wide %>% 
+penguins_longer_class2 <- penguins_wide %>% 
   pivot_longer(cols = contains(c("2007", "2008")), 
                names_to = c(".value", "year"),
                names_sep = "[.]")
 
 # Isn't it great that we don't have to change any of the code to make 8 columns
-# (4 variables) longer instead of just our body_mass_g columns?!
+# (4 variables) longer instead of just our body_mass_g columns?! :)
 
 
 
-
-
-#### Practice questions key ####
-
-# 1. Load in data
-happiness <- read.csv("../data/world-happiness_2007-2020.csv")
-
-# 2. Keep data for countries that have at least 5 years of data
-happiness_clean <- happiness %>% 
-  group_by(Country_name) %>% 
-  filter(n() >= 5) %>% 
-  ungroup()
-
-
-# You can compare the range of # of years of participation before and after
-# cleaning
-country_count <- happiness %>% 
-  group_by(Country_name) %>% 
-  count() %>% 
-  ungroup() %>% 
-  arrange(n)
-
-country_count_clean <- happiness_clean %>% 
-  group_by(Country_name) %>% 
-  count(name = "n.years") %>% 
-  ungroup() %>% 
-  arrange(n.years)
-
-table(country_count$n)
-table(country_count_clean$n)
-
-# Could also do this with tidyverse:
-country_count_clean_tbl <- country_count_clean %>% 
-  group_by(n.years) %>% 
-  count(name = "n.countries") %>% 
-  ungroup()
-
-
-# 3. Make a plot that compares happiness in 2019 and 2020
-# First, I want to keep only a few columns, filter for years, and reshape it:
-happiness_scatter <- happiness_clean %>% 
-  select(Country_name, Regional_indicator, Year, Ladder_score) %>% 
-  filter(Year %in% c(2019, 2020)) %>% # This %in% operator is very nifty! Good for checking more than one condition on a variable
-  pivot_wider(names_from = "Year",
-              values_from = "Ladder_score",
-              names_glue = "{.value}.{Year}") # Could have also used names_prefix= "Ladder_score.", but this is a much nicer (and more generalizable) way to do it!
-
-
-# Make plot
-ggplot(happiness_scatter, aes(x = Ladder_score.2019, y = Ladder_score.2020, color = Regional_indicator)) +
-  facet_wrap(~Regional_indicator) +
-  geom_point() +
-  geom_smooth(method = "lm")
-
-
-
-# Jamboard:
-# https://tinyurl.com/quack-plots
