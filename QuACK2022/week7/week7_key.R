@@ -12,16 +12,19 @@ guest_list = c("Willa", "Elena", "Roya")
 guest_list[2]
 
 # 2a. Create a vector called phone_no that contains three phone numbers: (3459430876, 2067389942, 5482240381)
-phone_no = c(3459430876, 2067389942, 5482240381)
+phone_no = c("3459430876", "2067389942", "5482240381")
 
 # 2b. Access the second phone number in the list. 
 
 phone_no[2]
 
 # 3a. The function paste0() allows you to concatenate elements into one string. Try the following code to test it out: 
-week_days = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+week_days <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-paste0("Today is ",  week_days[2])
+paste0("Today is ",  week_days[2], ".")
+
+# paste default is " "
+paste("Today is",  week_days[2], ".", sep = "-")
 
 # 3b. Now use the paste0 function along with your answers to 1b and 2b to print the following message: 
 # "Elena's phone number is 2067389942." 
