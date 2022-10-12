@@ -215,16 +215,17 @@ mult_tbl
 
 
 given <- 3
-nums <- 0
 
+nums <- 0
 for(i in 1:given) {
   nums <- sum(nums, i)
   print(nums)
 }
 
+sum <- 0
 for(i in 1:given) {
-  nums <- nums + i
-  print(nums)
+  sum <- sum + i
+  print(sum)
 }
 
 

@@ -1,6 +1,6 @@
 # For loops
 # Willa & Elena
-# 10/11/21
+# 10/11/22
 
 ################### Warm up #########################
 
@@ -37,8 +37,11 @@ paste0(guest_list[2], "'s phone number is ", phone_no[2])
 # i exists within the scope of the loop
 # "i" will take on each value in a range. 
 
-# print the numbers 1 through 10 on separate lines
-for (i in 1:10){
+# The : symbol let's us define a range
+1:3
+
+# print the numbers 1 through 3 on separate lines
+for (i in 1:3){
   print(i)
 }
 
@@ -61,7 +64,7 @@ for (i in 1:3){
 
 guest_list = c(guest_list, "Emily")
 
-# If we keep the same for loop from above, we won't get to the last person now!
+# If we keep the same for loop from above, we won"t get to the last person now!
 for(i in 1:3) {
   print(guest_list[i])
 }
@@ -84,7 +87,7 @@ message <- "I’m having a Halloween Party on 10/31! The party starts at 9pm. I 
   
 for (i in 1:length(guest_list)){
   
-  print(paste0('hi ', guest_list[i], " ! ", message))
+  print(paste0("hi ", guest_list[i], " ! ", message))
   
   
 }
@@ -94,22 +97,22 @@ for (i in 1:length(guest_list)){
 
 # lets include phone number at the top of our message
 
-for (i in 1:3){
+for (i in 1:length(guest_list)){
   
-  print(paste0('To:', phone_no[i], 
+  print(paste0("To:", phone_no[i], 
                 
-                'hi ', guest_list[i], message) )
+                " hi ", guest_list[i], message) )
   
 }
 
 ## Lets save our custom messages in a new vector "sent"
 sent <- c()
 
-for (i in 1:3){
+for (i in 1:length(guest_list)){
   
-  sent[i] = paste0('To:', phone_no[i], 
+  sent[i] = paste0("To:", phone_no[i], 
                
-               'hi ', guest_list[i], message)
+               " hi ", guest_list[i], message)
   
 }
   
@@ -140,7 +143,18 @@ for(i in 1:5){
 }
 
 
-# Another way to do it
+# Some other ways to do it
+pattern <- c()
+for(i in 1:5) {
+  pattern <- c(pattern, i)
+  
+  # pattern[i] <- i
+  # ^^ Note that both of these ways append i to the vector!
+  
+  print(pattern)
+}
+
+
 n <- c()
 for(i in 1:5) {
   n <- append(n, i, after = length(n))
@@ -191,15 +205,39 @@ mult_tbl
 ## For a given number, calculate the sum of all the numbers between 1 and the
 # given number. Print out the running total each time after you add the next
 # number.
-# Hint: How will you store the running sum?
+# Hint: One way to do it is to store a running sum, though there is a way to do
+# it without doing that!
 
-# Solution 1:
+# If given number is 3, the output would be:
+# 1
+# 3
+# 6
+
+
+# There are many different solutions!
+given <- 3
+
+# Simplest, but doesn't save end sum or any intermediary ones
+for(i in 1:given) {
+  print(sum(1:i))
+}
+
+# Two solutions that save end sum
+# They are very similar, they just do the addition different
 sum <- 0
-num <- 10
-for(i in 1:num) {
-  sum <- sum  + i
+for(i in 1:given) {
+  sum <- sum + i
   print(sum)
 }
+
+
+nums <- 0
+for(i in 1:given) {
+  nums <- sum(nums, i)
+  print(nums)
+}
+
+
 
 # Let's step through what the code is doing:
 # sum = 0  i = 1 --> sum <- 0 + 1 = 1
@@ -209,21 +247,18 @@ for(i in 1:num) {
 # 1
 # 1+2
 # 1+2+3
-# 1+2+3+4
-# ...
 
 
-# Solution 2: 
 # In this solution, we save each intermediate sum, whereas before we did not
 sum_bucket <- c()
 
-for(i in 1:10) {
+for(i in 1:given) {
   sum_bucket[i] <- sum(1:i)
   print(sum_bucket[i])
 }
 
 
-
+# Try changing given and rerun one (or all) of the solutions!
 
 
 ## Question 4: Introduction to "nested" for loops ##
