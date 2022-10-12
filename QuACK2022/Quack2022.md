@@ -40,7 +40,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 4 (9/20)|Data wrangling - Part 2|[w4_materials](week4/week4.zip)|[w4_key](week4/week4_key.R)|*no slides*|[w4_recording](https://berkeley.zoom.us/rec/share/PbISG21E71pJgo4yVxiBJDKQrW2L9lsn6H2SoEf4mZq0yRU0NySqhhDuJh9lr9dR.mWSOMB7y6WTA-Rxe)<br>(passcode: &5&\*NGJh)|
 | Week 5 (9/27) |Intro to data visualization (ggplot) - Part 1|[w5_materials](week5/week5.zip)|[w5_key](week5/week5_key.R)|[w5_slides](week5/DataViz-part1.pdf)|[w5_recording](https://drive.google.com/file/d/1g8E4Ee6KASm6K3phpMNumq7U-LLfI2lZ/view?usp=sharing)|
 | Week 6 (10/4) |Data visualization - Part 2|[w6_materials](week6/week6.zip)|[w6_key](week6/week6_key.R)|*no slides*|[w6_recording](https://berkeley.zoom.us/rec/share/LTtMD1PsKnF2g_R40LVhoeMTaEWJYXjxOvyMxFSqi2WL4TyjoXMjUuPvMcpDTXGW.Ew7IsonBBYEEDfzU)<br>(passcode: snG%^2YY)|
-| Week 7 (10/11) |Intro to loops|[w7_materials](week7/week7_starter.R)||||||
+| Week 7 (10/11) |Intro to loops|[w7_materials](week7/week7_starter.R)|[w7_key](week7/week7_key.R)|[w7_slides](week7/week7_slides.pdf)|[w7_recording](https://berkeley.zoom.us/rec/share/NjuaBSyyO7gWs9krsopcHhmvR0EsNeQPMgWGqFKTMhe80AQdTpOu6VM0PUr5eJQ.gzViLAGQA-F42G9W)<br>(passcode: &z@^tGZ4)|||
 | Week 8 (10/18) |Loops continued and random sampling|||||
 | Week 9 (10/25) |Random sampling - Part 2|||||
 | Week 10 (11/1) |Functions||||||
