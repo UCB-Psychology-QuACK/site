@@ -1,0 +1,244 @@
+---
+title: "Week 8"
+format: html
+editor: visual
+---
+
+## Warm-up
+
+1\. We want to create a list of filepaths for our participants. Write a for loop that combines information about the participant condition and participant ID into a path name. Save the output into a vector called filepaths.
+
+your file path should contain both condition and participant info:
+
+For example, the output for participant 1 would be: `"../data/cond1/data_subj01"`
+
+and for participant 2 it would be: `"../data/cond2/data_subj02"`
+
+The participants and conditions are:
+
+```{r}
+# load in libraries
+library(tidyverse)
+
+# create data
+subj <- c("subj01", "subj02", "subj03", "subj04", "subj05", "subj06", "subj07", "subj08")
+
+cond1 <- c("subj01", "subj04", "subj07", "subj08")
+cond2 <- c("subj02", "subj03", "subj05", "subj06")
+
+```
+
+```{r}
+# your for loop here: 
+
+
+  
+
+
+```
+
+2.  Look up the function `rnorm()` in the help window. What does rnorm do? What inputs does it take?
+
+## Demo - Simulation
+
+So far we have always defined a variable explicitly (eg. subs \<- c("sub01", "sub02"...). You can also define a variable with a function. We can take 100 samples of heights from a normal distribution with a mean of 5.5 and an sd of 0.75
+
+```{r}
+height <- rnorm(100, mean = 5.5, sd = 0.75)
+hist(height)
+
+
+```
+
+#### This is simulated data
+
+A really useful thing to do when developing models and working with data is to simulate data.
+
+We can use a mathematical function to generate values for a random variable.
+
+**When might you use simulations?**
+
+*note:* rnorm is a handy way to implement the normal probability density function but you can use any function to simulate your data!
+
+![](normal.png)\
+You usually choose a function based on what you already know or hypothesize about the random variable.
+
+## Setting seeds
+
+If we define a variable with a probability function you'll notice that we get slightly different values each time.
+
+Every time we run this code the specific values contained in the vector height will change. But the way we define height will stay exactly the same.
+
+```{r}
+height <- rnorm(100, mean = 5.5, sd = 0.75)
+hist(height)
+
+
+```
+
+Let's redo our height simulation but this time we will set a random seed to keep the simulation consistent. We can take 100 samples of heights from a normal distribution with a mean of 5.5 and an sd of 0.75
+
+```{r}
+
+# set our seed
+# Try changing the seed and see what happens
+set.seed(342)
+
+height <- rnorm(100, mean = 5.5, sd = 0.75)
+hist(height)
+```
+
+# Random variables
+
+Let's look at the height data we simulated:
+
+#### This is an example of a **random variable.**
+
+In a random variable you have a sample space that defines a range of possible values your variable can take on. The specific values are randomly assigned based on a probability function (in our case, a normal distribution)
+
+Look at the above simulated data.
+
+-   What is the sample space we've defined? What are its attributes?
+
+-   What probability function are we using to assign those values?
+
+#### In science, we study random variables.
+
+Our job is to figure out the model that describes values of a variable that we get.
+
+We do this by asking things like:
+
+-   what factors influence the values we get?
+
+-   How do these factors interact?
+
+-   What is the relationship between other variables we can measure (IV) and our variable of interest (DV)?
+
+Hopefully we can find a model that defines the data we get and will also generalize and describe future measurements of that random variable.
+
+***In the above example we took 100 samples from a normal distribution with a mean of 5.5 and a sd of 0.75.***
+
+-   What will the mean of our 100 samples be?
+
+-   What about the sd?
+
+```{r}
+
+```
+
+Because we created this simulation we know the true mean of the distribution we're sampling from. How does the sampled data compare.
+
+Why do we accpet that drawing random collections of data points from a distribution will tell us something about the general population?
+
+ie. Can we actually learn something about the underlying distribution of a random variable just by sampling a subset?
+
+# Random sampling
+
+Imagine that you live on a planet called Quackland and are baby researchers studying gyrification of different regions of the brain. We want to know about the gyrification of a certain region of interest (r1) in 1-year-old children.
+
+Elena and Willa are omnipotent wizards who happen to know the actual gyrification of r1 in all 40,000 1-year-olds who live on Quackland. Lucky for you, we posted it on OSF just for us to use in this class!
+
+```{r}
+# Load in the brainwavebabydata
+baby <- read.csv('../data/brainwavebabydata.csv')
+
+```
+
+Let's randomly sample from our population (as we described above) and estimate our mean. We can use the tidyverse `slice_sample(n = 10)` to do this
+
+Randomly sample 10 babies from the dataset and plot a histogram. What's the mean?
+
+```{r}
+
+# set seed
+
+
+# sample 10 babies using sample_n()
+
+
+# plot a histogram of r1 values
+
+
+# get the mean for r1
+
+
+# get the sd r1
+
+```
+
+As all knowing wizards, Elena and Willa have granted you the power to check the TRUE MEAN gyrification of the population. Check that value. How does it compare to the estimated mean from the 10-baby sample?
+
+```{r}
+
+```
+
+*How does it compare?*
+
+Now you belong to a lucrative lab. So you are able to conduct 5 separate studies of 10 babies. Sample 10 babies, 5 times. Find the mean each time and save it to a vector called `means.`
+
+Create a histogram showing the mean for each of the five samples. What is the mean of means? The sd of means?
+
+```{r}
+
+num_samples <- 5
+sample_size <- 10
+
+```
+
+How do the individual means from each of your five studies compare to the true mean?
+
+How does your mean of sample means compare to the real mean?
+
+*Even when taking a truly random sample you might get a very different value from the real mean*
+
+Now take 100 samples of 10 babies. How does the mean compare?
+
+```{r}
+
+```
+
+What about 100 samples of 1000 babies?
+
+How does the distribution compare to the first time when we took 1 sample of 10 babies.
+
+#### This is a great use for simulations. If you can define a function to simulate your r1 data you can see how big a sample you need to recover the true features of the population!
+
+#### It is also an intuitive proof of the central limit theorem and the law of large numbers!
+
+-   if you take enough samples the mean of your samples will approach the true mean.
+
+-   Your sample means will be normally distributed around the true mean (most of the time your sample mean will be close to the true mean, sometimes it will be deviate).
+
+-   if your sample is large enough the mean of the sample will approximate the mean of your population.
+
+This is pretty intuitive if you think about it. but its what makes inferential stats work!
+
+## Resampling
+
+we see a lot of variability in our individual samples. Increasing the sample size helps. But what if you can't take 100 samples of 1000 participants? How can we estimate the range of possible means?
+
+read in the `penguins_clean` data
+
+```{r}
+
+```
+
+What is the mean and sd of body mass.
+
+```{r}
+
+```
+
+How can we assess the reliability of this mean? ie. how much might it vary if the sample was configured slightly differently?
+
+```{r}
+
+```
+
+To estimate this we can take different samples of our own dataset to create new combinations. A cool way to do this when you want to maintain your sample size is **sampling with replacement ! (**`slice_sample(replace = T)`**)**
+
+```{r}
+
+```
+
+Basically we are taking our sample, pretending its the population and sampling from it. If you do it enough times its ok that you are often sampling the same participant more than once.
