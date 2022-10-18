@@ -53,6 +53,10 @@ for(i in 1:length(subj)) {
 
 2.  Look up the function `rnorm()` in the help window. What does rnorm do? What inputs does it take?
 
+```{r}
+?rnorm()
+```
+
 ## Demo - Simulation
 
 So far we have always defined a variable explicitly (eg. subs \<- c("sub01", "sub02"...). You can also define a variable with a function. We can take 100 samples of heights from a normal distribution with a mean of 5.5 and an sd of 0.75
@@ -68,7 +72,7 @@ hist(height)
 
 A really useful thing to do when developing models and working with data is to simulate data.
 
-We can use a mathematical function to generate values for a random variable.
+We can use a mathematical function to generate values for our variable.
 
 **When might you use simulations?**
 

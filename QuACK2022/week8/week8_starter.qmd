@@ -54,7 +54,7 @@ hist(height)
 
 A really useful thing to do when developing models and working with data is to simulate data.
 
-We can use a mathematical function to generate values for a random variable.
+We can use a mathematical function to generate values for a variable.
 
 **When might you use simulations?**
 
