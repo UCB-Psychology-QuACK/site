@@ -153,7 +153,7 @@ Randomly sample 10 babies from the dataset and plot a histogram. What's the mean
 # set seed
 
 
-# sample 10 babies using sample_n()
+# sample 10 babies using slice_sample()
 
 
 # plot a histogram of r1 values

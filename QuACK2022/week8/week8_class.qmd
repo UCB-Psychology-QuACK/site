@@ -29,6 +29,10 @@ cond2 <- c("subj02", "subj03", "subj05", "subj06")
 ```
 
 ```{r}
+
+```
+
+```{r}
 # your for loop here: 
 
 
@@ -142,6 +146,8 @@ Why do we accpet that drawing random collections of data points from a distribut
 
 ie. Can we actually learn something about the underlying distribution of a random variable just by sampling a subset?
 
+Let's move away from the hypothetical and try this out by sampling some concrete data.
+
 # Random sampling
 
 Imagine that you live on a planet called Quackland and are baby researchers studying gyrification of different regions of the brain. We want to know about the gyrification of a certain region of interest (r1) in 1-year-old children.
@@ -151,6 +157,7 @@ Elena and Willa are omnipotent wizards who happen to know the actual gyrificatio
 ```{r}
 # Load in the brainwavebabydata
 baby <- read.csv('../data/brainwavebabydata.csv')
+
 
 ```
 
@@ -163,7 +170,7 @@ Randomly sample 10 babies from the dataset and plot a histogram. What's the mean
 # set seed
 
 
-# sample 10 babies using sample_n()
+# sample 10 babies using slice_sample()
 
 
 # plot a histogram of r1 values
