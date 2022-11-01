@@ -7,7 +7,8 @@ library(tidyverse)
 
 ################### Warm up #########################
 
-# 0) Load the baby data
+# 0) Load the baby data and remind Willa to start recording class!!!! 
+
 baby <- read.csv("../data/brainwavebabydata.csv")
 
 # 1) Randomly sample 20 babies from the baby brain wave data
