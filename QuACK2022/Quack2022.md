@@ -42,12 +42,12 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 6 (10/4) |Data visualization - Part 2|[w6_materials](week6/week6.zip)|[w6_key](week6/week6_key.R)|*no slides*|[w6_recording](https://berkeley.zoom.us/rec/share/LTtMD1PsKnF2g_R40LVhoeMTaEWJYXjxOvyMxFSqi2WL4TyjoXMjUuPvMcpDTXGW.Ew7IsonBBYEEDfzU)<br>(passcode: snG%^2YY)|
 | Week 7 (10/11) |Intro to loops|[w7_materials](week7/week7_starter.R)|[w7_key](week7/week7_key.R)|[w7_slides](week7/week7_slides.pdf)|[w7_recording](https://berkeley.zoom.us/rec/share/NjuaBSyyO7gWs9krsopcHhmvR0EsNeQPMgWGqFKTMhe80AQdTpOu6VM0PUr5eJQ.gzViLAGQA-F42G9W)<br>(passcode: &z@^tGZ4)|||
 | Week 8 (10/18) |Loops continued and random sampling|[week8_materials](week8/week8.zip)|[w8_key](week8/week8_key.zip)|||
-| Week 9 (10/25) |Random sampling - Part 2|||||
-| Week 10 (11/1) |Functions||||||
-| Week 11 (11/8) |Putting it all together!||||||
-| Week 12 (11/15) |Discussion topic or flex week||||||
+| Week 9 (10/25) |Class Cancelled|||||
+| Week 10 (11/1) |Random Sampling pt 2|[week10_materials](week9/week_9_starter.R)|||||
+| Week 11 (11/8) |Functions!||||||
+| Week 12 (11/15) |Discussion/Flex week||||||
 | Week 13 (11/22) |Thanksgiving Week: *No class*|||||
-| Week 14 (11/29) |Review and prep for 205|||||
+| Week 14 (11/29) |Putting it all together|||||
 | Week 15 (12/6) |Celebration! (*No formal class*)|||||
 
 
