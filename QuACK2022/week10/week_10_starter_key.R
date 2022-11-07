@@ -5,54 +5,56 @@
 #### Load libraries  ####
 library(tidyverse)
 
+
 ################### Warm up #########################
 
-# 0) Load the baby data
+# 0) Load the baby data and remind Willa to start recording class!!!! 
+
 baby <- read.csv("../data/brainwavebabydata.csv")
 
 # 1) Randomly sample 20 babies from the baby brain wave data
-n_sample = 20
 
-baby_sample <- baby %>% 
-  slice_sample(n = n_sample)
+sample <- baby %>% 
+  slice_sample( n = 20)
 
+# 2) Calculate the mean  of the r2 region for your sample and save it as a new variable.
 
-# 2) Calculate the mean gyrification of the r2 region for your sample and save it as a new variable.
-
-mean(baby_sample$r2)
+mean_sample <- mean(sample$r2)
 
 
 # 3) Repeat steps 1-2 10000 times, keeping all of the means that you calculate.
-means_r2 <- c()
+
+
+baby_means_r2 <- c()
 
 for (i in 1:10000){
-  baby_sample <- baby %>% 
-    slice_sample(n = n_sample)
   
-  means_r2[i] <- mean(baby_sample$r2)
+  sample_baby <- baby %>% 
+    slice_sample(n = 20)
+  
+  # save mean
+  baby_means_r2[i] <- mean(sample_baby$r2)
+  
 }
-
-
 
 # 4) Use the function hist() to plot a histogram of the means.  What do you notice about the histogram?
 
-hist(means_r2)
+hist(baby_means_r2)
 
 
 # 5) Find the mean of the r2 region sample means. What is the
 # mean telling you? (i.e., what does it represent?). And how does the mean
 # compare to the population r2 mean?
 
-mean(means_r2)
+mean(baby_means_r2)
+abline(v = mean(baby_means_r2), col = "red")
+abline(v = mean(baby$r2), col = "blue")
 
 # 6) BONUS: Find the standard deviation of the r2 region means. What is the
 # SD telling you? (i.e., what does it represent?)
+sd(baby_means_r2)
 
-sd(means_r2)
 
-# Its the sum of each measurements distance from the mean. Divided by the number of measurements. Square rooted to see one side. 
-
-# In this case it tells us how much variation we see in sample means. 
 ###############################################################################X
 
 
@@ -75,47 +77,7 @@ sd(means_r2)
 
 # ^^ This is the Central Limit Theorem!
 
-
-# Bonus: What would the standard deviation of the sample means represent?
-
-
-# Let's look at this for the baby brain data:
-View(baby)
-
-# Remember, we were pretending that the baby data magically included data for
-# our entire population of babies!
-
-# Set resampling parameters
-sample_size <- 100
-num_samples <- 10000
-
-# For each sample:
-means <- c()
-for (sample in 1:num_samples){
-  
-  #   Draw the sample
-  baby_sample <- baby %>% 
-    slice_sample(n = sample_size)
-  
-  #   Take the mean of r1 and save it
-  
-  means[sample] <- mean(baby_sample$r1)
-
-}
-
-# Let's plot this
-
-hist(means)
-
-# Compare our estimated population mean to our true population mean with an abline
-
-# print each mean
-paste("our estimated population mean is", round(mean(means),4))
-paste("our true population mean is", round(mean(baby$r1),4))
-
-# add a line to the histogram
-abline(v = mean(means), col = "red")
-abline(v = mean(baby$r1), col = "blue")
+# This is what we are illustrating above. 
 
 # If we were to do this again and draw samples of 100 10,000 times, then our
 # estimate would be even closer!
@@ -167,67 +129,42 @@ penguins <- read.csv("../data/penguins_clean.csv") # (Note: only 2008 sample)
 
 
 # How accurate is the mean body mass? In other words, how much would it vary across samples?
-mean(penguins$body_mass_g)
-sd(penguins$body_mass_g)
+
 
 # Let's use resampling to estimate how much the mean body mass varies between samples
 
 # Goal: Resample 1000 times *from our data* and take the mean every time.
 
 # What do we need to do? (Pseudocode)
-# 1) create a resampled data set
-# 2) calculate the mean and sd and save it
-# 3) repeat 1000 times. 
+# 1) create a place to put our means in
+# 2) sample with replacement and take the mean of that sample
+# 3) repeat step 2 1000 times
 
 # Code
-means_resampled <- c()
-for (i in 1:1000){
-  
-  resample <- penguins %>% 
-    slice_sample(n = nrow(penguins), replace = T ) 
-    
-    # calculate our mean
-    means_resampled[i] <-  mean(resample$body_mass_g)
+# 1) create a place to put our means in
+sample_means <- c()
+
+for (i in 1:1000 ){
+# sample penguins with replacement
+
+p.sampled <- penguins %>% 
+  slice_sample( n = nrow(penguins), replace = T)
+
+# take mean
+sample_means[i]<- mean(p.sampled$body_mass_g)
+
 }
 
 # Plot our means
-hist(means_resampled)
+hist(sample_means)
 
 # What is the mean and sd of our means?
-mean(means_resampled)
 
-sd(means_resampled)
+abline(v = mean(sample_means), col = "red")
 
-
+sd(sample_means)
 
 # What does the standard deviation tell you?
-
-
-
-# Lets compare our SD to the traditional SEM 
-#formula: se = sd / sqrt(n)
-
-se_bodyMass = sd(penguins$body_mass_g)/sqrt(nrow(penguins))
-sd((means_resampled))
-
-# When we report any statistic, we need to always report error!
-# For example, our mean body mass is  +/-  grams. 
-# Or better yet, report the 95% confidence interval:
-# Lower bound:
-
-lb <- 
-
-# Upper bound: 
-
-up <- 
-
-print(paste("Based on our sample, we estimate that the mean body mass of the population of penguins is between", round(lb, 3), "and", round(ub, 3), "grams."))
-
-
-
-# 95% CI means that we estimate that 95% of random samples we draw from our
-# population will have mean body masses between the lower bound and upper bound
-# values.
 
 
 # This resampling technique is called "Bootstrapping"!!! Sampling with
@@ -235,17 +172,52 @@ print(paste("Based on our sample, we estimate that the mean body mass of the pop
 # some statistic of interest.
 
 
+
+# Lets compare our SD to the traditional SEM 
+#formula: se = sd / sqrt(n)
+
+se_body_mass <- sd(penguins$body_mass_g)/sqrt(nrow(penguins))
+
+# When we report any statistic, we need to always report error!
+# For example, our mean body mass is  +/-  grams. 
+# Or better yet, report the 95% confidence interval:
+# Lower bound:
+
+lb <- mean(penguins$body_mass_g) - 1.96 * sd(sample_means)
+
+# Upper bound: 
+
+up <- mean(penguins$body_mass_g) + 1.96 * sd(sample_means)
+
+# Even better use your boostrapped standard deviation: 
+
+lb <- mean(penguins$body_mass_g) - 1.96 * se_body_mass
+
+# Upper bound: 
+
+up <- mean(penguins$body_mass_g) + 1.96 * se_body_mass
+
+print(paste("Based on our sample, we estimate that the mean body mass of the population of penguins is between", round(lb, 3), "and", round(up, 3), "grams."))
+
+# 95% CI means that we estimate that 95% of random samples we draw from our
+# population will have mean body masses between the lower bound and upper bound
+# values.
+
+
+
 ############### Is the difference between two groups meaningful? ###############
 # Use group_by() to find the body mass means for each sex
 
-means_sex <- penguins %>% 
+p.mean_body_mass <- penguins %>% 
   group_by(sex) %>% 
-  summarize(mean_body_mass =  mean(body_mass_g))
+  summarize(mean_body_mass = mean(body_mass_g)) %>% 
+  ungroup()
+
 
 # Can you think of another way to get the mean values using base R? 
+f.mean_body_mass <- mean(penguins$body_mass_g[penguins$sex == 'female'])
+m.mean_body_mass <- mean(penguins$body_mass_g[penguins$sex == 'male'])
 
-female <- mean(penguins$body_mass_g[penguins$sex=='female'])
-male <- mean(penguins$body_mass_g[penguins$sex=='male'])
 # plot the body mass as a violin plot with ggplot for each group to visualize this difference. 
 # include the following layers to illustrate the difference in means. 
 # stat_summary(fun = mean, geom = "point") 
@@ -253,15 +225,12 @@ male <- mean(penguins$body_mass_g[penguins$sex=='male'])
 
 ggplot(penguins, aes(x = sex, y = body_mass_g)) + 
   geom_violin() + 
-  stat_summary(fun = mean, geom = "point", size = 4) +
+  stat_summary(fun = mean, geom = "point") +
   stat_summary(fun = mean, geom = "line", aes(group = 1))
 
-
 # Let's quantify this difference in mean body mass between the group
-sex_dif <- female - male
 
-
-
+true_mean_dif <- f.mean_body_mass  - m.mean_body_mass
 # We want to know: is this difference different than 0? In other words, is there
 # really a group difference? Or is this difference that we found just due to
 # chance?
@@ -271,16 +240,12 @@ sex_dif <- female - male
 # 
 
 
-
-
-
-
 # Here's another idea:
 # We randomly shuffle the labels of sex and see if the two groups are different or not. If the label is MEANINGFUL then there will be a difference in the original data but there will not be a difference in the shuffled data!
 
 # 1. Make a new copy of the dataset called p.shuffled 
-p.shuffled <- penguins 
 
+p.shuffled <- penguins
 
 # 2. Randomly shuffle the sex column without replacement.
 
@@ -288,13 +253,18 @@ p.shuffled$sex <- sample(penguins$sex)
 
 # 3. Calculate the difference in means
 
-# 4. Create the same plot as above but using shuffled data
+f.mean_body_mass_shuffled <- mean(p.shuffled$body_mass_g[p.shuffled$sex == 'female'])
+m.mean_body_mass_shuffled <- mean(p.shuffled$body_mass_g[p.shuffled$sex == 'male'])
 
+shuffled_mean_dif <- f.mean_body_mass_shuffled - m.mean_body_mass_shuffled
+# 4. Create the same plot as above but using shuffled data
 
 ggplot(p.shuffled, aes(x = sex, y = body_mass_g)) + 
   geom_violin() + 
-  stat_summary(fun = mean, geom = "point", size = 4) +
+  stat_summary(fun = mean, geom = "point") +
   stat_summary(fun = mean, geom = "line", aes(group = 1))
+
+
 
 # What do you notice? 
 
@@ -302,53 +272,51 @@ ggplot(p.shuffled, aes(x = sex, y = body_mass_g)) +
 
 # Do this 1000 times and each time save the difference in means
 # HINT: Write out your steps in pseduo code first!
-mean_dif <- c()
+
+#1. create and empty vector for means
+saved_sampled_means <- c()
+
+#2. have a for loop 
 
 for (i in 1:1000){
   
-  # Make a new data set called p.shuffled (for penguins.shuffled)
+  # create a shuffled dataframe
   p.shuffled <- penguins
   
-  # Randomly shuffle the sex column WITHOUT REPLACEMENT!
+  # Randomly shuffle the sex column without replacement.
+  
   p.shuffled$sex <- sample(penguins$sex)
   
-  f.mean_shuffled <-  mean(p.shuffled$body_mass_g[p.shuffled$sex=='female'])
-  m.mean_shuffled <-mean(p.shuffled$body_mass_g[p.shuffled$sex=='male'])
-  dif <- f.mean_shuffled - m.mean_shuffled
-  mean_dif[i] <- dif
-}
-
-mass.diffs <- c()
-for(i in 1:1000) {
-  # Make a new data set called p.shuffled (for penguins.shuffled)
-  p.shuffled <- penguins
   
-  # Randomly shuffle the sex column WITHOUT REPLACEMENT!
-  p.shuffled$sex <- sample(penguins$sex)
+  # calculate the means for each sex
   
-  # Calculate the means for each group
-  f.mean_shuffled <- with(p.shuffled, mean(p.shuffled[sex == "female",]$body_mass_g))
-  m.mean_shuffled <- with(p.shuffled, mean(p.shuffled[sex == "male",]$body_mass_g))
+  f.mean_body_mass_shuffled <- mean(p.shuffled$body_mass_g[p.shuffled$sex == 'female'])
+  m.mean_body_mass_shuffled <- mean(p.shuffled$body_mass_g[p.shuffled$sex == 'male'])
+  # save the mean difference
   
-  # Calcualte the difference in the means and save it
-  mass.diffs[i] <- (f.mean_shuffled - m.mean_shuffled)
+  saved_sampled_means[i] <- f.mean_body_mass_shuffled - m.mean_body_mass_shuffled
+  
 }
 
 # Plot all the differences in means
 
-hist(mean_dif)
+hist(saved_sampled_means, xlim = c(-800, 800))
+# Add the mean of mean differences to the plot
+
+abline(v = mean(saved_sampled_means), col = 'red')
+abline(v = true_mean_dif, col = 'blue')
+
+# Add the experimental mean difference from penguins to the plot 
+# HINT (hist( X, xlim = c()) will change the axis)
 
 
-# Add our sample mean to the plot
-mean <- mean(mean_dif)
-abline(v = mean(mean_dif), col = 'red')
-abline(v = mean(sex_dif), col = 'blue')
+
 # What do you notice? 
 
 
 # What percent of our shuffled samples had differences in means more extreme than our experimental group difference?
 
-sum(mean_dif < sex_dif) /length(mean_dif) * 100
+sum(saved_sampled_means < true_mean_dif)/length(saved_sampled_means)
 
 # This is called a permutation test!
 # Shuffle our labels WITHOUT REPLACEMENT! Calculate our test statistic, and do
@@ -360,13 +328,60 @@ sum(mean_dif < sex_dif) /length(mean_dif) * 100
 #### Practice ####
 
 # Practice doing a permutation test with the happiness data.
-happiness <- read.csv("../data/world-happiness_2020.csv")
+happiness <- read.csv("../data/world-happiness_2020_clean.csv")
 
 # The label we are interested in shuffling is ladder_score_cat. Pick one of the
 # other variables to work with. We are interested in knowing whether being above
 # or below average in your ladder score is meaningfully different for this other
 # variable.
 
-# First, just try it with plotting (and with ~15 samples)! Then after you get
+
+
+# First, just try it with plotting! Then after you get
 # that code working, try it with calculating the difference in their means, like
 # we did in the example above.
+
+
+## Q. Are happy countries more generous? 
+
+#1. Take the true mean generosity score for countires above average and below average on happiness score. 
+above.mean_Generosity <- mean(happiness$Generosity[happiness$ladder_score_cat == 'above average'])
+below.mean_Generosity <- mean(happiness$Generosity[happiness$ladder_score_cat == 'below average'])
+
+generosity_mean_dif <- above.mean_Generosity - below.mean_Generosity
+
+# This doesn't seem like a big difference but we can compare it to the difference we would get with a randomly assigned happiness grouping just to see. 
+
+#2. Create a shuffled dataset 
+
+saved_sampled_means <- c()
+
+
+for (i in 1:1000){
+  
+  # create a shuffled dataframe
+  df.shuffled <- happiness
+  
+  # Randomly shuffle the sex column without replacement.
+  
+  df.shuffled$ladder_score_cat <- sample(happiness$ladder_score_cat)
+  
+  
+  # calculate the means for each sex
+  
+  above.mean_Generosity_shuffled <- mean(df.shuffled$Generosity[df.shuffled$ladder_score_cat == 'above average'])
+  below.mean_Generosity_shuffled <- mean(df.shuffled$Generosity[df.shuffled$ladder_score_cat == 'below average'])
+  # save the mean difference
+  
+  saved_sampled_means[i] <- above.mean_Generosity_shuffled - below.mean_Generosity_shuffled
+  
+}
+
+# 3. Compare the difference in generosity by happiness to the shuffled generosity difference
+hist(saved_sampled_means)
+abline( v = generosity_mean_dif, col = 'red')
+
+# The mean difference falls within our null distribution so it does NOT seem like generosity reliably differs between groups. 
+# We could quantify this by calculating the standard deviations from the shuffled mean or performing another analysis. 
+
+

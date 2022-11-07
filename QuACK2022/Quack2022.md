@@ -43,7 +43,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 7 (10/11) |Intro to loops|[w7_materials](week7/week7_starter.R)|[w7_key](week7/week7_key.R)|[w7_slides](week7/week7_slides.pdf)|[w7_recording](https://berkeley.zoom.us/rec/share/NjuaBSyyO7gWs9krsopcHhmvR0EsNeQPMgWGqFKTMhe80AQdTpOu6VM0PUr5eJQ.gzViLAGQA-F42G9W)<br>(passcode: &z@^tGZ4)|||
 | Week 8 (10/18) |Loops continued and random sampling|[week8_materials](week8/week8.zip)|[w8_key](week8/week8_key.zip)|||
 | Week 9 (10/25) |Class Cancelled|||||
-| Week 10 (11/1) |Random Sampling pt 2|[week10_materials](week9/week_9_starter.R)|||||
+| Week 10 (11/1) |Random Sampling pt 2|[week10_materials](week10/week_10_starter.R)|[w10_key](week10/week_10_key.R)||[w10_recording](https://drive.google.com/file/d/1xsHh9jjkLpGulov0vKHXafB_sDqjJDms/view?usp=share_link)|
 | Week 11 (11/8) |Functions!||||||
 | Week 12 (11/15) |Discussion/Flex week||||||
 | Week 13 (11/22) |Thanksgiving Week: *No class*|||||
