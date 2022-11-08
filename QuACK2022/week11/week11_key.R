@@ -4,29 +4,29 @@
 
 #### Load libraries and set options ####
 library(tidyverse)
-# options(stringsAsFactors = FALSE)
-
-
-
-#### Let's make some functions! ####
-
-# Let's use bootstrapping to estimate how much the mean body mass varies between
-# samples of penguins (standard error of the mean - SEM)
-
-# Load data
+options(stringsAsFactors = FALSE)
 penguins <- read.csv("../data/penguins_clean.csv") # (Note: only 2008 sample)
 
+#### Warm up ####
 
-# Here is what we did before:
+# 1. Are there any times that you have had to copy and paste code in this class?
+# What are some possible issues you can think of with repeatedly copy and
+# pasting?
 
-# Sample our sample size (101) 1000 times!
+# The next two questions are about the code you wrote last week:
+
+## Let's use bootstrapping to estimate how much the mean body mass varies between
+## samples of penguins (standard error of the mean - SEM)
+## Sample our sample (101) 1000 times!
 
 # Vector to keep track of the sample means
 means <- c()
+set.seed(1234)
 for(i in 1:1000) {
   # 1) Create a resampled data set, sample WITH REPLACEMENT
   p.resampled <- penguins %>%
-    sample_n(nrow(penguins), replace = T)
+    slice_sample(n = nrow(penguins), replace = TRUE)
+  
   
   # 2) Calculate the mean of body mass and save it
   means[i] <- mean(p.resampled$body_mass_g)
@@ -37,17 +37,40 @@ for(i in 1:1000) {
 hist(means)
 sd(means)
 
+# 2. What are at least two things you could change about this code to make it
+# more "flexible" (e.g., less hard coded")? Make those changes to the code
+# above. Is there anything else you could make more flexible?
 
-
-# How could we make these steps more "flexible"?
-
-# Some answers from class:
+# Some examples
 # - Set parameters for sample size and for # of samples
 # - Set if we want to sample with replacement or not!
 
+# Let's make our sample size and num_samples more flexible!
+sample_size <- nrow(penguins)
+num_samples <- 1000
 
-# We are going to do the first one!
+# Vector to keep track of the sample means
+means <- c()
+for(i in 1:num_samples) {
+  # 1) Take a sample WITH REPLACEMENT nrows(penguin) times
+  p.resampled <- penguins %>%
+    slice_sample(n = sample_size, replace = TRUE)
+  
+  # 2) Calculate the mean body_weight_g of the sample (and save it!)
+  means[i] <- mean(p.resampled$body_mass_g)
+}
 
+
+
+# 3. What are some things you might want to change to use this code with new data?
+
+
+
+
+## End of warm up ##
+
+
+#### Let's make some functions! ####
 
 
 # Let's make our sample size and num_samples more flexible!
@@ -59,7 +82,7 @@ means <- c()
 for(i in 1:num_samples) {
   # 1) Take a sample WITH REPLACEMENT nrows(penguin) times
   p.resampled <- penguins %>%
-    sample_n(sample_size, replace = TRUE)
+    slice_sample(n = sample_size, replace = TRUE)
 
   # 2) Calculate the mean body_weight_g of the sample (and save it!)
   means[i] <- mean(p.resampled$body_mass_g)
@@ -76,7 +99,7 @@ bootstrap_bodyMass <- function(sample_size, num_samples) {
   for(i in 1:num_samples) {
     # 1) Take a sample WITH REPLACEMENT nrows(penguin) times
     p.resampled <- penguins %>%
-      sample_n(sample_size, replace = TRUE)
+      slice_sample(n = sample_size, replace = TRUE)
     
     # 2) Calculate the mean body_weight_g of the sample (and save it!)
     means[i] <- mean(p.resampled$body_mass_g)
@@ -101,7 +124,7 @@ bootstrap_bodyMass <- function(sample_size, num_samples, seed) {
   for(i in 1:num_samples) {
     # 1) Take a sample WITH REPLACEMENT nrows(penguin) times
     p.resampled <- penguins %>%
-      sample_n(sample_size, replace = TRUE)
+      slice_sample(n = sample_size, replace = TRUE)
     
     # 2) Calculate the mean body_weight_g of the sample (and save it!)
     means[i] <- mean(p.resampled$body_mass_g)
@@ -140,7 +163,7 @@ bootstrap_bodyMass <- function(sample_size, num_samples, seed = NA) {
   for(i in 1:num_samples) {
     # 1) Take a sample WITH REPLACEMENT nrows(penguin) times
     p.resampled <- penguins %>%
-      sample_n(sample_size, replace = TRUE)
+      slice_sample(n = sample_size, replace = TRUE)
     
     # 2) Calculate the mean body_weight_g of the sample (and save it!)
     means[i] <- mean(p.resampled$body_mass_g)
@@ -190,7 +213,7 @@ bootstrap_penguins <- function(variable, sample_size, num_samples, seed = NA) {
   for(i in 1:num_samples) {
     # 1) Take a sample WITH REPLACEMENT nrows(penguin) times
     p.resampled <- penguins %>%
-      sample_n(sample_size, replace = TRUE)
+      slice_sample(n = sample_size, replace = TRUE)
     
     # 2) Calculate the mean body_weight_g of the sample (and save it!)
     means[i] <- mean(p.resampled[, variable])
@@ -249,7 +272,7 @@ bootstrap_SEM <- function(data, variable, sample_size, num_samples, seed = NA) {
   for(i in 1:num_samples) {
     # 1) Take a sample WITH REPLACEMENT nrows(penguin) times
     df.resampled <- data %>%
-      sample_n(sample_size, replace = TRUE)
+      slice_sample(n = sample_size, replace = TRUE)
     
     # 2) Calculate the mean body_weight_g of the sample (and save it!)
     means[i] <- mean(df.resampled[, variable])
@@ -335,7 +358,7 @@ bootstrap_SEM <- function(data, variable, sample_size, num_samples, seed = NA) {
   for(i in 1:num_samples) {
     # 1) Take a sample WITH REPLACEMENT nrows(penguin) times
     df.resampled <- data %>%
-      sample_n(sample_size, replace = TRUE)
+      slice_sample(n = sample_size, replace = TRUE)
     
     # 2) Calculate the mean body_weight_g of the sample (and save it!)
     means[i] <- mean(df.resampled[, variable])

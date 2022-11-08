@@ -2,31 +2,31 @@
 # Elena & Willa
 # 11/8/22
 
-#### Load libraries and set options ####
+#### Load libraries, set options, and load data ####
 library(tidyverse)
-# options(stringsAsFactors = FALSE)
-
-
-
-#### Let's make some functions! ####
-
-# Let's use bootstrapping to estimate how much the mean body mass varies between
-# samples of penguins (standard error of the mean - SEM)
-
-# Load data
+options(stringsAsFactors = FALSE)
 penguins <- read.csv("../data/penguins_clean.csv") # (Note: only 2008 sample)
 
 
-# Here is what we did before:
+#### Warm up ####
 
-# Sample our sample size (101) 1000 times!
+# 1. Are there any times that you have had to copy and paste code in this class?
+# What are some possible issues you can think of with repeatedly copy and
+# pasting?
+
+# The next two questions are about the code you wrote last week:
+
+## Let's use bootstrapping to estimate how much the mean body mass varies between
+## samples of penguins (standard error of the mean - SEM)
+## Sample our sample (101) 1000 times!
 
 # Vector to keep track of the sample means
 means <- c()
 for(i in 1:1000) {
   # 1) Create a resampled data set, sample WITH REPLACEMENT
   p.resampled <- penguins %>%
-    sample_n(nrow(penguins), replace = T)
+    slice_sample(n = nrow(penguins), replace = TRUE)
+    
   
   # 2) Calculate the mean of body mass and save it
   means[i] <- mean(p.resampled$body_mass_g)
@@ -37,27 +37,23 @@ for(i in 1:1000) {
 hist(means)
 sd(means)
 
+# 2. What are at least two things you could change about this code to make it
+# more "flexible" (e.g., less hard coded")? Make those changes to the code
+# above. Is there anything else you could make more flexible?
 
-# warm-up
 
-# 1. Are there any times that you have had to copy and paste code in this class? What are some possible issues you can think of with repeatedly copy and pasting?
 
-# [show bootstrapping code here]
 
-# 2. How could we make these steps more "flexible"? (e.g., not "hard coded")
 # 3. What are some things you might want to change to use this code with new data?
 
 
 
 
 
+## End of warm up ##
 
 
-
-
-
-
-
+#### Let's make some functions! ####
 
 # Let's make our sample size and num_samples more flexible!
 
