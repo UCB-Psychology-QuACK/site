@@ -65,6 +65,8 @@ for(i in 1:num_samples) {
 # 3. What are some things you might want to change to use this code with new data?
 
 
+## Change the data frame
+## Variable of interest
 
 
 ## End of warm up ##
@@ -93,7 +95,10 @@ for(i in 1:num_samples) {
 # Now, let's take this one step even further in making this flexible by making
 # it into a function!
 
-bootstrap_bodyMass <- function(sample_size, num_samples) {
+bootstrap_bodyMass <- function(num_samples) {
+  
+  sample_size = nrow(penguins)
+  
   # Vector to keep track of the sample means
   means <- c()
   for(i in 1:num_samples) {
@@ -108,8 +113,7 @@ bootstrap_bodyMass <- function(sample_size, num_samples) {
   return(means)
 }
 
-means_bodyMass <- bootstrap_bodyMass(sample_size = nrow(penguins), 
-                                     num_samples = 1000)
+means_bodyMass <- bootstrap_bodyMass(num_samples = 1000)
 hist(means_bodyMass)
 
 
@@ -117,7 +121,10 @@ hist(means_bodyMass)
 # Let's add some additional functionality to our function.
 # Let's make it so we can set a seed that we want it to use so that we (and
 # others) can replicate our results.
-bootstrap_bodyMass <- function(sample_size, num_samples, seed) {
+bootstrap_bodyMass <- function(num_samples, seed) {
+  
+  sample_size = nrow(penguins)
+  
   set.seed(seed)
   # Vector to keep track of the sample means
   means <- c()
@@ -133,8 +140,7 @@ bootstrap_bodyMass <- function(sample_size, num_samples, seed) {
   return(means)
 }
 
-means_bodyMass <- bootstrap_bodyMass(sample_size = nrow(penguins), 
-                                     num_samples = 1000,
+means_bodyMass <- bootstrap_bodyMass(num_samples = 1000,
                                      seed = 1234)
 hist(means_bodyMass)
 
@@ -151,7 +157,10 @@ hist(means_bodyMass)
 # will also need to make some changes to the body of our function to fully
 # incorporate the change.
 
-bootstrap_bodyMass <- function(sample_size, num_samples, seed = NA) {
+bootstrap_bodyMass <- function(num_samples, seed = NA) {
+  
+  sample_size = nrow(penguins)
+  
   # If a value is given for seed, set a seed
   # Otherwise, don't set a seed
   if(!is.na(seed)) {
@@ -173,15 +182,13 @@ bootstrap_bodyMass <- function(sample_size, num_samples, seed = NA) {
 }
 
 # Check that it still works when I pass it a seed
-means_bodyMass <- bootstrap_bodyMass(sample_size = nrow(penguins), 
-                                     num_samples = 1000,
+means_bodyMass <- bootstrap_bodyMass(num_samples = 1000,
                                      seed = 1234)
 hist(means_bodyMass)
 
 
 # Now check that it works when I don't pass a seed
-means_bodyMass2 <- bootstrap_bodyMass(sample_size = nrow(penguins), 
-                                     num_samples = 1000)
+means_bodyMass2 <- bootstrap_bodyMass(num_samples = 1000)
 hist(means_bodyMass2)
 
 
@@ -201,7 +208,10 @@ hist(means_bodyMass2)
 # I want the flexibility to find the bootstrapped SEM for any of the variables I
 # have!
 
-bootstrap_penguins <- function(variable, sample_size, num_samples, seed = NA) {
+bootstrap_penguins <- function(variable, num_samples, seed = NA) {
+  
+  sample_size = nrow(penguins)
+  
   # If a value is given for seed, set a seed
   # Otherwise, don't set a seed
   if(!is.na(seed)) {
@@ -223,14 +233,12 @@ bootstrap_penguins <- function(variable, sample_size, num_samples, seed = NA) {
 }
 
 means_bodyMass <- bootstrap_penguins(variable = "body_mass_g",
-                                     sample_size = nrow(penguins), 
                                      num_samples = 1000,
                                      seed = 1234)
 
 # ^^ should give us the same as what we got before with the _bodyMass function!
 
-means_bodyMass_old <- bootstrap_bodyMass(sample_size = nrow(penguins), 
-                                         num_samples = 1000,
+means_bodyMass_old <- bootstrap_bodyMass(num_samples = 1000,
                                          seed = 1234)
 
 hist(means_bodyMass)
@@ -260,7 +268,10 @@ happiness <- read.csv("../data/world-happiness_2020.csv")
 
 
 
-bootstrap_SEM <- function(data, variable, sample_size, num_samples, seed = NA) {
+bootstrap_SEM <- function(data, variable, num_samples, seed = NA) {
+  
+  sample_size = nrow(data)
+  
   # If a value is given for seed, set a seed
   # Otherwise, don't set a seed
   if(!is.na(seed)) {
@@ -282,14 +293,12 @@ bootstrap_SEM <- function(data, variable, sample_size, num_samples, seed = NA) {
 }
 
 means_bodyMass <- bootstrap_SEM(penguins, variable = "body_mass_g",
-                                sample_size = nrow(penguins), 
                                 num_samples = 1000,
                                 seed = 1234)
 
 # ^^ should give us the same as what we got before with the _penguins function!
 
 means_bodyMass_old <- bootstrap_penguins(variable = "body_mass_g",
-                                         sample_size = nrow(penguins), 
                                          num_samples = 1000,
                                          seed = 1234)
 
