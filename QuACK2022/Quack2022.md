@@ -44,7 +44,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 8 (10/18) |Loops continued and random sampling|[week8_materials](week8/week8.zip)|[w8_key](week8/week8_key.zip)|*no slides*|*see last year* [w8_recording](https://berkeley.app.box.com/s/8g6ypulaoo3e41rs8zqxzu6p4k5sv91s)|
 | Week 9 (10/25) |Class Cancelled|||||
 | Week 10 (11/1) |Random Sampling pt 2|[w10_materials](week10/week_10_starter.R)|[w10_key](week10/week_10_key.R)|*no slides*|[w10_recording](https://drive.google.com/file/d/1xsHh9jjkLpGulov0vKHXafB_sDqjJDms/view?usp=share_link)|
-| Week 11 (11/8) |Functions!|[w11_materials](week11/week11.zip)|||[w11_recording](https://youtu.be/uNfz156f2bI)|
+| Week 11 (11/8) |Functions!|[w11_materials](week11/week11.zip)|[w11_key](week11/week11_key.R)|[w11_slides](week11/week11_slides.pdf)|[w11_recording](https://youtu.be/uNfz156f2bI)|
 | Week 12 (11/15) |Discussion/Flex week||||||
 | Week 13 (11/22) |Thanksgiving Week: *No class*|||||
 | Week 14 (11/29) |Putting it all together|||||
