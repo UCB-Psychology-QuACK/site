@@ -45,10 +45,10 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 9 (10/25) |Class Cancelled|||||
 | Week 10 (11/1) |Random Sampling pt 2|[w10_materials](week10/week_10_starter.R)|[w10_key](week10/week_10_key.R)|*no slides*|[w10_recording](https://drive.google.com/file/d/1xsHh9jjkLpGulov0vKHXafB_sDqjJDms/view?usp=share_link)|
 | Week 11 (11/8) |Functions!|[w11_materials](week11/week11.zip)|[w11_key](week11/week11_key.R)|[w11_slides](week11/week11_slides.pdf)|[w11_recording](https://youtu.be/uNfz156f2bI)|
-| Week 12 (11/15) |Discussion/Flex week: *No class due to strike*||||||
-| Week 13 (11/22) |Thanksgiving Week: *No class*|||||
+| Week 12 (11/15) |Discussion/Flex week: |*No class due to strike*|||||
+| Week 13 (11/22) |Thanksgiving Week: |*No class*||||
 | Week 14 (11/29) |Putting it all together|*No class due to strike*||||
-| Week 15 (12/6) |Celebration! *postponed until spring*|||||
+| Week 15 (12/6) |Celebration! |*postponed until spring*||||
 
 
 ### Materials guide
