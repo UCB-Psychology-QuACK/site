@@ -9,7 +9,9 @@ This hands-on four-session bootcamp will focus on teaching fundamental data skil
   
 ### Dates, Time, and Location
 **Dates**: Wednesdays 6/14, 6/21, 6/28, and 7/12 (Please note that we **will not** have a session on 7/5)   
-**Time**: 2:00 - 2:30 PM 
+
+**Time**: 2:00 - 2:30 PM
+
 **Location**: Berkeley Way West (BWW), Room 3101 (Conference room in the 3rd floor atrium)  
   
 Sessions include live demos, individual work, and group work, and are interactive and hands-on. For these reasons, we encourage all who can to attend in person in order to get the most out of the bootcamp. That said, we understand that some people are remote this summer, may have time conflicts, or may need to miss a session. In order to make the materials as accessible as possible, we will also be recording all sessions and posting the recordings, materials, and answer keys to this site.   
@@ -51,7 +53,7 @@ Each week we will post some additional materials:
 
 ### Participating In-Person
 Please download the practice materials **before each session**. We will be sharing all other materials after the session.
-See our [FAQs](https://ucb-psychology-quack.github.io/site/summer_bootcamp2022/FAQs) for more info on the workshop and what to do if you miss a session. 
+See our [FAQs](https://ucb-psychology-quack.github.io/site/Bootcamp_2023/FAQs) for more info on the workshop and what to do if you miss a session. 
 
 ### Participating Asynchronously 
 Each week we will post a recording of the session as well as all of the materials you need to follow along. Please see the Materials Guide above for details. 
