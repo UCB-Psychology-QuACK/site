@@ -20,4 +20,4 @@ Yes they do! If you are not able to attend a session one week, we encourage you 
 No! Send us an [email](mailto:coronar@berkeley.edu) and we will add you to our listerv.
 
 
-#### [<- back to bootcamp home](https://ucb-psychology-quack.github.io/site/summer_bootcamp2022/bootcamp2022)
+#### [<- back to bootcamp home](https://ucb-psychology-quack.github.io/site/Bootcamp_2022/bootcamp2023)
