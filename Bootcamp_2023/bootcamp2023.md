@@ -34,7 +34,7 @@ Each session will start with a live demo focusing on fundemental data skills. We
 | June 14 |Getting started with R|[s1_materials](session_1.zip)|[s1_demo-script](session1/s1_my_first_script_2023.R)|s1_slides|s1_recording|
 | June 21 |Accessing and reading data|s2_materials|s2_demo-script & key|s2_slides|s2_recording|
 | June 28 |Cleaning and organizing dataframes|s3_materials|s3_demo-script & key|s3_slides|s3_recording|
-| July 12 |Data visualization|s4_materials|s4_demo-script & key||s4_recording|
+| July 12 |Data visualization|s4_materials|s4_demo-script & key|s4_slides|s4_recording|
 
 
 ### Materials Guide
