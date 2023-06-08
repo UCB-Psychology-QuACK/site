@@ -8,10 +8,8 @@ title: "Programming and Data Skills Bootcamp - Summer 2023"
 This hands-on four-session bootcamp will focus on teaching fundamental data skills in R with an emphasis on good data and coding practices. This bootcamp is open to all RAs and post-bacs in the department. Graduate students are also welcome to attend. Importantly, **no programming experience or R knowledge is expected or required**! Come as you are and learn!  
   
 ### Dates, Time, and Location
-**Dates**: Wednesdays 6/14, 6/21, 6/28, and 7/12 (Please note that we **will not** have a session on 7/5)   
-
-**Time**: 2:00 - 2:30 PM
-
+**Dates**: Wednesdays 6/14, 6/21, 6/28, and 7/12 (Please note that we *will not* have a session on 7/5)   
+**Time**: 1:00 - 2:30 PM   
 **Location**: Berkeley Way West (BWW), Room 3101 (Conference room in the 3rd floor atrium)  
   
 Sessions include live demos, individual work, and group work, and are interactive and hands-on. For these reasons, we encourage all who can to attend in person in order to get the most out of the bootcamp. That said, we understand that some people are remote this summer, may have time conflicts, or may need to miss a session. In order to make the materials as accessible as possible, we will also be recording all sessions and posting the recordings, materials, and answer keys to this site.   
@@ -46,8 +44,8 @@ We are committed to open science and we make all of our resources and teaching m
 
 Each week we will post some additional materials: 
 
-* **Practice materials**: This will include any starter code and prompts for the independent and/or group work. The best way to learn to program is to practice! So if you are participating asynchronously, we encourage you to try the practice to apply the new skills. 
-* **Live demo script**: Each session will begin with a demo where we introduce some fundemental skills and key concepts that will help you with the practice materials. We will post these after each session. This will also include answer keys for the group activity if applicable. 
+* **Practice Materials**: This will include any starter code and prompts for the independent and/or group work. The best way to learn to program is to practice! So if you are participating asynchronously, we encourage you to try the practice to apply the new skills. 
+* **Live Demo Script**: Each session will begin with a demo where we introduce some fundemental skills and key concepts that will help you with the practice materials. We will post these after each session. This will also include answer keys for the group activity if applicable. 
 * **Slides**: Any slides used will be made available for download after the session. 
 * **Recording**: We will be recording all of our sessions. If you miss a session we encourage you to watch the recording! 
 
