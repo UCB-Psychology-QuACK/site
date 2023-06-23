@@ -32,7 +32,7 @@ Each session will start with a live demo focusing on fundemental data skills. We
 | session | topic | practice materials |live demo script & answer key |slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
 | June 14 |Getting started with R|[s1_materials](session_1.zip)|[s1_demo-script](session1/s1_my_first_script_2023.R)|[s1_slides](session1/bootcamp_session1_slides_2023.pdf)|[s1_recording](https://drive.google.com/file/d/1urM_Dyy-Azs2-NmajIeGGM0otCBNaP-Y/view?usp=sharing)|
-| June 21 |Accessing and reading data|[s2_materials](session_2.zip)|s2_demo-script w/ key|[s2_slides](session2/bootcamp_slides_session2_2023.pdf)|s2_recording|
+| June 21 |Accessing and reading data|[s2_materials](session_2.zip)|[s2_demo-script w/ key](session2/session2_key.qmd)[s2_key_walk-through](https://drive.google.com/file/d/1ZLCl3TlOJAdk72AcbPupAA45cnr6Tctg/view?usp=sharing)|[s2_slides](session2/bootcamp_slides_session2_2023.pdf)|[s2_recording](https://drive.google.com/file/d/14TZJhkPf8ExmbchqG9CqiCim0Myj1sDX/view?usp=sharing)[s2_working-directory_walk-through](https://drive.google.com/file/d/1oPZQzG57PFLw1koWX3t6n029xLCMoRLo/view?usp=drive_link)|
 | June 28 |Cleaning and organizing dataframes|s3_materials|s3_demo-script w/ key|s3_slides|s3_recording|
 | July 12 |Data visualization|s4_materials|s4_demo-script w/ key|s4_slides|s4_recording|
 
