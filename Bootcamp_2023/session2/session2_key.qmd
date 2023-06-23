@@ -1,0 +1,335 @@
+---
+title: "R Bootcamp Session 2 Key"
+author: "Sierra Semko Krouse & Emily Rosenthal"
+date: "June 21, 2023"
+format: html
+editor: visual
+---
+
+# Warm-up
+Create three different vectors: 
+
+i. A  vector called "names" with three names
+
+```{r}
+names <- c("Sarah", "Robert", "Sally")
+```
+
+ii. A vector named "ages" with three ages of college students
+
+```{r}
+ages <- c(18, 20, 21)
+```
+
+iii. A vector called "year" with three years of college (e.g., Freshman, Sophomore, etc.)
+
+```{r}
+year <- c("freshman", "junior", "senior")
+year.factor <- factor(year, 
+               levels = c("freshman", "sophomore", "junior", "senior"))
+```
+
+We made a new vector called *"year.factor"* that is the factorized version of the vector *"year"*. The reason we make a factor from *"year"* is because there are four possible options/bins for year - freshman, sophomore, junior, or senior. Although we only **OBSERVED** three of these in the data, there are four possible options (e.g., sophomores still exist even if we didn't get data from one of them).
+
+The difference in our two year factors is evident when ask R to print out the content of each factor. Below, we can see that *"year.factor"* has levels, which is the tell-tale sign of a factor:
+
+```{r}
+year.factor
+```
+
+whereas the *"year"* vector is merely a character vector (a vector composed of a character items):
+
+```{r}
+year
+```
+
+*NOTE: You could do this in one step if you wanted to:*
+
+```{r}
+year <- factor(c("freshman", "junior", "senior"),
+               levels = c("freshman", "sophomore", "junior", "senior"))
+```
+
+Run the code and check that everything looks correct in the global environment.
+
+# Dataframes
+Let's make a dataframe called **"students"** with our new vectors:
+
+```{r}
+students <- data.frame(names, ages, year)
+```
+
+If you get an error that says something like "arguments imply differing number of rows:", check that each of the vectors you made has the same number of items -- e.g., that you have a list of **EXACTLY** three names, three ages, and three years. You can't make a dataframe from vectors of varying lengths. 
+
+We can look at our dataframe in a new tab:
+
+```{r}
+View(students)
+```
+
+We can also look at our data frame in the global environment. We see that each of our vectors became columns, and R is smart enough to make our column names the names of the vectors!
+
+We can use '$' to examine individual columns within our larger dataset:
+
+```{r}
+students$names
+students$ages
+students$year
+```
+
+If we run these lines of code, we see that each column is a vector!
+
+Normally, we don't create our own data frames by hand though because we have collected data that we have stored in a file that we want to read in to work with! 
+
+But first, before we read in any data, we need to understand the structure of our file directory and understand where our R script "lives" (i.e., which folder it is in), where our data file lives, and where our R script is pointing to.
+
+# Working Directory      
+The working directory is the file folder that R is currently working from. The working directory is also where R will look for any new data file, and where R will default to saving any new files.
+
+There is a command to check where the working directory is currently set:
+
+```{r}
+getwd()
+```
+      
+You can also see what the working directory is by looking at the bar below the tabs that say "Console," "Terminal," and "Jobs" and above the console panel.
+      
+If your data file is in your current working directory (which often means it is in the same folder as the R script you are working with), you can just write `read.csv("name-of-file.csv")`. You don't need to give R any other "address" information from the file because R is already in the right place to look for it!
+      
+Some ways to set your working directory: 
+
+* 1) [When R is closed] - Open your script from the file/library on your computer
+
+* 2) Point and click in R Studio -- At the top of your screen, go to: Session >> Set working directory >> Choose directory >> select a folder
+
+* 3) Use the setwd() function -- You would put the absolute file path here. On PC, this would look like: 
+
+`setwd("C:\\Users\\Emily\\Documents\\R_Bootcamp\\2023_Summer\\Session2")`. 
+
+On Mac, this would look like:
+
+`setwd(/Users/sierrasemko/Desktop/Bootcamp_2023/session2)`. 
+
+*Note: If you have a PC, you either need two dashes like \\ or one dash in the other direction /. This will differ for each person - your file paths will be different than mine! Using this absolute path is tricky if you ever change the names of your files.*
+      
+Regardless of how you set your working directory, just be careful and make sure you always know where your R script is located, where your data file is located, and where the working directory is. 
+
+If this is a bit confusing, check out [this linked video](https://drive.google.com/file/d/1oPZQzG57PFLw1koWX3t6n029xLCMoRLo/view?usp=sharing) we made on setting your working directory.
+
+*Note that you will need to set your working directory EVERY TIME you open an R script!*
+
+# Load Data
+Let's read in our data and save it in a dataframe called "covid_attitudes". There are two ways to go about loading a dataset into R Studio: 
+
+Option 1) If your data "lives" one level *above* your working directory (e.g., if your working directory is set to the Session 2 folder, but your data file 'lives' one level up in the R Bootcamp 2023 folder). 
+
+This would be the case if you have a Bootcamp_2023 folder where the data lives, but within that folder you have subfolders for each workshop session. If your working directory is set to the Session 2 subfolder, for example, you need to indicate to R to look at the folder one level higher to find the data file (e.g., the script / working directory is set to the classroom, but you need it to look in the hallway for your data file if we want to use the analogy we discussed earlier).
+
+Indicate this to R by `../` right before the name of the data file, which says, “look one folder higher”:
+
+```{r}
+covid_attitudes <- read.csv("../covid_attitudes_2023.csv")
+```
+
+Option 2) If your working directory is the file folder where your document lives (e.g., right to your **R Bootcamp 2023 folder**)
+
+```{r}
+# covid_attitudes <- read.csv("covid_attitudes_2023.csv")
+```
+
+You will only need to do **one** of these options, and it will all depend on a) where your working directory is currently set, and b) where the data file that you want to read into R is currently stored. 
+
+This should appear in your global environment! 
+      
+*Note: If my CSV file was saved in the same folder as my working directory, I would read it in with this code: covid_attitudes <- read.csv("covid_attitudes.csv"), without the "../"*
+      
+**Bonus/Extra -- Reading in SPSS (.sav) Data Files** 
+
+Some labs have data files saved in SPSS, and they will appear in your folder as .sav files. 
+
+We didn't cover this during the recording, but this might be helpful for you if this applies to your lab! 
+
+1. Install the haven package
+
+```{r}
+# install.packages('haven')
+```
+
+You only need to run this line of code once. After that, this package will be installed (make sure you take out the # before you run it the first time, but no need to run it again once it's been installed).
+
+2. Load the package!
+
+```{r}
+# library(haven)
+```
+
+You need to run this every time you run your code when loading ".sav" files, and this should be run **BEFORE** loading in your data
+
+3. Make a data frame with your data!
+
+```{r}
+# data_frame_name<-read_sav("data_file_name.sav") 
+```
+
+## Setting Options
+
+Older versions of R would automatically make columns with characters into factors, which is not what we want. 
+
+So, let's tell R **not** to make this assumption when it loads in data!
+
+```{r}
+options(stringsAsFActors = FALSE) 
+```
+
+## Examining Data
+
+If you add a question mark before a command, R can provide some information about what it does (look in the bottom right corner of your screen!
+
+For instance, what do these do?: 
+
+```{r}
+?ncol 
+?nrow
+?str
+?summary
+```
+
+Remember: if you want to call a specific vector (column) from your data frame, use the $ operator! 
+
+e.g., `covid_attitudes$Q74.education` -- this calls the Q74.education column from our covid_attitudes data frame
+
+# On Your Own
+## (1)
+
+### (a) 
+**Use the `summary()` function to learn about the covid_attitudes dataframe. This should look like: `summary(covid_attitudes)`.**
+
+```{r}
+summary(covid_attitudes)
+```
+
+When called on a data frame, this command gives you summary information for each column. 
+
+* For numeric columns, gives you mean, median, and quartile information.
+* For character columns, does not give you much information, just the length and type.
+* For factors, gives much more information: shows all the levels (i.e., sub-groups), and also how many observations are in each group.
+
+### (b)
+**Now use the use the `str()` function in the same way. What do these do? What do you see? What types of data do we have in our data frame?** 
+
+```{r}
+str(covid_attitudes)
+```
+
+str stands for "structure". This function gives you the structure of the data frame, which is similar to the information that the global environment gives you. It shows you all of the columns and what type they are. It also gives you a sample of the data in each column.
+
+This data frame has variables that are integers (a type of numeric variable), characters, numeric, and logical.
+
+## (2)
+**Use the `ncol()` function. How many columns in our data?** 
+
+```{r}
+ncol(covid_attitudes) # this function gives us the number of columns in the data frame
+```
+
+There are 29 columns. 
+
+*Note: If you check the output of your str() function or in the global environment, this is equal to the number of variables.*
+
+## (3)
+**Use the `nrow()` function. How many rows in our data?** 
+
+```{r}
+nrow(covid_attitudes) # this function gives us the number of rows in our data frame
+```
+
+There are 1020 rows. 
+
+*Note: If you check the output of your str() function or in the global environment, this is equal to the number of obs. (which stands for observations)*
+
+*Also Note: This does not count the row with the col names, it knows that those are the names for the variables/columns.*
+
+## (4)
+### (a)
+**Some of these columns should be factors! Lets turn the education column into a factor. Use the command `factor(covid_attitudes$Q74.education)` but be sure to save the factor as a column in your dataframe:**
+
+```{r}
+covid_attitudes$Q74.education.factor <- factor(covid_attitudes$Q74.education)
+```
+
+When we create a factor, we want to make sure we are creating a new column within our data frame where that can live. To make a new column within our data frame, we have the name of our data frame, our `$`, and then the name we are making for this new column.
+
+### (b)
+**Pick some other column you think should be a factor and turn it into a factor:**
+
+```{r}
+covid_attitudes$Q8.covid.info.factor <- factor(covid_attitudes$Q8.covid.info)
+```
+
+## (5)
+**Now use the `summary()` command to run on summary on just the column with your new factor. Does the description change from how it was before? What does it look like now?** 
+
+```{r}
+summary(covid_attitudes$Q74.education.factor)
+```
+
+Before we made it a factor, the summary() function just told us that it was a character vector and had a length of 1020 (which is the number of observations)
+
+Now that it is a factor, we can see more information! We now see the levels and the number of observations (people) who reported each level of education (and NA).
+
+## (6)
+**Which columns have the most NAs? Use the `summary()` command to investigate!**
+
+```{r}
+summary(covid_attitudes)
+```
+
+This depends on which you made into factors! For example. 
+
+* Q43 has 190 NAs! (it is a numeric variable, so will show NAs)
+
+* Q84 has 188 NAs (but we only know this if we turned it into a factor!
+
+## (7)
+What do you notice about how the NAs are represented in different columns? In *summary()*? When you *View()* it?
+
+```{r}
+# summary(covid_attitudes)
+# View(covid_attitudes)
+```
+
+I notice that for the column `covid_attitudes$Q13.trust_none_of_above`, missing data is indicated by a blank cell, wheareas for others they are indicated as italicised NA's. Thise italicized NA's come up as "NA's" in the summary. 
+
+Different labs format missing data differently and it is something to keep an eye out for in the future as it's really important to make sure that it is formatted properly.
+
+## (8)
+**On average, how likely do people think they are to catch Covid-19?**
+*Hint: You first need to find the relevant column to answer this question, we first have to find the relevant column: Q_18*
+
+**Then, use `summary()` to find the mean:**
+
+```{r}
+summary(covid_attitudes$Q18.likely_to_catch_covid)
+```
+
+The mean is 42.16, so on average, people think they have a 42.16% chance of catching Covid.
+
+## (9)
+**How many types of living communities are there? To answer this question, we first have to find the relevant column: Q_84.community.**
+
+**If you haven't already, you will need to turn it into a factor:**
+
+```{r}
+covid_attitudes$Q84.community.factor <- factor(covid_attitudes$Q84.community)
+```
+
+**Then, use `summary()` to see the levels of the factor, as well as how many people or observations are in each level:**
+
+```{r}
+summary(covid_attitudes$Q84.community.factor)
+```
+
+There are 4 types of communities and NA.
+
+## (10)
+**If you have time: Think of another question you can ask and answer it!**
