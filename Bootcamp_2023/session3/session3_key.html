@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2023-06-28">
+
+<title>R Bootcamp Session 3 Starter Code w/ Key</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="session3_key_files/libs/clipboard/clipboard.min.js"></script>
+<script src="session3_key_files/libs/quarto-html/quarto.js"></script>
+<script src="session3_key_files/libs/quarto-html/popper.min.js"></script>
+<script src="session3_key_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="session3_key_files/libs/quarto-html/anchor.min.js"></script>
+<link href="session3_key_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="session3_key_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="session3_key_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="session3_key_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="session3_key_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#set-options" id="toc-set-options" class="nav-link active" data-scroll-target="#set-options">Set options</a></li>
+  <li><a href="#warm-up" id="toc-warm-up" class="nav-link" data-scroll-target="#warm-up">Warm-up</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">(1)</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">(2)</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">(3)</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">(4)</a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">(5)</a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">(6)</a></li>
+  </ul></li>
+  <li><a href="#loading-packages" id="toc-loading-packages" class="nav-link" data-scroll-target="#loading-packages">Loading packages</a>
+  <ul class="collapse">
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  </ul></li>
+  <li><a href="#intro-to-tidy-data" id="toc-intro-to-tidy-data" class="nav-link" data-scroll-target="#intro-to-tidy-data">Intro to tidy data</a></li>
+  <li><a href="#tidyverse" id="toc-tidyverse" class="nav-link" data-scroll-target="#tidyverse">Tidyverse</a>
+  <ul class="collapse">
+  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><strong><code>select()</code></strong></a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><strong><code>filter()</code></strong></a>
+  <ul class="collapse">
+  <li><a href="#logical-operators" id="toc-logical-operators" class="nav-link" data-scroll-target="#logical-operators">Logical operators</a></li>
+  </ul></li>
+  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><strong><code>mutate()</code></strong></a></li>
+  </ul></li>
+  <li><a href="#making-one-new-dataframe" id="toc-making-one-new-dataframe" class="nav-link" data-scroll-target="#making-one-new-dataframe">Making one new dataframe!</a></li>
+  <li><a href="#save-tidy-data-as-csv" id="toc-save-tidy-data-as-csv" class="nav-link" data-scroll-target="#save-tidy-data-as-csv">Save tidy data as csv</a></li>
+  <li><a href="#independent-practice" id="toc-independent-practice" class="nav-link" data-scroll-target="#independent-practice">Independent practice</a>
+  <ul class="collapse">
+  <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6">(1)</a></li>
+  <li><a href="#section-7" id="toc-section-7" class="nav-link" data-scroll-target="#section-7">(2)</a></li>
+  <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8">(3)</a></li>
+  <li><a href="#section-9" id="toc-section-9" class="nav-link" data-scroll-target="#section-9">(4)</a></li>
+  <li><a href="#section-10" id="toc-section-10" class="nav-link" data-scroll-target="#section-10">(5)</a></li>
+  <li><a href="#section-11" id="toc-section-11" class="nav-link" data-scroll-target="#section-11">(6)</a></li>
+  <li><a href="#section-12" id="toc-section-12" class="nav-link" data-scroll-target="#section-12">(7)</a></li>
+  <li><a href="#section-13" id="toc-section-13" class="nav-link" data-scroll-target="#section-13">(8)</a></li>
+  </ul></li>
+  <li><a href="#challenge-questions-if-you-have-extra-time" id="toc-challenge-questions-if-you-have-extra-time" class="nav-link" data-scroll-target="#challenge-questions-if-you-have-extra-time">Challenge questions – if you have extra time</a>
+  <ul class="collapse">
+  <li><a href="#section-14" id="toc-section-14" class="nav-link" data-scroll-target="#section-14">(1)</a></li>
+  <li><a href="#section-15" id="toc-section-15" class="nav-link" data-scroll-target="#section-15">(2)</a></li>
+  </ul></li>
+  <li><a href="#bonus-summary-statistics" id="toc-bonus-summary-statistics" class="nav-link" data-scroll-target="#bonus-summary-statistics">Bonus: summary statistics</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">R Bootcamp Session 3 Starter Code w/ Key</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sierra Semko Krouse &amp; Emily Rosenthal </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 28, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="set-options" class="level1">
+<h1>Set options</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="warm-up" class="level1">
+<h1>Warm-up</h1>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">(1)</h2>
+<p><strong>Please sign in!</strong> Go to: https://tinyurl.com/session3-signin</p>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">(2)</h2>
+<p><strong>Make sure you have downloaded and saved the following three files:</strong></p>
+<ol type="1">
+<li><p>The COVID attitudes data “covid_attitudes_2023.csv” (you should have downloaded this last session)</p></li>
+<li><p>The penguins data “penguins.csv” (we will use this for the warm up)</p></li>
+<li><p>The <em>cleaned</em> penguins data “penguins_cleaned.csv”</p></li>
+</ol>
+<p><em>Note that we are not using the cleaned penguins data right now, but we will be working with it later today.</em></p>
+<p><strong>Make sure all files are saved in the appropriate location!</strong></p>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">(3)</h2>
+<p><strong>Load the penguins data set (the document is titled “penguins.csv”). Name it <code>penguins</code>.</strong></p>
+<p><em>Hint: if it’s not working, check your working directory using the <code>getwd()</code> command. Is it where you want it to be located? If not, set your working directory!</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/Users/sierrasemko/Desktop/Bootcamp_2023/session3"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setwd("/Users/sierrasemko/Desktop/Bootcamp_2023/session3") # replace this path with yours, if you need to set your working directory! </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../penguins.csv"</span>) <span class="co"># remember that you might need to remove "../" from the file name above if your data in a different folder than your working director. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3">(4)</h2>
+<p><strong>Look at the structure of your data using the <code>str()</code> command. What types of variables do you have?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   344 obs. of  9 variables:
+ $ penguin          : chr  "p1" "p2" "p3" "p4" ...
+ $ species          : chr  "Adelie" "Adelie" "Adelie" "Adelie" ...
+ $ island           : chr  "Torgersen" "Torgersen" "Torgersen" "Torgersen" ...
+ $ bill_length_mm   : num  39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...
+ $ bill_depth_mm    : num  18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...
+ $ flipper_length_mm: int  181 186 195 NA 193 190 181 195 193 190 ...
+ $ body_mass_g      : int  3750 3800 3250 NA 3450 3650 3625 4675 3475 4250 ...
+ $ sex              : chr  "male" "female" "female" NA ...
+ $ year             : int  2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...</code></pre>
+</div>
+</div>
+<p>I see character (for example, “penguin” and “species”), numeric (e.g., “bill_length_mm” and “bill_depth_mm”), and integer variables (e.g., “body_mass_g” and “year”) in this data set.</p>
+</section>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4">(5)</h2>
+<p><strong>What is the mean body mass of the penguins (in grams)?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(penguins<span class="sc">$</span>body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   2700    3550    4050    4202    4750    6300       2 </code></pre>
+</div>
+</div>
+<p>The mean body mass (in grams) is 4202.</p>
+</section>
+<section id="section-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-5">(6)</h2>
+<p><strong>How many penguins were measured in each year?</strong></p>
+<p><em>Hint: you will need to make year a factor first.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>penguins<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">factor</span>(penguins<span class="sc">$</span>year)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(penguins<span class="sc">$</span>year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2007 2008 2009 
+ 110  114  120 </code></pre>
+</div>
+</div>
+<p>There were 110 measured in 2007, 114 measured in 2008, and 120 measured in 2009.</p>
+</section>
+</section>
+<section id="loading-packages" class="level1">
+<h1>Loading packages</h1>
+<p>We want to install the package named <code>psych</code>!</p>
+<p>To install this package, there are 2 options:</p>
+<ol type="1">
+<li><p>Go to the “Packages” tab in the bottom right pane of RStudio. Click “Install” and type “psych” into the box and click “Install.”</p></li>
+<li><p>Instead, you could type <code>install.packages("psych")</code> into the console (be sure that the name of the package is in quotation marks!).</p></li>
+</ol>
+<p><strong>You only need to install the package once!</strong> However, you will need to load the package every time you want to use it. You can do this by running this code: <code>library(psych)</code>.</p>
+<p>Think of the code <code>install.packages("psych")</code> as going to the bookstore and buying a book. Until we take the book off of the shelf and open it, we can’t read it. The code <code>library(psych)</code> is equivalent of opening the book to read (in this metaphor).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("psych")</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Check again in the “Packages” tab on the bottom-right. If there is a check / tick mark next to the “psych” package, you’re good to go!</p>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<p>Install and load the tidyverse package</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse")</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ ggplot2 3.4.0     ✔ purrr   0.3.4
+✔ tibble  3.1.6     ✔ dplyr   1.0.9
+✔ tidyr   1.2.0     ✔ stringr 1.4.0
+✔ readr   1.4.0     ✔ forcats 0.5.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyr' was built under R version 4.0.5</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ ggplot2::%+%()   masks psych::%+%()
+✖ ggplot2::alpha() masks psych::alpha()
+✖ dplyr::filter()  masks stats::filter()
+✖ dplyr::lag()     masks stats::lag()</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="intro-to-tidy-data" class="level1">
+<h1>Intro to tidy data</h1>
+<p>Check out our <code>penguins</code> data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The goal for our tidy <code>penguins</code> data frame is:</p>
+<ul>
+<li><p>Only has columns for the variables penguin, species, island, bill_length_mm, bill_depth_mm, sex, year</p></li>
+<li><p>Only has the observations for the year 2008</p></li>
+<li><p>Remove penguins from the data frame that have NAs for any cells</p></li>
+<li><p>Make a new variable called “bill_sum” that is the sum of bill_length and bill_depth</p></li>
+<li><p>Make species into a factor</p></li>
+<li><p>Rename the levels of the variable sex from “female” to “f” and “male” to “m”</p></li>
+</ul>
+<p>This is what we want our data to look like after we do these processing steps:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>penguins_cleaned <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../penguins_cleaned.csv"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(penguins_cleaned)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s use the tidyverse package to accomplish this and turn our data into tidy data!</p>
+</section>
+<section id="tidyverse" class="level1">
+<h1>Tidyverse</h1>
+<p>One of the key features of the tidyverse is the pipe operator <code>%&gt;%</code>.</p>
+<p>The pipe operator allows you to string together many functions on the same data frame. You make a workﬂow of tasks that you perform sequentially on a data frame.</p>
+<p><em>Check out the session 3 recording for a more in-depth discussion about this from Emily.</em></p>
+<p>Here are the functions in the tidyverse that will allow us to adjust our data so that it becomes tidy and matches the <code>penguins_cleaned</code> dataset.</p>
+<section id="select" class="level2">
+<h2 class="anchored" data-anchor-id="select"><strong><code>select()</code></strong></h2>
+<p>With this function, we can select <em>only</em> our columns of interest: “penguin”, “species”, “island”, “bill_length_mm”, “bill_depth_mm”, “sex”, “year.” Here, we are making changes to the <em>columns</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>penguins_selected <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(penguin, species, island, bill_length_mm, bill_depth_mm, sex, year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We’re saving our smaller dataset that contains <em>only</em> the columns we want into a dataframe called <code>penguins_selected</code>.</p>
+<p>Next, we tell R which dataframe we want to use to create the smaller dataset. For us, that is the <code>penguins</code> dataframe.</p>
+<p>We then include the pipe operator, which tells R to expect more from us! We want to add additional functions, specifically, the <code>select()</code> function.</p>
+<p>Within <code>select()</code>, we list the columns that we want to select. We don’t need to put quotation marks around them, because we already told R which dataframe we’re using! For that same reason, we also don’t need to use the <code>$</code> operator.</p>
+<p>We can also use <code>select()</code> to <em>remove</em> columns:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>penguins_selected2 <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>flipper_length_mm, <span class="sc">-</span>body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Notice the <code>-</code> before each variable, or column, that we want to remove.</em></p>
+<p>Both of these uses of <code>select()</code> result in the SAME end product!</p>
+<p>Learn more functionality of <code>select()</code> <a href="https://dplyr.tidyverse.org/reference/select.html">here</a> (You can even use select to rename columns!)</p>
+</section>
+<section id="filter" class="level2">
+<h2 class="anchored" data-anchor-id="filter"><strong><code>filter()</code></strong></h2>
+<p>We can use filter to “subset” the data to retain just <em>some</em> of the observations.</p>
+<p>This is a change to the rows! We are only keeping rows that meet a certain criteria: In this case, we are only keeping observations (rows) that are part of the group that was measured in 2008.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>penguins_filtered <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2008</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>==</code> operator is a logical operator. This is notably different from <code>=</code> which equates two things (says x is equivalent to 2, for example). In contrast, <code>==</code> says “if TRUE”.</p>
+<p>The code above tells R to <code>filter()</code> within the “year” column if the observation is “2008”.</p>
+<section id="logical-operators" class="level3">
+<h3 class="anchored" data-anchor-id="logical-operators">Logical operators</h3>
+<p>For more information about all the logical operators you can use in filter, see <a href="https://www.tutorialspoint.com/r/r_operators.htm">this site</a>, the Relational and Logical Operators sections. For a quick preview:</p>
+<ul>
+<li><p><code>==</code> equals, <code>!=</code> not equals</p></li>
+<li><p><code>&gt;</code> greater than, <code>&gt;=</code> greater than or equal to</p></li>
+<li><p><code>&lt;</code> less than, <code>&lt;=</code> less than or equal to</p></li>
+<li><p><code>&amp;</code> AND</p></li>
+<li><p><code>|</code> OR</p></li>
+</ul>
+<p>Here is another example of how logic could be used with the <code>filter()</code> function:</p>
+<p>If you wanted to create a data frame with all penguins from 2007 <strong>or</strong> 2008 but NOT those from 2009, here are two ways this might be done using logic:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>penguins_filtered_no2009 <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span> <span class="sc">|</span> year <span class="sc">==</span> <span class="dv">2008</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I am telling R that I want to keep all penguins where the year is 2007 or the year is 2008. This means that all penguins who are not from either 2007 or 2008 are excluded. In other words, this means those from 2009 are excluded.</p>
+<p>There’s another way to go about this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>penguins_filtered_no2009<span class="fl">.2</span> <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">!=</span> <span class="dv">2009</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here, I am telling R to put in my new data frame all penguins where the year is <strong>NOT</strong> 2009. Given the levels of “year”, this means those from 2007 or 2008 are included and those from 2009 are excluded.</p>
+<p>These two produce identical data frames with penguins only from 2007 and 2008.</p>
+<p>There are <strong>a lot</strong> more ways you can use filter! <em>Learn more functionality of filter <a href="https://dplyr.tidyverse.org/reference/filter.html">here</a></em></p>
+</section>
+</section>
+<section id="mutate" class="level2">
+<h2 class="anchored" data-anchor-id="mutate"><strong><code>mutate()</code></strong></h2>
+<p><code>mutate()</code> allows us to make new columns and retain the old ones! We can use this in a lot of different ways:</p>
+<p>Let’s make a new column called “bill_sum” that adds the two bill columns:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>penguins_mutated <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bill_sum =</span> bill_length_mm <span class="sc">+</span> bill_depth_mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Our new column “bill_sum” is the sum of “bill_length_mm” and “bill_depth_mm”.</p>
+<p>Let’s also make the variable species into a factor:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>penguins_mutated2 <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">species =</span> <span class="fu">factor</span>(species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, we’ll change the values of the cells in the sex column</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>penguins_mutated3 <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex_recoded =</span> <span class="fu">case_when</span>(sex <span class="sc">==</span> <span class="st">"female"</span> <span class="sc">~</span> <span class="st">"f"</span>, sex <span class="sc">==</span> <span class="st">"male"</span> <span class="sc">~</span> <span class="st">"m"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here, we’re using a function called <code>case_when()</code>. Within the function, we say to assign “f” to the new column (“sex_recoded”) for every observation of “female” in the “sex” column, and to assign “m” for every observation of “male” in the “sex” column.</p>
+<p><em>BONUS: Managing NAs:</em></p>
+<ol type="1">
+<li>Recoding NAs</li>
+</ol>
+<p>Sometimes you will load data sets, and NA’s will be coded in different ways, such as -99 or “.”</p>
+<p>You can use <code>mutate()</code> and the <code>na_if()</code> commands to recode these values into NAs to make sure R can recognize them.</p>
+<p>THIS IS NOT THE CASE, but if the column “body_mass_g” had -99 for its NA values, you could write your code something like this: <code>penguins.new2 &lt;- penguins %&gt;% mutate(body_mass_g.NA = na_if(body_mass_g, -99))</code></p>
+<p>“body_mass_g” is the variable we are looking at -99 is the values of this vector that will be replaced with NA in the new vector “body_mass_g.NA”.</p>
+<ol start="2" type="1">
+<li>We can also use the function <code>drop_na()</code> to remove any rows that have an NA in a cell. We’ll utilize that in the next step:</li>
+</ol>
+<p>As we’ve made these changes, we’ve created a new dataframe every time. Luckily for us, we can use the pipe operator (<code>%&gt;%</code>) to link these functions together and make the changes all at once!</p>
+</section>
+</section>
+<section id="making-one-new-dataframe" class="level1">
+<h1>Making one new dataframe!</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>penguins_tidy <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(penguin, species, island, bill_length_mm, bill_depth_mm, sex, year) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2008</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bill_sum =</span> bill_length_mm <span class="sc">+</span> bill_depth_mm,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">species =</span> <span class="fu">factor</span>(species),</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">sex_recoded =</span> <span class="fu">case_when</span>(sex <span class="sc">==</span> <span class="st">"female"</span> <span class="sc">~</span> <span class="st">"f"</span>, sex <span class="sc">==</span> <span class="st">"male"</span> <span class="sc">~</span> <span class="st">"m"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>As you write your code, test it out along the way! As long as you highlight up to (before, but not including) a pipe operator (<code>%&gt;%</code>), the code will run and you can make sure you don’t have any errors. You can also run the code as you add each new function just to double-check.</p>
+</section>
+<section id="save-tidy-data-as-csv" class="level1">
+<h1>Save tidy data as csv</h1>
+<p>Let’s save a separate csv file with our cleaned data frame so that we don’t need to go through the “tidying” process every time we want to work with the penguins data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(penguins_tidy, <span class="at">file =</span> <span class="st">"penguins_cleaned.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We first name the dataframe we want to save (<code>penguins_tidy</code>), then indicate what we want the file to be saved as (“penguins_cleaned.csv”). <code>row.names = FALSE</code> tells R <em>not</em> to save the row numbers that it assigns as a column in the csv (<code>View(penguins_tidy)</code> and look on the far left to see what I’m talking about).</p>
+</section>
+<section id="independent-practice" class="level1">
+<h1>Independent practice</h1>
+<section id="section-6" class="level2">
+<h2 class="anchored" data-anchor-id="section-6">(1)</h2>
+<p><strong>Load the “covid_attitudes_2023” data. Name this data frame “covid_attitudes”.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>covid_attitudes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../covid_attitudes_2023.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>If you can, try to do all the ones below as a single call (e.g., only creating one new data frame).</strong></p>
+<p>I will list the code to do each portion below the question, but we’ll run the code altogether at the end to save everything into one dataframe.</p>
+<p><code>covid_attitudes_clean &lt;- covid_attitudes %&gt;%</code></p>
+</section>
+<section id="section-7" class="level2">
+<h2 class="anchored" data-anchor-id="section-7">(2)</h2>
+<p><strong>Remove the variable “Q6.consent”.</strong></p>
+<p><code>select(-Q6.consent) %&gt;%</code></p>
+</section>
+<section id="section-8" class="level2">
+<h2 class="anchored" data-anchor-id="section-8">(3)</h2>
+<p><strong>Keep only observations from large cities.</strong></p>
+<p><code>filter(Q84.community == "large city") %&gt;%</code></p>
+</section>
+<section id="section-9" class="level2">
+<h2 class="anchored" data-anchor-id="section-9">(4)</h2>
+<p><strong>Drop NAs.</strong></p>
+<p><code>drop_na() %&gt;%</code></p>
+</section>
+<section id="section-10" class="level2">
+<h2 class="anchored" data-anchor-id="section-10">(5)</h2>
+<p><strong>Add a new variable called “apprehension_score” that is a composite score of Q18, Q20, and Q21 (e.g., is an average of these three values)</strong></p>
+<p><code>mutate(apprehension_score = rowMeans(across(c(Q18.likely_to_catch_covid, Q20.ability_to_protect_self, Q21.expected_symptom_severity))) %&gt;%</code></p>
+<p>The function <code>rowMeans()</code> finds the mean across multiple columns and within one row. You also need the <code>across()</code> function within that and then <code>c()</code> (concatenate) to give it multiple columns to go across.</p>
+<p>Alternatively, you could add together values from the three columns and divide by three: <code>mutate(apprehension_score = (Q18.likely_to_catch_covid + Q20.ability_to_protect_self + Q21.expected_symptom_severity) / 3)) %&gt;%</code></p>
+</section>
+<section id="section-11" class="level2">
+<h2 class="anchored" data-anchor-id="section-11">(6)</h2>
+<p><strong>Recode the levels of a variable that has TRUE and FALSE to 1 for TRUE and 0 for FALSE, and make this variable into a factor.</strong></p>
+<p><code>mutate(Q13_1.trust_doctor_news = case_when(Q13.trust_doctor_news ~ 1, !Q13.trust_doctor_news ~ 0)) %&gt;%</code></p>
+<p><em>Since the values of this column are TRUE and FALSE, you can use them directly in <code>case_when()</code> and don’t need to wrap them in quotation marks!</em></p>
+<p>You could also do this as we’ve done previously and write it out – <code>mutate(Q13_1.trust_doctor_news = case_when(Q13.trust_doctor_news ==TRUE ~ 1, Q13.trust_doctor_news == FALSE ~ 0)) %&gt;%</code></p>
+<p>Notice that there are no quotes around TRUE or FALSE. It is because these columns are logical, NOT characters!</p>
+</section>
+<section id="section-12" class="level2">
+<h2 class="anchored" data-anchor-id="section-12">(7)</h2>
+<p><strong>We want to recode data from one of the likert scales!</strong></p>
+<p>We want to convert “Q9.covid_knowledge” into numeric responses:</p>
+<ul>
+<li><p>“Nothing at all” should be 1</p></li>
+<li><p>“A little” should be 2</p></li>
+<li><p>“A moderate amount” should be 3</p></li>
+<li><p>“A lot” should be 4.</p></li>
+</ul>
+<p><strong>Save this as a new column titled “Q9.covid_knowledge_num”.</strong></p>
+<p><code>mutate(Q9.covid_knowledge_num = case_when(Q9.covid_knowledge == "Nothing at all" ~ 1, Q9.covid_knowledge == "A little" ~ 2, Q9.covid_knowledge == "A moderate amount" ~ 3, Q9.covid_knowledge == "A lot" ~ 4)) %&gt;%</code></p>
+<p>This one was a bit tricky. First, let’s take a look at the levels of this variable. Run <code>summary(factor(covid_attitudes$Q9.covid_knowledge))</code> in your console.</p>
+<p>Be careful with how you write the responses, because they must exactly match what is already in the dataframe! How we write out these levels needs to be the same exact spacing/capitalization for R to recognize it!!</p>
+<p>Now, let’s do it all at once:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>covid_attitudes_tidy <span class="ot">&lt;-</span> covid_attitudes <span class="sc">%&gt;%</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Q6.consent) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Q84.community <span class="sc">==</span> <span class="st">"large city"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">apprehension_score =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(<span class="fu">c</span>(</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    Q18.likely_to_catch_covid,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    Q20.ability_to_protect_self,</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    Q21.expected_symptom_severity))),</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q13_1.trust_doctor_news =</span> <span class="fu">case_when</span>(</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>      Q13.trust_doctor_news <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>      <span class="sc">!</span>Q13.trust_doctor_news <span class="sc">~</span> <span class="dv">0</span>),</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q9.covid_knowledge_num =</span> <span class="fu">case_when</span>(</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>      Q9.covid_knowledge <span class="sc">==</span> <span class="st">"Nothing at all"</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>      Q9.covid_knowledge <span class="sc">==</span> <span class="st">"A little"</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>      Q9.covid_knowledge <span class="sc">==</span> <span class="st">"A moderate amount"</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>      Q9.covid_knowledge <span class="sc">==</span> <span class="st">"A lot"</span> <span class="sc">~</span> <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-13" class="level2">
+<h2 class="anchored" data-anchor-id="section-13">(8)</h2>
+<p><strong>Save your data frame:</strong></p>
+<p><em>Hint: Your code should look something like this: <code>write.csv(your_df, file= "add-your-file-name-here.csv", row.names = FALSE)</code></em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(covid_attitudes_tidy, <span class="st">"covid_attitudes_tidy.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="challenge-questions-if-you-have-extra-time" class="level1">
+<h1>Challenge questions – if you have extra time</h1>
+<p><code>covid_attitudes_challenge &lt;- covid_attitudes %&gt;%</code></p>
+<section id="section-14" class="level2">
+<h2 class="anchored" data-anchor-id="section-14">(1)</h2>
+<p><strong>Remove the variable Q6.consent</strong></p>
+<p><code>select(-Q6.consent) %&gt;%</code></p>
+</section>
+<section id="section-15" class="level2">
+<h2 class="anchored" data-anchor-id="section-15">(2)</h2>
+<p><strong>Keep observations from large cities OR suburbs</strong></p>
+<p><em>(Hint: think back to the logical operators we learned earlier today….)</em></p>
+<p><code>filter(Q84.community == "large city" | Q84.community == "suburb")</code></p>
+<p>Just for fun, let’s do it all at once!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>covid_attitudes_challenge <span class="ot">&lt;-</span> covid_attitudes <span class="sc">%&gt;%</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Q6.consent) <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Q84.community <span class="sc">==</span> <span class="st">"large city"</span> <span class="sc">|</span> Q84.community <span class="sc">==</span> <span class="st">"suburb"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="bonus-summary-statistics" class="level1">
+<h1>Bonus: summary statistics</h1>
+<p>We can use <code>summarise()</code> to get summary statistics for our variables.</p>
+<p>Run the following code to see how it works:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>attitudes_summary <span class="ot">&lt;-</span> covid_attitudes_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(apprehension_score))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Try this yourself but now get the standard deviation instead of the mean.</strong></p>
+<p><em>Hint: you can use <code>?summarise</code> if you’re stuck, and/or look up how to do standard deviation in R.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>attitudes_summary <span class="ot">&lt;-</span> covid_attitudes_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">sd</span>(apprehension_score))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now let’s look at the average apprehension score for each age group using another powerful tidyverse command: <code>group_by()</code>. Run the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>attitudes_summary <span class="ot">&lt;-</span> covid_attitudes_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group by age</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Q40.age) <span class="sc">%&gt;%</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get mean apprehension score for each age group</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">apprehension_mean =</span> <span class="fu">mean</span>(apprehension_score)) <span class="sc">%&gt;%</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># it's important to ungroup!</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li><p>View the new variable in the “attitudes_summary” dataframe. What did it give you?</p></li>
+<li><p>Try grouping by another variable of interest (or more than one). Don’t forget to ungroup() after you’re done !</p></li>
+</ol>
+<p><em>Note: Grouping doesn’t alter your data frame, it just changes how it’s listed and how it interacts with the other commands.</em></p>
+<p>Check out the <a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">tidy cheat sheet</a> for more tidyverse and data wrangling functionality!</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
