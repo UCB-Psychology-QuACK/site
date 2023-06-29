@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sierra Semko Krouse &amp; Emily Rosenthal">
+<meta name="dcterms.date" content="2023-06-21">
+
+<title>R Bootcamp Session 2 Key</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="session2_key_files/libs/clipboard/clipboard.min.js"></script>
+<script src="session2_key_files/libs/quarto-html/quarto.js"></script>
+<script src="session2_key_files/libs/quarto-html/popper.min.js"></script>
+<script src="session2_key_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="session2_key_files/libs/quarto-html/anchor.min.js"></script>
+<link href="session2_key_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="session2_key_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="session2_key_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="session2_key_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="session2_key_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">R Bootcamp Session 2 Key</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sierra Semko Krouse &amp; Emily Rosenthal </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 21, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="warm-up" class="level1">
+<h1>Warm-up</h1>
+<p>Create three different vectors:</p>
+<ol type="i">
+<li>A vector called “names” with three names</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Sarah"</span>, <span class="st">"Robert"</span>, <span class="st">"Sally"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="i">
+<li>A vector named “ages” with three ages of college students</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">20</span>, <span class="dv">21</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="i">
+<li>A vector called “year” with three years of college (e.g., Freshman, Sophomore, etc.)</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"freshman"</span>, <span class="st">"junior"</span>, <span class="st">"senior"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>year.factor <span class="ot">&lt;-</span> <span class="fu">factor</span>(year, </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"freshman"</span>, <span class="st">"sophomore"</span>, <span class="st">"junior"</span>, <span class="st">"senior"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We made a new vector called <em>“year.factor”</em> that is the factorized version of the vector <em>“year”</em>. The reason we make a factor from <em>“year”</em> is because there are four possible options/bins for year - freshman, sophomore, junior, or senior. Although we only <strong>OBSERVED</strong> three of these in the data, there are four possible options (e.g., sophomores still exist even if we didn’t get data from one of them).</p>
+<p>The difference in our two year factors is evident when ask R to print out the content of each factor. Below, we can see that <em>“year.factor”</em> has levels, which is the tell-tale sign of a factor:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>year.factor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] freshman junior   senior  
+Levels: freshman sophomore junior senior</code></pre>
+</div>
+</div>
+<p>whereas the <em>“year”</em> vector is merely a character vector (a vector composed of a character items):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "freshman" "junior"   "senior"  </code></pre>
+</div>
+</div>
+<p><em>NOTE: You could do this in one step if you wanted to:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"freshman"</span>, <span class="st">"junior"</span>, <span class="st">"senior"</span>),</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"freshman"</span>, <span class="st">"sophomore"</span>, <span class="st">"junior"</span>, <span class="st">"senior"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Run the code and check that everything looks correct in the global environment.</p>
+</section>
+<section id="dataframes" class="level1">
+<h1>Dataframes</h1>
+<p>Let’s make a dataframe called <strong>“students”</strong> with our new vectors:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>students <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(names, ages, year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you get an error that says something like “arguments imply differing number of rows:”, check that each of the vectors you made has the same number of items – e.g., that you have a list of <strong>EXACTLY</strong> three names, three ages, and three years. You can’t make a dataframe from vectors of varying lengths.</p>
+<p>We can look at our dataframe in a new tab:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(students)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can also look at our data frame in the global environment. We see that each of our vectors became columns, and R is smart enough to make our column names the names of the vectors!</p>
+<p>We can use ‘$’ to examine individual columns within our larger dataset:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>students<span class="sc">$</span>names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Sarah"  "Robert" "Sally" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>students<span class="sc">$</span>ages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18 20 21</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>students<span class="sc">$</span>year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] freshman junior   senior  
+Levels: freshman sophomore junior senior</code></pre>
+</div>
+</div>
+<p>If we run these lines of code, we see that each column is a vector!</p>
+<p>Normally, we don’t create our own data frames by hand though because we have collected data that we have stored in a file that we want to read in to work with!</p>
+<p>But first, before we read in any data, we need to understand the structure of our file directory and understand where our R script “lives” (i.e., which folder it is in), where our data file lives, and where our R script is pointing to.</p>
+</section>
+<section id="working-directory" class="level1">
+<h1>Working Directory</h1>
+<p>The working directory is the file folder that R is currently working from. The working directory is also where R will look for any new data file, and where R will default to saving any new files.</p>
+<p>There is a command to check where the working directory is currently set:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/Users/sierrasemko/Desktop/Bootcamp_2023/session2"</code></pre>
+</div>
+</div>
+<p>You can also see what the working directory is by looking at the bar below the tabs that say “Console,” “Terminal,” and “Jobs” and above the console panel.</p>
+<p>If your data file is in your current working directory (which often means it is in the same folder as the R script you are working with), you can just write <code>read.csv("name-of-file.csv")</code>. You don’t need to give R any other “address” information from the file because R is already in the right place to look for it!</p>
+<p>Some ways to set your working directory:</p>
+<ul>
+<li><ol type="1">
+<li>[When R is closed] - Open your script from the file/library on your computer</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Point and click in R Studio – At the top of your screen, go to: Session &gt;&gt; Set working directory &gt;&gt; Choose directory &gt;&gt; select a folder</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Use the setwd() function – You would put the absolute file path here. On PC, this would look like:</li>
+</ol></li>
+</ul>
+<p><code>setwd("C:\\Users\\Emily\\Documents\\R_Bootcamp\\2023_Summer\\Session2")</code>.</p>
+<p>On Mac, this would look like:</p>
+<p><code>setwd(/Users/sierrasemko/Desktop/Bootcamp_2023/session2)</code>.</p>
+<p><em>Note: If you have a PC, you either need two dashes like \ or one dash in the other direction /. This will differ for each person - your file paths will be different than mine! Using this absolute path is tricky if you ever change the names of your files.</em></p>
+<p>Regardless of how you set your working directory, just be careful and make sure you always know where your R script is located, where your data file is located, and where the working directory is.</p>
+<p>If this is a bit confusing, check out <a href="https://drive.google.com/file/d/1oPZQzG57PFLw1koWX3t6n029xLCMoRLo/view?usp=sharing">this linked video</a> we made on setting your working directory.</p>
+<p><em>Note that you will need to set your working directory EVERY TIME you open an R script!</em></p>
+</section>
+<section id="load-data" class="level1">
+<h1>Load Data</h1>
+<p>Let’s read in our data and save it in a dataframe called “covid_attitudes”. There are two ways to go about loading a dataset into R Studio:</p>
+<p>Option 1) If your data “lives” one level <em>above</em> your working directory (e.g., if your working directory is set to the Session 2 folder, but your data file ‘lives’ one level up in the R Bootcamp 2023 folder).</p>
+<p>This would be the case if you have a Bootcamp_2023 folder where the data lives, but within that folder you have subfolders for each workshop session. If your working directory is set to the Session 2 subfolder, for example, you need to indicate to R to look at the folder one level higher to find the data file (e.g., the script / working directory is set to the classroom, but you need it to look in the hallway for your data file if we want to use the analogy we discussed earlier).</p>
+<p>Indicate this to R by <code>../</code> right before the name of the data file, which says, “look one folder higher”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>covid_attitudes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../covid_attitudes_2023.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Option 2) If your working directory is the file folder where your document lives (e.g., right to your <strong>R Bootcamp 2023 folder</strong>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># covid_attitudes &lt;- read.csv("covid_attitudes_2023.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You will only need to do <strong>one</strong> of these options, and it will all depend on a) where your working directory is currently set, and b) where the data file that you want to read into R is currently stored.</p>
+<p>This should appear in your global environment!</p>
+<p><em>Note: If my CSV file was saved in the same folder as my working directory, I would read it in with this code: covid_attitudes &lt;- read.csv(“covid_attitudes.csv”), without the “../”</em></p>
+<p><strong>Bonus/Extra – Reading in SPSS (.sav) Data Files</strong></p>
+<p>Some labs have data files saved in SPSS, and they will appear in your folder as .sav files.</p>
+<p>We didn’t cover this during the recording, but this might be helpful for you if this applies to your lab!</p>
+<ol type="1">
+<li>Install the haven package</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages('haven')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You only need to run this line of code once. After that, this package will be installed (make sure you take out the # before you run it the first time, but no need to run it again once it’s been installed).</p>
+<ol start="2" type="1">
+<li>Load the package!</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library(haven)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You need to run this every time you run your code when loading “.sav” files, and this should be run <strong>BEFORE</strong> loading in your data</p>
+<ol start="3" type="1">
+<li>Make a data frame with your data!</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data_frame_name&lt;-read_sav("data_file_name.sav") </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="setting-options" class="level2">
+<h2 class="anchored" data-anchor-id="setting-options">Setting Options</h2>
+<p>Older versions of R would automatically make columns with characters into factors, which is not what we want.</p>
+<p>So, let’s tell R <strong>not</strong> to make this assumption when it loads in data!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">stringsAsFActors =</span> <span class="cn">FALSE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="examining-data" class="level2">
+<h2 class="anchored" data-anchor-id="examining-data">Examining Data</h2>
+<p>If you add a question mark before a command, R can provide some information about what it does (look in the bottom right corner of your screen!</p>
+<p>For instance, what do these do?:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>?ncol </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>?nrow</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>?str</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>?summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Remember: if you want to call a specific vector (column) from your data frame, use the $ operator!</p>
+<p>e.g., <code>covid_attitudes$Q74.education</code> – this calls the Q74.education column from our covid_attitudes data frame</p>
+</section>
+</section>
+<section id="on-your-own" class="level1">
+<h1>On Your Own</h1>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">(1)</h2>
+<section id="a" class="level3">
+<h3 class="anchored" data-anchor-id="a">(a)</h3>
+<p><strong>Use the <code>summary()</code> function to learn about the covid_attitudes dataframe. This should look like: <code>summary(covid_attitudes)</code>.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(covid_attitudes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     sub_ID         Q6.consent Q8.covid.info      Q9.covid_knowledge
+ Min.   :   1.0   Min.   :1    Length:1020        Length:1020       
+ 1st Qu.: 255.8   1st Qu.:1    Class :character   Class :character  
+ Median : 510.5   Median :1    Mode  :character   Mode  :character  
+ Mean   : 510.5   Mean   :1                                         
+ 3rd Qu.: 765.2   3rd Qu.:1                                         
+ Max.   :1020.0   Max.   :1                                         
+                  NA's   :47                                        
+ Q10.rank_attention_to_news Q13.trust_doctor_news Q13.trust_hospital_news
+ Min.   : 0.000             Mode :logical         Mode :logical          
+ 1st Qu.: 5.000             FALSE:895             FALSE:939              
+ Median : 7.000             TRUE :125             TRUE :81               
+ Mean   : 6.792                                                          
+ 3rd Qu.: 8.000                                                          
+ Max.   :10.000                                                          
+ NA's   :120                                                             
+ Q13.trust_cdc_news Q13.trust_government_news Q13.trust_none_of_above
+ Mode :logical      Mode :logical             Length:1020            
+ FALSE:369          FALSE:937                 Class :character       
+ TRUE :651          TRUE :83                  Mode  :character       
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+ Q14.confidence_us_government Q16.Belief_scientists_understand_covid
+ Min.   : 0.000               Min.   : 0.000                        
+ 1st Qu.: 2.000               1st Qu.: 5.000                        
+ Median : 4.000               Median : 6.000                        
+ Mean   : 3.968               Mean   : 5.961                        
+ 3rd Qu.: 6.000               3rd Qu.: 7.000                        
+ Max.   :10.000               Max.   :10.000                        
+ NA's   :141                  NA's   :137                           
+ Q17.concerned_outbreak Q18.likely_to_catch_covid Q20.ability_to_protect_self
+ Length:1020            Min.   :  0.00            Min.   :  0.00             
+ Class :character       1st Qu.: 20.00            1st Qu.: 61.00             
+ Mode  :character       Median : 41.00            Median : 77.00             
+                        Mean   : 42.16            Mean   : 73.53             
+                        3rd Qu.: 60.00            3rd Qu.: 90.00             
+                        Max.   :100.00            Max.   :100.00             
+                        NA's   :153               NA's   :150                
+ Q21.expected_symptom_severity Q101.confidence_in_authority
+ Min.   :1.000                 Min.   :  0.00              
+ 1st Qu.:2.000                 1st Qu.: 29.00              
+ Median :3.000                 Median : 47.00              
+ Mean   :2.857                 Mean   : 45.15              
+ 3rd Qu.:3.000                 3rd Qu.: 62.00              
+ Max.   :6.000                 Max.   :100.00              
+ NA's   :154                   NA's   :157                 
+ Q23.risk_exaggerated Q27.wearing_mask   Q35.take_vaccine.    Q40.age         
+ Length:1020          Length:1020        Length:1020        Length:1020       
+ Class :character     Class :character   Class :character   Class :character  
+ Mode  :character     Mode  :character   Mode  :character   Mode  :character  
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+  Q41.gender        Q74.education      Q84.community      Q43.health.1.5.
+ Length:1020        Length:1020        Length:1020        Min.   :1.000  
+ Class :character   Class :character   Class :character   1st Qu.:3.000  
+ Mode  :character   Mode  :character   Mode  :character   Median :4.000  
+                                                          Mean   :3.552  
+                                                          3rd Qu.:4.000  
+                                                          Max.   :5.000  
+                                                          NA's   :190    
+ Q39.flu.vaccine    Q44.contact_covid  Q85.pre.exisiting_conditions
+ Length:1020        Length:1020        Length:1020                 
+ Class :character   Class :character   Class :character            
+ Mode  :character   Mode  :character   Mode  :character            
+                                                                   
+                                                                   
+                                                                   
+                                                                   
+ Q92.friends.family_preexisiting_conditions
+ Length:1020                               
+ Class :character                          
+ Mode  :character                          
+                                           
+                                           
+                                           
+                                           </code></pre>
+</div>
+</div>
+<p>When called on a data frame, this command gives you summary information for each column.</p>
+<ul>
+<li>For numeric columns, gives you mean, median, and quartile information.</li>
+<li>For character columns, does not give you much information, just the length and type.</li>
+<li>For factors, gives much more information: shows all the levels (i.e., sub-groups), and also how many observations are in each group.</li>
+</ul>
+</section>
+<section id="b" class="level3">
+<h3 class="anchored" data-anchor-id="b">(b)</h3>
+<p><strong>Now use the use the <code>str()</code> function in the same way. What do these do? What do you see? What types of data do we have in our data frame?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(covid_attitudes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   1020 obs. of  29 variables:
+ $ sub_ID                                    : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ Q6.consent                                : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ Q8.covid.info                             : chr  "A moderate amount" "A lot" "A lot" "A moderate amount" ...
+ $ Q9.covid_knowledge                        : chr  NA "A little" "A moderate amount" "A moderate amount" ...
+ $ Q10.rank_attention_to_news                : int  3 6 8 4 NA 5 8 9 9 NA ...
+ $ Q13.trust_doctor_news                     : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
+ $ Q13.trust_hospital_news                   : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
+ $ Q13.trust_cdc_news                        : logi  TRUE TRUE TRUE TRUE FALSE TRUE ...
+ $ Q13.trust_government_news                 : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
+ $ Q13.trust_none_of_above                   : chr  "FALSE" "FALSE" "FALSE" "FALSE" ...
+ $ Q14.confidence_us_government              : int  NA 6 5 4 NA 3 5 3 8 NA ...
+ $ Q16.Belief_scientists_understand_covid    : int  NA 5 9 3 NA 4 6 8 10 NA ...
+ $ Q17.concerned_outbreak                    : chr  "A moderate amount" "A little" "A moderate amount" NA ...
+ $ Q18.likely_to_catch_covid                 : int  NA 29 50 9 NA 22 40 69 85 NA ...
+ $ Q20.ability_to_protect_self               : int  NA 50 70 49 NA 81 61 70 100 NA ...
+ $ Q21.expected_symptom_severity             : int  NA 4 2 3 NA 3 3 3 2 NA ...
+ $ Q101.confidence_in_authority              : int  NA 46 40 30 NA 50 60 40 80 NA ...
+ $ Q23.risk_exaggerated                      : chr  NA "somewhat disagree" NA "strongly disagree" ...
+ $ Q27.wearing_mask                          : chr  NA "sick people" "sick people" "everyone" ...
+ $ Q35.take_vaccine.                         : chr  NA "definitely" "probably" "definitely" ...
+ $ Q40.age                                   : chr  NA "30-34" "25-29" "50-54" ...
+ $ Q41.gender                                : chr  NA "f" "f" "m" ...
+ $ Q74.education                             : chr  NA "doctorate" "professional degree" "doctorate" ...
+ $ Q84.community                             : chr  NA "large city" "ruralArea" "small city/town" ...
+ $ Q43.health.1.5.                           : int  3 3 3 3 NA 4 3 5 3 NA ...
+ $ Q39.flu.vaccine                           : chr  "FALSE" "TRUE" "FALSE" "TRUE" ...
+ $ Q44.contact_covid                         : chr  "no" "unsure" "no" "no" ...
+ $ Q85.pre.exisiting_conditions              : chr  "prefer not to say" "no" "no" "no" ...
+ $ Q92.friends.family_preexisiting_conditions: chr  "no" "no" "no" "yes" ...</code></pre>
+</div>
+</div>
+<p>str stands for “structure”. This function gives you the structure of the data frame, which is similar to the information that the global environment gives you. It shows you all of the columns and what type they are. It also gives you a sample of the data in each column.</p>
+<p>This data frame has variables that are integers (a type of numeric variable), characters, numeric, and logical.</p>
+</section>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">(2)</h2>
+<p><strong>Use the <code>ncol()</code> function. How many columns in our data?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(covid_attitudes) <span class="co"># this function gives us the number of columns in the data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 29</code></pre>
+</div>
+</div>
+<p>There are 29 columns.</p>
+<p><em>Note: If you check the output of your str() function or in the global environment, this is equal to the number of variables.</em></p>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">(3)</h2>
+<p><strong>Use the <code>nrow()</code> function. How many rows in our data?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(covid_attitudes) <span class="co"># this function gives us the number of rows in our data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1020</code></pre>
+</div>
+</div>
+<p>There are 1020 rows.</p>
+<p><em>Note: If you check the output of your str() function or in the global environment, this is equal to the number of obs. (which stands for observations)</em></p>
+<p><em>Also Note: This does not count the row with the col names, it knows that those are the names for the variables/columns.</em></p>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3">(4)</h2>
+<section id="a-1" class="level3">
+<h3 class="anchored" data-anchor-id="a-1">(a)</h3>
+<p><strong>Some of these columns should be factors! Lets turn the education column into a factor. Use the command <code>factor(covid_attitudes$Q74.education)</code> but be sure to save the factor as a column in your dataframe:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>covid_attitudes<span class="sc">$</span>Q74.education.factor <span class="ot">&lt;-</span> <span class="fu">factor</span>(covid_attitudes<span class="sc">$</span>Q74.education)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>When we create a factor, we want to make sure we are creating a new column within our data frame where that can live. To make a new column within our data frame, we have the name of our data frame, our <code>$</code>, and then the name we are making for this new column.</p>
+</section>
+<section id="b-1" class="level3">
+<h3 class="anchored" data-anchor-id="b-1">(b)</h3>
+<p><strong>Pick some other column you think should be a factor and turn it into a factor:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>covid_attitudes<span class="sc">$</span>Q8.covid.info.factor <span class="ot">&lt;-</span> <span class="fu">factor</span>(covid_attitudes<span class="sc">$</span>Q8.covid.info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4">(5)</h2>
+<p><strong>Now use the <code>summary()</code> command to run on summary on just the column with your new factor. Does the description change from how it was before? What does it look like now?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(covid_attitudes<span class="sc">$</span>Q74.education.factor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       4 year degree        2 year degree            doctorate 
+                 159                   76                  112 
+ highschool graduate less than highschool  professional degree 
+                  91                    7                   86 
+        some college                 NA's 
+                 301                  188 </code></pre>
+</div>
+</div>
+<p>Before we made it a factor, the summary() function just told us that it was a character vector and had a length of 1020 (which is the number of observations)</p>
+<p>Now that it is a factor, we can see more information! We now see the levels and the number of observations (people) who reported each level of education (and NA).</p>
+</section>
+<section id="section-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-5">(6)</h2>
+<p><strong>Which columns have the most NAs? Use the <code>summary()</code> command to investigate!</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(covid_attitudes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     sub_ID         Q6.consent Q8.covid.info      Q9.covid_knowledge
+ Min.   :   1.0   Min.   :1    Length:1020        Length:1020       
+ 1st Qu.: 255.8   1st Qu.:1    Class :character   Class :character  
+ Median : 510.5   Median :1    Mode  :character   Mode  :character  
+ Mean   : 510.5   Mean   :1                                         
+ 3rd Qu.: 765.2   3rd Qu.:1                                         
+ Max.   :1020.0   Max.   :1                                         
+                  NA's   :47                                        
+ Q10.rank_attention_to_news Q13.trust_doctor_news Q13.trust_hospital_news
+ Min.   : 0.000             Mode :logical         Mode :logical          
+ 1st Qu.: 5.000             FALSE:895             FALSE:939              
+ Median : 7.000             TRUE :125             TRUE :81               
+ Mean   : 6.792                                                          
+ 3rd Qu.: 8.000                                                          
+ Max.   :10.000                                                          
+ NA's   :120                                                             
+ Q13.trust_cdc_news Q13.trust_government_news Q13.trust_none_of_above
+ Mode :logical      Mode :logical             Length:1020            
+ FALSE:369          FALSE:937                 Class :character       
+ TRUE :651          TRUE :83                  Mode  :character       
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+ Q14.confidence_us_government Q16.Belief_scientists_understand_covid
+ Min.   : 0.000               Min.   : 0.000                        
+ 1st Qu.: 2.000               1st Qu.: 5.000                        
+ Median : 4.000               Median : 6.000                        
+ Mean   : 3.968               Mean   : 5.961                        
+ 3rd Qu.: 6.000               3rd Qu.: 7.000                        
+ Max.   :10.000               Max.   :10.000                        
+ NA's   :141                  NA's   :137                           
+ Q17.concerned_outbreak Q18.likely_to_catch_covid Q20.ability_to_protect_self
+ Length:1020            Min.   :  0.00            Min.   :  0.00             
+ Class :character       1st Qu.: 20.00            1st Qu.: 61.00             
+ Mode  :character       Median : 41.00            Median : 77.00             
+                        Mean   : 42.16            Mean   : 73.53             
+                        3rd Qu.: 60.00            3rd Qu.: 90.00             
+                        Max.   :100.00            Max.   :100.00             
+                        NA's   :153               NA's   :150                
+ Q21.expected_symptom_severity Q101.confidence_in_authority
+ Min.   :1.000                 Min.   :  0.00              
+ 1st Qu.:2.000                 1st Qu.: 29.00              
+ Median :3.000                 Median : 47.00              
+ Mean   :2.857                 Mean   : 45.15              
+ 3rd Qu.:3.000                 3rd Qu.: 62.00              
+ Max.   :6.000                 Max.   :100.00              
+ NA's   :154                   NA's   :157                 
+ Q23.risk_exaggerated Q27.wearing_mask   Q35.take_vaccine.    Q40.age         
+ Length:1020          Length:1020        Length:1020        Length:1020       
+ Class :character     Class :character   Class :character   Class :character  
+ Mode  :character     Mode  :character   Mode  :character   Mode  :character  
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+  Q41.gender        Q74.education      Q84.community      Q43.health.1.5.
+ Length:1020        Length:1020        Length:1020        Min.   :1.000  
+ Class :character   Class :character   Class :character   1st Qu.:3.000  
+ Mode  :character   Mode  :character   Mode  :character   Median :4.000  
+                                                          Mean   :3.552  
+                                                          3rd Qu.:4.000  
+                                                          Max.   :5.000  
+                                                          NA's   :190    
+ Q39.flu.vaccine    Q44.contact_covid  Q85.pre.exisiting_conditions
+ Length:1020        Length:1020        Length:1020                 
+ Class :character   Class :character   Class :character            
+ Mode  :character   Mode  :character   Mode  :character            
+                                                                   
+                                                                   
+                                                                   
+                                                                   
+ Q92.friends.family_preexisiting_conditions          Q74.education.factor
+ Length:1020                                some college       :301      
+ Class :character                            4 year degree     :159      
+ Mode  :character                           doctorate          :112      
+                                            highschool graduate: 91      
+                                            professional degree: 86      
+                                            (Other)            : 83      
+                                            NA's               :188      
+        Q8.covid.info.factor
+ A little         : 33      
+ A lot            :602      
+ A moderate amount:268      
+ NA's             :117      
+                            
+                            
+                            </code></pre>
+</div>
+</div>
+<p>This depends on which you made into factors! For example.</p>
+<ul>
+<li><p>Q43 has 190 NAs! (it is a numeric variable, so will show NAs)</p></li>
+<li><p>Q84 has 188 NAs (but we only know this if we turned it into a factor!</p></li>
+</ul>
+</section>
+<section id="section-6" class="level2">
+<h2 class="anchored" data-anchor-id="section-6">(7)</h2>
+<p>What do you notice about how the NAs are represented in different columns? In <em>summary()</em>? When you <em>View()</em> it?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(covid_attitudes)</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># View(covid_attitudes)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I notice that for the column <code>covid_attitudes$Q13.trust_none_of_above</code>, missing data is indicated by a blank cell, wheareas for others they are indicated as italicised NA’s. Thise italicized NA’s come up as “NA’s” in the summary.</p>
+<p>Different labs format missing data differently and it is something to keep an eye out for in the future as it’s really important to make sure that it is formatted properly.</p>
+</section>
+<section id="section-7" class="level2">
+<h2 class="anchored" data-anchor-id="section-7">(8)</h2>
+<p><strong>On average, how likely do people think they are to catch Covid-19?</strong> <em>Hint: You first need to find the relevant column to answer this question, we first have to find the relevant column: Q_18</em></p>
+<p><strong>Then, use <code>summary()</code> to find the mean:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(covid_attitudes<span class="sc">$</span>Q18.likely_to_catch_covid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.00   20.00   41.00   42.16   60.00  100.00     153 </code></pre>
+</div>
+</div>
+<p>The mean is 42.16, so on average, people think they have a 42.16% chance of catching Covid.</p>
+</section>
+<section id="section-8" class="level2">
+<h2 class="anchored" data-anchor-id="section-8">(9)</h2>
+<p><strong>How many types of living communities are there? To answer this question, we first have to find the relevant column: Q_84.community.</strong></p>
+<p><strong>If you haven’t already, you will need to turn it into a factor:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>covid_attitudes<span class="sc">$</span>Q84.community.factor <span class="ot">&lt;-</span> <span class="fu">factor</span>(covid_attitudes<span class="sc">$</span>Q84.community)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Then, use <code>summary()</code> to see the levels of the factor, as well as how many people or observations are in each level:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(covid_attitudes<span class="sc">$</span>Q84.community.factor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     large city       ruralArea small city/town          suburb            NA's 
+            150              66             260             356             188 </code></pre>
+</div>
+</div>
+<p>There are 4 types of communities and NA.</p>
+</section>
+<section id="section-9" class="level2">
+<h2 class="anchored" data-anchor-id="section-9">(10)</h2>
+<p><strong>If you have time: Think of another question you can ask and answer it!</strong></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
