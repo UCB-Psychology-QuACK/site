@@ -17,7 +17,7 @@ The class takes a hands-on workshop style format focusing on using real data!
 *See the [FAQs](#faqs) below for more info*
 
 ### Instructors
-The course was developed by [Elena Leib](https://ucb-psychology-quack.github.io/site/about/about) and [Willa Voorhies](https://ucb-psychology-quack.github.io/site/about/about), who are 5th year PhD students in the department.
+The course was developed by [Elena Leib](https://ucb-psychology-quack.github.io/site/about/about) and [Willa Voorhies](https://ucb-psychology-quack.github.io/site/about/about).
 This year's course will be instructed by Sierra Semko-Krouse, Maria Luciani, Emily Rosenthal, Elizabeth Cisneros, Colin Jacobs, Sophie Regan, Maria Martin Lopez, Evan Orticio, Emma Ward-Griffin and Samira Maboudian. 
 This year's course coordinators are Rebecca Corona and Victoria Keating. 
 
