@@ -37,7 +37,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 |  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
 | Week 1 () |Intro to R & Programming|[w1_materials](week1/week1.zip)
-| Week 2 () |Working directories and reading in data|[w2_materials](week2/week2.zip)|[w2_key](week2/week2_key.R)|[w2_slides](week2/week2_slides.pdf)|
+| Week 2 () |Working directories and reading in data|[w2_materials](week2/week2.zip)
 | Week 3 () |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](week3/week3.zip)|[w3_key](week3/week3_key.R)|[w3_slides](week3/week3_slides.pdf)|
 | Week 4 ()|Data wrangling - Part 2|[w4_materials](week4/week4.zip)|[w4_key](week4/week4_key.R)|*no slides*|
 | Week 5 () |Intro to data visualization (ggplot) - Part 1|[w5_materials](week5/week5.zip)|[w5_key](week5/week5_key.R)|[w5_slides](week5/DataViz-part1.pdf)
