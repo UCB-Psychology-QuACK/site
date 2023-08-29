@@ -44,7 +44,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 6 () |Data visualization - Part 2|[w6_materials](week6/week6.zip)|[w6_key](week6/week6_key.R)|*no slides*|
 | Week 7 () |Intro to loops|[w7_materials](week7/week7_starter.R)|[w7_key](week7/week7_key.R)|[w7_slides](week7/week7_slides.pdf)|
 | Week 8 () |Loops continued and random sampling|[week8_materials](week8/week8.zip)|[w8_key](week8/week8_key.zip)
-| Week 9 () |Class Cancelled|||||
+| Week 9 () |Class Cancelled||||
 | Week 10 () |Random Sampling pt 2|[w10_materials](week10/week_10_starter.R)|[w10_key](week10/week_10_key.R)
 | Week 11 () |Functions!|[w11_materials](week11/week11.zip)|[w11_key](week11/week11_key.R)|[w11_slides](week11/week11_slides.pdf)
 | Week 12 () |Discussion/Flex week
