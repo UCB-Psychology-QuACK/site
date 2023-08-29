@@ -36,17 +36,17 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 
 |  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
-| Week 1 () |Intro to R & Programming|w1_materials
-| Week 2 () |Working directories and reading in data|[w2_materials](week2/week2.zip)
-| Week 3 () |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](week3/week3.zip)|[w3_key](week3/week3_key.R)|[w3_slides](week3/week3_slides.pdf)|
-| Week 4 ()|Data wrangling - Part 2|[w4_materials](week4/week4.zip)|[w4_key](week4/week4_key.R)|*no slides*|
-| Week 5 () |Intro to data visualization (ggplot) - Part 1|[w5_materials](week5/week5.zip)|[w5_key](week5/week5_key.R)|[w5_slides](week5/DataViz-part1.pdf)
-| Week 6 () |Data visualization - Part 2|[w6_materials](week6/week6.zip)|[w6_key](week6/week6_key.R)|*no slides*|
-| Week 7 () |Intro to loops|[w7_materials](week7/week7_starter.R)|[w7_key](week7/week7_key.R)|[w7_slides](week7/week7_slides.pdf)|
-| Week 8 () |Loops continued and random sampling|[week8_materials](week8/week8.zip)|[w8_key](week8/week8_key.zip)
+| Week 1 () |Intro to R & Programming|
+| Week 2 () |Working directories and reading in data|
+| Week 3 () |Intro to the tidyverse and data wrangling - Part 1|
+| Week 4 ()|Data wrangling - Part 2|
+| Week 5 () |Intro to data visualization (ggplot) - Part 1|
+| Week 6 () |Data visualization - Part 2|
+| Week 7 () |Intro to loops|
+| Week 8 () |Loops continued and random sampling|
 | Week 9 () |Class Cancelled||||
-| Week 10 () |Random Sampling pt 2|[w10_materials](week10/week_10_starter.R)|[w10_key](week10/week_10_key.R)
-| Week 11 () |Functions!|[w11_materials](week11/week11.zip)|[w11_key](week11/week11_key.R)|[w11_slides](week11/week11_slides.pdf)
+| Week 10 () |Random Sampling pt 2
+| Week 11 () |Functions!
 | Week 12 () |Discussion/Flex week
 | Week 13 () |Thanksgiving Week
 | Week 14 () |Putting it all together
