@@ -10,7 +10,7 @@ This semester-long course is for PhD students by PhD students. We will focus on 
 The class takes a hands-on workshop style format focusing on using real data!
 
 **To take the class for credit:** Register  through [CalCentral](https://calcentral.berkeley.edu/dashboard):
-* Course Number: 14178
+* Course Number: 14192
 * Select 2 credits (since it is 2 hours a week)
 * Select to take the class Pass/No Pass
 
