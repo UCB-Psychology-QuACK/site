@@ -37,7 +37,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 |  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
 | Week 1 () |Intro to R & Programming|[w1_materials](week1/week1.zip)|[w1_key](week1/week1_key.Rweek1_key.R)|[w1_slides](week1/QuACK2023_slides_week1_pdf.pdf)|w1_recording
-| Week 2 () |Working directories and reading in data|[w2_materials](week2/week2.zip)|| [w2_slides](week2/QuACK2023_slides_week2_data.pptx)
+| Week 2 () |Working directories and reading in data|[w2_materials](week2/week2.zip)|| [w2_slides](week2/QuACK2023_slides_week2_data.pdf)
 | Week 3 () |Intro to the tidyverse and data wrangling - Part 1|
 | Week 4 ()|Data wrangling - Part 2|
 | Week 5 () |Intro to data visualization (ggplot) - Part 1|
