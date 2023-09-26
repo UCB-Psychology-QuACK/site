@@ -40,7 +40,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 2 (9/5) |Working directories and reading in data|[w2_materials](week2/week2.zip)|[w2_key](week2/week2_key.R)| [w2_slides](week2/QuACK2023_slides_week2_data.pdf)|
 | Week 3 (9/12) |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](week3/week3.zip)|[w3_key](week3/week3_key.r)|[w3_slides](week3/QuACK2023_slides_week3.pdf)|
 | Week 4 (9/19)|Data wrangling - Part 2|[w4_materials](week4/week4.zip)|[w4_key](week4/week4_key.R)|[w4_slides](week4/QuACK2023_slides_week4.pdf)|
-| Week 5 (9/26) |Intro to data visualization (ggplot) - Part 1|
+| Week 5 (9/26) |Intro to data visualization (ggplot) - Part 1| [w5_materials] (week5/week5.zip)|
 | Week 6 () |Data visualization - Part 2|
 | Week 7 () |Intro to loops|
 | Week 8 () |Loops continued and random sampling|
