@@ -42,7 +42,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 4 (9/19)|Data wrangling - Part 2|[w4_materials](week4/week4.zip)|[w4_key](week4/week4_key.R)|[w4_slides](week4/QuACK2023_slides_week4.pdf)|[w4_recording](https://youtu.be/x3HHvLZxc2o?si=bRO-Bp9If3t4QXM9)
 | Week 5 (9/26) |Intro to data visualization (ggplot) - Part 1| [w5_materials](week5/week5.zip)|[w5_key](week5/week5_key.R)| 
 | Week 6 (10/3) |Data visualization - Part 2| [w6_materials](week6/week6.zip)|
-| Week 7 (10/10) |Intro to loops| [w7_materials](week7/week7_starter.R)|[w7_key](week7/week7_key.R)|[w7_slides](week7/QuACK_Week7_forLoops_2023.pdf)
+| Week 7 (10/10) |Intro to loops| [w7_materials](week7/week7_starter.R)|[w7_key](week7/week7_key.R)|[w7_slides](week7/QuACK_Week7_forLoops_2023.pdf)|[w7_recording](https://www.youtube.com/watch?v=ra8PE4mAZaU) 
 | Week 8 (10/17) |Loops continued and random sampling|
 | Week 9 () |TBD|
 | Week 10 () |Random Sampling pt 2
