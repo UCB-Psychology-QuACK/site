@@ -43,7 +43,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 5 (9/26) |Intro to data visualization (ggplot) - Part 1| [w5_materials](week5/week5.zip)|[w5_key](week5/week5_key.R)| 
 | Week 6 (10/3) |Data visualization - Part 2| [w6_materials](week6/week6.zip)|
 | Week 7 (10/10) |Intro to loops| [w7_materials](week7/week7_starter.R)|[w7_key](week7/week7_key.R)|[w7_slides](week7/QuACK_Week7_forLoops_2023.pdf)|[w7_recording](https://www.youtube.com/watch?v=ra8PE4mAZaU) 
-| Week 8 (10/17) |Loops continued and random sampling|
+| Week 8 (10/17) |Loops continued and random sampling| [w8_materials](week8/week8.zip)|[w8_key](week8/week8_key.zip)|[w8_slides](week8/Quack2023_Week8_slides.pptx.pdf)|[w8_recording (Passcode: m3gW9$e.)](https://berkeley.zoom.us/rec/play/e4VObBEQgmL1AKQY774ham8--B0cPz_w6XPKjioSRTyuLxq8vypL_FoLPdvZ8OmFKj9TjwMZ5d5C3yCx.VLnEDqD22vc-Vubw) 
 | Week 9 () |TBD|
 | Week 10 () |Random Sampling pt 2
 | Week 11 () |Functions!
