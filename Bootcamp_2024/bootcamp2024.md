@@ -31,7 +31,7 @@ Each session will start with a live demo focusing on fundemental data skills. We
 
 | session | topic | practice materials |live demo script & answer key |slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
-| June 13 |Getting started with R|[s1_materials](s1_materials.zip)|[s1_demo-script](session1/s1_my-first-script_2024.R)|[s1_slides]()|[s1_recording]()|
+| June 13 |Getting started with R|[s1_materials](s1_materials.zip)|[s1_demo-script](session1/s1_my-first-script_2024.R)|[s1_slides](session1/bootcamp_session1_slides_2024.pdf)|[s1_recording]()|
 
 ### Materials Guide
 We are committed to open science and we make all of our resources and teaching materials freely available for offline learning.
