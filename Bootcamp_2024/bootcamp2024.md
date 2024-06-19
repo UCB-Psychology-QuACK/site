@@ -54,8 +54,8 @@ Each week we will post a recording of the session as well as all of the material
 
 ### Office Hours
 Emily and Sierra will be offering weekly office hours both in-person and over Zoom to talk with you about the bootcamp, projects of your own, PhD aspirations, etc. No need to make an appointment - just come say hello! 
-* **In-person** with Emily on ------ *or* with Sierra (BWW 3rd floor atrium) on ------
-* **Virtual** [with Emily on ------](zoom link) *or* [with Sierra on ------](zoom link).
+* **In-person** with Emily (BWW 3rd floor atrium) on Mondays, 9-10AM *or* with Sierra (BWW 3rd floor atrium) on Thursdays, 1:30-2:30PM
+* **Virtual** [with Emily on Thursdays, 4:30-5:30PM](https://berkeley.zoom.us/j/95755031386?pwd=UZG7jswVCEFF8xlFyqnArUObQzNQEE.1) *or* [with Sierra on Tuesdays, 2-3PM](https://berkeley.zoom.us/j/8953647598).
 
 ### [FAQ](https://ucb-psychology-quack.github.io/site/Bootcamp_2024/FAQs)
 
