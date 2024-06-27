@@ -32,7 +32,7 @@ Each session will start with a live demo focusing on fundemental data skills. We
 | session | topic | practice materials |live demo script & answer key |slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
 | June 13 |Getting started with R|[s1_materials](s1_materials.zip)|[s1_demo-script](session1/s1_my-first-script_2024.R)|[s1_slides](session1/bootcamp_session1_2024.pdf)|[s1_recording](https://drive.google.com/file/d/1meQKQqOVKdtzpu37rfc1zL_eURI3ozFf/view?usp=sharing)|
-| June 20 |Accessing and reading data|[s2_materials](s2_materials.zip)|[s2_demo-script](session2/session2_starter-code_2024.R)|[s2_slides](session2/bootcamp_slides_session2_2024.pptx.pdf)|[s2_recording](https://drive.google.com/file/d/1V9V9tVyFKmIoVlJ2aKcSevU3rQY4-oPw/view?usp=sharing)|
+| June 20 |Accessing and reading data|[s2_materials](s2_materials.zip)|[s2_demo-script](session2/session2_starter-code_2024.R)|[s2_slides](session2/bootcamp_slides_session2_2024.pdf)|[s2_recording](https://drive.google.com/file/d/1V9V9tVyFKmIoVlJ2aKcSevU3rQY4-oPw/view?usp=sharing)|
 | June 27th |Cleaning and organizing dataframes|[s3_materials](s3_materials.zip)|[s3_demo-script](session3/s3_starter-code_2024.R)|[s3_slides](session3/bootcamp_session3_2024.pdf)|[s3_recording]
 
 ### Materials Guide
