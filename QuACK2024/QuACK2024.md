@@ -36,16 +36,17 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 
 |  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
-| Week 1 (X) |Intro to R & Programming|[w1_materials](week1/week1.zip)|[w1_key](week1/week1_key.Rweek1_key.R)|[w1_slides](week1/QuACK2023_slides_week1_pdf.pdf)|[w1_recording](https://www.youtube.com/watch?v=w7kltAPiaPs&list=PLAFncb38bTgs1e_wQl-FTkUMk0pxEhNtG&index=2&t=2s)
-| Week 2 (X) |Working directories and reading in data|[w2_materials](week2/week2.zip)|[w2_key](week2/week2_key.R)| [w2_slides](week2/QuACK2023_slides_week2_data.pdf)|[w2_recording](https://www.youtube.com/watch?v=gWgOfuwTkHM&list=PLAFncb38bTgs1e_wQl-FTkUMk0pxEhNtG&index=1)
-| Week 3 (X) |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](week3/week3.zip)|[w3_key](week3/week3_key.r)|[w3_slides](week3/QuACK2023_slides_week3.pdf)|[w3_recording](https://drive.google.com/file/d/1uUcJtZyHd3HroIq7NakGepBTJvr8KG6y/view?usp=drive_link)
-| Week 4 (X) |Data wrangling - Part 2|[w4_materials](week4/week4.zip)|[w4_key](week4/week4_key.R)|[w4_slides](week4/QuACK2023_slides_week4.pdf)|[w4_recording](https://youtu.be/x3HHvLZxc2o?si=bRO-Bp9If3t4QXM9)
-| Week 5 (X) |Intro to data visualization (ggplot) - Part 1| [w5_materials](week5/week5.zip)|[w5_key](week5/week5_key.R)| 
-| Week 6 (X) |Data visualization - Part 2| [w6_materials](week6/week6.zip)|
-| Week 7 (X) |Intro to loops| [w7_materials](week7/week7_starter.R)|[w7_key](week7/week7_key.R)|[w7_slides](week7/QuACK_Week7_forLoops_2023.pdf)|[w7_recording](https://www.youtube.com/watch?v=ra8PE4mAZaU) 
-| Week 8 (X) |Loops continued and random sampling| [w8_materials](week8/week8.zip)|[w8_key](week8/week8_key.zip)|[w8_slides](week8/Quack2023_Week8_slides.pptx.pdf)|[w8_recording (Passcode: m3gW9$e.)](https://berkeley.zoom.us/rec/play/e4VObBEQgmL1AKQY774ham8--B0cPz_w6XPKjioSRTyuLxq8vypL_FoLPdvZ8OmFKj9TjwMZ5d5C3yCx.VLnEDqD22vc-Vubw) 
-| Week 14 (X) |Putting it all together| [w14 materials](week14/week14.zip)
-| Week 15 (X) |Celebration! 
+| Week 1 (9/9) |Intro to R & Programming|[w1_materials](week1/week1.zip)|[w1_key](week1/week1_key.Rweek1_key.R)|[w1_slides](week1/QuACK2023_slides_week1_pdf.pdf)|[w1_recording]
+| Week 2 (9/16) |Working directories and reading in data|[w2_materials](week2/week2.zip)|[w2_key](week2/week2_key.R)| [w2_slides](week2/QuACK2023_slides_week2_data.pdf)|[w2_recording]
+| Week 3 (9/23) |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](week3/week3.zip)|[w3_key](week3/week3_key.r)|[w3_slides](week3/QuACK2023_slides_week3.pdf)|[w3_recording]
+| Week 4 (9/30) |Data wrangling - Part 2|[w4_materials](week4/week4.zip)|[w4_key](week4/week4_key.R)|[w4_slides](week4/QuACK2023_slides_week4.pdf)|[w4_recording]
+| Week 5 (10/7) |Intro to data visualization (ggplot) - Part 1| [w5_materials](week5/week5.zip)|[w5_key](week5/week5_key.R)| 
+| Week 6 (10/14) |Data visualization - Part 2| [w6_materials](week6/week6.zip)|
+| Week 7 (10/21) |Intro to loops| [w7_materials](week7/week7_starter.R)|[w7_key](week7/week7_key.R)|[w7_slides](week7/QuACK_Week7_forLoops_2023.pdf)|[w7_recording]
+| Week 8 (10/28) |Loops continued and random sampling| [w8_materials](week8/week8.zip)|[w8_key](week8/week8_key.zip)|[w8_slides](week8/Quack2023_Week8_slides.pptx.pdf)|[w8_recording)]
+| Week 9 (11/4) |Random Sampling| [w9_materials](week9/week9.zip)|[w9_key](week9/week9_key.zip)|[w8_slides](week9/Quack2023_Week9_slides.pptx.pdf)|[w9_recording)]
+| Week 10 (11/18) |Fun Functions| [w10_materials](week10/week10.zip)|[w10_key](week10/week10_key.zip)|[w10_slides](week10/Quack2023_Week10_slides.pptx.pdf)|[w10_recording)]
+| Week 11 (12/2) |Putting it all together| [w14 materials](week14/week14.zip)
 
 
 ### Materials guide
