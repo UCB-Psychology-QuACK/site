@@ -37,7 +37,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 |  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
 | Week 1 (9/9) |Intro to R & Programming|[w1_materials](week1/week1.zip)|[w1_key](week1/week1_key.Rweek1_key.R)|[w1_slides](week1/QuACK2023_slides_week1_pdf.pdf)|[w1_recording]
-| Week 2 (9/16) |Working directories and reading in data|[w2_materials](week2/week2.zip)|[w2_key](week2/week2_key.R)| [w2_slides](week2/QuACK2023_slides_week2_data.pdf)|[w2_recording]
+| Week 2 (9/16) |Working directories and reading in data|[w2_materials](week2/week2.zip)|[w2_key](week2/week2_key.R)| [w2_slides](week2/QuACK2024_slides_week2_data.pdf)|[w2_recording]
 | Week 3 (9/23) |Intro to the tidyverse and data wrangling - Part 1|[w3_materials](week3/week3.zip)|[w3_key](week3/week3_key.r)|[w3_slides](week3/QuACK2023_slides_week3.pdf)|[w3_recording]
 | Week 4 (9/30) |Data wrangling - Part 2|[w4_materials](week4/week4.zip)|[w4_key](week4/week4_key.R)|[w4_slides](week4/QuACK2023_slides_week4.pdf)|[w4_recording]
 | Week 5 (10/7) |Intro to data visualization (ggplot) - Part 1| [w5_materials](week5/week5.zip)|[w5_key](week5/week5_key.R)| 
