@@ -10,9 +10,9 @@ This hands-on four-session bootcamp will focus on teaching fundamental data skil
 ### Dates, Time, and Location
 **Dates**: Wednesdays, June 11th, July 2nd, 16th, 23rd
 **Time**: 1-3pm  
-**Location**: Berkeley Way West (BWW), Room 1213 (but we will change rooms after the first session, so stay tuned!) 
+**Location**: Berkeley Way West (BWW), Room 1213 (first and fourth sessions) 3101 (second and third sessions) (note the different rooms!) 
   
-Sessions include live demos, individual work, and group work, and are interactive and hands-on. For these reasons, we encourage all who can to attend in person in order to get the most out of the bootcamp. That said, we understand that some people are remote this summer, may have time conflicts, or may need to miss a session. In order to make the materials as accessible as possible, we will also be recording all sessions and posting the recordings, materials, and answer keys to this site.   
+Sessions include live demos, individual work, and group work, and are interactive and hands-on. For these reasons, we encourage all who can to attend in person in order to get the most out of the bootcamp. That said, we understand that some people are remote this summer, may have time conflicts, or may need to miss a session. 
 
 ### Coordinators
 The bootcamp is taught by Sophie Regan and Nina Schoener who are PhD students in the department and are always learning about R themselves! The bootcamp point-person who manages all things logistics is Victoria Keating.
