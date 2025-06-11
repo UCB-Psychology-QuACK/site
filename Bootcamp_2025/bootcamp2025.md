@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Programming and Data Skills Bootcamp - Summer 2024"
+title: "Programming and Data Skills Bootcamp - Summer 2025"
 ---
 
-## Programming and Data Skills Bootcamp - Summer 2024
+## Programming and Data Skills Bootcamp - Summer 2025
 ### Welcome to UC Berkeley Psychology's Summer Bootcamp! 
 This hands-on four-session bootcamp will focus on teaching fundamental data skills in R with an emphasis on good data and coding practices. This bootcamp is open to all RAs and post-bacs in the department. Graduate students are also welcome to attend. Importantly, **no programming experience or R knowledge is expected or required**! Come as you are and learn!  
   
@@ -31,10 +31,10 @@ Each session will start with a live demo focusing on fundemental data skills. We
 
 | session | topic | practice materials |live demo script & answer key |slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
-| June 13 |Getting started with R|[s1_materials](s1_materials.zip)|[s1_demo-script](session1/s1_my-first-script_2024.R)|[s1_slides](session1/bootcamp_session1_2024.pdf)|[s1_recording](https://drive.google.com/file/d/1meQKQqOVKdtzpu37rfc1zL_eURI3ozFf/view?usp=sharing)|
-| June 20 |Accessing and reading data|[s2_materials](s2_materials.zip)|[s2_demo-script](session2/session2_starter-code_2024.R)<br><br>[s2_key](https://sierrasemkokrouse.quarto.pub/r-bootcamp-session-2-key/)|[s2_slides](session2/bootcamp_slides_session2_2024.pdf)|[s2_recording](https://drive.google.com/file/d/1V9V9tVyFKmIoVlJ2aKcSevU3rQY4-oPw/view?usp=sharing)|[s2_key-walkthrough](https://drive.google.com/file/d/1ZLCl3TlOJAdk72AcbPupAA45cnr6Tctg/view?usp=sharing)|[s2_wd-walkthrough](https://drive.google.com/file/d/1oPZQzG57PFLw1koWX3t6n029xLCMoRLo/view?usp=drive_link)
-| June 27th |Cleaning and organizing dataframes|[s3_materials](s3_materials.zip)|[s3_demo-script](session3/s3_starter-code_2024.R)<br><br>[s3_key](https://sierrasemkokrouse.quarto.pub/r-bootcamp-session-3-starter-code-w-key/)|[s3_slides](session3/bootcamp_session3_2024.pdf)|[s3_recording](https://drive.google.com/file/d/1qeSUu9hF62GwyNxwsNCAiiMFMn8LHTE9/view?usp=sharing)|[s3_key-walkthrough](https://drive.google.com/file/d/1pIeA4zS-CS7-t_rhSHEKrLmlGLeIWlZE/view?usp=drive_link)
-| July 11th |Data Visualization|[s4_materials](s4_materials.zip)|[s4_demo-script](session4/s4_starter-code_2024.R)<br><br>[s4_key](https://sierrasemkokrouse.quarto.pub/session-4-starter-code-w-key/)<br><br>[s4_activity-key](https://sierrasemkokrouse.quarto.pub/session-4-activity-key/#question-1-set-up-script)|[s4_slides](session4/bootcamp_slides_session4_2024.pptx.pdf)|[s4_recording](https://drive.google.com/file/d/1yBmdX9oCRd4oSmEf_ATFg3f-IhVV-Oax/view)|[s4_key-walkthrough](https://drive.google.com/file/d/1tWHtIbT42spxX1ZHugkjPQOk90C2SPn3/view?usp=drive_link)
+| June 13 |Getting started with R|[s1_materials](s1_materials.zip)|[s1_demo-script](session1/s1_my-first-script_2025.R)|[s1_slides](session1/bootcamp_session1_2025.pdf)|[s1_recording](https://drive.google.com/file/d/1meQKQqOVKdtzpu37rfc1zL_eURI3ozFf/view?usp=sharing)|
+| June 20 |Accessing and reading data|[s2_materials](s2_materials.zip)|[s2_demo-script](session2/session2_starter-code_2025.R)<br><br>[s2_key](https://sierrasemkokrouse.quarto.pub/r-bootcamp-session-2-key/)|[s2_slides](session2/bootcamp_slides_session2_2025.pdf)|[s2_recording](https://drive.google.com/file/d/1V9V9tVyFKmIoVlJ2aKcSevU3rQY4-oPw/view?usp=sharing)|[s2_key-walkthrough](https://drive.google.com/file/d/1ZLCl3TlOJAdk72AcbPupAA45cnr6Tctg/view?usp=sharing)|[s2_wd-walkthrough](https://drive.google.com/file/d/1oPZQzG57PFLw1koWX3t6n029xLCMoRLo/view?usp=drive_link)
+| June 27th |Cleaning and organizing dataframes|[s3_materials](s3_materials.zip)|[s3_demo-script](session3/s3_starter-code_2025.R)<br><br>[s3_key](https://sierrasemkokrouse.quarto.pub/r-bootcamp-session-3-starter-code-w-key/)|[s3_slides](session3/bootcamp_session3_2025.pdf)|[s3_recording](https://drive.google.com/file/d/1qeSUu9hF62GwyNxwsNCAiiMFMn8LHTE9/view?usp=sharing)|[s3_key-walkthrough](https://drive.google.com/file/d/1pIeA4zS-CS7-t_rhSHEKrLmlGLeIWlZE/view?usp=drive_link)
+| July 11th |Data Visualization|[s4_materials](s4_materials.zip)|[s4_demo-script](session4/s4_starter-code_2025.R)<br><br>[s4_key](https://sierrasemkokrouse.quarto.pub/session-4-starter-code-w-key/)<br><br>[s4_activity-key](https://sierrasemkokrouse.quarto.pub/session-4-activity-key/#question-1-set-up-script)|[s4_slides](session4/bootcamp_slides_session4_2025.pptx.pdf)|[s4_recording](https://drive.google.com/file/d/1yBmdX9oCRd4oSmEf_ATFg3f-IhVV-Oax/view)|[s4_key-walkthrough](https://drive.google.com/file/d/1tWHtIbT42spxX1ZHugkjPQOk90C2SPn3/view?usp=drive_link)
 
 ### Materials Guide
 We are committed to open science and we make all of our resources and teaching materials freely available for offline learning.
@@ -50,7 +50,7 @@ Each week we will post some additional materials:
 
 ### Participating In-Person
 Please download the practice materials **before each session**. We will be sharing all other materials after the session.
-See our [FAQs](https://ucb-psychology-quack.github.io/site/Bootcamp_2024/FAQs) for more info on the workshop and what to do if you miss a session. 
+See our [FAQs](https://ucb-psychology-quack.github.io/site/Bootcamp_2025/FAQs) for more info on the workshop and what to do if you miss a session. 
 
 ### Participating Asynchronously 
 Each week we will post a recording of the session as well as all of the materials you need to follow along. Please see the Materials Guide above for details. 
@@ -60,7 +60,7 @@ Emily and Sierra will be offering weekly office hours both in-person and over Zo
 * **In-person** with Emily (BWW 3rd floor atrium) on Mondays, 9-10AM *or* with Sierra (BWW 3rd floor atrium) on Thursdays, 1:30-2:30PM
 * **Virtual** [with Emily on Thursdays, 4:30-5:30PM](https://berkeley.zoom.us/j/95755031386?pwd=UZG7jswVCEFF8xlFyqnArUObQzNQEE.1) *or* [with Sierra on Tuesdays, 2-3PM](https://berkeley.zoom.us/j/8953647598).
 
-### [FAQ](https://ucb-psychology-quack.github.io/site/Bootcamp_2024/FAQs)
+### [FAQ](https://ucb-psychology-quack.github.io/site/Bootcamp_2025/FAQs)
 
 ### Ready to learn more?
 [Check out these other R-resources](https://ucb-psychology-quack.github.io/site/resources/r-resources)
