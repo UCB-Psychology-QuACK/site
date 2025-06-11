@@ -46,14 +46,10 @@ Each week we will post some additional materials:
 * **Practice Materials**: This will include any starter code and prompts for the independent and/or group work. The best way to learn to program is to practice! So if you are participating asynchronously, we encourage you to try the practice to apply the new skills. 
 * **Live Demo Script**: Each session will begin with a demo where we introduce some fundemental skills and key concepts that will help you with the practice materials. We will post these after each session. This will also include answer keys for the group activity if applicable. 
 * **Slides**: Any slides used will be made available for download after the session. 
-* **Recording**: We will be recording all of our sessions. If you miss a session we encourage you to watch the recording! 
 
 ### Participating In-Person
 Please download the practice materials **before each session**. We will be sharing all other materials after the session.
 See our [FAQs](https://ucb-psychology-quack.github.io/site/Bootcamp_2025/FAQs) for more info on the workshop and what to do if you miss a session. 
-
-### Participating Asynchronously 
-Each week we will post a recording of the session as well as all of the materials you need to follow along. Please see the Materials Guide above for details. 
 
 ### [FAQ](https://ucb-psychology-quack.github.io/site/Bootcamp_2025/FAQs)
 
