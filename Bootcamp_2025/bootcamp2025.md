@@ -32,9 +32,9 @@ Each session will start with a live demo focusing on fundemental data skills. We
 | session | topic | practice materials |live demo script & answer key |slides | recording | 
 | ------|-------|------- |  ------|-------|-------|
 | June 11th |Getting started with R|[s1_materials](s1_materials.zip)|[s1_demo-script](session1/session1_2025_starter_code.Rmd)|[s1_slides](session1/bootcamp_session1_2025.pdf)
-| July 2nd |Data cleaning and wrangling|[s2_materials](s2_materials.zip)|[s2_demo-script](session2/session2_starter-code_2025.R)<br><br>[s2_key](https://sierrasemkokrouse.quarto.pub/r-bootcamp-session-2-key/)|[s2_slides](session2/bootcamp_slides_session2_2025.pdf)|[s2_recording](https://drive.google.com/file/d/1V9V9tVyFKmIoVlJ2aKcSevU3rQY4-oPw/view?usp=sharing)|[s2_key-walkthrough](https://drive.google.com/file/d/1ZLCl3TlOJAdk72AcbPupAA45cnr6Tctg/view?usp=sharing)|[s2_wd-walkthrough](https://drive.google.com/file/d/1oPZQzG57PFLw1koWX3t6n029xLCMoRLo/view?usp=drive_link)
-| July 16th |Data visualization|[s3_materials](s3_materials.zip)|[s3_demo-script](session3/s3_starter-code_2025.R)<br><br>[s3_key](https://sierrasemkokrouse.quarto.pub/r-bootcamp-session-3-starter-code-w-key/)|[s3_slides](session3/bootcamp_session3_2025.pdf)|[s3_recording](https://drive.google.com/file/d/1qeSUu9hF62GwyNxwsNCAiiMFMn8LHTE9/view?usp=sharing)|[s3_key-walkthrough](https://drive.google.com/file/d/1pIeA4zS-CS7-t_rhSHEKrLmlGLeIWlZE/view?usp=drive_link)
-| July 23rd |Intro to stats with R|[s4_materials](s4_materials.zip)|[s4_demo-script](session4/s4_starter-code_2025.R)<br><br>[s4_key](https://sierrasemkokrouse.quarto.pub/session-4-starter-code-w-key/)<br><br>[s4_activity-key](https://sierrasemkokrouse.quarto.pub/session-4-activity-key/#question-1-set-up-script)|[s4_slides](session4/bootcamp_slides_session4_2025.pptx.pdf)|[s4_recording](https://drive.google.com/file/d/1yBmdX9oCRd4oSmEf_ATFg3f-IhVV-Oax/view)|[s4_key-walkthrough](https://drive.google.com/file/d/1tWHtIbT42spxX1ZHugkjPQOk90C2SPn3/view?usp=drive_link)
+| July 2nd |Data cleaning and wrangling|
+| July 16th |Data visualization|
+| July 23rd |Intro to stats with R|
 
 ### Materials Guide
 We are committed to open science and we make all of our resources and teaching materials freely available for offline learning.
