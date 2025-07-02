@@ -32,7 +32,7 @@ Each session will start with a live demo focusing on fundemental data skills. We
 | session | topic | practice materials |live demo script & answer key |slides 
 | ------|-------|------- |  ------|
 | June 11th |Getting started with R|[s1_materials](s1_materials.zip)|[s1_demo-script](session1/session1_2025_starter_code.Rmd)|[s1_slides](session1/bootcamp_session1_2025.pdf)
-| July 2nd |Data cleaning and wrangling
+| July 2nd |Data cleaning and wrangling | [s2_materials](s2_materials.zip)|[s2_demo-script](session2/session2_2025_starter_code.Rmd)|[s2_slides](session2/bootcamp_session2_2025.pdf)
 | July 16th |Data visualization
 | July 23rd |Intro to stats with R
 
