@@ -26,15 +26,14 @@ The bootcamp is taught by Sophie Regan and Nina Schoener who are PhD students in
 
 ### Schedule
 
-Each session will start with a live demo focusing on fundemental data skills. We will then work independently and in groups to apply these skills to real data. Finally, we will finish each session with a group discussion centering around the challenges faced while working with the data and ways to address and overcome them. 
+Each session will start with a live demo focusing on fundamental data skills. We will then work independently and in groups to apply these skills to real data. Finally, we will finish each session with a group discussion centering around the challenges faced while working with the data and ways to address and overcome them. 
 
-
-| session | topic | practice materials |live demo script & answer key |slides 
-| ------|-------|------- |  ------|
-| June 11th |Getting started with R|[s1_materials](s1_materials.zip)|[s1_demo-script](session1/session1_2025_starter_code.Rmd)|[s1_slides](session1/bootcamp_session1_2025.pdf)
-| July 2nd |Data cleaning and wrangling | [s2_materials](s2_materials.zip)|[s2_demo-script](session2/session2_2025_starter_code.Rmd)|[s2_slides](session2/bootcamp_session2_2025.pdf)
-| July 16th |Data visualization
-| July 23rd |Intro to stats with R
+| session | topic | practice materials | live demo script & answer key | slides |
+| ------- | ----- | ------------------ | ----------------------------- | ------ |
+| June 11th | Getting started with R | [s1_materials](s1_materials.zip) | [s1_demo-script](session1/session1_2025_starter_code.Rmd) | [s1_slides](session1/bootcamp_session1_2025.pdf) |
+| July 2nd | Data cleaning and wrangling | [s2_materials](s2_materials.zip) | [s2_demo-script](session2/session2_2025_starter_code.Rmd) | [s2_slides](session2/bootcamp_session2_2025.pdf) |
+| July 16th | Data visualization | _TBD_ | _TBD_ | _TBD_ |
+| July 23rd | Intro to stats with R | _TBD_ | _TBD_ | _TBD_ |
 
 ### Materials Guide
 We are committed to open science and we make all of our resources and teaching materials freely available for offline learning.
