@@ -12,13 +12,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 First, we need to load in our data.
 ```{r}
-quack_responses_clean <-
+quack_responses_clean <- 
 ```
 
 
-Sometimes we want to compare whether two groups differ on a numeric variable. In this case, we’re asking whether people in one lab tend to be taller than people in another lab. To answer this question, we’ll compare the mean heights of two groups (LCD and Gopnik) using a two-sample t-test.
 
-A t-test tells us whether the observed difference in means is likely due to random variation or whether it's statistically significant. This test assumes normality and similar variances — assumptions we’ll talk about.
 ```{r}
 # View average heights by lab
 
@@ -30,15 +28,26 @@ A t-test tells us whether the observed difference in means is likely due to rand
 
 
 # Run the t-test
-t_test_result <- 
-print(t_test_result)
+
 
 # Optional: plot the comparison
 
-```
-If we want to know whether two numeric variables move together, we can use a correlation. For example, if someone has more experience with R, do they also tend to have more general coding experience? Correlation measures the strength and direction of the linear relationship between two continuous variables.
 
-We’ll compute the correlation coefficient and test whether the observed relationship is statistically significant.
+```
+When you want to compare means across more than two groups, a t-test isn't enough — that's where ANOVA (Analysis of Variance) comes in.
+
+ANOVA checks if there is any significant difference in means across the groups. It doesn't tell you which groups differ — just whether at least one group is different. You can follow up with post-hoc tests if needed.
+```{r}
+# Check how many labs are in the dataset
+
+
+# Fit ANOVA model
+
+
+# Plot the means with boxplots
+
+
+```
 
 ```{r}
 # Plot the relationship
@@ -48,13 +57,10 @@ We’ll compute the correlation coefficient and test whether the observed relati
 
 
 ```
-Sometimes, we want to predict a numeric outcome using a categorical variable with more than two groups. Here, we’ll examine whether students at different stages in college (e.g., Freshman, Sophomore, etc.) report different levels of general coding experience.
 
-We’ll use linear regression to estimate the average coding experience for each group and assess whether college year helps explain variation in coding knowledge.
 ```{r}
 # Convert CollegeYear to factor and set order
-quack_responses_clean$CollegeYear <- factor(quack_responses_clean$CollegeYear,
-                                            levels = c("Freshman", "Sophomore", "Junior", "Senior"))
+
 
 # Run the regression
 
@@ -64,21 +70,73 @@ quack_responses_clean$CollegeYear <- factor(quack_responses_clean$CollegeYear,
 
 ```
 
-When your outcome variable is binary (e.g., “Yes” or “No”), linear regression isn’t appropriate — but logistic regression is. This test models the probability of an event occurring based on one or more predictors.
 
-In this case, we want to know whether height predicts whether someone thinks there was a correct answer to a philosophical survey question. We'll use logistic regression to test whether height influences the odds of saying “Yes.”
 ```{r}
 # Recode LastQuestion to binary
-quack_responses_clean <- 
+
 
 # Run logistic regression
 
 
 # Predict probabilities
 
+
 # Plot
 
 
 ```
+Sampling:
+Statistical estimates, like the mean height in a sample, are just one version of what you could have gotten if you had collected a different sample. To understand how estimates vary across repeated samples, we can simulate repeated sampling.
 
+```{r}
+# Set up an empty vector to store means
+
+
+# Repeat sampling 1000 times
+
+# Plot the sampling distribution
+
+
+```
+
+When we collect one sample, we often want to know how uncertain our estimate is. One way to do this is using bootstrapping, which is a non-parametric method that resamples your data many times to build a distribution of your statistic (e.g., the mean).
+
+Bootstrapping is especially helpful when:
+
+The sample size is small.
+
+We don’t want to assume normality.
+
+We want to estimate confidence intervals for stats that don’t have exact formulas (e.g., the median).
+
+
+```{r}
+library(boot)
+
+# Define a function to compute the statistic of interest
+boot_mean <- function(data, indices) {
+  d <- data[indices, ]
+  return(mean(d$height_clean, na.rm = TRUE))
+}
+
+# Run the bootstrap
+boot_results <- boot(data = quack_responses_clean, 
+                     statistic = boot_mean, 
+                     R = 1000)
+
+# Print results
+print(boot_results)
+
+# Bootstrap confidence intervals
+boot.ci(boot_results, type = "perc")
+
+
+# Plot histogram of bootstrap sample means
+hist(boot_results$t,
+     breaks = 30,
+     col = "tomato",
+     main = "Bootstrap Distribution of the Mean",
+     xlab = "Mean Height (inches)")
+
+```
 
