@@ -1,0 +1,84 @@
+---
+title: "Summer 2025 Quack Bootcamp Session 4"
+author: "Sophie Regan"
+date: "2025-07-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+First, we need to load in our data.
+```{r}
+quack_responses_clean <-
+```
+
+
+Sometimes we want to compare whether two groups differ on a numeric variable. In this case, we’re asking whether people in one lab tend to be taller than people in another lab. To answer this question, we’ll compare the mean heights of two groups (LCD and Gopnik) using a two-sample t-test.
+
+A t-test tells us whether the observed difference in means is likely due to random variation or whether it's statistically significant. This test assumes normality and similar variances — assumptions we’ll talk about.
+```{r}
+# View average heights by lab
+
+
+# Filter only LCD and Gopnik lab members
+
+
+# Check how many people per lab
+
+
+# Run the t-test
+t_test_result <- 
+print(t_test_result)
+
+# Optional: plot the comparison
+
+```
+If we want to know whether two numeric variables move together, we can use a correlation. For example, if someone has more experience with R, do they also tend to have more general coding experience? Correlation measures the strength and direction of the linear relationship between two continuous variables.
+
+We’ll compute the correlation coefficient and test whether the observed relationship is statistically significant.
+
+```{r}
+# Plot the relationship
+
+
+# Correlation test
+
+
+```
+Sometimes, we want to predict a numeric outcome using a categorical variable with more than two groups. Here, we’ll examine whether students at different stages in college (e.g., Freshman, Sophomore, etc.) report different levels of general coding experience.
+
+We’ll use linear regression to estimate the average coding experience for each group and assess whether college year helps explain variation in coding knowledge.
+```{r}
+# Convert CollegeYear to factor and set order
+quack_responses_clean$CollegeYear <- factor(quack_responses_clean$CollegeYear,
+                                            levels = c("Freshman", "Sophomore", "Junior", "Senior"))
+
+# Run the regression
+
+
+# Visualize the results
+
+
+```
+
+When your outcome variable is binary (e.g., “Yes” or “No”), linear regression isn’t appropriate — but logistic regression is. This test models the probability of an event occurring based on one or more predictors.
+
+In this case, we want to know whether height predicts whether someone thinks there was a correct answer to a philosophical survey question. We'll use logistic regression to test whether height influences the odds of saying “Yes.”
+```{r}
+# Recode LastQuestion to binary
+quack_responses_clean <- 
+
+# Run logistic regression
+
+
+# Predict probabilities
+
+# Plot
+
+
+```
+
+

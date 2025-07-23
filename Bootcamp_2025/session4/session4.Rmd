@@ -1,0 +1,104 @@
+---
+title: "Summer 2025 Quack Bootcamp Session 4"
+author: "Sophie Regan"
+date: "2025-07-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+First, we need to load in our data.
+```{r}
+quack_responses_clean <- read_csv("quack_responses_clean.csv")
+```
+
+
+Sometimes we want to compare whether two groups differ on a numeric variable. In this case, we’re asking whether people in one lab tend to be taller than people in another lab. To answer this question, we’ll compare the mean heights of two groups (LCD and Gopnik) using a two-sample t-test.
+
+A t-test tells us whether the observed difference in means is likely due to random variation or whether it's statistically significant. This test assumes normality and similar variances — assumptions we’ll talk about.
+```{r}
+# View average heights by lab
+quack_responses_clean %>%
+  group_by(Lab) %>%
+  summarise(mean_height = mean(height_clean, na.rm = TRUE),
+            sd_height = sd(height_clean, na.rm = TRUE),
+            n = n())
+
+# Filter only LCD and Gopnik lab members
+filtered_df <- quack_responses_clean %>%
+  filter(Lab %in% c("LCD (Srinivasan)", "CDLL (Gopnik)"))
+
+# Check how many people per lab
+table(filtered_df$Lab)
+
+# Run the t-test
+t_test_result <- t.test(height_clean ~ Lab, data = filtered_df)
+print(t_test_result)
+
+# Optional: plot the comparison
+ggplot(filtered_df, aes(x = Lab, y = height_clean)) +
+  geom_boxplot() +
+  labs(title = "Height by Lab (LCD vs Gopnik)",
+       x = "Lab", y = "Height (inches)")
+```
+If we want to know whether two numeric variables move together, we can use a correlation. For example, if someone has more experience with R, do they also tend to have more general coding experience? Correlation measures the strength and direction of the linear relationship between two continuous variables.
+
+We’ll compute the correlation coefficient and test whether the observed relationship is statistically significant.
+
+```{r}
+# Plot the relationship
+ggplot(quack_responses_clean, aes(x = ExperienceR, y = ExperienceOther)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "R Experience vs Other Coding Experience")
+
+# Correlation test
+cor.test(quack_responses_clean$ExperienceR, quack_responses_clean$ExperienceOther)
+
+```
+Sometimes, we want to predict a numeric outcome using a categorical variable with more than two groups. Here, we’ll examine whether students at different stages in college (e.g., Freshman, Sophomore, etc.) report different levels of general coding experience.
+
+We’ll use linear regression to estimate the average coding experience for each group and assess whether college year helps explain variation in coding knowledge.
+```{r}
+# Convert CollegeYear to factor and set order
+quack_responses_clean$CollegeYear <- factor(quack_responses_clean$CollegeYear,
+                                            levels = c("Freshman", "Sophomore", "Junior", "Senior"))
+
+# Run the regression
+lm_model <- lm(ExperienceOther ~ CollegeYear, data = quack_responses_clean)
+summary(lm_model)
+
+# Visualize the results
+ggplot(quack_responses_clean, aes(x = CollegeYear, y = ExperienceOther)) +
+  geom_boxplot() +
+  labs(title = "Coding Experience by College Year")
+
+```
+
+When your outcome variable is binary (e.g., “Yes” or “No”), linear regression isn’t appropriate — but logistic regression is. This test models the probability of an event occurring based on one or more predictors.
+
+In this case, we want to know whether height predicts whether someone thinks there was a correct answer to a philosophical survey question. We'll use logistic regression to test whether height influences the odds of saying “Yes.”
+```{r}
+# Recode LastQuestion to binary
+quack_responses_clean <- quack_responses_clean %>%
+  mutate(correct_answer = ifelse(LastQuestion == "Yes", 1, 0))
+
+# Run logistic regression
+log_model <- glm(correct_answer ~ height_clean, data = quack_responses_clean, family = "binomial")
+summary(log_model)
+
+# Predict probabilities
+quack_responses_clean$predicted_prob <- predict(log_model, type = "response")
+
+# Plot
+ggplot(quack_responses_clean, aes(x = height_clean, y = correct_answer)) +
+  geom_jitter(height = 0.05) +
+  geom_smooth(method = "glm", method.args = list(family = "binomial")) +
+  labs(title = "Belief in Correct Answer vs Height")
+
+```
+
+
