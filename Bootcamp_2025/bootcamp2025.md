@@ -33,7 +33,7 @@ Each session will start with a live demo focusing on fundamental data skills. We
 | June 11th | Getting started with R | [s1_materials](s1_materials.zip) | [s1_demo-script](session1/session1_2025_starter_code.Rmd) | [s1_slides](session1/bootcamp_session1_2025.pdf) |
 | July 2nd | Data cleaning and wrangling | [s2_materials](s2_materials.zip) | [s2_demo-script](session2/session2_starter.Rmd) | [s2_slides](session2/Quack_Session2_2025.pdf) |
 | July 16th | Data visualization | [s3_materials](s3_materials.zip) | [s3_demo-script](session3/session3_starter.Rmd) | [s3_slides](session3/Quack_Session3_2025.pdf) |
-| July 23rd | Intro to stats with R | _TBD_ | _TBD_ | _TBD_ |
+| July 23rd | Intro to stats with R | [s4_materials](s4_materials.zip) | [s4_demo-script](session4/session4_starter.Rmd) | [s4_slides](session4/Quack_Session4_2025.pdf) |
 
 ### Materials Guide
 We are committed to open science and we make all of our resources and teaching materials freely available for offline learning.
