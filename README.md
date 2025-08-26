@@ -12,6 +12,7 @@ Find materials for our R courses below
 ### QuACK - Intro to Programming in R for Behavioral Science
 Semester-long weekly course for first-year PhD students and post-bacs in the department 
 
+* [QuACK 2025](https://ucb-psychology-quack.github.io/site/QuACK2025/QuACK2025) 
 * [QuACK 2024](https://ucb-psychology-quack.github.io/site/QuACK2024/QuACK2024) 
 * [QuACK 2023](https://ucb-psychology-quack.github.io/site/QuACK2023/QuACK2023)  
 * [QuACK 2022](https://ucb-psychology-quack.github.io/site/QuACK2022/Quack2022)  
