@@ -34,9 +34,9 @@ Each session will start with a live demo focusing on fundemental data skills. We
 
 As you will see, the sessions build on each other. If you miss a session, we encourage you to watch the recording and try the practice problems on your own. 
 
-|  Week | Topic | practice materials | live demo script & answer key | slides | recording | 
-| ------|-------|------- |  ------|-------|-------|
-| Week 1 (9/8) |Intro to R & Programming|[w1_materials](week1/week1.zip)|[w1_key](week1/week1_key.Rweek1_key.R)|[w1_slides](week1/QuACK2023_slides_week1_pdf.pdf)|[w1_recording]
+|  Week | Topic | practice materials | live demo script & answer key | slides |
+| ------|-------|------- |  ------|-------|
+| Week 1 (9/8) |Intro to R & Programming|[w1_materials](week1/week1.zip)|[w1_key](week1/week1_key.Rweek1_key.R)|[w1_slides](week1/QuACK2023_slides_week1_pdf.pdf)|
 | Week 2 (9/15) |Intro to the tidyverse and data wrangling - Part 1|
 | Week 3 (9/22) |Intro to the tidyverse and data wrangling - Part 2|
 | Week 4 (9/29) |Intro to data visualization (ggplot) - Part 1|
