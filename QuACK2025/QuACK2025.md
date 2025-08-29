@@ -28,11 +28,11 @@ This year's course coordinator is Victoria Keating.
 
 ### Schedule
 
-We will meet weekly on **Mondays from 10am - 12pm PST in BWW 1213**.  First session September 8th!
+We will meet weekly on **Mondays from 10am - 12pm PST in BWW 1211**.  First session September 8th!
 
 Each session will start with a live demo focusing on fundemental data skills. We will then work independently and in groups to apply these skills to real data. Finally, we will finish each session with a group discussion centering around challenges you faced working with the data and ways to address and overcome these challenges. 
 
-As you will see, the sessions build on each other. If you miss a session, we encourage you to watch the recording and try the practice problems on your own. 
+As you will see, the sessions build on each other. If you miss a session, we encourage you to look at the slides and try the practice problems on your own. 
 
 |  Week | Topic | practice materials | live demo script & answer key | slides |
 | ------|-------|------- |  ------|-------|
