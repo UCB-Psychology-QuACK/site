@@ -1,0 +1,11 @@
+ID,Timestamp,How much comfort/experience have you had with R roughly? (4 is I've used R but I could learn more),"Have you used other programs/languages to analyze data? (It's okay if it's no, this program is just R)","If yes, what have you used?",Which area are you joining?,Which month were you born in?,What is your favorite season?,"What, in your opinion, is the ideal temperature (Fahrenheit)?",How many pets have you had in your lifetime?,Is there a correct answer to this question?,Are hotdogs sandwiches?,Rate this bear on a scale from 1-7
+1,2025/08/29 4:29:39 PM MDT,2,Yes,SPSS - More than R but still not much,Clinical Science,May,Fall,68,2,No,No,1
+2,2025/08/29 4:42:36 PM MDT,4,Yes,python ,Cognition,March,Summer,75,0,Yes,Yes,1
+3,2025/08/29 5:25:22 PM MDT,5,Yes,SPSS (many years ago),Developmental,September,Fall,80,0,Yes,Yes,3
+4,2025/08/29 6:33:27 PM MDT,5,No,,Social-Personality,December,Fall,72,1,No,No,6
+5,2025/08/29 6:38:54 PM MDT,4,No,,Developmental,August,Winter,65,5,No,Yes,2
+6,2025/08/30 12:48:01 PM MDT,1,Yes,"SPSS, MATLAB",Clinical Science,July,Winter,68ºF,1,Yes,No,1
+7,2025/09/02 1:04:13 PM MDT,3,Yes,STATA,Clinical Science,November,Fall,65,Over 20,No,Yes,2
+8,2025/09/02 4:23:47 PM MDT,1,Yes,Matlab,Clinical Science,October,Spring,85,5,No,Yes,3
+9,2025/09/03 3:07:17 PM MDT,4,No,,Clinical Science,May,Fall,72,22,No,Yes,7
+10,2025/09/03 4:38:05 PM MDT,2,Yes,"Python, MATLAB",Cognition,April,Summer,81 F,0,Yes,No,1
