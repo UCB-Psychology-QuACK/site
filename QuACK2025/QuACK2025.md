@@ -56,22 +56,21 @@ Each week we will be posting the following materials:
 * **Datasets**: Please download the datasets that we will use this semester [here](datasets/data.zip).
 * **Live demo script**: Each session will begin with a demo where we introduce some fundemental skills and key concepts that will help you with the practice materials. We will post these after each session. This will also include answer keys for the group activity if applicable. 
 * **Slides**: Any slides used will be made available for download after the session. 
-* **Recording**: We will be recording all of our sessions. If you miss a session we encourage you to watch the recording! 
 
 ### FAQs
 
 #### I can't attend all of the sessions. Should I still enroll? 
-You will not be penalzied for missing sessions. However, we do encourage everyone to attend as many sessions as possible as the sessions build on eachother. It is also a great opportunity to get to know your cohort better! 
+You will not be penalzied for missing sessions. However, we do encourage everyone to attend as many sessions as possible as the sessions build on each other. It is also a great opportunity to get to know your cohort better! 
 
 #### How much experience with programming, R, or statistics is expected?
 No experience is expected or required! We are going to build up the foundational skills you need to work with data in R. If you do have some past experience with R, this workshop will give you the chance to brush up on your skills and learn to apply them to real data. The goal is to give you the tools (and confidence!) to continue learning in your lab, on your own, and/or through other online tools. We will also share additional resources so you can keep learning R on your own.
 
-We will not be teaching statistics in this workshop. However, this course will set you up nicely for a statistics course by giving you hands-on experience working with real data in R and the fundemental programming skills that are required for statistical analyses. 
+We will not be teaching any advanced statistics in this workshop. However, this course will set you up nicely for a statistics course by giving you hands-on experience working with real data in R and the fundemental programming skills that are required for statistical analyses. 
 
 #### What is the time commitment for this course? 
 This is a semester-long workshop that meets once a week for 2 hours. There are no required assignments or homework. However, learning to program requires lots of hands on practice. We encourage everyone to work through the provided practice problems and/or practice applying the skills to your own research throughout the semester. 
 
 #### I can't attend in person. Is there a virtual option? 
-Unfortunately, we are not able to offer a synchronous virtual option this year. However, each week we will post all of the materials (practice questions, demos, answer keys etc.) and a recording of the live session for those who want to follow along asynchronously. 
+Unfortunately, we are not able to offer a synchronous virtual option this year. However, each week we will post all of the materials (practice questions, demos, answer keys etc.) for those who want to review them asynchronously. 
 
-If you are not able to attend live but are interested in the course make sure to subscribe to our mailing list and join our slack channel to keep up with course updates and the QuACK community.
+If you are not able to attend live but are interested in the course make sure to subscribe to our mailing list to keep up with course updates and the QuACK community.
