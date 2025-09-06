@@ -36,7 +36,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 
 |  Week | Topic | practice materials | live demo script & answer key | slides |
 | ------|-------|------- |  ------|-------|
-| Week 1 (9/8) |Intro to R & Programming|[w1_materials](week1/week1.zip)|[w1_key]|[w1_slides]|
+| Week 1 (9/8) |Intro to R & Programming|[w1_materials](week1/week1.zip)|w1_key|w1_slides|
 | Week 2 (9/15) |Intro to the tidyverse and data wrangling - Part 1|
 | Week 3 (9/22) |Intro to the tidyverse and data wrangling - Part 2|
 | Week 4 (9/29) |Intro to data visualization (ggplot) - Part 1|
