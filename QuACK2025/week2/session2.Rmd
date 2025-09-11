@@ -1,0 +1,137 @@
+---
+title: "quack_session2_2025"
+author: "Nina Schoener & Alyson Wong"
+date: "2025-09-15"
+output: html_document
+---
+
+[Modeled after QuACK 2025 Summer Sessions 2 by Nina Schoener and Sophie Regan]
+
+## Loading our packages
+
+```{r}
+
+# let's start by installing and loading tidyverse in full using the method we went over
+
+install.packages("tidyverse")
+library(tidyverse)
+
+
+# tidylog is a useful add-on that will give you feedback on what your tidyverse commands have done. let's add it! 
+
+install.packages("tidylog")
+library(tidylog)
+
+# you may get a warning saying "the following objects are masked from..."
+# this means that there are some functions in the package you just loaded with the same name as functions in a different package (or base R)
+# it's ok -- just be careful about this! if you want to be extra sure you're using the right function, you can always type "packagename::" before it!
+# pro-tip: this also lets you use a particular function from a package without having to load it into your library first!
+
+```
+
+## Reading in our data
+
+We're going to use the same data we used last week and we're going to do some of the same operations we did last week, just to demonstrate that tidyverse has its advantages.
+
+```{r}
+
+# let's start by loading in the quack response data from csv
+# the tidyverse (in this case dplyr) way of doing this is using read_csv() rather than read.csv() as we did last week
+# does anyone know the differences between the two?
+
+quack_responses = read_csv("quack_response_data_fall25.csv")
+
+
+# try calling str() on our data
+# what does it tell you?
+
+```
+
+## Getting familiar with our data
+
+Before doing anything else with your data, it's always a good idea to get familiar with how it's structured and what the possible values for each variable are.
+
+What can you tell about your dataframe by looking at the global environment?
+
+```{r}
+
+# try calling summary() like we did last week to remind yourself of what's in this dataframe
+
+summary(quack_responses)
+
+# let's rename our variables again like we did last week, but this time using tidyverse
+
+quack_responses_clean <- quack_responses %>%
+  set_names(c("ID", "Timestamp", "Experience_R", "Experience_Other", "Languages", "Area", "BirthMonth", "Season", "FavTemp", "Pets", "Correct_Answer", "Hotdogs", "Bear_Rating"))
+
+# read_csv does not automatically convert character columns to factors, but some of our character columns should probably be factors
+# let's convert them now
+
+# Interest is an example of variable that should be a factor
+# we can combine the factor() function from base R with the mutate() function to include it in our pipe
+
+quack_responses_clean <- quack_responses_clean %>%
+  mutate(Experience_Other = factor(Experience_Other, levels = c("Yes", "No")))
+
+# take a few minutes and add two other variables to the pipe that you think should be factors
+# remember to include a pipe operator in between each one!
+
+quack_responses_clean <- quack_responses_clean %>%
+  mutate(Experience_Other = factor(Experience_Other, levels = c("Yes", "No"))) #%>%
+  #mutate(Area = factor(Area, levels = c("Clinical Science", "Cognition", "Developmental", "Social-Personality"))) %>%
+  #mutate(Season = factor(Season, levels = c("Fall", "Winter", "Spring", "Summer")))
+  
+
+# now try summarizing the data again -- what does it look like?
+
+summary(quack_responses_clean)
+
+```
+
+## Cleaning our data
+
+A common issue you'll come across is that there might be missing values (NAs) in your data. What you'll want to do with NAs will vary case-by-case, but here we will simply remove them.
+
+```{r}
+# first, let's see where there are NAs in our data
+# summarise() can tell you this
+
+
+quack_responses_clean %>%
+  summarise(across(everything(), ~ sum(is.na(.))))
+
+# which columns have the most NAs?
+
+
+# it looks like the Temperature and Pets columns are problematic here, since each has some numeric values and some character values
+# if we keep these columns as they are, R will treat all values as characters, which is not what we want
+# let's instead reformat these columns so all values are the same type
+# we can do that using grepl() on the Temperature column
+
+quack_responses_clean <- quack_responses_clean %>%
+  ##INSERT GREPL()
+
+# another way to standardize responses is using Tidyverse
+# in the Pets column, let's use a combination of mutate(), case_when(), and str_detect() to standardize responses
+
+quack_responses_clean <- quack_responses_clean %>%
+  mutate(Pets = case_when(str_detect(Pets, "Over ") ~ "",
+                            TRUE ~ Pets))
+
+# one other column, Languages, has a few NAs here and there
+# let's drop data from respondents who have an NA in any of those columns
+
+quack_responses_clean <- quack_responses_clean %>%
+  drop_na()
+```
+
+Next, let's remove any outliers in the Pets column. We can do this using filter().
+
+```{r}
+
+# use the filter() function on the column "Pets" to drop anyone who said they have 20 or more pets
+
+quack_responses_clean <- quack_responses_clean %>%
+  filter(Pets <= 20)
+
+```
