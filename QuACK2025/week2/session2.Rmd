@@ -5,7 +5,7 @@ date: "2025-09-15"
 output: html_document
 ---
 
-[Modeled after QuACK 2025 Summer Sessions 2 by Nina Schoener and Sophie Regan]
+[Modeled after QuACK 2025 Summer Session 2 by Nina Schoener and Sophie Regan]
 
 ## Loading our packages
 
@@ -13,13 +13,13 @@ output: html_document
 
 # let's start by installing and loading tidyverse in full using the method we went over
 
-install.packages("tidyverse")
+#install.packages("tidyverse")
 library(tidyverse)
 
 
 # tidylog is a useful add-on that will give you feedback on what your tidyverse commands have done. let's add it! 
 
-install.packages("tidylog")
+#install.packages("tidylog")
 library(tidylog)
 
 # you may get a warning saying "the following objects are masked from..."
@@ -103,13 +103,13 @@ quack_responses_clean %>%
 # which columns have the most NAs?
 
 
-# it looks like the Temperature and Pets columns are problematic here, since each has some numeric values and some character values
+# it looks like the FavTemp and Pets columns are problematic here, since each has some numeric values and some character values
 # if we keep these columns as they are, R will treat all values as characters, which is not what we want
 # let's instead reformat these columns so all values are the same type
-# we can do that using grepl() on the Temperature column
+# we can do that using a combination of as.numeric() and str_remove_all() on the FavTemp column
 
 quack_responses_clean <- quack_responses_clean %>%
-  ##INSERT GREPL()
+  mutate(FavTemp = as.numeric(str_remove_all(FavTemp, "ºF| F")))
 
 # another way to standardize responses is using Tidyverse
 # in the Pets column, let's use a combination of mutate(), case_when(), and str_detect() to standardize responses
