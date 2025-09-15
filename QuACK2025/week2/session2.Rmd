@@ -45,6 +45,8 @@ quack_responses = read_csv("quack_response_data_fall25.csv")
 # try calling str() on our data
 # what does it tell you?
 
+str(quack_responses)
+
 ```
 
 ## Getting familiar with our data
@@ -62,12 +64,12 @@ summary(quack_responses)
 # let's rename our variables again like we did last week, but this time using tidyverse
 
 quack_responses_clean <- quack_responses %>%
-  set_names(c("ID", "Timestamp", "Experience_R", "Experience_Other", "Languages", "Area", "BirthMonth", "Season", "FavTemp", "Pets", "Correct_Answer", "Hotdogs", "Bear_Rating"))
+  set_names(c("ID", "Timestamp", "Experience_R", "Experience_Other", "Languages", "Area", "Birth_Month", "Season", "Fav_Temp", "Pets", "Correct_Answer", "Hotdogs", "Bear_Rating"))
 
 # read_csv does not automatically convert character columns to factors, but some of our character columns should probably be factors
 # let's convert them now
 
-# Interest is an example of variable that should be a factor
+# Experience_Other is an example of variable that should be a factor
 # we can combine the factor() function from base R with the mutate() function to include it in our pipe
 
 quack_responses_clean <- quack_responses_clean %>%
@@ -77,11 +79,10 @@ quack_responses_clean <- quack_responses_clean %>%
 # remember to include a pipe operator in between each one!
 
 quack_responses_clean <- quack_responses_clean %>%
-  mutate(Experience_Other = factor(Experience_Other, levels = c("Yes", "No"))) #%>%
-  #mutate(Area = factor(Area, levels = c("Clinical Science", "Cognition", "Developmental", "Social-Personality"))) %>%
-  #mutate(Season = factor(Season, levels = c("Fall", "Winter", "Spring", "Summer")))
+  mutate(Experience_Other = factor(Experience_Other, levels = c("Yes", "No"))) %>%
+  mutate(Area = factor(Area, levels = c("Clinical Science", "Cognition", "Developmental", "Social-Personality"))) %>%
+  mutate(Season = factor(Season, levels = c("Fall", "Winter", "Spring", "Summer")))
   
-
 # now try summarizing the data again -- what does it look like?
 
 summary(quack_responses_clean)
@@ -96,7 +97,6 @@ A common issue you'll come across is that there might be missing values (NAs) in
 # first, let's see where there are NAs in our data
 # summarise() can tell you this
 
-
 quack_responses_clean %>%
   summarise(across(everything(), ~ sum(is.na(.))))
 
@@ -109,14 +109,21 @@ quack_responses_clean %>%
 # we can do that using a combination of as.numeric() and str_remove_all() on the FavTemp column
 
 quack_responses_clean <- quack_responses_clean %>%
-  mutate(FavTemp = as.numeric(str_remove_all(FavTemp, "ºF| F")))
+  mutate(Fav_Temp = as.numeric(str_remove_all(Fav_Temp, "ºF| F")))
 
 # another way to standardize responses is using Tidyverse
-# in the Pets column, let's use a combination of mutate(), case_when(), and str_detect() to standardize responses
+# in the Pets column, let's use a combination of mutate() and str_replace() to standardize responses
 
 quack_responses_clean <- quack_responses_clean %>%
-  mutate(Pets = case_when(str_detect(Pets, "Over ") ~ "",
-                            TRUE ~ Pets))
+  mutate(Pets = as.numeric(str_replace(Pets, "Over ", "")))
+
+# another useful function is case_when()
+# let's try using this function to create a column Spooky 
+# for anyone whose favorite season is Fall, let's give them "Spooky", and everyone else "Not Spooky"
+
+quack_responses_clean <- quack_responses_clean %>%
+  mutate(Spooky = case_when(Season == "Fall" ~ "Spooky",
+                            TRUE ~ "Not Spooky"))
 
 # one other column, Languages, has a few NAs here and there
 # let's drop data from respondents who have an NA in any of those columns
@@ -132,6 +139,6 @@ Next, let's remove any outliers in the Pets column. We can do this using filter(
 # use the filter() function on the column "Pets" to drop anyone who said they have 20 or more pets
 
 quack_responses_clean <- quack_responses_clean %>%
-  filter(Pets <= 20)
+  filter(Pets < 20)
 
 ```
