@@ -39,7 +39,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 1 (9/8) |Intro to R & Programming|[w1_materials](week1/week1.zip)|[w1_key](week1/session1_2025.Rmd)|[w1_slides](week1/Quack_Session1_F2025.pdf)|
 | Week 2 (9/15) |Intro to the tidyverse and data wrangling - Part 1|[w2_materials](week2/week2.zip)|[w2_key](week2/session2.Rmd)|[w2_slides](week2/Quack_Session2_F2025.pdf)|
 | Week 3 (9/22) |Intro to the tidyverse and data wrangling - Part 2|[w3_materials](week3/week3.zip)|[w3_key](week3/session3.Rmd)|[w3_slides](week3/Quack_Session3_F2025.pdf)|
-| Week 4 (9/29) |Intro to data visualization (ggplot) - Part 1|
+| Week 4 (9/29) |Intro to data visualization (ggplot) - Part 1|[w4_materials](week4/week4.zip)|
 | Week 5 (10/6) |Intro to data visualization (ggplot) - Part 2| 
 | Week 6 (10/13) |Functions and loops|
 | Week 7 (10/20) |Flex Week/Review/Q&A|
