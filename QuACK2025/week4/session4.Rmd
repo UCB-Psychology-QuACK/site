@@ -72,7 +72,7 @@ Or we can add labels.
 ggplot(responses_summary, aes(y = mean_fav_temp,
                     x = Area))+
   geom_bar(stat = "identity", width=.5)+
-  labs(title = "Favorite Height by Area",
+  labs(title = "Favorite Temp by Area",
        x = "Area",
        y = "Mean Temperature")
 
@@ -86,7 +86,7 @@ ggplot(responses_summary, aes(y = mean_fav_temp,
                     x = Area,
                     fill = Area))+
   geom_bar(stat = "identity", width=.5)+
-  labs(title = "Favorite Height by Area",
+  labs(title = "Favorite Temp by Area",
        x = "Area",
        y = "Mean Temperature")
 
