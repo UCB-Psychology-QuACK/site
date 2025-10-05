@@ -1,0 +1,51 @@
+participant_id,snack_preference,hours_of_sleep,alien_encounters,favorite_shape,paranoia_level,coffee_intake,day_of_week,cheese_score
+P01,wasabi peas,6.8,7,triangle,8,0,Friday,23
+P02,pickles,8.5,8,trapezoid,4,2,Wednesday,27
+P03,pickles,7.8,13,circle,9,6,Wednesday,43
+P04,wasabi peas,6.3,12,circle,3,0,Tuesday,24
+P05,kale chips,9.8,11,octagon,10,6,Saturday,23
+P06,marshmallows,5.0,7,star,10,4,Saturday,80
+P07,marshmallows,6.4,4,trapezoid,8,7,Wednesday,29
+P08,marshmallows,8.6,15,circle,4,4,Tuesday,44
+P09,wasabi peas,6.9,2,hexagon,8,6,Wednesday,46
+P10,pickles,8.9,1,trapezoid,7,8,Thursday,87
+P11,wasabi peas,6.6,3,trapezoid,4,10,Tuesday,36
+P12,wasabi peas,7.6,4,star,2,7,Saturday,53
+P13,glitter pretzels,2.4,5,circle,2,2,Saturday,36
+P14,pickles,3.8,13,trapezoid,7,3,Wednesday,97
+P15,glitter pretzels,4.3,2,octagon,6,4,Thursday,91
+P16,chocolate bacon,2.6,12,octagon,7,3,Wednesday,43
+P17,pickles,3.9,12,circle,7,0,Sunday,74
+P18,pickles,2.8,14,octagon,8,9,Monday,72
+P19,pickles,4.2,8,hexagon,1,8,Monday,42
+P20,marshmallows,7.1,0,star,2,0,Thursday,16
+P21,marshmallows,4.9,3,octagon,1,5,Friday,21
+P22,glitter pretzels,5.0,8,octagon,7,0,Friday,91
+P23,glitter pretzels,3.7,10,hexagon,6,0,Monday,64
+P24,pickles,4.1,3,star,2,9,Monday,45
+P25,glitter pretzels,9.5,9,trapezoid,4,7,Friday,15
+P26,marshmallows,7.2,13,star,4,8,Tuesday,10
+P27,wasabi peas,6.9,5,triangle,4,8,Friday,52
+P28,wasabi peas,3.4,14,circle,9,2,Wednesday,26
+P29,wasabi peas,7.8,0,circle,8,0,Tuesday,91
+P30,glitter pretzels,3.3,8,triangle,3,8,Wednesday,43
+P31,chocolate bacon,5.0,5,hexagon,7,1,Monday,30
+P32,marshmallows,9.9,3,triangle,3,2,Tuesday,66
+P33,chocolate bacon,7.1,9,trapezoid,5,1,Wednesday,80
+P34,glitter pretzels,6.5,6,trapezoid,8,9,Wednesday,100
+P35,kale chips,7.5,4,circle,4,1,Tuesday,64
+P36,pickles,8.7,11,trapezoid,2,10,Thursday,81
+P37,marshmallows,8.2,5,circle,8,3,Sunday,11
+P38,wasabi peas,3.8,0,triangle,9,6,Friday,24
+P39,chocolate bacon,2.3,10,triangle,2,1,Saturday,19
+P40,kale chips,4.5,15,octagon,1,9,Wednesday,98
+P41,kale chips,4.1,0,octagon,9,3,Friday,29
+P42,marshmallows,3.7,3,triangle,1,9,Sunday,79
+P43,marshmallows,9.5,11,circle,2,9,Saturday,14
+P44,kale chips,9.0,9,triangle,4,0,Friday,57
+P45,pickles,4.5,7,triangle,3,9,Monday,84
+P46,pickles,7.2,1,hexagon,7,1,Saturday,80
+P47,chocolate bacon,5.2,7,triangle,8,6,Sunday,28
+P48,pickles,9.3,2,trapezoid,8,10,Friday,65
+P49,kale chips,5.7,2,circle,4,9,Wednesday,26
+P50,kale chips,4.1,15,hexagon,7,9,Saturday,15
