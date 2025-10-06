@@ -154,7 +154,7 @@ library(boot)
 # Define a function to compute the statistic of interest
 boot_mean <- function(data, indices) {
   d <- data[indices, ]
-  return(mean(d$height_clean, na.rm = TRUE))
+  return(mean(d$FavTemp, na.rm = TRUE))
 }
 
 # Run the bootstrap
@@ -174,7 +174,7 @@ hist(boot_results$t,
      breaks = 30,
      col = "tomato",
      main = "Bootstrap Distribution of the Mean",
-     xlab = "Mean Height (inches)")
+     xlab = "Mean Fav Temp")
 
 ```
 
