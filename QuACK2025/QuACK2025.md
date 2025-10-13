@@ -41,7 +41,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 3 (9/22) |Intro to the tidyverse and data wrangling - Part 2|[w3_materials](week3/week3.zip)|[w3_key](week3/session3.Rmd)|[w3_slides](week3/Quack_Session3_F2025.pdf)|
 | Week 4 (9/29) |Intro to data visualization (ggplot) - Part 1|[w4_materials](week4/week4.zip)| [w4_key](week4/session4.Rmd)|[w4_slides](week4/Quack_Session4_F2025.pdf)|
 | Week 5 (10/6) |Intro to data visualization (ggplot) - Part 2|[w5_materials](week5/week5.zip)| [w5_key](week5/session5.Rmd)|[w5_slides](week5/Quack_Session5_F2025.pdf)| 
-| Week 6 (10/13) |Flex Week/Review/Q&A||[w5_materials](week5/week5.zip)| [w5_key](week5/session5_starter.Rmd)| 
+| Week 6 (10/13) |Flex Week/Review/Q&A|[w5_materials](week5/session5.zip)| [w5_key](week5/session5.Rmd)|[w5_slides](week5/Quack_Session5_F2025.pdf)| 
 | Week 7 (10/20) |Functions and loops|
 | Week 8 (10/27) |Intro to Basic Stats - Part 1|
 | Week 9 (11/3) |Intro to Basic Stats - Part 2|
