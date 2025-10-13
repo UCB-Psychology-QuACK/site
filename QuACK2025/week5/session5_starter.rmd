@@ -1,0 +1,386 @@
+---
+title: "QuACK Longitudinal Data Wrangling Practice"
+author: "Victoria Keating"
+date: "`2025-10-13`"
+output: 
+  html_document:
+    toc: true # add table of contents
+    toc_depth: 3 # how many levels shown in toc
+    toc_float: true #floating toc
+    theme: cosmo
+---
+
+[This is flex week material, covering particularly datawrangling, multiple datasets, and formatting]
+
+## Loading our Packages {.tabset}
+```{r, echo=FALSE,  warning=FALSE, message=FALSE}
+library(tidyverse)
+library(tidylog)
+```
+
+
+## Intro to Topic {.tabset}
+
+This week we'll be covering a little more on data-wrangling and getting more experience with joining datasets, pivoting, and managing data. (Plus a little discussion of R formatting if we can fit it in)
+
+
+## Practice with Pivoting: First Year Grad Students' Longitudinal Data {.tabset}
+
+For fun today, we're going to use a completely made up dataset (via ChatGPT) to model what it looks like to work with and wrangle longitudinal data
+
+Let's pretend that we had the same survey for grad students and gave it three different times, the end of their first semester, second semester, and third semester at Berkeley. You just cloned the same survey thrice so you've got three data sets. PsychGradLife_Sem1.csv, PsychGradLife_Sem2.csv, and PsychGradLife_Sem3.csv. You had some demographic data (i.e., area and advisor). Other variables of interest include daily caffeine consumption (caffeine_mg), daily TikTok consumption (tiktok_min), weekly existential crises as measured by hours contemplating other paths (hours_contemplating_other_paths), and reported sense of selfcare from 1 - 10 (worst to best) (selfcare_score)
+
+### Practice with Making Long Data  {.tabset}
+```{r, echo=FALSE, message=FALSE}
+# First, let's load in the data
+
+
+# Let's merge the data. The issue is if just add these rows altogether, you won't be able to tell which one is from which time. 
+
+# With that, you have to add a row in each that will say which one is which. Let's use mutate to make a column in each dataframe that says Time with the appropriate time
+
+
+
+# Okay, now let's create one big dataframe using bind_rows
+
+# A lesson to learn from past Victoria's mistakes
+## Sometimes, you'll be tempted to add data together to make it wider and you will use left_join. The left_join becomes unhappy when you try to add columns with similar names so it adds suffixes (default is .x and .y). You can adjust this so when it adds columns it adds something like (_T1, _T2), however, doing this will actually just make your life harder because you will eventually end up going longer. 
+## Heads up, generally pivot_longer for analysis or visualization, pivot_wider for reporting (it looks tidy)
+## Adding rows is like adding observations or adding participants
+## Adding columns is like adding new variables 
+
+
+```
+
+#### Summarizing the Data using Group_by {.tabset}
+```{r, message=FALSE,include=FALSE}
+# Let's get some broad summaries of each column in semester 1
+
+```
+
+##### Caffeine consumption {.tabset}
+```{r, message=FALSE}
+# Let's see if we can summarize how caffeine consumption changes over time
+
+sem_long %>%
+  group_by() %>%
+  summarise(
+    caffeine_mean = mean(),
+    caffeine_sd   = sd(),
+    .groups = "drop"    # optional, ungroups automatically
+  )
+
+```
+
+##### TikTok consumption {.tabset}
+```{r, message=FALSE}
+
+```
+
+##### Existential Crises {.tabset}
+```{r, message=FALSE}
+
+```
+
+##### Self Care {.tabset}
+```{r, message=FALSE}
+
+```
+
+#### Wide to Long {.tabset}
+```{r, message=FALSE}
+# Load in that data
+wide_data<- 
+```
+
+##### Caffeine example {.tabset}
+```{r, message=FALSE}
+# Let's say you just want to pivot for caffeine consumption
+caffeine_long <- wide_data %>%
+  # first choose which columns you want, occasionally you don't want them all
+  select(participant, area, advisor, ...) %>%
+  # Here comes the pivot!
+  #  pivot_longer takes multiple arguments. 
+  ##  data = which tells what data you're using, but since we have used piping, you can skip that
+  ## cols= tells the formula what are the columns you're using to pivot
+  ## names_to = tells the formula, so those columns that I've chosen, I want them to be in a column of their own called this. 
+  ## values_to = tells the formula the number is going to be called what
+  pivot_longer(
+    #because we have caffeine_mg_S1, caffeine_mg_S2,and caffeine_mg_S3, we can use it like this cols=starts_with("caffeine_mg") which will take all columns that start with that phrase. 
+    cols = ,
+    names_to = ,
+    values_to = ,
+    #this is optional, but basically it takes away this prefix so we end up with just S1, S2, and S3. 
+    names_prefix = 
+      )
+```
+
+###### Visualization {.tabset}
+```{r, echo=FALSE}
+# Let's make a graph of caffeine consumption over time!
+# Let's do a graph with dots (geom_jitter) and a line
+
+ggplot()+
+  geom_jitter()+
+  stat_summary(fun = mean, geom = "line",group=1) 
+
+```
+
+```{r, echo=FALSE}
+# What if we wanted to group by area?
+
+
+```
+
+##### Tiktok example {.tabset}
+```{r, message=FALSE}
+# Let's say you just want to pivot for tiktok consumption
+
+```
+
+###### Visualization {.tabset}
+```{r, echo=FALSE}
+# Let's make a graph of TikTok consumption over time!
+# Let's do a graph with dots (geom_jitter) and with a line
+
+```
+
+```{r, echo=FALSE}
+# What if we wanted to group by area?
+
+```
+
+##### Pivot for everything Example
+```{r, message=FALSE}
+
+long_data<- wide_data %>%
+  pivot_longer(
+    # taking all the columns that start with these things
+    cols = starts_with(c("caffeine_mg", "tiktok_min", "hours_contemplating_other_paths", "selfcare_score")),
+    # Names to semester, remember this just says which semester or time point
+    names_to = c(".value", "Semester"),  # .value keeps the main variable names
+    names_sep = "_S"                     # takes out _S1, _S2, _S3 so it's just 1, 2, 3
+  )
+```
+
+
+#### Long to Wide
+
+Let's say there's some reason you want to change from long data to wide data
+```{r}
+#For the moment, we're just going to use the tiktok_long
+tiktok_wide<-tiktok_long%>%
+  #Pivot wider is the opposite of pivot_longer. You'll still need data, and in this case, instead of names_to and values_to, you're going to do names_from and values_from. Names from is where are the column names coming from. Values from is what are the values in those columns going to be coming from.
+  pivot_wider(
+    names_from="semester",
+    values_from="tiktok_min"
+  )
+```
+
+## Helpful R Markdown Formatting {.tabset}
+
+### YAML {.tabset}
+
+#### Basic YAML info {.tabset}
+
+title: "Graduate Student Data Wrangling Review"
+
+subtitle: "Pivoting, Wrangling, and Simpson’s Paradox"
+
+author: "Your Name"
+
+date: "`r Sys.Date()`" (gives system date), if you want an actual date, you can put an 
+actual date in there
+
+abstract: "A fun exploration of R data wrangling techniques using psych grad student data."
+
+keywords: ["pivot_longer", "pivot_wider", "Simpson's paradox", "tidyverse"]
+
+lang: en
+
+These are not all required
+
+#### Output formats {.tabset}
+
+##### HTML {.tabset}
+ html_document: 
+ 
+    theme: flatly # HTML theme (options: cosmo, journal, united, etc.) 
+    
+    toc: true # include a table of contents 
+    
+    toc_float: true # floating TOC sidebar number_sections: 
+    
+    true # numbered section headers 
+    
+    highlight: tango # syntax highlighting style 
+    
+    code_folding: show # collapsible code blocks 
+    
+    df_print: paged # interactive paged data frames 
+    
+    self_contained: true # embed all dependencies (portable HTML)
+
+    
+##### PDF {.tabset}
+  pdf_document:
+
+    toc: true
+
+    toc_depth: 3
+
+    number_sections: true
+
+    latex_engine: xelatex   # or pdflatex if xelatex unavailable
+
+    geometry: "margin=1in"  # page margins
+    
+##### Word {.tabset}
+  word_document:
+
+    toc: true
+
+    reference_docx: "template.docx"  # optional custom Word style
+
+#### Table of Contents {.tabset}
+  
+  table of contents: 
+  
+    toc: true
+
+    toc_depth: 3
+
+    number_sections: true
+
+    anchor_sections: true
+
+### R Chunk Headers {.tabset}
+
+These are the things between the squigglies that start with r
+
+Here are some common options (you separate them with commas)
+
+#### Visibility and output control {.tabset}
+
+| Option | What it does | Example |
+|---------|---------------|----------|
+| `echo = FALSE` | Hides the code, shows only output | `echo = FALSE` |
+| `eval = FALSE` | Shows the code but doesn’t run it | `eval = FALSE` |
+| `include = FALSE` | Runs the code, hides both code *and* output | `include = FALSE` |
+| `message = FALSE` | Suppresses messages | `message = FALSE` |
+| `warning = FALSE` | Suppresses warnings | `warning = FALSE` |
+| `error = TRUE` | Keeps knitting even if an error occurs | `error = TRUE` |
+| `results = "hide"` | Runs code but hides textual results | `results = "hide"` |
+| `results = "asis"` | Renders raw markdown output (great for tables) | `results = "asis"` |
+| `comment = ""` | Removes the `##` prefix in output | `comment = ""` |
+
+#### Formatting & layout {.tabset}
+
+| Option | Purpose | Example |
+|---------|----------|----------|
+| `fig.width` / `fig.height` | Size of figure (in inches) | `fig.width = 6, fig.height = 4` |
+| `fig.align` | Figure alignment (`left`, `center`, `right`) | `fig.align = "center"` |
+| `fig.cap` | Add a caption to the figure | `fig.cap = "Caffeine trends over semesters"` |
+| `out.width`, `out.height` | Output size in HTML/PDF | `out.width = "80%"` |
+| `dpi` | Image resolution | `dpi = 300` |
+
+#### Plotting & caching {.tabset}
+
+| Option | What it does | Example |
+|---------|---------------|----------|
+| `fig.show = "hold"` | Displays multiple plots together | `fig.show = "hold"` |
+| `cache = TRUE` | Saves results for faster re-knit | `cache = TRUE` |
+| `cache.lazy = FALSE` | Forces recalculation on dependency change | `cache.lazy = FALSE` |
+| `dev = "png"` | Choose graphics device (`png`, `pdf`, etc.) | `dev = "png"` |
+
+#### Code folding & collapsing (HTML only) {.tabset}
+
+| Option | Description | Example |
+|---------|--------------|----------|
+| `collapse = TRUE` | Collapse input/output together | `collapse = TRUE` |
+| `class.source` | Add HTML class to code block | `class.source = "fold-show"` |
+| `code_folding: show` | Set globally in YAML, but can override here |  |
+
+#### Advanced options {.tabset}
+
+| Option | What it controls | Example |
+|---------|------------------|----------|
+| `tidy = TRUE` | Auto-formats code | `tidy = TRUE` |
+| `child = "filename.Rmd"` | Inserts another Rmd file | `child = "methods.Rmd"` |
+| `ref.label` | Reuses results from another chunk | `ref.label = "data-cleaning"` |
+
+### R Chunk Squigglies i.e. Tabset {.tabset}
+
+| Attribute       | Description                                                       | Common Use                                     |
+| --------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
+| `.tabset`       | Turns subheadings into clickable tabs.                            | Show multiple plots or summaries side-by-side. |
+| `.tabset-fade`  | Adds a fade-in/fade-out animation between tab transitions.        | Smooth visual effect for tabbed sections.      |
+| `.tabset-pills` | Displays tabs as rounded Bootstrap “pills” instead of rectangles. | Visual style tweak for tabsets.                |
+| `.collapse`     | Makes the section collapsible (click to expand/hide).             | Hide lengthy explanations or code.             |
+| `.unlisted`     | Removes the section from the table of contents (TOC).             | Keep TOC concise while retaining the section.  |
+| `.hidden`       | Hides the section entirely from the rendered output.              | Include instructor notes or draft sections.    |
+| `.appendix`     | Marks the section as part of the appendix (affects numbering).    | Differentiate appendices from main text.       |
+| `.levelX`       | Sets a custom TOC nesting level for the section.                  | Manually control TOC hierarchy.                |
+
+### R Mardown Text Formatting {.tabset}
+
+#### Headings {.tabset}
+
+As you may have noticed, hashtags make the headings, one more hashtag means one more level of hashtags
+
+#### Bold and Italics {.tabset}
+
+We use * (star) for bolds
+
+*One star on each side of the text for italics* 
+
+**Two stars on each side for bold**
+
+***Three if you want bold and italics***
+
+#### Bullet points {.tabset}
+
+Here you're going to use the dash (-). Don't forget to add a space between the dash and your first word
+
+- First item
+
+- Second item
+
+ - sub item (this is a space from where the other one started)
+ 
+ - sub item
+ 
+A single star with no pair makes another bullet
+
+#### Numbered List {.tabset}
+Make lists with 1. 2. 3., so on, if you want to do a sub list, similarly add an item
+
+#### Horizontal Lines {.tabset}
+
+To make horizontal lines, you can do --- on a empty line, *** on an empty line, or _______ 
+
+#### Blockquotes {.tabset}
+> This is a blockquote.
+> You can have multiple lines.
+
+Do a  greater-than sign to start a block quote
+
+#### Tables {.tabset}
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| A        | B        | C        |
+| 1        | 2        | 3        |
+
+Use dashes and | to make your rows and columns
+
+#### Math Equations {.tabset}
+Use dollar signs to frame your math chunk
+
+$$
+y = \frac{a}{b} + c
+$$
+
+
+
+
