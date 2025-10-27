@@ -43,7 +43,7 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 5 (10/6) |Intro to data visualization (ggplot) - Part 2|[w5_materials](week5/week5.zip)| [w5_key](week5/session5.Rmd)|[w5_slides](week5/Quack_Session5_F2025.pdf)| 
 | Week 6 (10/13) |Flex Week/Review/Q&A|[w5_materials](week5/session5.zip)| [w5_key](week5/session5.Rmd)|[w5_slides](week5/Quack_Session5_F2025.pdf)| 
 | Week 7 (10/20) |Functions and loops|[w7_materials](week7/session7.zip)| [w7_key](week7/session7.Rmd)|[w7_slides](week7/Quack_Session7_F2025.pdf)| 
-| Week 8 (10/27) |Intro to Basic Stats - Part 1|
+| Week 8 (10/27) |Intro to Basic Stats - Part 1|[w8_materials](week8/week8.zip)| [w8_key](week8/session8.Rmd)|[w8_slides](week8/Quack_Session8_F2025.pdf)| 
 | Week 9 (11/3) |Intro to Basic Stats - Part 2|
 | Week 10 (11/10) |Open-Science, Github & Git|
 
