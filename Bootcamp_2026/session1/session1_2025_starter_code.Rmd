@@ -1,0 +1,352 @@
+---
+title: "quack_session1_2025 starter code"
+author: "Nina Schoener"
+date: "2025-06-06"
+output: html_document
+---
+
+[Modeled after QuACK 2024 Session 1 by Emily Rosenthal and Sierra Semko Krouse]
+
+## Welcome to your first week of QuACK!
+
+QuACK stands for Quantitative Analysis and Coding Knowledge. Hopefully, we have convinced you that analysis and coding skills are worth spending time developing, and that R is a great place to start. Let's go over some basics!
+
+### Intro to RStudio
+
+The console is where your code is run. This is usually at the bottom left of your screen by default, but you can configure your panels however you like.
+
+The script (where you are reading this) is used to keep track of everything that you have done so that you can do it again!
+
+This document is an R Markdown document, which has some more features than a basic R script that make it more readable, and easier to export into other formats like a PDF or HTML script. You can try switching between the "Source" and "Visual" modes at the top left of the script to see the effects of Markdown formatting. We'll talk more about this later.
+
+The environment (top right by default) is where you will see variables that you have created so far.
+
+The files pane (bottom right by default) is where you can navigate between files on your desktop. If you generate a plot, it will appear in the "Plots" tab here, and the "Packages" tab is useful for finding out which packages you currently have installed and loaded. The "Help" tab is where you can find documentation for functions if you aren't sure how to use them in your script. This can also be accessed by typing a question mark before the name of the function directly in the console.
+
+```{r}
+# like this! try pressing the green button to run this code chunk -->
+
+?print
+
+# you can also navigate to a line or highlight a chunk of code and press Ctrl + Enter (Cmd + Enter on Mac) to run individual lines
+# try printing the statements below one at a time using this method
+
+print("Now I know how to use the print function!")
+
+print("I am having so much fun in QuACK :)")
+
+```
+
+### Conventions
+
+You can use hashtags (\#) to write comments. Comments are helpful for:
+
+-   reminding yourself of what you did
+
+-   letting others read and understand your code
+
+-   troubleshooting / debugging specific lines of your code
+
+If you use one to four hashtags before your text, you will create headings of different levels. You can collapse sections under headings, and navigate to them using the "Outline" on the right.
+
+Now, we're ready to start writing some code!
+
+### My Code
+
+```{r}
+# try entering a number 
+# what happens?
+
+
+
+# how about a word (string)?
+
+
+
+# how about a mathematical expression?
+
+```
+
+#### Variables
+
+In order to be able to reuse information again later in our scripts, we need to give it a name!
+
+So, we create VARIABLES to store the information.
+
+We do this by giving it a variable name, and then assigning it information.
+
+"\<-" is called the "assignment operator"
+
+**Hot keys for making "\<-"**
+
+-   PC: "alt" + "-"
+
+-   Mac: "opt" + "-"
+
+-   or you can just type it out!
+
+```{r}
+
+# Variables can store numeric information
+
+         
+# Number of participants in our study: 100
+sample_size <-
+
+
+# What if I name it Sample_size (with a capital 'S')? What does this tell us about R?
+Sample_size <-
+# This creates a different variable! 
+# R cares about capitalization when naming variables! 
+  
+
+#What happens if I run it again, with a new value?
+        
+sample_size <-
+    # R replaced the value of this variable! This is because they have the same name. 
+
+
+```
+
+If you have two variables with the same name, R will assign the value to the one you ran most recently. It replaces what you did before!
+
+Be careful about this!!
+
+```{r}
+# Variables can also store words (strings, characters)
+
+         
+name <- 
+# The quotes indicate to the program that the information inside is a word (string/character)
+
+# Functionally, double and single quotes are the same
+name <- 
+name2 <- 
+```
+
+```{r}
+# Variables can also store logical values (booleans)
+
+bool_t <- 
+bool_f <- 
+
+# Notice that characters and booleans change colors -- this is R telling you
+# that it recognizes these different data types.
+
+```
+
+Note: for booleans, it is important that TRUE and FALSE are capitalized! Writing true or True will NOT do the same thing! Using all caps is to logicals what using double quotes is to characters. It is your way of telling R how a piece of info should be treated. Try it out! Type true or True and you will see that it doesn't change color if all the letters aren't capitalized.
+
+#### Vectors
+
+Syntax for creating a vector is: c()
+
+c means "concatenate" (some people also think of it as "combine"). It's telling R that we are giving it a list. Make sure you put a comma between items on your list!
+
+```{r}
+
+# you can make a vector of numbers
+
+numbers <- # after you run this, the variable 'numbers' should pop up in your global environment on the top right
+
+        
+# Interpreting what your global environment is telling you: 
+# 'num' tells you that this is a numeric variable
+# [1:8] tells you that there are 8 items or members of this vector
+
+
+# you can make a vector of characters
+
+names <-
+# after you run this, the variable 'names' should pop up in your global \# environment on the top right
+
+         
+# Interpreting what your global environment is telling you: 
+# 'chr' tells you that this is a character variable
+# [1:6] tells you that there are 6 items or members of this vector
+
+
+# you can make a vector of booleans (or logic)
+
+boolean_vector<-
+
+boolean_vector
+print(boolean_vector)
+
+# Vectors can only contain one type of value! What happens when we try to give
+# a vector multiple types of input?
+
+        
+newvector<-
+newvector
+# It turns everything into characters!
+```
+
+#### Factors
+
+Represent categorical information (where we have a limited number of discrete categories) Levels are sub-categories or groups of categorical information! This becomes super important later on, for instance when you want to visualize your data!
+
+```{r}
+# How is a factor different from a character vector? How do they show up in our global environment?
+   
+  #vector of character data
+  groups_string<-
+  
+  #making it a factor
+  groups<-
+
+
+# You can also make numeric values into a factor
+     
+  # e.g., if you had a variable "TreatmentGroups" where each participant was 
+  # assigned to one of four unique treatment conditions, 1, 2, 3, or 4, 
+
+  #vector of numeric data
+  TreatmentGroup<-
+  
+  #making it a factor
+  TreatmentGroupFactor<-
+```
+
+### Reading in data
+In R, you will often want to load in datasets so that you can analyse them. To do so, you need to know a few things. The first is how to figure out what working directory you are in. If you are using R markdown, this will be the directory where you have saved your markdown file. If you are using an R script, it may be different, so beware! 
+```{r}
+# Use the getwd() command to see your working directory.
+
+```
+
+Next, we might want to change our working directory (especially if using an R script rather than markdown). In R markdown, it will only change your directory inside of that chunk, so be careful. 
+```{r}
+# Use setwd() to set a new working directory.
+
+```
+
+A useful command is ".." which means "go up a directory". 
+
+Once you are in the correct working directory, you can open up the files you want to see. When we are working in R, the most common file type we will be using is called a csv file, which stands for "comma separated value." To read in a csv file, you can use read.csv().
+Make sure to save the csv file under some variable name (like quack_responses.) Don't forget to use quotation marks around the filename. 
+```{r}
+
+```
+
+Okay, now let's try to open up a csv file that is in a more complicated location. We can do it two ways. First, we can set our working directory to be the appropriate folder and then open up the files in that folder. This is a good idea if you are using an R script and you want to work with files in a specific folder. Let's try that first.
+```{r}
+# Let's open up alien_smoothies.csv
+
+```
+
+Great! Now let's try to do it without changing the working directory. We can open up a file using the filepath from our working directory.
+```{r}
+# Let's open up pet_rock_survey.csv
+
+```
+
+Now try to find all of the other csv files hidden amongst the folders! Have fun!
+
+#### Directories
+
+#### Dataframes
+
+Most of the time, you won't be creating vectors like these from scratch in your R code, but rather importing a dataset to work with and then refactoring, renaming columns, etc.
+
+Let's try importing a dataset now that you know your way around the working directory!
+
+```{r}
+
+library(readr)
+data <- 
+
+# you can view the data that you just imported like this
+View(data)
+
+
+# you can also view some descriptive statistics about your dataset like this
+summary(data)
+
+
+```
+
+Sometimes, you'll want to index particular values in your dataframe. For example, you might want to know what respondent number 5 answered to the question "Is there a correct answer to this question?" You can do that by referencing the column after a dollar sign (\$) and the row in square brackets ([]) like this:
+
+```{r}
+
+answer1 <- 
+# this line of code looks for the row where the column "ID" has a value of 5, and then for that row returns the value in the column "Is there a correct answer to this question?"
+
+```
+
+You may notice that this is a cumbersome process if you have long column names, especially if there are spaces in them. One thing you can do is index by column number and row number instead of column name. You can View your dataframe and then hover over columns to see what number they are.
+
+```{r}
+
+answer2 <- 
+# what do you notice about answer1 vs. answer2?
+
+```
+
+Another way to get around this is just to rename your dataframe's columns with more sensible names. We will learn a tidier way of doing this next week, but the way to rename columns in base R is by assigning a vector of names to the column names of your dataframe:
+
+```{r}
+
+names(data) <- c("ID", 
+                 "Timestamp", 
+                 "Interest", 
+                 "Experience_R", 
+                 "Experience_Other", 
+                 "Languages", 
+                 "Lab",
+                 "Year", 
+                 "BirthMonth", 
+                 "State", 
+                 "SodaPop", 
+                 "Height_4ft", 
+                 "Height_5ft", 
+                 "Height_6ft", 
+                 "LastQuestion")
+View(data)
+
+answer1 <-
+
+```
+
+You might also notice that the data in some of these columns is quite messy. For example, there is a character column "SodaPop" that contains many variants of essentially the same few responses "soda", "pop", "soft drinks", and "beverages". Let's use what we learned about capitalization in R and factoring to make this column easier to handle
+
+```{r}
+
+# tolower() will remove all capitalization from the SodaPop column
+data$SodaPop <-
+
+# now we can group the responses based on the term used
+data$SodaPop <- ifelse(grepl("soda", data$SodaPop), "soda",
+           ifelse(grepl("pop", data$SodaPop), "pop",
+           ifelse(grepl("soft drink", data$SodaPop), "soft drinks",
+           ifelse(grepl("beverage", data$SodaPop), "beverage",
+           data$SodaPop))))
+
+```
+
+Most of the time, when working with data in R, you will likely import it from somewhere else, like we did above. But sometimes, you may want to create a dataframe directly in R. You can do this by combining columns or rows (vectors, like we created earlier) using cbind() and rbind().
+
+```{r}
+
+# let's try making a dataframe for attendance
+# let's start by creating a vector of names of those sitting in the first row, marking them as present 
+
+first_row_names <- 
+first_row_present <- 
+
+# and those in the second row, marking them as present
+
+second_row_names <-
+second_row_present <- 
+
+# now we can create a dataframe for the first row by binding the names and present columns together
+first_row <- 
+
+# and do the same for the second row
+second_row <- 
+
+# and lastly, combine everything into an attendance dataframe
+attendance <- 
+```
+

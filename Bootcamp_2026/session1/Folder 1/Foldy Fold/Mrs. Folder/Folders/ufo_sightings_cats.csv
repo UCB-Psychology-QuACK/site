@@ -1,0 +1,31 @@
+Cat_Name,Breed,Sightings,Witness_Type,Reported_To,Believability_Score
+Cat_0,Tabby,3,Floating Saucer,Vet,5.7
+Cat_1,Persian,1,Laser Light,Internet,0.3
+Cat_2,Sphynx,3,Laser Light,Internet,9.5
+Cat_3,Tabby,5,Floating Saucer,Vet,2.2
+Cat_4,Persian,1,Laser Light,Internet,5.6
+Cat_5,Persian,0,Glowing Yarn,Owner,8.9
+Cat_6,Persian,2,Floating Saucer,Internet,6.3
+Cat_7,Maine Coon,3,Laser Light,Owner,6.7
+Cat_8,Maine Coon,3,Floating Saucer,Internet,4.9
+Cat_9,Maine Coon,2,Floating Saucer,Internet,4.7
+Cat_10,Tabby,1,Glowing Yarn,Owner,0.6
+Cat_11,Sphynx,3,Laser Light,Owner,2.7
+Cat_12,Siamese,3,Floating Saucer,Owner,1.3
+Cat_13,Sphynx,3,Laser Light,Vet,7.1
+Cat_14,Siamese,3,Glowing Yarn,Owner,5.1
+Cat_15,Siamese,4,Glowing Yarn,Owner,7.6
+Cat_16,Persian,4,Floating Saucer,Internet,2.3
+Cat_17,Persian,5,Laser Light,Vet,2.9
+Cat_18,Sphynx,2,Laser Light,Owner,6.0
+Cat_19,Persian,5,Glowing Yarn,Owner,2.1
+Cat_20,Sphynx,3,Laser Light,Owner,3.8
+Cat_21,Sphynx,1,Laser Light,Internet,7.8
+Cat_22,Tabby,8,Floating Saucer,Vet,7.9
+Cat_23,Sphynx,2,Laser Light,Vet,7.2
+Cat_24,Tabby,4,Laser Light,Internet,5.4
+Cat_25,Maine Coon,6,Laser Light,Internet,5.5
+Cat_26,Tabby,1,Laser Light,Internet,0.0
+Cat_27,Siamese,6,Floating Saucer,Vet,0.7
+Cat_28,Tabby,5,Laser Light,Vet,5.1
+Cat_29,Siamese,2,Laser Light,Owner,8.1

@@ -1,0 +1,200 @@
+---
+title: "quack_session2_2025"
+author: "Nina Schoener"
+date: "2025-07-01"
+output: html_document
+---
+
+[Modeled after QuACK 2024 Sessions 2 & 3 by Emily Rosenthal and Sierra Semko Krouse]
+
+## Loading our packages
+
+```{r}
+
+# let's start by installing and loading tidyverse in full using the method we went over
+
+
+
+
+# tidylog is a useful add-on that will give you feedback on what your tidyverse commands have done. let's add it! 
+
+
+
+
+# you may get a warning saying "the following objects are masked from..."
+# this means that there are some functions in the package you just loaded with the same name as functions in a different package (or base R)
+# it's ok -- just be careful about this! if you want to be extra sure you're using the right function, you can always type "packagename::" before it!
+# pro-tip: this also lets you use a particular function from a package without having to load it into your library first!
+
+```
+
+## Reading in our data
+
+We're going to use the same data we used last week and we're going to do some of the same operations we did last week, just to demonstrate that tidyverse has its advantages.
+
+```{r}
+
+# let's start by loading in the quack response data from csv
+# the tidyverse (in this case dplyr) way of doing this is using read_csv() rather than read.csv() as we did last week
+# does anyone know the differences between the two?
+
+
+
+
+# try calling str() on our data
+# what does it tell you?
+
+
+
+```
+
+## Getting familiar with our data
+
+Before doing anything else with your data, it's always a good idea to get familiar with how it's structured and what the possible values for each variable are.
+
+What can you tell about your dataframe by looking at the global environment?
+
+```{r}
+
+# try calling summary() like we did last week to remind yourself of what's in this dataframe
+
+
+
+# let's rename our variables again like we did last week, but this time using tidyverse
+
+
+
+# read_csv does not automatically convert character columns to factors, but some of our character columns should probably be factors
+# let's convert them now
+
+# Interest is an example of variable that should be a factor
+# we can combine the factor() function from base R with the mutate() function to include it in our pipe
+
+
+# take a few minutes and add two other variables to the pipe that you think should be factors
+# remember to include a pipe operator in between each one!
+
+quack_responses_clean <- quack_responses_clean %>%
+  mutate(Interest = ) %>%
+  mutate(CollegeYear = ) %>%
+  mutate(LastQuestion = )
+  
+
+# now try summarizing the data again -- what does it look like?
+
+
+
+```
+
+## Cleaning our data
+
+A common issue you'll come across is that there might be missing values (NAs) in your data. What you'll want to do with NAs will vary case-by-case, but here we will simply remove them.
+
+```{r}
+# first, let's see where there are NAs in our data
+# summarise() can tell you this
+
+
+
+
+# which columns have the most NAs?
+
+
+# it looks like the Height columns are problematic here, since each person only has an entry for either 4, 5, or 6ft
+# if we dropped every row that had an NA, we would drop every single person's data right now
+# let's instead drop those columns entirely for now
+# we can do that using select()
+
+
+
+# some other columns, like Lab, OtherLanguages, and COllegeYear have a few NAs here and there
+# let's drop data from respondents who have an NA in any of those columns
+
+
+```
+
+Next, let's remove any respondent who said they were only "Maybe" interested in QuACK. We can do this using filter().
+
+```{r}
+
+# use the filter() function on the column "Interest" to drop anyone who said they were only maybe interested
+
+
+
+
+```
+
+Our data is looking pretty clean! One last thing: let's standardize the Drinks column again like we did last week, but this time using Tidyverse.
+
+```{r}
+
+# in order to standardize responses in the Drinks column, we're going to use a combination of mutate(), case_when(), and str_detect()
+
+```
+
+## Pivoting our data
+
+Let's say we want to know what each person's mean level of coding knowledge is – not just in R, but across all languages. How would we do that? In our current dataframe, we have two separate columns for experience in R and experience in other languages. Let's reshape our data from *wide form* into *long form* so that it's easier to describe the level of coding knowledge that each respondent has across languages.
+
+```{r}
+
+# first, for simplicity, we're going to create a new dataframe and drop all of the columns that are irrelevant to this question
+
+
+
+# now, let's use pivot() to reshape our data into long form
+# you'll need to specify which columns you want to pivot, what you want the new variable for your column names to be called, and what you want the new variable for your column values to be called
+# you can optionally specify some other things -- run ?pivot_longer to learn more
+
+
+
+# great, now we have one column with everyone's experience levels! now, let's summarize each participant's experience level. to do this, we're going to group_by() ID
+
+
+
+# now what if we want to know the mean experience level of everyone, broken down by Language?
+
+
+
+
+```
+
+## Joining our dataframes
+
+Let's imagine we have two dataframes that we really want to be one dataframe. How do we smoosh them together? This is called "joining" dataframes.
+
+```{r}
+# for the sake of illustration, let's pretend our data on coding experience and our data on soda naming are from two different dataframes. We have already created a new df called quack_coding_experience. Let's do the same for soda names. 
+
+
+
+
+# there are several ways we can combine these dfs, but let's use inner_join()	
+
+
+
+# Here are some other good joins to keep in mind!
+
+
+# INNER JOIN: Keep rows where id exists in BOTH df1 and df2
+
+# LEFT JOIN: Keep ALL rows from df1, add matching rows from df2, NA if no match
+
+# RIGHT JOIN: Keep ALL rows from df2, add matching rows from df1, NA if no match
+
+# FULL JOIN: Keep ALL rows from BOTH dataframes, NA if no match in one
+
+# ANTI JOIN: Return rows from df1 that DO NOT have a match in df2
+
+# SEMI JOIN: Return rows from df1 that DO have a match in df2 (but only columns from df1)
+```
+
+## Saving a dataframe to a csv file
+
+As always in Rland, we've had a lot of fun today, but when it is time to say goodbye to your Rstudio session for the time being, what do I do with my dataframes? They'll always be here if you need them, but it can be a good practice to save a new csv file with your finished work.
+
+```{r}
+# we can do this with the write.csv command
+
+
+```

@@ -1,0 +1,190 @@
+---
+title: "Quack Summer 2025"
+author: "Sophie Regan"
+date: "2025-07-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+R Bootcamp Session 3 - Starter Code
+July 16, 2025
+Sophie Regan and Nina Schoener
+Adapted from Emily Rosenthal & Sierra Semko Krouse 
+
+
+Today, we will learn about data visualisation! (pause for cheers from the audience). To do this, meet your new best friend GGPLOT2. Let's install this library.
+
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+#### DATA VISUALIZATION DEMO ####
+
+# This website has some helpful info about plotting with ggplot: https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html  
+
+# ggplot cheat sheet: https://www.maths.usyd.edu.au/u/UG/SM/STAT3022/r/current/Misc/data-visualization-2.1.pdf  
+
+# R-graph gallery: Help choosing and creating types of plots (NOTE: only use the ggplot section on each page) https://www.r-graph-gallery.com/index.html  
+
+Before we start, make sure you have quack_responses_clean loaded.
+We can look at the distribution of heights in our class. A good way to do this is to create a histogram. 
+```{r}
+# First, we need to manipulate our three height columns into one column. Let's do it this way:
+quack_responses_clean <- quack_responses_clean %>%
+  mutate(
+    height_clean = case_when(
+      !is.na(Height4) ~ 48 + as.integer(str_remove(Height4, " in")),
+      !is.na(Height5) ~ 60 + as.integer(str_remove(Height5, " in")),
+      !is.na(Height6) ~ 72 + as.integer(str_remove(Height6, " in")),
+      TRUE ~ NA_integer_
+    )
+  )
+
+# Now that we have one column, let's create a simple histogram of heights. What do you notice?
+ggplot(quack_responses_clean, aes(x = height_clean)) + geom_histogram()
+
+```
+Cool! We created our first ggplot plot. There are a few things to note. 
+First, you have to call ggplot.
+Then, you have to tell it what dataframe you want to use.
+Then, using aes(), you tell it what columns you want plotted.
+Finally, you tell it what kind of plot you want. This time, we used a histogram. 
+
+We can also add other things to our plot. For example, we can change the binwidth on our histogram. 
+```{r}
+ggplot(quack_responses_clean, aes(x = height_clean)) + geom_histogram(binwidth = 10)  
+
+#What changes?
+```
+
+Or we can add labels.
+```{r}
+ggplot(quack_responses_clean, aes(x = height_clean)) + geom_histogram(binwidth = 1)  + labs(
+  title = "Distribution of Heights",
+  x = "Height (inches)",
+  y = "Number of People"
+)
+
+
+```
+
+Another thing we can do is change the color or fill of the bars based on another column in our dataset. 
+We can use fill = group inside aes() to fill the bars based on that column.
+
+```{r}
+ggplot(quack_responses_clean, aes(x = height_clean, fill = MonthBorn)) + 
+  geom_histogram(binwidth = 1, color = "black") +
+  labs(
+    title = "Height Distribution by Group",
+    x = "Height (inches)",
+    y = "Number of People"
+  )
+
+```
+If we want to see the groups side-by-side instead of stacked, we can change the position to "dodge":
+
+```{r}
+ggplot(quack_responses_clean, aes(x = height_clean, fill = MonthBorn)) + 
+  geom_histogram(binwidth = 1, color = "black", position = "dodge2") +
+  labs(
+    title = "Side-by-Side Height Comparison",
+    x = "Height (inches)",
+    y = "Number of People"
+  )
+
+```
+Instead of a histogram, we can create something similar: a column plot. The difference is that we specify a column for both the x and the y axes. 
+```{r}
+
+month_levels <- c("January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November", "December")
+
+quack_responses_clean <- quack_responses_clean %>%
+  mutate(MonthBorn = factor(MonthBorn, levels = month_levels, ordered = TRUE))
+
+ggplot(quack_responses_clean, aes(x = MonthBorn, y = height_clean, fill = MonthBorn)) + 
+  geom_col(binwidth = 1, color = "black", position = "dodge2") +
+  labs(
+    title = "Side-by-Side Height Comparison",
+    x = "Height (inches)",
+    y = "Number of People"
+  )
+
+```
+
+
+Let's create a different type of plot. Let's say we want to compare someone's college year to their coding experience. How would we do that?
+```{r}
+# First, we have to summarise their coding experience by year.
+
+coding_exp_by_year <- quack_responses_clean %>%
+  group_by(CollegeYear) %>%
+  summarise(mean_exp = mean(ExperienceOther))
+
+
+# Now we can plot our means
+
+ggplot(coding_exp_by_year, aes(x = CollegeYear, y = mean_exp)) + geom_point()
+```
+
+Let's make this plot a little nicer looking.
+```{r}
+
+# we can also save a plot as a variable like this
+plot <- ggplot(coding_exp_by_year, aes(x = CollegeYear, y = mean_exp, color = CollegeYear)) +
+  geom_point() +
+  geom_line(aes(group = 1)) +
+  labs(
+    x = "Year in College",
+    y = "Mean Coding Experience (hours/week)",
+    title = "Coding Experience by College Year"
+  )
+
+# Let's also remove the NA
+coding_exp_by_year <- coding_exp_by_year %>%
+  filter(CollegeYear != "NA")
+
+
+plot_without_na <- ggplot(coding_exp_by_year, aes(x = CollegeYear, y = mean_exp, color = CollegeYear)) +
+  geom_point() +
+  geom_line(aes(group = 1)) +
+  labs(
+    x = "Year in College",
+    y = "Mean Coding Experience (hours/week)",
+    title = "Coding Experience by College Year"
+  )
+```
+Now, let's try to see whether the state you are from predicts what you call soda!
+```{r}
+quack_responses_clean <- quack_responses_clean %>%
+  mutate(soda_clean = case_when(grepl("oda", Drinks) ~ "soda",
+         .default = "other"))
+
+soda_names <- quack_responses_clean %>%
+  group_by(StateBorn, soda_clean) %>%
+  summarise(count = n()) %>%
+  group_by(StateBorn) %>%
+  mutate(percentage = count / sum(count) * 100)
+
+
+ggplot(soda_names, aes(x = StateBorn, y = percentage, fill = soda_clean)) +
+  geom_bar(stat = "identity") +
+  labs(
+    x = "State Born",
+    y = "Percentage",
+    fill = "Drink Term",
+    title = "Preferred Term for Soda by State"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+We can also save any plot using ggsave! (Be careful about overwriting plots though!)
+```{r}
+ggsave("new_plot.png", width = 7, height = 4)
+```
+
