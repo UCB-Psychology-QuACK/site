@@ -21,7 +21,7 @@ Semester-long weekly course for first-year PhD students and post-bacs in the dep
   
 ### Programming and Data Skills Summer Bootcamp
 4-session intro to R and data skills for RAs doing research with the department over the summer
-* [Summer Bootcamp 2026] (https://ucb-psychology-quack.github.io/site/Bootcamp_2026/bootcamp2026)
+* [Summer Bootcamp 2026](https://ucb-psychology-quack.github.io/site/Bootcamp_2026/bootcamp2026)
 * [Summer Bootcamp 2025](https://ucb-psychology-quack.github.io/site/Bootcamp_2025/bootcamp2025)
 * [Summer Bootcamp 2024](https://ucb-psychology-quack.github.io/site/Bootcamp_2024/bootcamp2024) 
 * [Summer Bootcamp 2023](https://ucb-psychology-quack.github.io/site/Bootcamp_2023/bootcamp2023)
