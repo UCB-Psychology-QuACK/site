@@ -9,7 +9,7 @@ This hands-on four-session bootcamp will focus on teaching fundamental data skil
   
 ### Dates, Time, and Location
 **Dates**: Thursdays, June 4th, June 18th, July 2nd, July 16th
-**Time**: 1:30-3:30pm  
+<br>**Time**: 1:30-3:30pm  
 **Location**: Berkeley Way West (BWW), Room 3101 
   
 Sessions include live demos, individual work, and group work, and are interactive and hands-on. For these reasons, we encourage all who can to attend in person in order to get the most out of the bootcamp. That said, we understand that some people are remote this summer, may have time conflicts, or may need to miss a session. 
