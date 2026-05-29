@@ -15,7 +15,7 @@ No, unfortunately sessions will not be recorded this year. If you have to miss a
 Yes they do! If you are not able to attend a session one week, we encourage you to catch up by completing the practice in order to get the most out of the next session. Again, we encourage everyone to attend all the sessions if possible.
 
 #### 4) Is it too late to join? 
-No! Send us an [email](mailto:victoria_keating@berkeley.edu) and we will add you to our listerv.
+No! Send us an [email](mailto:nina_schoener@berkeley.edu,alyson_wong@berkeley.edu,victoria_keating@berkeley.edu) and we will add you to our listerv.
 
 
-#### [<- back to bootcamp home](https://ucb-psychology-quack.github.io/site/Bootcamp_2025/bootcamp2025)
+#### [<- back to bootcamp home](https://ucb-psychology-quack.github.io/site/Bootcamp_2026/bootcamp2026)
