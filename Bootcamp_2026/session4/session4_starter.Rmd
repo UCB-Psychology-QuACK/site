@@ -1,7 +1,7 @@
 ---
-title: "Summer 2025 Quack Bootcamp Session 4"
-author: "Sophie Regan"
-date: "2025-07-23"
+title: "Summer 2026 Quack Bootcamp Session 4"
+author: "Nina Schoener & Alyson Wong"
+date: "2026-07-2"
 output: html_document
 ---
 
@@ -16,7 +16,7 @@ quack_responses_clean <-
 ```
 
 
-
+# T-Test
 ```{r}
 # View average heights by lab
 
@@ -34,6 +34,8 @@ quack_responses_clean <-
 
 
 ```
+# ANOVA
+
 When you want to compare means across more than two groups, a t-test isn't enough — that's where ANOVA (Analysis of Variance) comes in.
 
 ANOVA checks if there is any significant difference in means across the groups. It doesn't tell you which groups differ — just whether at least one group is different. You can follow up with post-hoc tests if needed.
