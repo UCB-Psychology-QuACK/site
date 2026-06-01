@@ -1,7 +1,7 @@
 ---
-title: "quack_session2_2025"
-author: "Nina Schoener"
-date: "2025-07-01"
+title: "quack_session2_2026"
+author: "Nina Schoener & Alyson Wong"
+date: "2026-06-018"
 output: html_document
 ---
 
