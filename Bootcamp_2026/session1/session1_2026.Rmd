@@ -219,7 +219,6 @@ getwd()
 
 Next, we might want to change our working directory (especially if using an R script rather than markdown). In R markdown, it will only change your directory inside of that chunk, so be careful.
 
-
 ```{r}
 # Use setwd() to set a new working directory.
 setwd("..")

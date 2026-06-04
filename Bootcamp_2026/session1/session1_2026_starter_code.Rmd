@@ -91,18 +91,18 @@ We do this by giving it a variable name, and then assigning it information.
 
          
 # Number of participants in our study: 100
-sample_size <- 
+sample_size <- 100
 
 
 # What if I name it Sample_size (with a capital 'S')? What does this tell us about R?
-Sample_size <-
+Sample_size <- 100
 # This creates a different variable! 
 # R cares about capitalization when naming variables!
   
 
 #What happens if I run it again, with a new value?
         
-sample_size <- 
+sample_size <- 5000
     # R replaced the value of this variable! This is because they have the same name. 
 
 
@@ -116,19 +116,19 @@ Be careful about this!!
 # Variables can also store words (strings, characters)
 
          
-name <- 
+name <- "Nina"
 # The quotes indicate to the program that the information inside is a word (string/character)
 
 # Functionally, double and single quotes are the same
-name <- 
-name2 <- 
+name <- "Alyson"
+name2 <- 'Alyson'
 ```
 
 ```{r}
 # Variables can also store logical values (booleans)
 
-bool_t <- 
-bool_f <- 
+bool_t <- TRUE
+bool_f <- FALSE
 
 # Notice that characters and booleans change colors -- this is R telling you
 # that it recognizes these different data types.
@@ -147,7 +147,7 @@ c means "concatenate" (some people also think of it as "combine"). It's telling 
 
 # you can make a vector of numbers
 
-numbers <-  
+numbers <- c(1, 2, 3, 4, 5, 10000, 4000, 3)
 # after you run this, the variable 'numbers' should pop up in your global environment on the top right
 
         
@@ -158,7 +158,7 @@ numbers <-
 
 # you can make a vector of characters
 
-names <-
+names <- c("Sophie", "Nina", "Victoria", "Alyson")
 # after you run this, the variable 'names' should pop up in your global environment on the top right
 
          
@@ -169,7 +169,7 @@ names <-
 
 # you can make a vector of booleans (or logic)
 
-boolean_vector <-
+boolean_vector <- c(TRUE, FALSE, TRUE, TRUE)
 
 boolean_vector
 print(boolean_vector)
@@ -191,10 +191,10 @@ Represent categorical information (where we have a limited number of discrete ca
 # How is a factor different from a character vector? How do they show up in our global environment?
    
   # vector of character data
-  groups_string <- 
+  groups_string <- c("treatment1", "treatment2", "treatment3", "treatment4", "control")
   
   # making it a factor
-  groups <- 
+  groups <- factor(c("treatment1", "treatment2", "treatment3", "treatment4", "control"))
 
 
 # You can also make numeric values into a factor
@@ -203,10 +203,10 @@ Represent categorical information (where we have a limited number of discrete ca
   # assigned to one of four unique treatment conditions, 1, 2, 3, or 4, 
 
   #vector of numeric data
-  TreatmentGroup <-
+  TreatmentGroup <- c(1, 2, 3, 3, 4, 2, 4, 3)
   
   #making it a factor
-  TreatmentGroupFactor <-
+  TreatmentGroupFactor <- factor(c(1, 2, 3, 3, 4, 2, 4, 3))
 ```
 
 ### Reading in data
@@ -215,15 +215,16 @@ In R, you will often want to load in datasets so that you can analyse them. To d
 
 ```{r}
 # Use the getwd() command to see your working directory.
+getwd()
 
 ```
 
 Next, we might want to change our working directory (especially if using an R script rather than markdown). In R markdown, it will only change your directory inside of that chunk, so be careful.
 
-
 ```{r}
 # Use setwd() to set a new working directory.
-
+setwd("..")
+list.files()
 ```
 
 A useful command is ".." which means "go up a directory".
@@ -231,7 +232,7 @@ A useful command is ".." which means "go up a directory".
 Once you are in the correct working directory, you can open up the files you want to see. When we are working in R, the most common file type we will be using is called a csv file, which stands for "comma separated value." To read in a csv file, you can use read.csv(). Make sure to save the csv file under some variable name (like quack_responses.) Don't forget to use quotation marks around the filename.
 
 ```{r}
-quack_responses <- 
+quack_responses <- read.csv("quack_response_data.csv")
 ```
 
 Okay, now let's try to open up a csv file that is in a more complicated location. We can do it two ways. First, we can set our working directory to be the appropriate folder and then open up the files in that folder. This is a good idea if you are using an R script and you want to work with files in a specific folder. Let's try that first.
@@ -241,7 +242,7 @@ Okay, now let's try to open up a csv file that is in a more complicated location
 
 getwd()
 setwd("Folder 1/Foldy Fold/Mr. Folder/*The Best Part of waking up is/")
-alien_smoothies <- 
+alien_smoothies <- read.csv("alien_smoothies.csv")
 ```
 
 Great! Now let's try to do it without changing the working directory. We can open up a file using the filepath from our working directory.
@@ -250,7 +251,10 @@ Great! Now let's try to do it without changing the working directory. We can ope
 # Let's open up pet_rock_survey.csv
 getwd()
 
-pet_rock_survey <- 
+pet_rock_survey <- read.csv("Folder 1/Foldy Fold/Mrs. Folder/All you need is folders/pet_rock_survey.csv")
+
+wizard_hat_preferences <- read.csv("Folder 2/Ain't no folder like a folder/You're getting folder/wizard_hat_preferences.csv")
+
 ```
 
 Now try to find all of the other csv files hidden amongst the folders! Have fun!
@@ -264,17 +268,18 @@ Most of the time, you won't be creating vectors like these from scratch in your 
 Let's try importing a dataset now that you know your way around the working directory!
 
 ```{r}
-
+install.packages("readr")
 library(readr)
-data <- 
+
+data <- read.csv("quack_response_data.csv")
 
 # you can view the data that you just imported like this
 
-
+View(data)
 
 # you can also view some descriptive statistics about your dataset like this
 
-
+summary(data)
 
 ```
 
@@ -282,7 +287,7 @@ Sometimes, you'll want to index particular values in your dataframe. For example
 
 ```{r}
 
-answer1 <- 
+answer1 <- data$Is.there.a.correct.answer.to.this.question.[data$ID==5]
 # this line of code looks for the row where the column "ID" has a value of 5, and then for that row returns the value in the column "Is there a correct answer to this question?"
 
 ```
@@ -291,7 +296,7 @@ You may notice that this is a cumbersome process if you have long column names, 
 
 ```{r}
 
-answer2 <- 
+answer2 <- data[5, 14]
 # what do you notice about answer1 vs. answer2?
 
 ```
@@ -305,7 +310,8 @@ names(data) <- c("ID",
                  "Interest", 
                  "ExperienceR", 
                  "ExperienceOther", 
-                 "Languages", 
+                 "Languages",
+                 "Skills",
                  "Lab",
                  "Year", 
                  "BirthMonth", 
