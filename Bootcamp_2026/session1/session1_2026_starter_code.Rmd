@@ -303,37 +303,21 @@ Another way to get around this is just to rename your dataframe's columns with m
 names(data) <- c("ID", 
                  "Timestamp", 
                  "Interest", 
-                 "Experience_R", 
-                 "Experience_Other", 
+                 "ExperienceR", 
+                 "ExperienceOther", 
                  "Languages", 
                  "Lab",
                  "Year", 
                  "BirthMonth", 
-                 "State", 
-                 "SodaPop", 
-                 "Height_4ft", 
-                 "Height_5ft", 
-                 "Height_6ft", 
-                 "LastQuestion")
+                 "Season", 
+                 "FavTemp", 
+                 "Pets", 
+                 "CorrectAnswer", 
+                 "Hotdogs", 
+                 "Bear")
 View(data)
 
 answer1 <- 
-
-```
-
-You might also notice that the data in some of these columns is quite messy. For example, there is a character column "SodaPop" that contains many variants of essentially the same few responses "soda", "pop", "soft drinks", and "beverages". Let's use what we learned about capitalization in R and factoring to make this column easier to handle
-
-```{r}
-
-# tolower() will remove all capitalization from the SodaPop column
-data$SodaPop <- tolower(data$SodaPop)
-
-# now we can group the responses based on the term used
-data$SodaPop <- ifelse(grepl("soda", data$SodaPop), "soda",
-           ifelse(grepl("pop", data$SodaPop), "pop",
-           ifelse(grepl("soft drink", data$SodaPop), "soft drinks",
-           ifelse(grepl("beverage", data$SodaPop), "beverage",
-           data$SodaPop))))
 
 ```
 
