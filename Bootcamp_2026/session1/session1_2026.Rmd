@@ -289,7 +289,7 @@ You may notice that this is a cumbersome process if you have long column names, 
 
 ```{r}
 
-answer2 <- data[5, 15]
+answer2 <- data[5, 14]
 # what do you notice about answer1 vs. answer2?
 
 ```
@@ -303,7 +303,8 @@ names(data) <- c("ID",
                  "Interest", 
                  "Experience_R", 
                  "Experience_Other", 
-                 "Languages", 
+                 "Languages",
+                 "Skills",
                  "Lab",
                  "Year", 
                  "BirthMonth", 
