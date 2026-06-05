@@ -30,7 +30,7 @@ Each session will start with a live demo focusing on fundamental data skills. We
 
 | session | topic | practice materials | live demo script & answer key | slides |
 | ------- | ----- | ------------------ | ----------------------------- | ------ |
-| June 4th | Getting started with R | [s1_materials](s1_materials.zip) |  |  |
+| June 4th | Getting started with R | [s1_materials](s1_materials.zip) | [s1_demo](session1/session1_2026.Rmd) | [s1_slides](session1/quack_summer1_slides_2026.pdf) |
 | June 18th | Data cleaning and wrangling |  |  |  |
 | July 2nd | Data visualization |  |  |  |
 | July 16th | Intro to stats with R |  |  |  |
