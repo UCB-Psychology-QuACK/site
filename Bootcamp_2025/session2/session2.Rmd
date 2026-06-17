@@ -55,7 +55,7 @@ What can you tell about your dataframe by looking at the global environment?
 
 ```{r}
 
-# try calling summary() like we did last week to remind yourself of what's in this dataframe
+# try calling summary() like we did last session to remind yourself of what's in this dataframe
 
 summary(quack_responses)
 
