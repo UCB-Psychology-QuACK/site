@@ -1,7 +1,7 @@
 ---
-title: "Quack Summer 2025"
-author: "Sophie Regan"
-date: "2025-07-14"
+title: "Quack Summer 2026"
+author: "Nina Schoener"
+date: "2026-07-01"
 output: html_document
 ---
 
@@ -10,8 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 R Bootcamp Session 3 - Starter Code
-July 16, 2025
-Sophie Regan and Nina Schoener
+July 1, 2026
+Victoria Keating and Nina Schoener
 Adapted from Emily Rosenthal & Sierra Semko Krouse 
 
 
@@ -30,22 +30,50 @@ library(ggplot2)
 
 # R-graph gallery: Help choosing and creating types of plots (NOTE: only use the ggplot section on each page) https://www.r-graph-gallery.com/index.html  
 
-Before we start, make sure you have quack_responses_clean loaded.
-We can look at the distribution of heights in our class. A good way to do this is to create a histogram. 
-```{r}
-# First, we need to manipulate our three height columns into one column. Let's do it this way:
-quack_responses_clean <- quack_responses_clean %>%
-  mutate(
-    height_clean = case_when(
-      !is.na(Height4) ~ 48 + as.integer(str_remove(Height4, " in")),
-      !is.na(Height5) ~ 60 + as.integer(str_remove(Height5, " in")),
-      !is.na(Height6) ~ 72 + as.integer(str_remove(Height6, " in")),
-      TRUE ~ NA_integer_
-    )
-  )
 
-# Now that we have one column, let's create a simple histogram of heights. What do you notice?
-ggplot(quack_responses_clean, aes(x = height_clean)) + geom_histogram()
+```{r}
+
+
+# Before we start, make sure you have quack_responses_clean loaded. We're going to use a shortcut to turn all columns that are character vectors into factors (which is more or less what we want for this dataset). 
+
+quack_responses_clean <- read_csv("quack_responses_clean.csv") %>%
+  mutate(across(where(is.character), as.factor))
+
+# Now, let's create two dataframes again like we did last time: one that represents each respondent's level of coding knowledge, and one that represents each respondent's year in college. 
+
+quack_coding_knowledge <- quack_responses_clean %>%
+  select(c("ID", "ExperienceR", "ExperienceOther"))
+
+
+quack_college_year <- quack_responses_clean %>%
+  select(c("ID", "Year"))
+
+# Now, let's join them together using what we learned last week about joining dataframes. 
+
+plot_data <- left_join(quack_coding_knowledge, quack_college_year)
+
+# We now have a dataset very similar to what we ended with last time, and today we're going to use it to plot our data! 
+
+
+```
+
+
+```{r}
+
+# First, let's see how many people are in each year in college. From here on out, we're going to use our plot_data dataframe. 
+
+ggplot(plot_data, aes(x = Year)) + 
+  geom_histogram(stat = "count")
+
+# What do you notice about this plot?
+
+plot_data <- plot_data %>%
+  mutate(Year = factor(Year, levels = c("Freshman", "Sophomore", "Junior", "Senior")))
+
+# that's right, we needed to refactor it to put the levels in the right order!
+
+ggplot(plot_data, aes(x = Year)) + 
+  geom_histogram(stat = "count")
 
 ```
 Cool! We created our first ggplot plot. There are a few things to note. 
@@ -54,137 +82,264 @@ Then, you have to tell it what dataframe you want to use.
 Then, using aes(), you tell it what columns you want plotted.
 Finally, you tell it what kind of plot you want. This time, we used a histogram. 
 
-We can also add other things to our plot. For example, we can change the binwidth on our histogram. 
-```{r}
-ggplot(quack_responses_clean, aes(x = height_clean)) + geom_histogram(binwidth = 10)  
-
-#What changes?
-```
-
-Or we can add labels.
-```{r}
-ggplot(quack_responses_clean, aes(x = height_clean)) + geom_histogram(binwidth = 1)  + labs(
-  title = "Distribution of Heights",
-  x = "Height (inches)",
-  y = "Number of People"
-)
-
-
-```
-
-Another thing we can do is change the color or fill of the bars based on another column in our dataset. 
-We can use fill = group inside aes() to fill the bars based on that column.
+We can also add other things to our plot. For example, we can add labels. By default, R will use your column names, but our y axis here for example does not have a name because we asked R to count the number of responses of each Year in College, i.e., that data did not come directly from a column. 
 
 ```{r}
-ggplot(quack_responses_clean, aes(x = height_clean, fill = MonthBorn)) + 
-  geom_histogram(binwidth = 1, color = "black") +
+
+ggplot(plot_data, aes(x = Year)) + 
+  geom_histogram(stat = "count") +
   labs(
-    title = "Height Distribution by Group",
-    x = "Height (inches)",
-    y = "Number of People"
-  )
+    title = "Number of Students in each Year of College",
+    x = "Year in College",
+    y = "Number of Students")
 
-```
-If we want to see the groups side-by-side instead of stacked, we can change the position to "dodge":
 
-```{r}
-ggplot(quack_responses_clean, aes(x = height_clean, fill = MonthBorn)) + 
-  geom_histogram(binwidth = 1, color = "black", position = "dodge2") +
+# We may also want to have an intuitive scale on the y axis. Let's change it to 0 - 10. 
+
+ggplot(plot_data, aes(x = Year)) + 
+  geom_histogram(stat = "count") +
   labs(
-    title = "Side-by-Side Height Comparison",
-    x = "Height (inches)",
-    y = "Number of People"
-  )
+    title = "Number of Students in each Year of College",
+    x = "Year in College",
+    y = "Number of Students") +
+  ylim(0, 10)
 
-```
-Instead of a histogram, we can create something similar: a column plot. The difference is that we specify a column for both the x and the y axes. 
-```{r}
+# You'll see that this automatically changed your y axis labels to have decimals and to be in increments of 2.5. Since we can't have .5 of a student, this is maybe not the most intuitive way to represent our data. Let's try an alternate way of doing the same thing using scale_y_continuous. 
 
-month_levels <- c("January", "February", "March", "April", "May", "June",
-                  "July", "August", "September", "October", "November", "December")
-
-quack_responses_clean <- quack_responses_clean %>%
-  mutate(MonthBorn = factor(MonthBorn, levels = month_levels, ordered = TRUE))
-
-ggplot(quack_responses_clean, aes(x = MonthBorn, y = height_clean, fill = MonthBorn)) + 
-  geom_col(binwidth = 1, color = "black", position = "dodge2") +
+ggplot(plot_data, aes(x = Year)) + 
+  geom_histogram(stat = "count") +
   labs(
-    title = "Side-by-Side Height Comparison",
-    x = "Height (inches)",
-    y = "Number of People"
-  )
+    title = "Number of Students in each Year of College",
+    x = "Year in College",
+    y = "Number of Students") +
+scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2))
+
+  
 
 ```
 
+Another thing we can do is change the color or fill of the bars. 
 
-Let's create a different type of plot. Let's say we want to compare someone's college year to their coding experience. How would we do that?
 ```{r}
-# First, we have to summarise their coding experience by year.
 
-coding_exp_by_year <- quack_responses_clean %>%
-  group_by(CollegeYear) %>%
-  summarise(mean_exp = mean(ExperienceOther))
+# We can use fill = Year inside aes() to fill the bars based on that column.
 
+ggplot(plot_data, aes(x = Year, fill = Year)) + 
+  geom_histogram(stat = "count") +
+  labs(
+    title = "Number of Students in each Year of College",
+    x = "Year in College",
+    y = "Number of Students") +
+  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2))
 
-# Now we can plot our means
+# This also adds a legend by default. It's a bit redundant here, so we can remove it using theme().  
 
-ggplot(coding_exp_by_year, aes(x = CollegeYear, y = mean_exp)) + geom_point()
+ggplot(plot_data, aes(x = Year, fill = Year)) + 
+  geom_histogram(stat = "count") +
+  labs(
+    title = "Number of Students in each Year of College",
+    x = "Year in College",
+    y = "Number of Students") +
+  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2)) +
+  theme(legend.position = "none")
+
+# It will use a default color palette if you don't tell ggplot which colors to use, but you can (and should) change the colors to be whatever you want. You can do this using scale_[fill/color]_[discrete/continuous](). 
+
+ggplot(plot_data, aes(x = Year, fill = Year)) + 
+  geom_histogram(stat = "count") +
+  labs(
+    title = "Number of Students in each Year of College",
+    x = "Year in College",
+    y = "Number of Students") +
+  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2)) +
+  theme(legend.position = "none") +
+  scale_fill_discrete(palette = "Dark2")
+
+# I like Dark2, but go ahead and try out other palettes (you can find them on RGraphGallery linked above). For example, there's Pastel1, Accent, and Set1. 
+  
+  
+
 ```
 
-Let's make this plot a little nicer looking.
+The theme layer is very powerful: you can change all kinds of things about the theme you're using to plot your data inside of the theme layer. 
+
+```{r}
+
+# I think it's nice to center plot titles and that's one thing you can do within theme().  
+
+ggplot(plot_data, aes(x = Year, fill = Year)) + 
+  geom_histogram(stat = "count") +
+  labs(
+    title = "Number of Students in each Year of College",
+    x = "Year in College",
+    y = "Number of Students") +
+  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2)) +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) +
+  scale_fill_discrete(palette = "Dark2")
+
+# Another thing that's useful that you might want to do is rotate your x axis labels especially if your labels are very long. 
+
+ggplot(plot_data, aes(x = Year, fill = Year)) + 
+  geom_histogram(stat = "count") +
+  labs(
+    title = "Number of Students in each Year of College",
+    x = "Year in College",
+    y = "Number of Students") +
+  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2)) +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10)) +
+  scale_fill_discrete(palette = "Dark2")
+
+
+```
+Before we explore more about themes, let's try out some other kinds of plots. Instead of a histogram, we can create something similar: a column plot. The difference is that we specify a column for both the x and the y axes. 
+```{r}
+
+# One thing we're going to want to plot is mean coding knowledge, so let's calculate that and add a column for it in our data. 
+
+plot2_data <- plot_data %>%
+  pivot_longer(cols = c(ExperienceR, ExperienceOther), 
+               names_to = "Language", 
+               values_to = "ExperienceLevel") %>%
+  group_by(Year) %>%
+  summarize(MeanExperience = mean(ExperienceLevel))
+
+
+ggplot(plot2_data, aes(x = Year, y = MeanExperience, fill = Year)) + 
+  geom_col(position = "dodge2") +
+  labs(
+    title = "Coding Experience by Year in College",
+    x = "Year",
+    y = "Experience Level"
+  ) +
+  scale_fill_discrete(palette = "Dark2") +
+  scale_y_continuous(limits = c(0, 5), breaks = seq(0, 5, by = 1)) +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10))
+
+
+```
+
+Let's create a different type of plot. If we want to see whether having more pets is related to your rating of Oski the Bear (two continuous variables), a scatterplot might be a good choice. 
+
+```{r}
+
+# the way to create a scatterplot in ggplot is using geom_point()
+ggplot(quack_responses_clean, aes(x = Pets, y = Bear)) + 
+  geom_point()
+
+# let's go ahead and spruce up this plot the way we did before
+ggplot(quack_responses_clean, aes(x = Pets, y = Bear)) + 
+  geom_point(fill = "lightblue", color = "black", shape = 23, size = 3) +
+  labs(
+    title = "Bear Rating by Number of Pets",
+    x = "Number of Pets",
+    y = "Bear Rating"
+  ) +
+  scale_y_continuous(limits = c(0, 7), breaks = seq(0, 7, by = 1)) +
+  scale_x_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 1)) + 
+  # note that this will remove the outlier with 30 pets!
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10))
+
+
+# next week, we will explore some light stats, which will include for example adding 
+# a regression line to a plot like this!
+
+
+```
+
+One thing that may be useful is saving a plot as a variable so that you can build on it later. 
 ```{r}
 
 # we can also save a plot as a variable like this
-plot <- ggplot(coding_exp_by_year, aes(x = CollegeYear, y = mean_exp, color = CollegeYear)) +
-  geom_point() +
-  geom_line(aes(group = 1)) +
+plot <- ggplot(quack_responses_clean, aes(x = Pets, y = Bear)) + 
+  geom_point(fill = "lightblue", color = "black", shape = 23, size = 3) +
   labs(
-    x = "Year in College",
-    y = "Mean Coding Experience (hours/week)",
-    title = "Coding Experience by College Year"
-  )
-
-# Let's also remove the NA
-coding_exp_by_year <- coding_exp_by_year %>%
-  filter(CollegeYear != "NA")
-
-
-plot_without_na <- ggplot(coding_exp_by_year, aes(x = CollegeYear, y = mean_exp, color = CollegeYear)) +
-  geom_point() +
-  geom_line(aes(group = 1)) +
-  labs(
-    x = "Year in College",
-    y = "Mean Coding Experience (hours/week)",
-    title = "Coding Experience by College Year"
-  )
-```
-Now, let's try to see whether the state you are from predicts what you call soda!
-```{r}
-quack_responses_clean <- quack_responses_clean %>%
-  mutate(soda_clean = case_when(grepl("oda", Drinks) ~ "soda",
-         .default = "other"))
-
-soda_names <- quack_responses_clean %>%
-  group_by(StateBorn, soda_clean) %>%
-  summarise(count = n()) %>%
-  group_by(StateBorn) %>%
-  mutate(percentage = count / sum(count) * 100)
-
-
-ggplot(soda_names, aes(x = StateBorn, y = percentage, fill = soda_clean)) +
-  geom_bar(stat = "identity") +
-  labs(
-    x = "State Born",
-    y = "Percentage",
-    fill = "Drink Term",
-    title = "Preferred Term for Soda by State"
+    title = "Bear Rating by Number of Pets",
+    x = "Number of Pets",
+    y = "Bear Rating"
   ) +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  scale_y_continuous(limits = c(0, 7), breaks = seq(0, 7, by = 1)) +
+  scale_x_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 1)) + 
+  # note that this will remove the outlier with 30 pets!
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10))
+
+# now you can call the plot using its name
+plot
+
+# or you can edit it
+plot +
+  theme_bw()
+
+# try this out and try applying different themes! some options are grey, bw, linedraw, classic, minimal, void, dark, and light. the ggthemes package contains many more! themes change many things about your plots including the background, gridlines, borders, font, layout, and more. 
+
+
 ```
 
-We can also save any plot using ggsave! (Be careful about overwriting plots though!)
+
+Now, let's create one last plot and put it all together! What kind of plot could make sense if we want to know what your favorite temperature and favorite season are based on your birth month?
+
 ```{r}
-ggsave("new_plot.png", width = 7, height = 4)
+
+# lets try a few different options
+
+# first, let's put the months in order for BirthMonth and the seasons in order for Season
+quack_responses_clean <- quack_responses_clean %>%
+  mutate(BirthMonth = factor(BirthMonth, levels = c("March", "May", "June", "July", "September", "October", "November", "December"))) %>%
+  mutate(Season = factor(Season, levels = c("Winter", "Spring", "Summer", "Fall")))
+  
+# and create a scatterplot
+ggplot(quack_responses_clean, aes(x = BirthMonth, y = FavTemp, fill = Season)) + 
+  geom_point(shape = 23, size = 3) +
+  labs(
+    title = "Favorite Temperature and Season by Birth Month",
+    x = "Birth Month",
+    y = "Favorite Temperature", 
+    fill = "Favorite Season"
+  ) +
+  theme(plot.title = element_text(hjust = 0.5), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10)) 
+
+# this is hard to interpret. 
+# another option could be switching BirthMonth and Season, depending on which one we care more about
+# we can use geom_jitter() to jitter the points slightly in case they would otherwise overlap
+
+ggplot(quack_responses_clean, aes(x = Season, y = FavTemp, color = BirthMonth)) +
+  geom_jitter(width = 0.15, size = 3) +
+  labs(title = "Favorite Temperature by Season and Birth Month", x = "Season", y = "Favorite Temperature", color = "Birth Month") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_classic()
+
+# this plot is still kind of hard to interpret. what if we split up the data somehow?
+
+ggplot(quack_responses_clean, aes(x = BirthMonth, y = FavTemp, color = Season)) +
+  geom_point(size = 3) +
+  facet_wrap(~ Season) +
+  labs(title = "Favorite Temperature by Birth Month, Split by Season", x = "Birth Month", y = "Favorite Temperature") +
+  theme_bw() +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+
+# now it's a bit easier to see! with the exception of "yes!" it seems like our Fall babies like it a bit cooler and our summer babies like it a bit warmer. Spring is somewhere in between and no one likes Winter (except Victoria :)). And interestingly, none of the Spring babies actually like the Spring. 
+
+# lets save this plot to a variable in case we want to use it later (we will in about 30 seconds)
+
+facet_plot <- ggplot(quack_responses_clean, aes(x = BirthMonth, y = FavTemp, color = Season)) +
+  geom_point(size = 3) +
+  facet_wrap(~ Season) +
+  labs(title = "Favorite Temperature by Birth Month, Split by Season", x = "Birth Month", y = "Favorite Temperature") +
+  theme_bw() +
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+
+```
+
+We can export any plot using ggsave! (Be careful about overwriting plots though!)
+```{r}
+
+facet_plot
+ggsave("facet_plot.png", width = 7, height = 4)
 ```
 
