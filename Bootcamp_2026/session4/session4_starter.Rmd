@@ -1,28 +1,32 @@
 ---
 title: "Summer 2026 Quack Bootcamp Session 4"
-author: "Nina Schoener & Alyson Wong"
-date: "2026-07-2"
+author: "Nina Schoener"
+date: "2026-07-14"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidylog)
 ```
 
 
 First, we need to load in our data.
 ```{r}
-quack_responses_clean <- 
+
 ```
 
 
-# T-Test
+Now, let's try the first example that we talked about. In this example, we're interested in whether LCD lab members like Oski more than Gopnik lab members do. 
 ```{r}
-# View average heights by lab
+
+# View average temp by lab
 
 
 # Filter only LCD and Gopnik lab members
-
+filtered_df <- quack_responses_clean %>%
+  filter(Lab %in% c("Language and Cognitive Development Lab (PI: Mahesh Srinivasan)", "Cognitive Development and Learning Lab (PI: Alison Gopnik)"))
 
 # Check how many people per lab
 
@@ -33,24 +37,25 @@ quack_responses_clean <-
 # Optional: plot the comparison
 
 
-```
-# ANOVA
 
+```
 When you want to compare means across more than two groups, a t-test isn't enough — that's where ANOVA (Analysis of Variance) comes in.
 
 ANOVA checks if there is any significant difference in means across the groups. It doesn't tell you which groups differ — just whether at least one group is different. You can follow up with post-hoc tests if needed.
+Our example here was whether coding knowledge varies by college year. We can also treat this as a linear regression, but we will go over that later. 
+
 ```{r}
-# Check how many labs are in the dataset
+# Check how many years are in the dataset
 
 
 # Fit ANOVA model
-
 
 # Plot the means with boxplots
 
 
 ```
 
+In order to find the relationship between two variables without attempting to predict one from the other, we can do a Pearson's correlation. Pearson's correlation is the default, but you can change it to be a Spearman's or other kind of correlation if you need it. 
 ```{r}
 # Plot the relationship
 
@@ -60,9 +65,11 @@ ANOVA checks if there is any significant difference in means across the groups. 
 
 ```
 
+As an example for linear regression, we can look at whether coding knowledge varies by college year. This is the same as what we did as the example for the ANOVA, just to demonstrate that multiple analyses can apply to the same questions. 
 ```{r}
 # Convert CollegeYear to factor and set order
-
+quack_responses_clean$Year <- factor(quack_responses_clean$Year,
+                                            levels = c("Freshman", "Sophomore", "Junior", "Senior"))
 
 # Run the regression
 
@@ -72,73 +79,15 @@ ANOVA checks if there is any significant difference in means across the groups. 
 
 ```
 
-
+Lastly, as an example for logistic regression, we can look at whether people were more likely to think that there was a correct answer to the last survey question based on the number of pets that they have. 
 ```{r}
-# Recode LastQuestion to binary
+# Recode CorrectAnswer to binary
 
 
 # Run logistic regression
-
-
-# Predict probabilities
 
 
 # Plot
 
 
 ```
-Sampling:
-Statistical estimates, like the mean height in a sample, are just one version of what you could have gotten if you had collected a different sample. To understand how estimates vary across repeated samples, we can simulate repeated sampling.
-
-```{r}
-# Set up an empty vector to store means
-
-
-# Repeat sampling 1000 times
-
-# Plot the sampling distribution
-
-
-```
-
-When we collect one sample, we often want to know how uncertain our estimate is. One way to do this is using bootstrapping, which is a non-parametric method that resamples your data many times to build a distribution of your statistic (e.g., the mean).
-
-Bootstrapping is especially helpful when:
-
-The sample size is small.
-
-We don’t want to assume normality.
-
-We want to estimate confidence intervals for stats that don’t have exact formulas (e.g., the median).
-
-
-```{r}
-library(boot)
-
-# Define a function to compute the statistic of interest
-boot_mean <- function(data, indices) {
-  d <- data[indices, ]
-  return(mean(d$height_clean, na.rm = TRUE))
-}
-
-# Run the bootstrap
-boot_results <- boot(data = quack_responses_clean, 
-                     statistic = boot_mean, 
-                     R = 1000)
-
-# Print results
-print(boot_results)
-
-# Bootstrap confidence intervals
-boot.ci(boot_results, type = "perc")
-
-
-# Plot histogram of bootstrap sample means
-hist(boot_results$t,
-     breaks = 30,
-     col = "tomato",
-     main = "Bootstrap Distribution of the Mean",
-     xlab = "Mean Height (inches)")
-
-```
-
