@@ -1,12 +1,14 @@
 ---
-title: "Summer 2025 Quack Bootcamp Session 4"
-author: "Sophie Regan"
-date: "2025-07-23"
+title: "Summer 2026 Quack Bootcamp Session 4"
+author: "Nina Schoener"
+date: "2026-07-14"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidylog)
 ```
 
 
@@ -16,52 +18,56 @@ quack_responses_clean <- read_csv("quack_responses_clean.csv")
 ```
 
 
-
+Now, let's try the first example that we talked about. In this example, we're interested in whether LCD lab members like Oski more than Gopnik lab members do. 
 ```{r}
-# View average heights by lab
+
+# View average temp by lab
 quack_responses_clean %>%
   group_by(Lab) %>%
-  summarise(mean_height = mean(height_clean, na.rm = TRUE),
-            sd_height = sd(height_clean, na.rm = TRUE),
+  summarise(mean_rating = mean(Bear, na.rm = TRUE),
+            sd_rating = sd(Bear, na.rm = TRUE),
             n = n())
 
 # Filter only LCD and Gopnik lab members
 filtered_df <- quack_responses_clean %>%
-  filter(Lab %in% c("LCD (Srinivasan)", "CDLL (Gopnik)"))
+  filter(Lab %in% c("Language and Cognitive Development Lab (PI: Mahesh Srinivasan)", "Cognitive Development and Learning Lab (PI: Alison Gopnik)"))
 
 # Check how many people per lab
 table(filtered_df$Lab)
 
 # Run the t-test
-t_test_result <- t.test(height_clean ~ Lab, data = filtered_df)
+t_test_result <- t.test(Bear ~ Lab, data = filtered_df)
 print(t_test_result)
 
 # Optional: plot the comparison
-ggplot(filtered_df, aes(x = Lab, y = height_clean)) +
-  geom_boxplot() +
-  labs(title = "Height by Lab (LCD vs Gopnik)",
-       x = "Lab", y = "Height (inches)")
+ggplot(filtered_df, aes(x = Lab, y = Bear)) +
+  geom_boxplot(fill="orange") +
+  labs(title = "Oski Rating by Lab (LCD vs Gopnik)",
+       x = "Lab", y = "Oski Rating (1-7)")
 
 
 ```
 When you want to compare means across more than two groups, a t-test isn't enough — that's where ANOVA (Analysis of Variance) comes in.
 
 ANOVA checks if there is any significant difference in means across the groups. It doesn't tell you which groups differ — just whether at least one group is different. You can follow up with post-hoc tests if needed.
+Our example here was whether coding knowledge varies by college year. We can also treat this as a linear regression, but we will go over that later. 
+
 ```{r}
-# Check how many labs are in the dataset
-table(quack_responses_clean$Lab)
+# Check how many years are in the dataset
+table(quack_responses_clean$Year)
 
 # Fit ANOVA model
-aov_model <- aov(height_clean ~ Lab, data = quack_responses_clean)
+aov_model <- aov(ExperienceOther ~ Year, data = quack_responses_clean)
 summary(aov_model)
 
 # Plot the means with boxplots
-ggplot(quack_responses_clean, aes(x = Lab, y = height_clean)) +
+ggplot(quack_responses_clean, aes(x = Year, y = ExperienceOther)) +
   geom_boxplot(fill = "lightblue") +
-  labs(title = "Height Across Labs", y = "Height (inches)", x = "Lab")
+  labs(title = "Coding Experience by Year", y = "Year", x = "Coding Knowledge (Other)")
 
 ```
 
+In order to find the relationship between two variables without attempting to predict one from the other, we can do a Pearson's correlation. Pearson's correlation is the default, but you can change it to be a Spearman's or other kind of correlation if you need it. 
 ```{r}
 # Plot the relationship
 ggplot(quack_responses_clean, aes(x = ExperienceR, y = ExperienceOther)) +
@@ -70,105 +76,41 @@ ggplot(quack_responses_clean, aes(x = ExperienceR, y = ExperienceOther)) +
   labs(title = "R Experience vs Other Coding Experience")
 
 # Correlation test
-cor.test(quack_responses_clean$ExperienceR, quack_responses_clean$ExperienceOther)
+cor.test(quack_responses_clean$ExperienceR, quack_responses_clean$ExperienceOther, method = "pearson")
 
 ```
 
+As an example for linear regression, we can look at whether coding knowledge varies by college year. This is the same as what we did as the example for the ANOVA, just to demonstrate that multiple analyses can apply to the same questions. 
 ```{r}
 # Convert CollegeYear to factor and set order
-quack_responses_clean$CollegeYear <- factor(quack_responses_clean$CollegeYear,
+quack_responses_clean$Year <- factor(quack_responses_clean$Year,
                                             levels = c("Freshman", "Sophomore", "Junior", "Senior"))
 
 # Run the regression
-lm_model <- lm(ExperienceOther ~ CollegeYear, data = quack_responses_clean)
+lm_model <- lm(ExperienceOther ~ Year, data = quack_responses_clean)
 summary(lm_model)
 
 # Visualize the results
-ggplot(quack_responses_clean, aes(x = CollegeYear, y = ExperienceOther)) +
-  geom_boxplot() +
+ggplot(quack_responses_clean, aes(x = Year, y = ExperienceOther)) +
+  geom_boxplot(fill = "pink") +
   labs(title = "Coding Experience by College Year")
 
 ```
 
-
+Lastly, as an example for logistic regression, we can look at whether people were more likely to think that there was a correct answer to the last survey question based on the number of pets that they have. 
 ```{r}
-# Recode LastQuestion to binary
+# Recode CorrectAnswer to binary
 quack_responses_clean <- quack_responses_clean %>%
-  mutate(correct_answer = ifelse(LastQuestion == "Yes", 1, 0))
+  mutate(CorrectAnswer = ifelse(CorrectAnswer == "Yes", 1, 0))
 
 # Run logistic regression
-log_model <- glm(correct_answer ~ height_clean, data = quack_responses_clean, family = "binomial")
+log_model <- glm(CorrectAnswer ~ Pets, data = quack_responses_clean, family = "binomial")
 summary(log_model)
 
-# Predict probabilities
-quack_responses_clean$predicted_prob <- predict(log_model, type = "response")
-
 # Plot
-ggplot(quack_responses_clean, aes(x = height_clean, y = correct_answer)) +
+ggplot(quack_responses_clean, aes(x = Pets, y = CorrectAnswer)) +
   geom_jitter(height = 0.05) +
   geom_smooth(method = "glm", method.args = list(family = "binomial")) +
-  labs(title = "Belief in Correct Answer vs Height")
+  labs(title = "Belief in Correct Answer vs Pets")
 
 ```
-Sampling:
-Statistical estimates, like the mean height in a sample, are just one version of what you could have gotten if you had collected a different sample. To understand how estimates vary across repeated samples, we can simulate repeated sampling.
-
-```{r}
-# Set up an empty vector to store means
-sample_means <- numeric(1000)
-
-# Repeat sampling 1000 times
-for (i in 1:1000) {
-  sample_data <- sample(quack_responses_clean$height_clean, 
-                        size = 10, replace = TRUE)
-  sample_means[i] <- mean(sample_data, na.rm = TRUE)
-}
-
-# Plot the sampling distribution
-hist(sample_means, breaks = 30, col = "skyblue",
-     main = "Sampling Distribution of the Mean (n = 10)",
-     xlab = "Sample Mean Height")
-
-```
-
-When we collect one sample, we often want to know how uncertain our estimate is. One way to do this is using bootstrapping, which is a non-parametric method that resamples your data many times to build a distribution of your statistic (e.g., the mean).
-
-Bootstrapping is especially helpful when:
-
-The sample size is small.
-
-We don’t want to assume normality.
-
-We want to estimate confidence intervals for stats that don’t have exact formulas (e.g., the median).
-
-
-```{r}
-library(boot)
-
-# Define a function to compute the statistic of interest
-boot_mean <- function(data, indices) {
-  d <- data[indices, ]
-  return(mean(d$height_clean, na.rm = TRUE))
-}
-
-# Run the bootstrap
-boot_results <- boot(data = quack_responses_clean, 
-                     statistic = boot_mean, 
-                     R = 1000)
-
-# Print results
-print(boot_results)
-
-# Bootstrap confidence intervals
-boot.ci(boot_results, type = "perc")
-
-
-# Plot histogram of bootstrap sample means
-hist(boot_results$t,
-     breaks = 30,
-     col = "tomato",
-     main = "Bootstrap Distribution of the Mean",
-     xlab = "Mean Height (inches)")
-
-```
-
