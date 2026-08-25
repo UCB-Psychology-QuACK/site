@@ -1,0 +1,131 @@
+---
+title: "Fall 2025 Quack Session 8"
+author: "Victoria Keating & Sophie Regan"
+date: "2025-07-23"
+output: html_document
+---
+
+# Loading
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+```
+
+
+# Warm Up Activity
+```{r}
+# Load in the data
+GradLife <- read.csv("PsychGradLife_SemWide8.csv")
+
+# Number of respondents in the dataset
+n<-nrow(GradLife)
+
+#mean, median, range
+mean(GradLife$selfcare_score_S3)
+
+median(GradLife$selfcare_score_S3)
+
+range(GradLife$selfcare_score_S3)
+
+# Just for Cognition and Social, compare first caffeine usage
+GradLife_CogSoc<-GradLife%>%
+  filter(area %in% c("Cognitive","Social"))%>%
+  group_by(area)
+
+ggplot(GradLife_CogSoc, aes(x=area,y=caffeine_mg_S1))+
+  geom_boxplot()
+
+```
+
+
+# T-Test
+```{r}
+# View average self-care by area
+library(dplyr)
+GradLife %>%
+  group_by(area) %>%
+  summarise(mean_selfcare_S3 = mean(selfcare_score_S3, na.rm = TRUE),
+            sd_selfcare_S3 = sd(selfcare_score_S3, na.rm = TRUE),
+            n = n())
+
+# Filter only clinical and developmental lab members
+GradLife_ClinDev<-GradLife%>%
+  filter(area %in% c("Clinical","Developmental"))%>%
+  group_by(area)
+
+# Check how many people per lab
+table(GradLife_ClinDev$area)
+
+# Run the t-test
+t_test_result <- t.test(selfcare_score_S3 ~ area, data = GradLife_ClinDev)
+print(t_test_result)
+```
+
+
+
+
+# Correlations
+```{r}
+# Plot the relationship
+ggplot(GradLife, aes(x = caffeine_mg_S1, y = tiktok_min_S1)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Caffeine T1 vs Tiktok T1")
+
+# Correlation test
+cor.test(GradLife$caffeine_mg_S1, GradLife$tiktok_min_S1)
+
+```
+# ANOVA
+When you want to compare means across more than two groups, a t-test isn't enough — that's where ANOVA (Analysis of Variance) comes in.
+
+ANOVA checks if there is any significant difference in means across the groups. It doesn't tell you which groups differ — just whether at least one group is different. You can follow up with post-hoc tests if needed.
+```{r}
+# Check how many areas are in the dataset
+table(GradLife$area)
+
+# Fit ANOVA model
+aov_model <- aov(selfcare_score_S3 ~ area, data = GradLife)
+summary(aov_model)
+
+# Plot the means with boxplots
+ggplot(GradLife, aes(x = area, y = selfcare_score_S3)) +
+  geom_boxplot(fill = "lightblue") +
+  labs(title = "Self-Care Across Areas", y = "Self-Care Score", x = "Area")
+
+# Let's do a post-hoc on an easier ANOVA
+
+# Which one is actually significant?
+
+TukeyHSD(aov_model)
+
+```
+
+# Linear Regression
+```{r}
+# Run the regression
+lm_model <- lm(hours_contemplating_other_paths_S3 ~ selfcare_score_S3 + submitted_grant, data = GradLife)
+summary(lm_model)
+```
+
+# Logistic Regression
+```{r}
+log_model<-glm(submitted_grant~tiktok_min_S2 + caffeine_mg_S2, data=GradLife,family="binomial")
+
+summary(log_model)
+
+# Predict probabilities
+GradLife$predicted_prob <- predict(log_model, type = "response")
+
+# Plot
+ggplot(GradLife, aes(x = tiktok_min_S2, y = submitted_grant)) +
+  geom_jitter(height = 0.05) +
+  geom_smooth(method = "glm", method.args = list(family = "binomial")) +
+  labs(title = "Grant Submission by TikTok Minutes")
+
+```
+
+
+
+

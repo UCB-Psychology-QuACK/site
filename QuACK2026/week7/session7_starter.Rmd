@@ -1,0 +1,291 @@
+---
+title: "Loops & Functions in R (Psych Grad R Workshop)"
+author: "Sophie Regan"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+    theme: readable
+---
+
+# Overview
+
+In this lesson we’ll cover:
+
+- **For loops**: iterate over indices or elements
+- **While loops**: repeat until a condition is met
+- **Functions**: write reusable, testable code
+- **The apply family**: `apply()`, `lapply()`, `sapply()`, `tapply()`, and `purrr::map()`
+
+We’ll use simple examples first (strings, numbers), then psychology-flavored examples (participants, trials, reaction times).
+
+---
+
+# Warm-up
+
+```{r}
+# 1.a Create a vector called guest_list
+
+
+# 1.b Access the second element
+
+
+# 2a Create a vector phone_no with three phone numbers (as character strings)
+
+
+# 2b Access the second phone number
+
+
+# 3a paste0() concatenates; test it
+week_days <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+paste0("Today is ", week_days[2], ".")
+
+# paste() default separator is a space; change with 'sep'
+
+# 3b Use paste0() with answers to 1b and 2b:
+
+```
+
+---
+
+# For loops
+
+For loops use an **index** or **iterator**. The iterator takes on each value in a sequence.
+
+```{r}
+# The : operator lets us define a range
+1:3
+
+# Print the numbers 1 through 3
+for (i in 1:3) {
+  print(i)
+}
+```
+
+We often use **indexing** to get elements of a vector:
+
+```{r}
+guest_list <- c("Willa", "Elena", "Samira")
+guest_list[1]; guest_list[2]; guest_list[3]
+```
+
+A loop lets us avoid repeating similar lines:
+
+```{r}
+
+```
+
+If we **add another guest**, a hard-coded range breaks. Prefer `seq_along()` or `length()`:
+
+```{r}
+guest_list <- c(guest_list, "Sophie")
+
+# Bad: still uses 1:3
+for (i in 1:3) {
+  print(guest_list[i])
+}
+
+# Better: adapts to current length
+
+
+# Or loop directly over elements
+
+```
+
+Personalize messages using a loop:
+
+```{r}
+message <- "I’m having a Halloween Party on 10/31! The party starts at 9pm. I hope to see you there!"
+
+
+# Indexing across multiple vectors in one loop:
+
+```
+
+Save outputs you generate inside a loop:
+
+```{r}
+
+```
+
+---
+
+## Practice: loop puzzles
+
+**Q1.** Print this pattern:
+
+```
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+```
+
+```{r}
+
+```
+
+**Q2.** First 10 Fibonacci numbers (start 0, 1, then sum previous two):
+
+```{r}
+
+```
+
+**Q3.** Multiplication table for a given number (parameterize it):
+
+```{r}
+
+```
+
+**Q4.** Running total from 1 to a given number (show every intermediate sum):
+
+```{r}
+given <- 3
+
+
+# Manual running sum
+running <- 0
+
+```
+
+**Q5.** Nested loops (block × trial):
+
+```{r}
+
+```
+
+**Bonus Q6.** The Hokey Pokey (nested loops + strings):
+
+```{r}
+body_parts <- c("left foot", "right foot", "head", "left hand", "right hand", "tongue")
+events <- c("you put your %s in,\n", "you take your %s out,\n", "you put your %s in,\n")
+rest <- "And you shake it all about.\nYou do the hokey pokey\nAnd turn yourself around—\nThat's what it's all about!\n"
+
+
+```
+
+---
+
+# While loops
+
+A **while loop** repeats **until a condition is no longer true**. Use while-loops when you *don’t know* in advance how many iterations you’ll need (e.g., simulate until a criterion is reached).
+
+```{r}
+# Basic pattern
+i <- 1
+while (i <= 5) {
+  print(i)
+  i <- i + 1
+}
+```
+
+## Example 1: Simulate RTs until N valid trials
+
+Imagine collecting reaction times until you have **N non-missing** valid RTs.
+
+```{r}
+set.seed(1)
+
+```
+
+## Example 2: Convergence (stop when change is small)
+
+```{r}
+value <- 0
+delta <- Inf
+iter <- 0
+threshold <- 1e-4
+max_iter <- 1000
+
+```
+
+## Safety tips for while-loops
+
+- Always make sure **something changes** inside the loop, or you’ll get an infinite loop.
+- Consider a **max iteration** safeguard.
+- Prefer `for` loops when you know the number of iterations; prefer `while` when you don’t.
+
+---
+
+# Functions
+
+A **function** is a named, reusable block of code. It takes **arguments**, does some work, and **returns** a value (implicitly the last expression, or explicitly with `return()`).
+
+```{r}
+# Minimal version (implicit return)
+
+
+# Using a function and assigning the output
+# x <- mean_rt_safe(df, col = "rt")
+```
+
+### Psychology example: per-participant summaries
+
+```{r}
+# Suppose df has columns: participant_id, rt, condition
+# by_participant is a list of data frames, one per participant
+# by_participant <- split(df, df$participant_id)
+
+# Apply version (list -> numeric vector)
+# avg_by_p <- sapply(by_participant, mean_rt)
+
+# Loop version
+# avg_by_p2 <- numeric(length(by_participant))
+# i <- 1
+# for (p in names(by_participant)) {
+#   avg_by_p2[i] <- mean_rt(by_participant[[p]])
+#   i <- i + 1
+# }
+```
+
+---
+
+# From loops to the *apply()* family
+
+These are **loop alternatives** that often produce shorter, clearer, and faster code.
+
+- `apply(X, MARGIN, FUN, ...)` — apply a function to rows/columns of a matrix/data frame (`MARGIN=1` rows, `2` cols).  
+- `lapply(X, FUN, ...)` — apply a function to each element of a **list**, returns a **list**.  
+- `sapply(X, FUN, ...)` — like `lapply()` but **simplifies** output to a vector/matrix if possible.  
+- `tapply(X, INDEX, FUN, ...)` — apply a function to subsets defined by a **factor**.  
+- `purrr::map()` — tidyverse mapping with consistent return types (e.g., `map_dbl`, `map_df`).
+
+**Base R examples:**
+
+```{r}
+# Mean per column (matrix or data frame)
+# apply(df, 2, mean, na.rm = TRUE)
+
+# Apply to each participant's data frame in a list
+# participant_means <- lapply(by_participant, mean_rt)
+
+# Simplify to a numeric vector
+# participant_means_vec <- sapply(by_participant, mean_rt)
+
+# Mean RT by condition
+# tapply(df$rt, df$condition, mean, na.rm = TRUE)
+```
+
+**Tidyverse example:**
+
+```{r}
+# library(purrr); library(readr)
+# files <- c("P01.csv", "P02.csv", "P03.csv")
+# results <- files %>%
+#   map(readr::read_csv) %>%
+#   map_dbl(~ mean(.x$rt, na.rm = TRUE))
+```
+
+---
+
+# Exercises (hands-on)
+
+1. **For loop**: Given `parts <- c("left", "right")` and `items <- c("shoe", "glove")`, print “left shoe”, “right shoe”, “left glove”, “right glove” using a **nested loop**.
+2. **While loop**: Simulate drawing RTs (Normal(600, 80)) until you collect 20 RTs between 300 and 1200 ms. Store them in a vector and print the mean.
+3. **Function**: Write `zscore_vec(x)` that returns `(x - mean(x, na.rm=TRUE))/sd(x, na.rm=TRUE)`. Then write `zscore_col(df, col)` that z-scores a column by name and returns the modified data frame.
+4. **Apply**: Split a data frame by `participant_id` and compute mean RT per participant using both `sapply(split(...))` and a `for` loop. Compare the two results to confirm they match.
+
+> Tip: try each task *both ways* (explicit loop vs. apply/map) to build fluency.

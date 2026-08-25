@@ -1,0 +1,149 @@
+---
+title: "quack_session2_2025"
+author: "Nina Schoener"
+date: "2025-07-01"
+output: html_document
+---
+
+[Modeled after QuACK 2025 Summer Session 2 by Victoria Keating, Sophie Regan, and Nina Schoener]
+
+## Loading our packages
+
+```{r}
+
+# let's start by installing and loading tidyverse in full using the method we went over
+
+#install.packages("tidyverse")
+library(tidyverse)
+
+
+# tidylog is a useful add-on that will give you feedback on what your tidyverse commands have done. let's add it! 
+
+#install.packages("tidylog")
+library(tidylog)
+
+# you may get a warning saying "the following objects are masked from..."
+# this means that there are some functions in the package you just loaded with the same name as functions in a different package (or base R)
+# it's ok -- just be careful about this! if you want to be extra sure you're using the right function, you can always type "packagename::" before it!
+# pro-tip: this also lets you use a particular function from a package without having to load it into your library first!
+
+```
+
+## Reading in our data
+
+For today's session, we're going to pretend that we have collected some mid-semester feedback from you all about QuACK. We're going to use this data to demonstrate some helpful data reshaping and merging functions. The csv file called "quack_midsemester_data" contains the new data you will need. 
+
+
+```{r}
+
+# let's start by loading in the original quack response data from csv
+# you can use the version that you just cleaned during the warm-up!
+
+quack_responses <-
+
+# and now let's load in the new data
+
+quack_midsemester <- 
+
+# let's get familiar with this new dataset
+# what function should we call to see what kind of columns are in this dataframe?
+
+
+
+# let's go ahead and rename the columns to something simpler
+
+quack_midsemester <- quack_midsemester %>%
+
+
+```
+
+
+
+### Joining our dataframes
+
+One thing we're going to need to do in order to analyze this data efficiently is we're going to need to put these two dataframes together. This is called joining two dataframes. 
+
+```{r}
+
+# there are several ways we can combine these dfs, but let's first use inner_join()	
+# an inner join will keep ONLY the rows that exist in BOTH dataframes
+# in order to identify these rows, you need to have one column in common across the two dataframes
+# what column is that in our case?
+
+inner_combined_df <- 
+
+
+# let's try another commonly used join method
+
+left_combined_df <- 
+
+
+# take a moment to choose another join method from below and try it on our two dataframes
+
+
+
+# INNER JOIN: Keep rows where id exists in BOTH df1 and df2
+
+# LEFT JOIN: Keep ALL rows from df1, add matching rows from df2, NA if no match
+
+# RIGHT JOIN: Keep ALL rows from df2, add matching rows from df1, NA if no match
+
+# FULL JOIN: Keep ALL rows from BOTH dataframes, NA if no match in one
+
+# ANTI JOIN: Return rows from df1 that DO NOT have a match in df2
+
+# SEMI JOIN: Return rows from df1 that DO have a match in df2 (but only columns from df1)
+```
+
+## Pivoting our data
+
+Let's say we want to know how likely people are to keep coming to QuACK and what their overall satisfaction is, grouped by whether they have liked QuACK so far. In order to do this, we're going to need to create a summary dataframe that groups people together based on whether they responded "yes" or "no" to whether they have liked QuACK so far. Then, we're going to pivot the summary dataframe so that we can easily plot this data in the future. 
+
+
+```{r}
+
+# we're going to start by using just the quack_responses dataframe for this
+# we need to summarize the data
+
+quack_midsemester_summary <- quack_midsemester %>%
+
+# now, let's use pivot() to reshape our data into long form
+# you'll need to specify which columns you want to pivot, what you want the new variable for your column names to be called, and what you want the new variable for your column values to be called
+# you can optionally specify some other things -- run ?pivot_longer to learn more
+
+quack_midsemester_summary <- quack_midsemester_summary %>%
+
+
+# great, now we have one column with both groups' ratings! 
+# let's quickly plot this data -- you'll see why it was useful to pivot!
+
+ggplot(data = quack_midsemester_summary, aes(x = Liked, y = Rating, fill = Question)) +
+  geom_col(position = "dodge")
+
+# pivoting made it so that all of the ratings were in the "rating" column, so we could assign just that one column to our y-axis, and use the "liked" and "question" columns to break up the data into four columns in the plot
+
+
+# let's practice doing this again, this time using data that can be found in our inner_combined_dataframe: people's previous experience in R
+
+inner_combined_summary <- inner_combined_df 
+
+# let's try plotting the data again
+
+ggplot(inner_combined_summary, 
+       aes(x = Question, y = Rating, fill = factor(Experience_R))) +
+  geom_col(position = "dodge") +
+  labs(fill = "Experience in R")
+
+```
+
+
+### Saving your combined dataframe to a csv file
+
+
+```{r}
+# let's save our combined dataframe to a new csv file in case we need it again in the future!
+
+write.csv()
+
+```
+

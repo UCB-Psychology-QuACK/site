@@ -1,0 +1,100 @@
+---
+title: "Fall 2025 Quack Session 8"
+author: "Victoria Keating & Sophie Regan"
+date: "2025-07-23"
+output: html_document
+---
+
+# Loading
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+```
+
+
+# Warm Up Activity
+```{r}
+# Load in the data
+GradLife <- 
+
+# Number of respondents in the dataset
+
+
+#mean, median, range
+
+
+# Just for Cognition and Social, compare first caffeine usage
+GradLife_CogSoc<-
+
+# plot it
+
+
+```
+
+
+# T-Test
+```{r}
+# View average self-care by area
+
+
+# Filter only clinical and developmental lab members
+
+
+# Check how many people per lab
+
+
+# Run the t-test
+
+```
+
+
+
+
+# Correlations
+```{r}
+# Plot the relationship
+
+# Correlation test
+
+```
+# ANOVA
+When you want to compare means across more than two groups, a t-test isn't enough — that's where ANOVA (Analysis of Variance) comes in.
+
+ANOVA checks if there is any significant difference in means across the groups. It doesn't tell you which groups differ — just whether at least one group is different. You can follow up with post-hoc tests if needed.
+```{r}
+# Check how many areas are in the dataset
+
+
+# Fit ANOVA model
+
+
+# Plot the means with boxplots
+
+
+# Let's do a post-hoc on the ANOVA
+
+
+
+
+```
+
+# Linear Regression
+```{r}
+# Run the regression
+
+```
+
+# Logistic Regression
+```{r}
+
+# Predict probabilities
+
+
+# Plot
+
+```
+
+
+
+

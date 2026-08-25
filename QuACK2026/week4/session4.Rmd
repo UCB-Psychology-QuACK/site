@@ -1,0 +1,117 @@
+---
+title: "Quack Fall 2025"
+author: "Alyson Wong & Nina Schoener"
+date: "2025-09-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Quack Session 4 - Starter Answer Key
+September 29, 2025
+Alyson Wong and Nina Schoener
+Adapted from Emily Rosenthal & Sierra Semko Krouse 
+
+
+Today, we will learn about data visualisation! (pause for cheers from the audience). To do this, meet your new best friend GGPLOT2. Let's install this library.
+
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+#### DATA VISUALIZATION DEMO ####
+
+# This website has some helpful info about plotting with ggplot: https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html  
+
+# ggplot cheat sheet: https://www.maths.usyd.edu.au/u/UG/SM/STAT3022/r/current/Misc/data-visualization-2.1.pdf  
+
+# R-graph gallery: Help choosing and creating types of plots (NOTE: only use the ggplot section on each page) https://www.r-graph-gallery.com/index.html  
+
+Before we start, make sure you have quack_responses_clean_fall25.csv loaded.
+```{r}
+# For our purposes this week, we have cleaned the data beforehand so that our column names are easy to work with and all of our columns only contain one type of variable.
+
+quack_responses_clean <- read_csv("quack_responses_clean.csv")
+```
+
+We can look at the average preferred temperature. A good way to do this is to create a bar plot. 
+
+There are a few things to note. 
+First, you have to call ggplot.
+Then, you have to tell it what dataframe you want to use.
+Then, using aes(), you tell it what columns you want plotted.
+Finally, you tell it what kind of plot you want. This time, we will use a bar plot 
+```{r}
+responses_summary <- quack_responses_clean %>%
+  group_by(Area) %>%
+  dplyr::summarize(mean_fav_temp = mean(FavTemp, na.rm = TRUE))
+
+# Now that we have our data loaded, let's create a simple column plot of the mean temperature. What do you notice?
+ggplot(responses_summary, aes(y = mean_fav_temp,
+                    x = Area))+
+  geom_bar(stat = "identity")
+
+```
+
+Cool! We created our first ggplot plot. 
+
+We can also add other things to our plot. For example, we can change the bar width on our bar plot. 
+```{r}
+ggplot(responses_summary, aes(y = mean_fav_temp,
+                    x = Area))+
+  geom_bar(stat = "identity", width=.5)
+
+#What changes?
+```
+
+Or we can add labels.
+```{r}
+ggplot(responses_summary, aes(y = mean_fav_temp,
+                    x = Area))+
+  geom_bar(stat = "identity", width=.5)+
+  labs(title = "Favorite Temp by Area",
+       x = "Area",
+       y = "Mean Temperature")
+
+```
+
+Another thing we can do is change the color or fill of the bars based on another column in our dataset. 
+We can use fill = group inside aes() to fill the bars based on that column.
+
+```{r}
+ggplot(responses_summary, aes(y = mean_fav_temp,
+                    x = Area,
+                    fill = Area))+
+  geom_bar(stat = "identity", width=.5)+
+  labs(title = "Favorite Temp by Area",
+       x = "Area",
+       y = "Mean Temperature")
+
+```
+
+Let's try making a new plot using a different column. Let's use the Hotdogs colummn. Remember, this is asking participants whether they think hotdogs are sandwiches with responses "Yes" and "No" only.
+```{r}
+ggplot(quack_responses_clean, aes(x = Hotdogs,
+                    fill = Area))+
+  geom_bar()
+
+```
+
+If we want to see the groups side-by-side instead of stacked, we can change the position to "dodge":
+```{r}
+ggplot(quack_responses_clean, aes(x = Hotdogs,
+                    fill = Area))+
+  geom_bar(position = "dodge")
+
+```
+
+We can also save any plot using ggsave! (Be careful about overwriting plots though!)
+```{r}
+#ggsave() by default will save the last plot generated.
+
+ggsave("new_plot.png", width = 7, height = 4)
+```
+
