@@ -1,16 +1,16 @@
 ---
 layout: default
-title: "QuACK 2025"
+title: "QuACK 2026"
 ---
 ## Quantitative Analysis and Coding Knowledge (QuACK) course page
 
-### Welcome to QuACK 2025!
+### Welcome to QuACK 2026!
 This semester-long course is for PhD students by PhD students. We will focus on teaching fudemental programming skills in R to prepare you for research and data anlysis. The workshop also helps prepare first-year PhD students for Psych 205: Data analysis. 
 
 The class takes a hands-on workshop style format focusing on using real data!
 
 **To take the class for credit:** Register  through [CalCentral](https://calcentral.berkeley.edu/dashboard):
-* Course Number: 14144
+* Course Number: TBD
 * Select 2 credits (since it is 2 hours a week)
 * Select to take the class Pass/No Pass
 
@@ -18,7 +18,7 @@ The class takes a hands-on workshop style format focusing on using real data!
 
 ### Instructors
 The course was developed by [Elena Leib](https://ucb-psychology-quack.github.io/site/about/about) and [Willa Voorhies](https://ucb-psychology-quack.github.io/site/about/about).
-This year's course will be instructed by Victoria Keating, Sophie Regan, Nina Schoener, and Alyson Wong. 
+This year's course will be instructed by Nina Schoener, Alyson Wong, and Victoria Keating. 
 This year's course coordinator is Victoria Keating.
 
 ### Core Goals
@@ -28,7 +28,7 @@ This year's course coordinator is Victoria Keating.
 
 ### Schedule
 
-We will meet weekly on **Mondays from 10am - 12pm PST in BWW 1211**.  First session September 8th!
+We will meet weekly on **Thursdays from 4pm - 6pm PST in BWW Rm TBD**.  First session September 10th!
 
 Each session will start with a live demo focusing on fundemental data skills. We will then work independently and in groups to apply these skills to real data. Finally, we will finish each session with a group discussion centering around challenges you faced working with the data and ways to address and overcome these challenges. 
 
@@ -36,16 +36,16 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 
 |  Week | Topic | Materials | Demo Script & Answer Key | Slides |
 | ------|-------|------- |  ------|-------|
-| Week 1 (9/8) |Intro to R & Programming|[w1_materials](week1/week1.zip)|[w1_key](week1/session1_2025.Rmd)|[w1_slides](week1/Quack_Session1_F2025.pdf)|
-| Week 2 (9/15) |Intro to the tidyverse and data wrangling - Part 1|[w2_materials](week2/week2.zip)|[w2_key](week2/session2.Rmd)|[w2_slides](week2/Quack_Session2_F2025.pdf)|
-| Week 3 (9/22) |Intro to the tidyverse and data wrangling - Part 2|[w3_materials](week3/week3.zip)|[w3_key](week3/session3.Rmd)|[w3_slides](week3/Quack_Session3_F2025.pdf)|
-| Week 4 (9/29) |Intro to data visualization (ggplot) - Part 1|[w4_materials](week4/week4.zip)| [w4_key](week4/session4.Rmd)|[w4_slides](week4/Quack_Session4_F2025.pdf)|
-| Week 5 (10/6) |Intro to data visualization (ggplot) - Part 2|[w5_materials](week5/week5.zip)| [w5_key](week5/session5.Rmd)|[w5_slides](week5/Quack_Session5_F2025.pdf)| 
-| Week 6 (10/13) |Flex Week/Review/Q&A|[w5_materials](week5/session5.zip)| [w5_key](week5/session5.Rmd)|[w5_slides](week5/Quack_Session5_F2025.pdf)| 
-| Week 7 (10/20) |Functions and loops|[w7_materials](week7/session7.zip)| [w7_key](week7/session7.Rmd)|[w7_slides](week7/Quack_Session7_F2025.pdf)| 
-| Week 8 (10/27) |Intro to Basic Stats - Part 1|[w8_materials](week8/week8.zip)| [w8_key](week8/session8.Rmd)|[w8_slides](week8/Quack_Session8_F2025.pdf)| 
-| Week 9 (11/3) |Intro to Basic Stats - Part 2|[w9_materials](week9/week9.zip) | [w9_key](week9/week_9 key.Rmd.R)|[w9_slides](week9/week_9 slides.pdf)| 
-| Week 10 (11/10) |Open-Science, Github & Git|none|none| [w10_slides](week10/Quack_Session10_F2025.pdf)|
+| Week 1 (9/10) |Intro to R & Programming|[w1_materials]|[w1_key]|[w1_slides]|
+| Week 2 (9/17) |Intro to the tidyverse and data wrangling - Part 1|
+| Week 3 (9/24) |Intro to the tidyverse and data wrangling - Part 2|
+| Week 4 (10/1) |Intro to data visualization (ggplot) - Part 1|
+| Week 5 (10/8) |Intro to data visualization (ggplot) - Part 2|
+| Week 6 (10/15) |Flex Week/Review/Q&A|
+| Week 7 (10/22) |Functions and loops|
+| Week 8 (10/29) |Intro to Basic Stats - Part 1|
+| Week 9 (11/5) |Intro to Basic Stats - Part 2|
+| Week 10 (11/12) |Open-Science, Github & Git|
 
 
 ### Materials guide
@@ -53,13 +53,13 @@ We are committed to open science and we make all of our resources and teaching m
 
 Each week we will be posting the following materials:
 * **Practice materials**: Please download the practice material before each session. This will include any starter code and prompts for the independent and/or group work. The best way to learn to program is to practice! So if you are participating asynchronously or if you miss a session, we encourage you to try the practice work on your own and use the slack channel to share any comments or ask questions you might have! 
-* **Live demo script**: Each session will begin with a demo where we introduce some fundemental skills and key concepts that will help you with the practice materials. We will post these after each session. This will also include answer keys for the group activity if applicable. 
+* **Live demo script**: Each session will begin with a demo where we introduce some fundamental skills and key concepts that will help you with the practice materials. We will post these after each session. This will also include answer keys for the group activity if applicable. 
 * **Slides**: Any slides used will be made available for download after the session. 
 
 ### FAQs
 
 #### I can't attend all of the sessions. Should I still enroll? 
-You will not be penalzied for missing sessions. However, we do encourage everyone to attend as many sessions as possible as the sessions build on each other. It is also a great opportunity to get to know your cohort better! 
+You will not be penalized for missing sessions. However, we do encourage everyone to attend as many sessions as possible as the sessions build on each other. It is also a great opportunity to get to know your cohort better! 
 
 #### How much experience with programming, R, or statistics is expected?
 No experience is expected or required! We are going to build up the foundational skills you need to work with data in R. If you do have some past experience with R, this workshop will give you the chance to brush up on your skills and learn to apply them to real data. The goal is to give you the tools (and confidence!) to continue learning in your lab, on your own, and/or through other online tools. We will also share additional resources so you can keep learning R on your own.
