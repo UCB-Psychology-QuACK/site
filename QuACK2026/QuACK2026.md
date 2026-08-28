@@ -41,10 +41,10 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 3 (9/24) |Intro to the tidyverse and data wrangling - Part 2|
 | Week 4 (10/1) |Intro to data visualization (ggplot) - Part 1|
 | Week 5 (10/8) |Intro to data visualization (ggplot) - Part 2|
-| Week 6 (10/15) |Flex Week/Review/Q&A|
-| Week 7 (10/22) |Functions and loops|
-| Week 8 (10/29) |Intro to Basic Stats - Part 1|
-| Week 9 (11/5) |Intro to Basic Stats - Part 2|
+| Week 6 (10/15) |Error Messages/Review/Q&A|
+| Week 7 (10/22) |Intro to Basic Stats - Part 1|
+| Week 8 (10/29) |Intro to Basic Stats - Part 2|
+| Week 9 (11/5) |Putting it all together|
 | Week 10 (11/12) | **NO CLASS** |
 | Week 11 (11/19) |Open-Science, Github & Git|
 
