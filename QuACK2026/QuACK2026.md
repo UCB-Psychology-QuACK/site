@@ -10,7 +10,7 @@ This semester-long course is for PhD students by PhD students. We will focus on 
 The class takes a hands-on workshop style format focusing on using real data!
 
 **To take the class for credit:** Register  through [CalCentral](https://calcentral.berkeley.edu/dashboard):
-* Course Number: TBD
+* Course Number: 14137
 * Select 2 credits (since it is 2 hours a week)
 * Select to take the class Pass/No Pass
 
@@ -28,7 +28,7 @@ This year's course coordinator is Victoria Keating.
 
 ### Schedule
 
-We will meet weekly on **Thursdays from 4pm - 6pm PST in BWW Rm TBD**.  First session September 10th!
+We will meet weekly on **Thursdays from 4pm - 6pm PST in BWW Rm 1213**.  First session September 10th!
 
 Each session will start with a live demo focusing on fundemental data skills. We will then work independently and in groups to apply these skills to real data. Finally, we will finish each session with a group discussion centering around challenges you faced working with the data and ways to address and overcome these challenges. 
 
