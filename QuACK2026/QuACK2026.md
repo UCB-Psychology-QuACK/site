@@ -19,7 +19,6 @@ The class takes a hands-on workshop style format focusing on using real data!
 ### Instructors
 The course was developed by [Elena Leib](https://ucb-psychology-quack.github.io/site/about/about) and [Willa Voorhies](https://ucb-psychology-quack.github.io/site/about/about).
 This year's course will be instructed by Nina Schoener, Alyson Wong, and Victoria Keating. 
-This year's course coordinator is Victoria Keating.
 
 ### Core Goals
 1) Provide hands-on training in fundamental programming and data skills with real data.  
