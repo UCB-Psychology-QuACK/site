@@ -45,7 +45,8 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 7 (10/22) |Functions and loops|
 | Week 8 (10/29) |Intro to Basic Stats - Part 1|
 | Week 9 (11/5) |Intro to Basic Stats - Part 2|
-| Week 10 (11/12) |Open-Science, Github & Git|
+| NO CLASS 11/12
+| Week 10 (11/19) |Open-Science, Github & Git|
 
 
 ### Materials guide
