@@ -1,0 +1,176 @@
+---
+title: "quack_session2_2026"
+author: "Nina Schoener & Alyson Wong"
+date: "2026-09-17"
+output: html_document
+---
+
+[Modeled after QuACK 2025 Summer Session 2 by Nina Schoener and Sophie Regan]
+
+## Loading our packages
+
+```{r}
+
+# let's start by installing and loading tidyverse in full using the method we went over
+
+
+
+
+
+# tidylog is a useful add-on that will give you feedback on what your tidyverse commands have done. let's add it! 
+
+
+
+
+# you may get a warning saying "the following objects are masked from..."
+# this means that there are some functions in the package you just loaded with the same name as functions in a different package (or base R)
+# it's ok -- just be careful about this! if you want to be extra sure you're using the right function, you can always type "packagename::" before it!
+# pro-tip: this also lets you use a particular function from a package without having to load it into your library first!
+
+```
+
+## Finishing up last week's content
+
+Most of the time, when working with data in R, you will likely import it from somewhere else, like we did above. But sometimes, you may want to create a dataframe directly in R. You can do this by combining columns or rows (vectors, like we created earlier) using cbind() and rbind().
+
+```{r}
+
+# let's try making a dataframe for attendance
+# let's start by creating a vector of names of those sitting in the first row, marking them as present
+
+
+
+# and those in the second row, marking them as present
+
+
+
+# now we can create a dataframe for the first row by binding the names and present columns together
+
+
+# and do the same for the second row
+
+
+# and lastly, combine everything into an attendance dataframe
+
+```
+
+
+## Reading in our data
+
+We're going to use the same data we used last week and we're going to do some of the same operations we did last week, just to demonstrate that tidyverse has its advantages.
+
+```{r}
+
+# let's start by loading in the quack response data from csv
+# the tidyverse (in this case dplyr) way of doing this is using read_csv() rather than read.csv() as we did last week
+# does anyone know the differences between the two?
+
+
+
+
+# try calling str() on our data
+# what does it tell you?
+
+
+
+```
+
+## Getting familiar with our data
+
+Before doing anything else with your data, it's always a good idea to get familiar with how it's structured and what the possible values for each variable are.
+
+What can you tell about your dataframe by looking at the global environment?
+
+```{r}
+
+# try calling summary() like we did last week to remind yourself of what's in this dataframe
+
+
+
+# let's rename our variables again like we did last week, but this time using tidyverse
+
+quack_responses_clean <- quack_responses %>%
+  set_names(c("ID",
+                 "Timestamp", 
+                 "ExperienceR", 
+                 "OtherLangsBinary", 
+                 "Languages", 
+                 "ExperienceOther", 
+                 "Skills", 
+                 "Questions", 
+                 "Area",
+                 "BirthMonth", 
+                 "Season", 
+                 "FavTemp", 
+                 "Pets", 
+                 "Siblings", 
+                 "Extraversion",
+                 "Hotdogs", 
+                 "Cereal", 
+                 "BearRating"))
+
+# read_csv does not automatically convert character columns to factors, but some of our character columns should probably be factors
+# let's convert them now
+
+# OtherLangsBinary is an example of variable that should be a factor
+# we can combine the factor() function from base R with the mutate() function to include it in our pipe
+
+
+
+# take a few minutes and add two other variables to the pipe that you think should be factors
+# remember to include a pipe operator in between each one!
+
+
+  
+# now try summarizing the data again -- what does it look like?
+
+
+
+```
+
+## Cleaning our data
+
+A common issue you'll come across is that there might be missing values (NAs) in your data. What you'll want to do with NAs will vary case-by-case, but here we will simply remove them.
+
+```{r}
+# first, let's see where there are NAs in our data
+# summarise() can tell you this
+
+
+
+# which columns have the most NAs?
+
+
+# it looks like the FavTemp and Pets columns are problematic here, since each has some numeric values and some character values
+# if we keep these columns as they are, R will treat all values as characters, which is not what we want
+# let's instead reformat these columns so all values are the same type
+# we can do that using a combination of as.numeric() and str_remove_all() on the FavTemp column
+
+
+
+# in the Pets column, let's use a combination of mutate() and str_remove_all() again to remove any responses that aren't numeric. we'll again make this column as.numeric() as well. 
+
+
+
+# another useful function is case_when()
+# let's try using this function to create a column Spooky 
+# for anyone whose favorite season is Fall, let's give them "Spooky", and everyone else "Not Spooky"
+
+
+
+
+# sometimes, your data will contain NAs that you'll want to remove. this is an important step because if you try to get summary statistics from your data, they may not be calculated correctly if there are NAs. 
+# let's drop any participant who has an NA in any column
+
+
+```
+
+Next, let's remove any outliers in the FavTemp column. We can do this using filter().
+
+```{r}
+
+# use the filter() function on the column "Pets" to drop anyone who said they have 20 or more pets
+
+
+
+```
