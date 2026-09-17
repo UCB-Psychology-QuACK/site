@@ -1,7 +1,7 @@
 ---
-title: "quack_session2_2025"
+title: "quack_session2_2026"
 author: "Nina Schoener & Alyson Wong"
-date: "2025-09-15"
+date: "2026-09-17"
 output: html_document
 ---
 
@@ -29,6 +29,34 @@ library(tidylog)
 
 ```
 
+## Finishing up last week's content
+
+Most of the time, when working with data in R, you will likely import it from somewhere else, like we did above. But sometimes, you may want to create a dataframe directly in R. You can do this by combining columns or rows (vectors, like we created earlier) using cbind() and rbind().
+
+```{r}
+
+# let's try making a dataframe for attendance
+# let's start by creating a vector of names of those sitting in the first row, marking them as present
+
+first_row_names <- c("A", "B")
+first_row_present <- c(1, 1)
+
+# and those in the second row, marking them as present
+
+second_row_names <- c("C", "D")
+second_row_present <- c(1, 1)
+
+# now we can create a dataframe for the first row by binding the names and present columns together
+first_row <- cbind.data.frame(Name = first_row_names, Present = first_row_present)
+
+# and do the same for the second row
+second_row <- cbind.data.frame(Name = second_row_names, Present = second_row_present)
+
+# and lastly, combine everything into an attendance dataframe
+attendance <- rbind(first_row, second_row)
+```
+
+
 ## Reading in our data
 
 We're going to use the same data we used last week and we're going to do some of the same operations we did last week, just to demonstrate that tidyverse has its advantages.
@@ -39,7 +67,7 @@ We're going to use the same data we used last week and we're going to do some of
 # the tidyverse (in this case dplyr) way of doing this is using read_csv() rather than read.csv() as we did last week
 # does anyone know the differences between the two?
 
-quack_responses = read_csv("quack_response_data_fall25.csv")
+quack_responses <- read_csv("quack_responses_fa26.csv")
 
 
 # try calling str() on our data
@@ -64,23 +92,40 @@ summary(quack_responses)
 # let's rename our variables again like we did last week, but this time using tidyverse
 
 quack_responses_clean <- quack_responses %>%
-  set_names(c("ID", "Timestamp", "Experience_R", "Experience_Other", "Languages", "Area", "Birth_Month", "Season", "Fav_Temp", "Pets", "Correct_Answer", "Hotdogs", "Bear_Rating"))
+  set_names(c("ID",
+                 "Timestamp", 
+                 "ExperienceR", 
+                 "OtherLangsBinary", 
+                 "Languages", 
+                 "ExperienceOther", 
+                 "Skills", 
+                 "Questions", 
+                 "Area",
+                 "BirthMonth", 
+                 "Season", 
+                 "FavTemp", 
+                 "Pets", 
+                 "Siblings", 
+                 "Extraversion",
+                 "Hotdogs", 
+                 "Cereal", 
+                 "BearRating"))
 
 # read_csv does not automatically convert character columns to factors, but some of our character columns should probably be factors
 # let's convert them now
 
-# Experience_Other is an example of variable that should be a factor
+# OtherLangsBinary is an example of variable that should be a factor
 # we can combine the factor() function from base R with the mutate() function to include it in our pipe
 
 quack_responses_clean <- quack_responses_clean %>%
-  mutate(Experience_Other = factor(Experience_Other, levels = c("Yes", "No")))
+  mutate(OtherLangsBinary = factor(OtherLangsBinary, levels = c("Yes", "No")))
 
 # take a few minutes and add two other variables to the pipe that you think should be factors
 # remember to include a pipe operator in between each one!
 
 quack_responses_clean <- quack_responses_clean %>%
-  mutate(Experience_Other = factor(Experience_Other, levels = c("Yes", "No"))) %>%
-  mutate(Area = factor(Area, levels = c("Clinical Science", "Cognition", "Developmental", "Social-Personality"))) %>%
+  mutate(OtherLangsBinary = factor(OtherLangsBinary, levels = c("Yes", "No"))) %>%
+  mutate(Area = factor(Area, levels = c("Clinical Science", "Cognition", "Social-Personality"))) %>%
   mutate(Season = factor(Season, levels = c("Fall", "Winter", "Spring", "Summer")))
   
 # now try summarizing the data again -- what does it look like?
@@ -109,13 +154,12 @@ quack_responses_clean %>%
 # we can do that using a combination of as.numeric() and str_remove_all() on the FavTemp column
 
 quack_responses_clean <- quack_responses_clean %>%
-  mutate(Fav_Temp = as.numeric(str_remove_all(Fav_Temp, "ºF| F")))
+  mutate(FavTemp = as.numeric(str_remove_all(FavTemp, "[:alpha:]")))
 
-# another way to standardize responses is using Tidyverse
-# in the Pets column, let's use a combination of mutate() and str_replace() to standardize responses
+# in the Pets column, let's use a combination of mutate() and str_remove_all() again to remove any responses that aren't numeric. we'll again make this column as.numeric() as well. 
 
 quack_responses_clean <- quack_responses_clean %>%
-  mutate(Pets = as.numeric(str_replace(Pets, "Over ", "")))
+  mutate(Pets = as.numeric(str_remove_all(Pets, "[:alpha:]")))
 
 # another useful function is case_when()
 # let's try using this function to create a column Spooky 
@@ -125,20 +169,21 @@ quack_responses_clean <- quack_responses_clean %>%
   mutate(Spooky = case_when(Season == "Fall" ~ "Spooky",
                             TRUE ~ "Not Spooky"))
 
-# one other column, Languages, has a few NAs here and there
-# let's drop data from respondents who have an NA in any of those columns
+
+# sometimes, your data will contain NAs that you'll want to remove. this is an important step because if you try to get summary statistics from your data, they may not be calculated correctly if there are NAs. 
+# let's drop any participant who has an NA in any column
 
 quack_responses_clean <- quack_responses_clean %>%
   drop_na()
 ```
 
-Next, let's remove any outliers in the Pets column. We can do this using filter().
+Next, let's remove any outliers in the FavTemp column. We can do this using filter().
 
 ```{r}
 
 # use the filter() function on the column "Pets" to drop anyone who said they have 20 or more pets
 
 quack_responses_clean <- quack_responses_clean %>%
-  filter(Pets < 20)
+  filter(FavTemp < 78)
 
 ```
