@@ -1,0 +1,21 @@
+PID,Age,Gender,Location,Favorite Cuisine
+1,24,Female,Berkeley,Italian
+2,31,Male,Oakland,Mexican
+3,27,Female,San Francisco,Japanese
+4,42,Male,Richmond,Indian
+5,35,Female,San Jose,Thai
+6,29,Non-binary,Emeryville,Mexican
+7,,,,
+8,22,Male,Berkeley,Korean
+9,38,Female,Oakland,Indian
+10,46,Male,San Francisco,Chinese
+11,33,Female,Richmond,Mediterranean
+12,28,Male,Berkeley,Japanese
+13,40,Female,San Jose,Mexican
+14,25,Male,Oakland,Thai
+15,54,Female,Albany,Italian
+16,36,Male,Emeryville,Indian
+17,30,Female,Berkeley,Korean
+18,,,,
+19,26,Female,Richmond,Chinese
+20,48,Male,Oakland,Japanese
