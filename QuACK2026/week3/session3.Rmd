@@ -1,7 +1,7 @@
 ---
-title: "quack_session2_2025"
+title: "quack_session3_2026"
 author: "Nina Schoener"
-date: "2025-07-01"
+date: "2026-09-24"
 output: html_document
 ---
 
@@ -31,32 +31,36 @@ library(tidylog)
 
 ## Reading in our data
 
-For today's session, we're going to pretend that we have collected some mid-semester feedback from you all about QuACK. We're going to use this data to demonstrate some helpful data reshaping and merging functions. The csv file called "quack_midsemester_data" contains the new data you will need. 
+For today's session, we have collected (read: invented) some data about people's food choices and whether they are getting enough servings of fruits and vegetables on a daily basis. We're going to use this data to demonstrate some helpful data reshaping and merging functions. The csv files called "fruit_vegetable_servings.csv" and "participant_demographics.csv" contain the new data you will need. 
 
 
 ```{r}
 
-# let's start by loading in the original quack response data from csv
-# you can use the version that you just cleaned during the warm-up!
+# let's start by loading in both datasets using read_csv
 
-quack_responses = read_csv("quack_response_data_fall25.csv")
-quack_responses <- quack_responses %>%
-  set_names(c("ID", "Timestamp", "Experience_R", "Experience_Other", "Languages", "Area", "Birth_Month", "Season", "FavTemp", "Pets", "Correct_Answer", "Hotdogs", "Bear_Rating"))
+veggies <- read_csv("fruit_vegetable_servings.csv")
+demo <- read_csv("participant_demographics.csv")
 
-# and now let's load in the new data
-
-quack_midsemester = read_csv("quack_midsemester_data.csv")
-
-# let's get familiar with this new dataset
+# let's get familiar with the veggies data first
 # what function should we call to see what kind of columns are in this dataframe?
 
+summary(veggies)
 
+# this dataframe is telling us how many servings of fruits and vegetables each participant had with each meal (presumably throughout a day). check the column types to make sure they're correct. the names are kind of annoying but you will see shortly that they will actually come in handy. 
 
-# let's go ahead and rename the columns to something simpler
+# but there isn't a whole lot to work with in terms of participant-level variables
+# let's see what the demo dataframe has to offer
 
-quack_midsemester <- quack_midsemester %>%
-  set_names(c("ID", "Liked", "Continuing", "Satisfaction"))
+summary(demo)
 
+# great, this dataframe offers us info on age, gender, location, and favorite cuisine!
+# is there anything we need to clean up about this dataframe before continuing?
+
+demo_clean <- demo %>%
+  rename(FavCuisine = `Favorite Cuisine`) %>%
+  mutate(Gender = as.factor(Gender), 
+         Location = as.factor(Location), 
+         FavCuisine = as.factor(FavCuisine))
 
 ```
 
@@ -64,7 +68,7 @@ quack_midsemester <- quack_midsemester %>%
 
 ### Joining our dataframes
 
-One thing we're going to need to do in order to analyze this data efficiently is we're going to need to put these two dataframes together. This is called joining two dataframes. 
+If we want to know anything about how participant-level variables are associated with veggie intake, we're going to need to put these two dataframes together. This is called joining two dataframes. 
 
 ```{r}
 
@@ -73,12 +77,12 @@ One thing we're going to need to do in order to analyze this data efficiently is
 # in order to identify these rows, you need to have one column in common across the two dataframes
 # what column is that in our case?
 
-inner_combined_df <- inner_join(quack_midsemester, quack_responses, by = "ID")
+inner_joined_df <- inner_join(veggies, demo_clean, by = "PID")
 
 
 # let's try another commonly used join method
 
-left_combined_df <- left_join(quack_midsemester, quack_responses, by = "ID")
+left_joined_df <- left_join(veggies, demo_clean, by = "PID")
 
 
 # take a moment to choose another join method from below and try it on our two dataframes
@@ -100,65 +104,76 @@ left_combined_df <- left_join(quack_midsemester, quack_responses, by = "ID")
 
 ## Pivoting our data
 
-Let's say we want to know how likely people are to keep coming to QuACK and what their overall satisfaction is, grouped by whether they have liked QuACK so far. In order to do this, we're going to need to create a summary dataframe that groups people together based on whether they responded "yes" or "no" to whether they have liked QuACK so far. Then, we're going to pivot the summary dataframe so that we can easily plot this data in the future. 
+Let's say we want to know how likely people are to have gotten their 5 servings of fruits and vegetables a day by favorite cuisine. In order to do this, we're going to pivot the dataframe so that we can easily find the average number of servings of fruits and vegetables per day by participant, by cuisine, etc. 
 
 
 ```{r}
 
-# we're going to start by using just the quack_responses dataframe for this
-# we need to summarize the data
-
-quack_midsemester_summary <- quack_midsemester %>%
-  group_by(Liked) %>%
-  summarize(Mean_Continuing = mean(Continuing, na.rm = TRUE), 
-            Mean_Satisfaction = mean(Satisfaction, na.rm = TRUE))
-
-# now, let's use pivot() to reshape our data into long form
+# we're going to start by pivoting the inner_joined data long. we're using this one because the left_joined data has NAs in it that we don't want to include. 
+# let's use pivot() to reshape our data into long form
 # you'll need to specify which columns you want to pivot, what you want the new variable for your column names to be called, and what you want the new variable for your column values to be called
 # you can optionally specify some other things -- run ?pivot_longer to learn more
 
-quack_midsemester_summary <- quack_midsemester_summary %>%
-  pivot_longer(cols = starts_with("Mean_"), names_to = "Question", values_to = "Rating") %>%
-  # removing the "Mean_" from the values in the Question column
-  mutate(Question = str_remove(Question, "Mean_"))
+long_veggies <- inner_joined_df %>%
+  pivot_longer(cols = starts_with("Meal"), names_to = "Meal", values_to = "Servings") %>%
+  mutate(Meal = str_remove(Meal, "Meal")) %>%
+  mutate(Meal = factor(Meal, levels = c("Breakfast", "Lunch", "Dinner", "Dessert")))
+
+# great, now let's summarize this data by participant and by meal
+
+summary_byp <- long_veggies %>%
+  group_by(PID) %>%
+  summarize(total_veggies = sum(Servings, na.rm = TRUE))
+
+summary_bymeal <- long_veggies %>%
+  group_by(Meal) %>%
+  summarize(mean_veggies = mean(Servings, na.rm = TRUE))
 
 
-# great, now we have one column with both groups' ratings! 
 # let's quickly plot this data -- you'll see why it was useful to pivot!
 
-ggplot(data = quack_midsemester_summary, aes(x = Liked, y = Rating, fill = Question)) +
+ggplot(data = summary_byp, aes(x = PID, y = total_veggies, fill = total_veggies)) +
   geom_col(position = "dodge")
 
-# pivoting made it so that all of the ratings were in the "rating" column, so we could assign just that one column to our y-axis, and use the "liked" and "question" columns to break up the data into four columns in the plot
+
+ggplot(data = summary_bymeal, aes(x = Meal, y = mean_veggies, fill = Meal)) +
+  geom_col(position = "dodge")
 
 
-# let's practice doing this again, this time using data that can be found in our inner_combined_dataframe: people's previous experience in R
 
-inner_combined_summary <- inner_combined_df %>%
-  group_by(Experience_R) %>%
-  summarize(Mean_Continuing = mean(Continuing, na.rm = TRUE), 
-            Mean_Satisfaction = mean(Satisfaction, na.rm = TRUE)) %>%
-  pivot_longer(cols = starts_with("Mean_"), names_to = "Question", values_to = "Rating") %>%
-  # removing the "Mean_" from the values in the Question column
-  mutate(Question = str_remove(Question, "Mean_"))
+# pivoting made it so that all of the servings were in the Servings column, so we could summarize (sum, mean, etc) just that one column for our y-axis, and use the Meal and Participant columns to break up the data into columns in the plot
+
+
+# let's practice doing this again, this time using data about the individuals in the dataset, rather than just their PID and the meal type: let's see if their favorite cuisine is associated with the amount of veggies they eat
+
+summary_bycuisine <- long_veggies %>%
+  group_by(PID, FavCuisine) %>%
+  # grouping by participant first so that we can get accurate SEs
+  summarize(participant_mean = mean(Servings, na.rm = TRUE)) %>%
+  # now summarizing across participants
+  group_by(FavCuisine) %>%
+  summarize(mean_veggies = mean(participant_mean),
+            se_veggies = sd(participant_mean) / sqrt(n()))
 
 # let's try plotting the data again
 
-ggplot(inner_combined_summary, 
-       aes(x = Question, y = Rating, fill = factor(Experience_R))) +
-  geom_col(position = "dodge") +
-  labs(fill = "Experience in R")
+ggplot(summary_bycuisine,
+       aes(x = FavCuisine, y = mean_veggies, fill = FavCuisine)) +
+  geom_col() +
+  geom_errorbar(aes(ymin = mean_veggies - se_veggies,
+                    ymax = mean_veggies + se_veggies),
+                width = 0.2)
 
 ```
 
 
-### Saving your combined dataframe to a csv file
+### Saving your long dataframe to a csv file
 
 
 ```{r}
-# let's save our combined dataframe to a new csv file in case we need it again in the future!
+# let's save our long dataframe to a new csv file in case we need it again in the future!
 
-write.csv(left_combined_df, "combined_data.csv")
+write.csv(long_veggies, "long_veggies.csv")
 
 ```
 

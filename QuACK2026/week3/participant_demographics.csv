@@ -5,7 +5,6 @@ PID,Age,Gender,Location,Favorite Cuisine
 4,42,Male,Richmond,Indian
 5,35,Female,San Jose,Thai
 6,29,Non-binary,Emeryville,Mexican
-7,,,,
 8,22,Male,Berkeley,Korean
 9,38,Female,Oakland,Indian
 10,46,Male,San Francisco,Chinese
@@ -16,6 +15,5 @@ PID,Age,Gender,Location,Favorite Cuisine
 15,54,Female,Albany,Italian
 16,36,Male,Emeryville,Indian
 17,30,Female,Berkeley,Korean
-18,,,,
 19,26,Female,Richmond,Chinese
 20,48,Male,Oakland,Japanese
