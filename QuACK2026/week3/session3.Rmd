@@ -104,7 +104,7 @@ left_joined_df <- left_join(veggies, demo_clean, by = "PID")
 
 ## Pivoting our data
 
-Let's say we want to know how likely people are to have gotten their 5 servings of fruits and vegetables a day by favorite cuisine. In order to do this, we're going to pivot the dataframe so that we can easily find the average number of servings of fruits and vegetables per day by participant, by cuisine, etc. 
+Let's say we want to know how many servings of fruits and vegetables a day people eat by favorite cuisine. In order to do this, we're going to pivot the dataframe so that we can easily find the average number of servings of fruits and vegetables per day by participant, by meal, by cuisine, etc. 
 
 
 ```{r}
@@ -129,7 +129,6 @@ summary_bymeal <- long_veggies %>%
   group_by(Meal) %>%
   summarize(mean_veggies = mean(Servings, na.rm = TRUE))
 
-
 # let's quickly plot this data -- you'll see why it was useful to pivot!
 
 ggplot(data = summary_byp, aes(x = PID, y = total_veggies, fill = total_veggies)) +
@@ -138,7 +137,6 @@ ggplot(data = summary_byp, aes(x = PID, y = total_veggies, fill = total_veggies)
 
 ggplot(data = summary_bymeal, aes(x = Meal, y = mean_veggies, fill = Meal)) +
   geom_col(position = "dodge")
-
 
 
 # pivoting made it so that all of the servings were in the Servings column, so we could summarize (sum, mean, etc) just that one column for our y-axis, and use the Meal and Participant columns to break up the data into columns in the plot
