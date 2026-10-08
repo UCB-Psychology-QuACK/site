@@ -1,386 +1,233 @@
 ---
-title: "QuACK Longitudinal Data Wrangling Practice"
-author: "Victoria Keating"
-date: "`2025-10-13`"
-output: 
-  html_document:
-    toc: true # add table of contents
-    toc_depth: 3 # how many levels shown in toc
-    toc_float: true #floating toc
-    theme: cosmo
+title: "Quack Fall 2026"
+author: "Nina Schoener"
+date: "2026-10-08"
+output: html_document
 ---
 
-[This is flex week material, covering particularly datawrangling, multiple datasets, and formatting]
-
-## Loading our Packages {.tabset}
-```{r, echo=FALSE,  warning=FALSE, message=FALSE}
-library(tidyverse)
-library(tidylog)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-## Intro to Topic {.tabset}
-
-This week we'll be covering a little more on data-wrangling and getting more experience with joining datasets, pivoting, and managing data. (Plus a little discussion of R formatting if we can fit it in)
-
-
-## Practice with Pivoting: First Year Grad Students' Longitudinal Data {.tabset}
-
-For fun today, we're going to use a completely made up dataset (via ChatGPT) to model what it looks like to work with and wrangle longitudinal data
-
-Let's pretend that we had the same survey for grad students and gave it three different times, the end of their first semester, second semester, and third semester at Berkeley. You just cloned the same survey thrice so you've got three data sets. PsychGradLife_Sem1.csv, PsychGradLife_Sem2.csv, and PsychGradLife_Sem3.csv. You had some demographic data (i.e., area and advisor). Other variables of interest include daily caffeine consumption (caffeine_mg), daily TikTok consumption (tiktok_min), weekly existential crises as measured by hours contemplating other paths (hours_contemplating_other_paths), and reported sense of selfcare from 1 - 10 (worst to best) (selfcare_score)
-
-### Practice with Making Long Data  {.tabset}
-```{r, echo=FALSE, message=FALSE}
-# First, let's load in the data
+R Fall 2026 Session 5 - Starter Code
+October 8, 2026
+Alyson Wong and Nina Schoener
+Adapted from Emily Rosenthal & Sierra Semko Krouse 
 
 
-# Let's merge the data. The issue is if just add these rows altogether, you won't be able to tell which one is from which time. 
+Today, we will continue learning about data visualisation! (pause for cheers from the audience). To do this, make sure you have installed and loaded your new best friend GGPLOT2. 
 
-# With that, you have to add a row in each that will say which one is which. Let's use mutate to make a column in each dataframe that says Time with the appropriate time
-
-
-
-# Okay, now let's create one big dataframe using bind_rows
-
-# A lesson to learn from past Victoria's mistakes
-## Sometimes, you'll be tempted to add data together to make it wider and you will use left_join. The left_join becomes unhappy when you try to add columns with similar names so it adds suffixes (default is .x and .y). You can adjust this so when it adds columns it adds something like (_T1, _T2), however, doing this will actually just make your life harder because you will eventually end up going longer. 
-## Heads up, generally pivot_longer for analysis or visualization, pivot_wider for reporting (it looks tidy)
-## Adding rows is like adding observations or adding participants
-## Adding columns is like adding new variables 
-
-
-```
-
-#### Summarizing the Data using Group_by {.tabset}
-```{r, message=FALSE,include=FALSE}
-# Let's get some broad summaries of each column in semester 1
-
-```
-
-##### Caffeine consumption {.tabset}
-```{r, message=FALSE}
-# Let's see if we can summarize how caffeine consumption changes over time
-
-sem_long %>%
-  group_by() %>%
-  summarise(
-    caffeine_mean = mean(),
-    caffeine_sd   = sd(),
-    .groups = "drop"    # optional, ungroups automatically
-  )
-
-```
-
-##### TikTok consumption {.tabset}
-```{r, message=FALSE}
-
-```
-
-##### Existential Crises {.tabset}
-```{r, message=FALSE}
-
-```
-
-##### Self Care {.tabset}
-```{r, message=FALSE}
-
-```
-
-#### Wide to Long {.tabset}
-```{r, message=FALSE}
-# Load in that data
-wide_data<- 
-```
-
-##### Caffeine example {.tabset}
-```{r, message=FALSE}
-# Let's say you just want to pivot for caffeine consumption
-caffeine_long <- wide_data %>%
-  # first choose which columns you want, occasionally you don't want them all
-  select(participant, area, advisor, ...) %>%
-  # Here comes the pivot!
-  #  pivot_longer takes multiple arguments. 
-  ##  data = which tells what data you're using, but since we have used piping, you can skip that
-  ## cols= tells the formula what are the columns you're using to pivot
-  ## names_to = tells the formula, so those columns that I've chosen, I want them to be in a column of their own called this. 
-  ## values_to = tells the formula the number is going to be called what
-  pivot_longer(
-    #because we have caffeine_mg_S1, caffeine_mg_S2,and caffeine_mg_S3, we can use it like this cols=starts_with("caffeine_mg") which will take all columns that start with that phrase. 
-    cols = ,
-    names_to = ,
-    values_to = ,
-    #this is optional, but basically it takes away this prefix so we end up with just S1, S2, and S3. 
-    names_prefix = 
-      )
-```
-
-###### Visualization {.tabset}
-```{r, echo=FALSE}
-# Let's make a graph of caffeine consumption over time!
-# Let's do a graph with dots (geom_jitter) and a line
-
-ggplot()+
-  geom_jitter()+
-  stat_summary(fun = mean, geom = "line",group=1) 
-
-```
-
-```{r, echo=FALSE}
-# What if we wanted to group by area?
-
-
-```
-
-##### Tiktok example {.tabset}
-```{r, message=FALSE}
-# Let's say you just want to pivot for tiktok consumption
-
-```
-
-###### Visualization {.tabset}
-```{r, echo=FALSE}
-# Let's make a graph of TikTok consumption over time!
-# Let's do a graph with dots (geom_jitter) and with a line
-
-```
-
-```{r, echo=FALSE}
-# What if we wanted to group by area?
-
-```
-
-##### Pivot for everything Example
-```{r, message=FALSE}
-
-long_data<- wide_data %>%
-  pivot_longer(
-    # taking all the columns that start with these things
-    cols = starts_with(c("caffeine_mg", "tiktok_min", "hours_contemplating_other_paths", "selfcare_score")),
-    # Names to semester, remember this just says which semester or time point
-    names_to = c(".value", "Semester"),  # .value keeps the main variable names
-    names_sep = "_S"                     # takes out _S1, _S2, _S3 so it's just 1, 2, 3
-  )
-```
-
-
-#### Long to Wide
-
-Let's say there's some reason you want to change from long data to wide data
 ```{r}
-#For the moment, we're just going to use the tiktok_long
-tiktok_wide<-tiktok_long%>%
-  #Pivot wider is the opposite of pivot_longer. You'll still need data, and in this case, instead of names_to and values_to, you're going to do names_from and values_from. Names from is where are the column names coming from. Values from is what are the values in those columns going to be coming from.
-  pivot_wider(
-    names_from="semester",
-    values_from="tiktok_min"
-  )
+#install.packages("ggplot2")
+library(ggplot2)
+library(tidyverse)
 ```
 
-## Helpful R Markdown Formatting {.tabset}
+#### DATA VISUALIZATION DEMO ####
 
-### YAML {.tabset}
+# This website has some helpful info about plotting with ggplot: https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html  
 
-#### Basic YAML info {.tabset}
+# ggplot cheat sheet: https://www.maths.usyd.edu.au/u/UG/SM/STAT3022/r/current/Misc/data-visualization-2.1.pdf  
 
-title: "Graduate Student Data Wrangling Review"
+# R-graph gallery: Help choosing and creating types of plots (NOTE: only use the ggplot section on each page) https://www.r-graph-gallery.com/index.html  
 
-subtitle: "Pivoting, Wrangling, and Simpson’s Paradox"
+Today, we will be using "coffee_data.csv", which has data about participants, how much coffee they drink, and their ratings of Pumpkin Spice Lattes. 
 
-author: "Your Name"
+```{r}
 
-date: "`r Sys.Date()`" (gives system date), if you want an actual date, you can put an 
-actual date in there
+# Before we start, make sure you have coffee_data loaded. We're going to use a shortcut to turn all columns that are character vectors into factors (which is more or less what we want for this dataset). 
 
-abstract: "A fun exploration of R data wrangling techniques using psych grad student data."
 
-keywords: ["pivot_longer", "pivot_wider", "Simpson's paradox", "tidyverse"]
 
-lang: en
+# Let's also rename some of the columns to be easier to work with
 
-These are not all required
+coffee_data <- coffee_data %>%
+  rename("PID" = Participant_ID,
+         "Pumpkin_Spice" = Pumpkin_Spice_Rating,
+         "Fav_Season" = Favorite_Season,
+         "Num_Cups" = Number_Cups_Coffee_Per_Week,
+         "Location" = Geographic_Region)
 
-#### Output formats {.tabset}
+# Now, let's create two dataframes: one that represents each person's coffee preferences and habits, and one that represents each person's favorite season
 
-##### HTML {.tabset}
- html_document: 
- 
-    theme: flatly # HTML theme (options: cosmo, journal, united, etc.) 
-    
-    toc: true # include a table of contents 
-    
-    toc_float: true # floating TOC sidebar number_sections: 
-    
-    true # numbered section headers 
-    
-    highlight: tango # syntax highlighting style 
-    
-    code_folding: show # collapsible code blocks 
-    
-    df_print: paged # interactive paged data frames 
-    
-    self_contained: true # embed all dependencies (portable HTML)
 
-    
-##### PDF {.tabset}
-  pdf_document:
 
-    toc: true
 
-    toc_depth: 3
 
-    number_sections: true
+# Now, let's join them together using what we learned two weeks ago about joining dataframes. 
 
-    latex_engine: xelatex   # or pdflatex if xelatex unavailable
 
-    geometry: "margin=1in"  # page margins
-    
-##### Word {.tabset}
-  word_document:
 
-    toc: true
+# We now have a dataset that we're going to use to plot our data! 
 
-    reference_docx: "template.docx"  # optional custom Word style
 
-#### Table of Contents {.tabset}
+```
+
+
+```{r}
+
+# First, let's see how what season is the most popular. From here on out, we're going to use our plot_data dataframe. 
+
+
+
+# What do you notice about this plot?
+
+
+
+# that's right, we needed to refactor it to put the levels in the right order!
+
+
+
+```
+
+Cool! We created our first ggplot plot. There are a few things to note. 
+First, you have to call ggplot.
+Then, you have to tell it what dataframe you want to use.
+Then, using aes(), you tell it what columns you want plotted.
+Finally, you tell it what kind of plot you want. This time, we used a histogram. 
+
+We can also add other things to our plot. For example, we can add labels. By default, R will use your column names, but our y axis here for example does not have a name because we asked R to count the number of responses of each Season, i.e., that data did not come directly from a column. 
+
+```{r}
+
+
+
+
+# We may also want to have an intuitive scale on the y axis. Let's change it to 0 - 40. 
+
+
+
+# We can also change where the breaks happen in our axes. Right now, they are set to increments of 10. Let's change it to increments of 5. 
+
+
+
   
-  table of contents: 
+
+```
+
+Another thing we can do is change the color or fill of the bars. 
+
+```{r}
+
+# We can use fill = Fav_Season inside aes() to fill the bars based on that column.
+
+
+
+# This also adds a legend by default. It's a bit redundant here, so we can remove it using theme().  
+
+
+
+# It will use a default color palette if you don't tell ggplot which colors to use, but you can (and should) change the colors to be whatever you want. You can do this using scale_[fill/color]_[discrete/continuous](). 
+
+
+
+
+# Go ahead and try out other palettes (you can find them on RGraphGallery linked above). For example, there's Pastel1, Accent, and Set1. 
   
-    toc: true
+  
 
-    toc_depth: 3
+```
 
-    number_sections: true
+The theme layer is very powerful: you can change all kinds of things about the theme you're using to plot your data inside of the theme layer. 
 
-    anchor_sections: true
+```{r}
 
-### R Chunk Headers {.tabset}
-
-These are the things between the squigglies that start with r
-
-Here are some common options (you separate them with commas)
-
-#### Visibility and output control {.tabset}
-
-| Option | What it does | Example |
-|---------|---------------|----------|
-| `echo = FALSE` | Hides the code, shows only output | `echo = FALSE` |
-| `eval = FALSE` | Shows the code but doesn’t run it | `eval = FALSE` |
-| `include = FALSE` | Runs the code, hides both code *and* output | `include = FALSE` |
-| `message = FALSE` | Suppresses messages | `message = FALSE` |
-| `warning = FALSE` | Suppresses warnings | `warning = FALSE` |
-| `error = TRUE` | Keeps knitting even if an error occurs | `error = TRUE` |
-| `results = "hide"` | Runs code but hides textual results | `results = "hide"` |
-| `results = "asis"` | Renders raw markdown output (great for tables) | `results = "asis"` |
-| `comment = ""` | Removes the `##` prefix in output | `comment = ""` |
-
-#### Formatting & layout {.tabset}
-
-| Option | Purpose | Example |
-|---------|----------|----------|
-| `fig.width` / `fig.height` | Size of figure (in inches) | `fig.width = 6, fig.height = 4` |
-| `fig.align` | Figure alignment (`left`, `center`, `right`) | `fig.align = "center"` |
-| `fig.cap` | Add a caption to the figure | `fig.cap = "Caffeine trends over semesters"` |
-| `out.width`, `out.height` | Output size in HTML/PDF | `out.width = "80%"` |
-| `dpi` | Image resolution | `dpi = 300` |
-
-#### Plotting & caching {.tabset}
-
-| Option | What it does | Example |
-|---------|---------------|----------|
-| `fig.show = "hold"` | Displays multiple plots together | `fig.show = "hold"` |
-| `cache = TRUE` | Saves results for faster re-knit | `cache = TRUE` |
-| `cache.lazy = FALSE` | Forces recalculation on dependency change | `cache.lazy = FALSE` |
-| `dev = "png"` | Choose graphics device (`png`, `pdf`, etc.) | `dev = "png"` |
-
-#### Code folding & collapsing (HTML only) {.tabset}
-
-| Option | Description | Example |
-|---------|--------------|----------|
-| `collapse = TRUE` | Collapse input/output together | `collapse = TRUE` |
-| `class.source` | Add HTML class to code block | `class.source = "fold-show"` |
-| `code_folding: show` | Set globally in YAML, but can override here |  |
-
-#### Advanced options {.tabset}
-
-| Option | What it controls | Example |
-|---------|------------------|----------|
-| `tidy = TRUE` | Auto-formats code | `tidy = TRUE` |
-| `child = "filename.Rmd"` | Inserts another Rmd file | `child = "methods.Rmd"` |
-| `ref.label` | Reuses results from another chunk | `ref.label = "data-cleaning"` |
-
-### R Chunk Squigglies i.e. Tabset {.tabset}
-
-| Attribute       | Description                                                       | Common Use                                     |
-| --------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
-| `.tabset`       | Turns subheadings into clickable tabs.                            | Show multiple plots or summaries side-by-side. |
-| `.tabset-fade`  | Adds a fade-in/fade-out animation between tab transitions.        | Smooth visual effect for tabbed sections.      |
-| `.tabset-pills` | Displays tabs as rounded Bootstrap “pills” instead of rectangles. | Visual style tweak for tabsets.                |
-| `.collapse`     | Makes the section collapsible (click to expand/hide).             | Hide lengthy explanations or code.             |
-| `.unlisted`     | Removes the section from the table of contents (TOC).             | Keep TOC concise while retaining the section.  |
-| `.hidden`       | Hides the section entirely from the rendered output.              | Include instructor notes or draft sections.    |
-| `.appendix`     | Marks the section as part of the appendix (affects numbering).    | Differentiate appendices from main text.       |
-| `.levelX`       | Sets a custom TOC nesting level for the section.                  | Manually control TOC hierarchy.                |
-
-### R Mardown Text Formatting {.tabset}
-
-#### Headings {.tabset}
-
-As you may have noticed, hashtags make the headings, one more hashtag means one more level of hashtags
-
-#### Bold and Italics {.tabset}
-
-We use * (star) for bolds
-
-*One star on each side of the text for italics* 
-
-**Two stars on each side for bold**
-
-***Three if you want bold and italics***
-
-#### Bullet points {.tabset}
-
-Here you're going to use the dash (-). Don't forget to add a space between the dash and your first word
-
-- First item
-
-- Second item
-
- - sub item (this is a space from where the other one started)
- 
- - sub item
- 
-A single star with no pair makes another bullet
-
-#### Numbered List {.tabset}
-Make lists with 1. 2. 3., so on, if you want to do a sub list, similarly add an item
-
-#### Horizontal Lines {.tabset}
-
-To make horizontal lines, you can do --- on a empty line, *** on an empty line, or _______ 
-
-#### Blockquotes {.tabset}
-> This is a blockquote.
-> You can have multiple lines.
-
-Do a  greater-than sign to start a block quote
-
-#### Tables {.tabset}
-
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| A        | B        | C        |
-| 1        | 2        | 3        |
-
-Use dashes and | to make your rows and columns
-
-#### Math Equations {.tabset}
-Use dollar signs to frame your math chunk
-
-$$
-y = \frac{a}{b} + c
-$$
+# I think it's nice to center plot titles and that's one thing you can do within theme().  
 
 
 
+# Another thing that's useful that you might want to do is rotate your x axis labels especially if your labels are very long. 
+
+
+
+
+```
+Before we explore more about themes, let's try out some other kinds of plots. Instead of a histogram, we can create something similar: a column plot. The difference is that we specify a column for both the x and the y axes. 
+```{r}
+
+# One other thing we might want to plot is mean pumpkin spice ratings based on favorite season, so let's calculate that and add a column for it in our data. 
+
+
+
+
+
+
+```
+
+Let's create a different type of plot. If we want to see whether number of cups of coffee per week is related to age, a scatterplot might be a good choice. 
+
+```{r}
+
+# the way to create a scatterplot in ggplot is using geom_point()
+
+
+# let's go ahead and spruce up this plot the way we did before
+
+
+
+# In two weeks, we will explore some light stats, which will include for example adding 
+# a regression line to a plot like this!
+
+
+```
+
+One thing that may be useful is saving a plot as a variable so that you can build on it later. 
+```{r}
+
+# we can also save a plot as a variable like this
+
+
+
+# now you can call the plot using its name
+
+
+
+# or you can edit it
+
+
+
+# try this out and try applying different themes! some options are grey, bw, linedraw, classic, minimal, void, dark, and light. the ggthemes package contains many more! themes change many things about your plots including the background, gridlines, borders, font, layout, and more. 
+
+
+```
+
+
+Now, let's create one last plot and put it all together! What kind of plot could make sense if we want to know if people's pumpkin spice latte rating and favorite season are based on their location?
+
+```{r}
+
+# lets try a few different options
+
+# first, let's put the seasons in order for Season and the Locations in our preferred order 
+
+
+  
+# and create a scatterplot
+
+
+
+# this is hard to interpret. 
+# another option could be switching Location and Season, depending on which one we care more about
+# we can use geom_jitter() to jitter the points slightly in case they would otherwise overlap
+
+
+
+# this plot is still kind of hard to interpret. what if we split up the data somehow?
+
+
+
+# now it's a bit easier to see! It seems like people whose favorite season is Fall or Winter rate Pumpkin Spice Lattes higher than people whose favorite season is Spring or Summer. It seems like this may also not vary much by location!
+
+# lets save this plot to a variable in case we want to use it later (we will in about 30 seconds)
+
+
+
+
+```
+
+We can export any plot using ggsave! (Be careful about overwriting plots though!)
+```{r}
+
+
+```
 
