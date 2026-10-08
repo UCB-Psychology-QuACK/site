@@ -18,8 +18,9 @@ Adapted from Emily Rosenthal & Sierra Semko Krouse
 Today, we will continue learning about data visualisation! (pause for cheers from the audience). To do this, make sure you have installed and loaded your new best friend GGPLOT2. 
 
 ```{r}
-install.packages("ggplot2")
+#install.packages("ggplot2")
 library(ggplot2)
+library(tidyverse)
 ```
 
 #### DATA VISUALIZATION DEMO ####
@@ -30,28 +31,38 @@ library(ggplot2)
 
 # R-graph gallery: Help choosing and creating types of plots (NOTE: only use the ggplot section on each page) https://www.r-graph-gallery.com/index.html  
 
+#Today, we will be using "coffee_data.csv", which has data about participants, how much coffee they drink, and their ratings of Pumpkin Spice Lattes. 
 
 ```{r}
 
-# Before we start, make sure you have movie_data loaded. We're going to use a shortcut to turn all columns that are character vectors into factors (which is more or less what we want for this dataset). 
+# Before we start, make sure you have coffee_data loaded. We're going to use a shortcut to turn all columns that are character vectors into factors (which is more or less what we want for this dataset). 
 
-movie_data <- read_csv("movie_data.csv") %>%
+coffee_data <- read_csv("coffee_data.csv") %>%
   mutate(across(where(is.character), as.factor))
 
-# Now, let's create two dataframes: one that represents each person's favorite movie, and one that represents each person's favorite genre.
+# Let's also rename some of the columns to be easier to work with
 
-quack_coding_knowledge <- movie_data %>%
-  select(c("ID", "ExperienceR", "ExperienceOther"))
+coffee_data <- coffee_data %>%
+  rename("PID" = Participant_ID,
+         "Pumpkin_Spice" = Pumpkin_Spice_Rating,
+         "Fav_Season" = Favorite_Season,
+         "Num_Cups" = Number_Cups_Coffee_Per_Week,
+         "Location" = Geographic_Region)
+
+# Now, let's create two dataframes: one that represents each person's coffee preferences and habits, and one that represents each person's favorite season
+
+pumpkin_spice <- coffee_data %>%
+  select(c("PID", "Pumpkin_Spice"))
 
 
-quack_college_year <- movie_data %>%
-  select(c("ID", "Year"))
+season <- coffee_data %>%
+  select(c("PID", "Fav_Season"))
 
-# Now, let's join them together using what we learned last week about joining dataframes. 
+# Now, let's join them together using what we learned two weeks ago about joining dataframes. 
 
-plot_data <- left_join(quack_coding_knowledge, quack_college_year)
+plot_data <- left_join(pumpkin_spice, season)
 
-# We now have a dataset very similar to what we ended with last time, and today we're going to use it to plot our data! 
+# We now have a dataset that we're going to use to plot our data! 
 
 
 ```
@@ -59,19 +70,19 @@ plot_data <- left_join(quack_coding_knowledge, quack_college_year)
 
 ```{r}
 
-# First, let's see how many people are in each year in college. From here on out, we're going to use our plot_data dataframe. 
+# First, let's see how what season is the most popular. From here on out, we're going to use our plot_data dataframe. 
 
-ggplot(plot_data, aes(x = Year)) + 
+ggplot(plot_data, aes(x = Fav_Season)) + 
   geom_histogram(stat = "count")
 
 # What do you notice about this plot?
 
 plot_data <- plot_data %>%
-  mutate(Year = factor(Year, levels = c("Freshman", "Sophomore", "Junior", "Senior")))
+  mutate(Fav_Season = factor(Fav_Season, levels = c("Winter", "Spring", "Summer", "Fall")))
 
 # that's right, we needed to refactor it to put the levels in the right order!
 
-ggplot(plot_data, aes(x = Year)) + 
+ggplot(plot_data, aes(x = Fav_Season)) + 
   geom_histogram(stat = "count")
 
 ```
@@ -81,37 +92,40 @@ Then, you have to tell it what dataframe you want to use.
 Then, using aes(), you tell it what columns you want plotted.
 Finally, you tell it what kind of plot you want. This time, we used a histogram. 
 
-We can also add other things to our plot. For example, we can add labels. By default, R will use your column names, but our y axis here for example does not have a name because we asked R to count the number of responses of each Year in College, i.e., that data did not come directly from a column. 
+We can also add other things to our plot. For example, we can add labels. By default, R will use your column names, but our y axis here for example does not have a name because we asked R to count the number of responses of each Season, i.e., that data did not come directly from a column. 
 
 ```{r}
 
-ggplot(plot_data, aes(x = Year)) + 
+ggplot(plot_data, aes(x = Fav_Season)) + 
   geom_histogram(stat = "count") +
   labs(
-    title = "Number of Students in each Year of College",
-    x = "Year in College",
-    y = "Number of Students")
+    title = "Favorite Seasons",
+    x = "Season",
+    y = "Number of Responses"
+  )
 
 
-# We may also want to have an intuitive scale on the y axis. Let's change it to 0 - 10. 
+# We may also want to have an intuitive scale on the y axis. Let's change it to 0 - 40. 
 
-ggplot(plot_data, aes(x = Year)) + 
+ggplot(plot_data, aes(x = Fav_Season)) + 
   geom_histogram(stat = "count") +
   labs(
-    title = "Number of Students in each Year of College",
-    x = "Year in College",
-    y = "Number of Students") +
-  ylim(0, 10)
+    title = "Favorite Seasons",
+    x = "Season",
+    y = "Number of Responses"
+  )+
+  ylim(0, 40)
 
-# You'll see that this automatically changed your y axis labels to have decimals and to be in increments of 2.5. Since we can't have .5 of a student, this is maybe not the most intuitive way to represent our data. Let's try an alternate way of doing the same thing using scale_y_continuous. 
+# We can also change where the breaks happen in our axes. Right now, they are set to increments of 10. Let's change it to increments of 5. 
 
-ggplot(plot_data, aes(x = Year)) + 
+ggplot(plot_data, aes(x = Fav_Season)) + 
   geom_histogram(stat = "count") +
   labs(
-    title = "Number of Students in each Year of College",
-    x = "Year in College",
-    y = "Number of Students") +
-scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2))
+    title = "Favorite Seasons",
+    x = "Season",
+    y = "Number of Responses"
+  )+
+  scale_y_continuous(limits = c(0, 40), breaks = seq(0, 50, by = 5))
 
   
 
@@ -121,40 +135,43 @@ Another thing we can do is change the color or fill of the bars.
 
 ```{r}
 
-# We can use fill = Year inside aes() to fill the bars based on that column.
+# We can use fill = Fav_Season inside aes() to fill the bars based on that column.
 
-ggplot(plot_data, aes(x = Year, fill = Year)) + 
+ggplot(plot_data, aes(x = Fav_Season, fill = Fav_Season)) + 
   geom_histogram(stat = "count") +
   labs(
-    title = "Number of Students in each Year of College",
-    x = "Year in College",
-    y = "Number of Students") +
-  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2))
+    title = "Favorite Seasons",
+    x = "Season",
+    y = "Number of Responses"
+  )+
+  scale_y_continuous(limits = c(0, 40), breaks = seq(0, 50, by = 5))
 
 # This also adds a legend by default. It's a bit redundant here, so we can remove it using theme().  
 
-ggplot(plot_data, aes(x = Year, fill = Year)) + 
+ggplot(plot_data, aes(x = Fav_Season, fill = Fav_Season)) + 
   geom_histogram(stat = "count") +
   labs(
-    title = "Number of Students in each Year of College",
-    x = "Year in College",
-    y = "Number of Students") +
-  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2)) +
+    title = "Favorite Seasons",
+    x = "Season",
+    y = "Number of Responses"
+  )+
+  scale_y_continuous(limits = c(0, 40), breaks = seq(0, 50, by = 5))+
   theme(legend.position = "none")
 
 # It will use a default color palette if you don't tell ggplot which colors to use, but you can (and should) change the colors to be whatever you want. You can do this using scale_[fill/color]_[discrete/continuous](). 
 
-ggplot(plot_data, aes(x = Year, fill = Year)) + 
+ggplot(plot_data, aes(x = Fav_Season, fill = Fav_Season)) + 
   geom_histogram(stat = "count") +
   labs(
-    title = "Number of Students in each Year of College",
-    x = "Year in College",
-    y = "Number of Students") +
-  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2)) +
-  theme(legend.position = "none") +
+    title = "Favorite Seasons",
+    x = "Season",
+    y = "Number of Responses"
+  )+
+  scale_y_continuous(limits = c(0, 40), breaks = seq(0, 50, by = 5))+
+  theme(legend.position = "none")+
   scale_fill_discrete(palette = "Dark2")
 
-# I like Dark2, but go ahead and try out other palettes (you can find them on RGraphGallery linked above). For example, there's Pastel1, Accent, and Set1. 
+# Go ahead and try out other palettes (you can find them on RGraphGallery linked above). For example, there's Pastel1, Accent, and Set1. 
   
   
 
@@ -166,27 +183,31 @@ The theme layer is very powerful: you can change all kinds of things about the t
 
 # I think it's nice to center plot titles and that's one thing you can do within theme().  
 
-ggplot(plot_data, aes(x = Year, fill = Year)) + 
+ggplot(plot_data, aes(x = Fav_Season, fill = Fav_Season)) + 
   geom_histogram(stat = "count") +
   labs(
-    title = "Number of Students in each Year of College",
-    x = "Year in College",
-    y = "Number of Students") +
-  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2)) +
-  theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) +
+    title = "Favorite Seasons",
+    x = "Season",
+    y = "Number of Responses"
+  )+
+  scale_y_continuous(limits = c(0, 40), breaks = seq(0, 50, by = 5))+
+  theme(legend.position = "none", 
+        plot.title = element_text(hjust = 0.5))+
   scale_fill_discrete(palette = "Dark2")
 
 # Another thing that's useful that you might want to do is rotate your x axis labels especially if your labels are very long. 
 
-ggplot(plot_data, aes(x = Year, fill = Year)) + 
+ggplot(plot_data, aes(x = Fav_Season, fill = Fav_Season)) + 
   geom_histogram(stat = "count") +
   labs(
-    title = "Number of Students in each Year of College",
-    x = "Year in College",
-    y = "Number of Students") +
-  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2)) +
-  theme(legend.position = "none", plot.title = element_text(hjust = 0.5), 
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 10)) +
+    title = "Favorite Seasons",
+    x = "Season",
+    y = "Number of Responses"
+  )+
+  scale_y_continuous(limits = c(0, 40), breaks = seq(0, 50, by = 5))+
+  theme(legend.position = "none", 
+        plot.title = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10))+
   scale_fill_discrete(palette = "Dark2")
 
 
@@ -194,55 +215,50 @@ ggplot(plot_data, aes(x = Year, fill = Year)) +
 Before we explore more about themes, let's try out some other kinds of plots. Instead of a histogram, we can create something similar: a column plot. The difference is that we specify a column for both the x and the y axes. 
 ```{r}
 
-# One thing we're going to want to plot is mean coding knowledge, so let's calculate that and add a column for it in our data. 
+# One other thing we might want to plot is mean pumpkin spice ratings based on favorite season, so let's calculate that and add a column for it in our data. 
 
 plot2_data <- plot_data %>%
-  pivot_longer(cols = c(ExperienceR, ExperienceOther), 
-               names_to = "Language", 
-               values_to = "ExperienceLevel") %>%
-  group_by(Year) %>%
-  summarize(MeanExperience = mean(ExperienceLevel))
+  group_by(Fav_Season) %>%
+  summarize(MeanRating = mean(Pumpkin_Spice))
 
 
-ggplot(plot2_data, aes(x = Year, y = MeanExperience, fill = Year)) + 
+ggplot(plot2_data, aes(x = Fav_Season, y = MeanRating, fill = Fav_Season)) + 
   geom_col(position = "dodge2") +
   labs(
-    title = "Coding Experience by Year in College",
-    x = "Year",
-    y = "Experience Level"
+    title = "Pumpkin Spice Ratings by Favorite Season",
+    x = "Favorite Season",
+    y = "Rating"
   ) +
-  scale_fill_discrete(palette = "Dark2") +
-  scale_y_continuous(limits = c(0, 5), breaks = seq(0, 5, by = 1)) +
-  theme(legend.position = "none", plot.title = element_text(hjust = 0.5), 
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 10))
+  scale_fill_discrete(palette = "Dark2")+
+    scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 2))+
+  theme(legend.position = "none", 
+        plot.title = element_text(hjust = 0.5))
 
 
 ```
 
-Let's create a different type of plot. If we want to see whether having more pets is related to your rating of Oski the Bear (two continuous variables), a scatterplot might be a good choice. 
+Let's create a different type of plot. If we want to see whether number of cups of coffee per week is related to age, a scatterplot might be a good choice. 
 
 ```{r}
 
 # the way to create a scatterplot in ggplot is using geom_point()
-ggplot(movie_data, aes(x = Pets, y = Bear)) + 
+ggplot(coffee_data, aes(x = Age, y = Num_Cups)) + 
   geom_point()
 
 # let's go ahead and spruce up this plot the way we did before
-ggplot(movie_data, aes(x = Pets, y = Bear)) + 
+ggplot(coffee_data, aes(x = Age, y = Num_Cups)) + 
   geom_point(fill = "lightblue", color = "black", shape = 23, size = 3) +
   labs(
-    title = "Bear Rating by Number of Pets",
-    x = "Number of Pets",
-    y = "Bear Rating"
+    title = "Number of Cups of Coffee Per Week by Age",
+    x = "Age",
+    y = "Number of Cups of Coffee"
   ) +
-  scale_y_continuous(limits = c(0, 7), breaks = seq(0, 7, by = 1)) +
-  scale_x_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 1)) + 
-  # note that this will remove the outlier with 30 pets!
-  theme(legend.position = "none", plot.title = element_text(hjust = 0.5), 
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 10))
+  scale_y_continuous(limits = c(0, 35), breaks = seq(0, 35, by = 5)) +
+  scale_x_continuous(limits = c(18, 38), breaks = seq(18, 38, by = 5)) + 
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5))
 
 
-# next week, we will explore some light stats, which will include for example adding 
+# In two weeks, we will explore some light stats, which will include for example adding 
 # a regression line to a plot like this!
 
 
@@ -252,18 +268,16 @@ One thing that may be useful is saving a plot as a variable so that you can buil
 ```{r}
 
 # we can also save a plot as a variable like this
-plot <- ggplot(movie_data, aes(x = Pets, y = Bear)) + 
+plot <- ggplot(coffee_data, aes(x = Age, y = Num_Cups)) + 
   geom_point(fill = "lightblue", color = "black", shape = 23, size = 3) +
   labs(
-    title = "Bear Rating by Number of Pets",
-    x = "Number of Pets",
-    y = "Bear Rating"
+    title = "Number of Cups of Coffee Per Week by Age",
+    x = "Age",
+    y = "Number of Cups of Coffee"
   ) +
-  scale_y_continuous(limits = c(0, 7), breaks = seq(0, 7, by = 1)) +
-  scale_x_continuous(limits = c(0, 10), breaks = seq(0, 10, by = 1)) + 
-  # note that this will remove the outlier with 30 pets!
-  theme(legend.position = "none", plot.title = element_text(hjust = 0.5), 
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 10))
+  scale_y_continuous(limits = c(0, 35), breaks = seq(0, 35, by = 5)) +
+  scale_x_continuous(limits = c(18, 38), breaks = seq(18, 38, by = 5)) + 
+  theme(legend.position = "none", plot.title = element_text(hjust = 0.5))
 
 # now you can call the plot using its name
 plot
@@ -278,24 +292,24 @@ plot +
 ```
 
 
-Now, let's create one last plot and put it all together! What kind of plot could make sense if we want to know what your favorite temperature and favorite season are based on your birth month?
+Now, let's create one last plot and put it all together! What kind of plot could make sense if we want to know if people's pumpkin spice latte rating and favorite season are based on their location?
 
 ```{r}
 
 # lets try a few different options
 
 # first, let's put the months in order for BirthMonth and the seasons in order for Season
-movie_data <- movie_data %>%
-  mutate(BirthMonth = factor(BirthMonth, levels = c("March", "May", "June", "July", "September", "October", "November", "December"))) %>%
-  mutate(Season = factor(Season, levels = c("Winter", "Spring", "Summer", "Fall")))
+coffee_data <- coffee_data %>%
+  mutate(Fav_Season = factor(Fav_Season, levels = c("Winter", "Spring", "Summer", "Fall"))) %>%
+  mutate(Location = factor(Location, levels = c("Northeast", "Southeast", "Midwest", "Southwest", "West")))
   
 # and create a scatterplot
-ggplot(movie_data, aes(x = BirthMonth, y = FavTemp, fill = Season)) + 
+ggplot(coffee_data, aes(x = Location, y = Pumpkin_Spice, fill = Fav_Season)) + 
   geom_point(shape = 23, size = 3) +
   labs(
-    title = "Favorite Temperature and Season by Birth Month",
-    x = "Birth Month",
-    y = "Favorite Temperature", 
+    title = "Pumpkin Spice Latte Rating & Favorite Season by Location",
+    x = "Location",
+    y = "Pupmkin Spice Rating", 
     fill = "Favorite Season"
   ) +
   theme(plot.title = element_text(hjust = 0.5), 
@@ -305,33 +319,45 @@ ggplot(movie_data, aes(x = BirthMonth, y = FavTemp, fill = Season)) +
 # another option could be switching BirthMonth and Season, depending on which one we care more about
 # we can use geom_jitter() to jitter the points slightly in case they would otherwise overlap
 
-ggplot(movie_data, aes(x = Season, y = FavTemp, color = BirthMonth)) +
+ggplot(coffee_data, aes(x = Location, y = Pumpkin_Spice, fill = Fav_Season)) + 
   geom_jitter(width = 0.15, size = 3) +
-  labs(title = "Favorite Temperature by Season and Birth Month", x = "Season", y = "Favorite Temperature", color = "Birth Month") +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  theme_classic()
+  labs(
+    title = "Pumpkin Spice Latte Rating & Favorite Season by Location",
+    x = "Location",
+    y = "Pupmkin Spice Rating", 
+    fill = "Favorite Season"
+  ) +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10)) 
 
 # this plot is still kind of hard to interpret. what if we split up the data somehow?
 
-ggplot(movie_data, aes(x = BirthMonth, y = FavTemp, color = Season)) +
-  geom_point(size = 3) +
-  facet_wrap(~ Season) +
-  labs(title = "Favorite Temperature by Birth Month, Split by Season", x = "Birth Month", y = "Favorite Temperature") +
-  theme_bw() +
-  theme(legend.position = "none", plot.title = element_text(hjust = 0.5),
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+ggplot(coffee_data, aes(x = Location, y = Pumpkin_Spice)) + 
+  facet_wrap( ~ Fav_Season) + 
+  geom_jitter(width = 0.15, size = 3) +
+  labs(
+    title = "Pumpkin Spice Latte Rating & Favorite Season by Location",
+    x = "Location",
+    y = "Pupmkin Spice Rating"
+  ) +
+  theme(plot.title = element_text(hjust = 0.5), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10)) 
 
-# now it's a bit easier to see! with the exception of "yes!" it seems like our Fall babies like it a bit cooler and our summer babies like it a bit warmer. Spring is somewhere in between and no one likes Winter (except Victoria :)). And interestingly, none of the Spring babies actually like the Spring. 
+# now it's a bit easier to see! It seems like people whose favorite season is Fall or Winter rate Pumpkin Spice Lattes higher than people whose favorite season is Spring or Summer. It seems like this may also not vary much by location!
 
 # lets save this plot to a variable in case we want to use it later (we will in about 30 seconds)
 
-facet_plot <- ggplot(movie_data, aes(x = BirthMonth, y = FavTemp, color = Season)) +
-  geom_point(size = 3) +
-  facet_wrap(~ Season) +
-  labs(title = "Favorite Temperature by Birth Month, Split by Season", x = "Birth Month", y = "Favorite Temperature") +
-  theme_bw() +
-  theme(legend.position = "none", plot.title = element_text(hjust = 0.5),
-        axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+facet_plot <- ggplot(coffee_data, aes(x = Location, y = Pumpkin_Spice)) + 
+  facet_wrap( ~ Fav_Season) + 
+  geom_jitter(width = 0.15, size = 3) +
+  labs(
+    title = "Pumpkin Spice Latte Rating & Favorite Season by Location",
+    x = "Location",
+    y = "Pupmkin Spice Rating"
+  ) +
+  theme(plot.title = element_text(hjust = 0.5), 
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 10)) 
 
 ```
 
