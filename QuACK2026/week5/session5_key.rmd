@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-R Fall 2026 Session 3 - Starter Code
+R Fall 2026 Session 5 - Starter Code
 October 8, 2026
 Alyson Wong and Nina Schoener
 Adapted from Emily Rosenthal & Sierra Semko Krouse 
@@ -33,19 +33,18 @@ library(ggplot2)
 
 ```{r}
 
+# Before we start, make sure you have movie_data loaded. We're going to use a shortcut to turn all columns that are character vectors into factors (which is more or less what we want for this dataset). 
 
-# Before we start, make sure you have quack_responses_clean loaded. We're going to use a shortcut to turn all columns that are character vectors into factors (which is more or less what we want for this dataset). 
-
-quack_responses_clean <- read_csv("quack_responses_clean.csv") %>%
+movie_data <- read_csv("movie_data.csv") %>%
   mutate(across(where(is.character), as.factor))
 
-# Now, let's create two dataframes again like we did last time: one that represents each respondent's level of coding knowledge, and one that represents each respondent's year in college. 
+# Now, let's create two dataframes: one that represents each person's favorite movie, and one that represents each person's favorite genre.
 
-quack_coding_knowledge <- quack_responses_clean %>%
+quack_coding_knowledge <- movie_data %>%
   select(c("ID", "ExperienceR", "ExperienceOther"))
 
 
-quack_college_year <- quack_responses_clean %>%
+quack_college_year <- movie_data %>%
   select(c("ID", "Year"))
 
 # Now, let's join them together using what we learned last week about joining dataframes. 
@@ -225,11 +224,11 @@ Let's create a different type of plot. If we want to see whether having more pet
 ```{r}
 
 # the way to create a scatterplot in ggplot is using geom_point()
-ggplot(quack_responses_clean, aes(x = Pets, y = Bear)) + 
+ggplot(movie_data, aes(x = Pets, y = Bear)) + 
   geom_point()
 
 # let's go ahead and spruce up this plot the way we did before
-ggplot(quack_responses_clean, aes(x = Pets, y = Bear)) + 
+ggplot(movie_data, aes(x = Pets, y = Bear)) + 
   geom_point(fill = "lightblue", color = "black", shape = 23, size = 3) +
   labs(
     title = "Bear Rating by Number of Pets",
@@ -253,7 +252,7 @@ One thing that may be useful is saving a plot as a variable so that you can buil
 ```{r}
 
 # we can also save a plot as a variable like this
-plot <- ggplot(quack_responses_clean, aes(x = Pets, y = Bear)) + 
+plot <- ggplot(movie_data, aes(x = Pets, y = Bear)) + 
   geom_point(fill = "lightblue", color = "black", shape = 23, size = 3) +
   labs(
     title = "Bear Rating by Number of Pets",
@@ -286,12 +285,12 @@ Now, let's create one last plot and put it all together! What kind of plot could
 # lets try a few different options
 
 # first, let's put the months in order for BirthMonth and the seasons in order for Season
-quack_responses_clean <- quack_responses_clean %>%
+movie_data <- movie_data %>%
   mutate(BirthMonth = factor(BirthMonth, levels = c("March", "May", "June", "July", "September", "October", "November", "December"))) %>%
   mutate(Season = factor(Season, levels = c("Winter", "Spring", "Summer", "Fall")))
   
 # and create a scatterplot
-ggplot(quack_responses_clean, aes(x = BirthMonth, y = FavTemp, fill = Season)) + 
+ggplot(movie_data, aes(x = BirthMonth, y = FavTemp, fill = Season)) + 
   geom_point(shape = 23, size = 3) +
   labs(
     title = "Favorite Temperature and Season by Birth Month",
@@ -306,7 +305,7 @@ ggplot(quack_responses_clean, aes(x = BirthMonth, y = FavTemp, fill = Season)) +
 # another option could be switching BirthMonth and Season, depending on which one we care more about
 # we can use geom_jitter() to jitter the points slightly in case they would otherwise overlap
 
-ggplot(quack_responses_clean, aes(x = Season, y = FavTemp, color = BirthMonth)) +
+ggplot(movie_data, aes(x = Season, y = FavTemp, color = BirthMonth)) +
   geom_jitter(width = 0.15, size = 3) +
   labs(title = "Favorite Temperature by Season and Birth Month", x = "Season", y = "Favorite Temperature", color = "Birth Month") +
   theme(plot.title = element_text(hjust = 0.5)) +
@@ -314,7 +313,7 @@ ggplot(quack_responses_clean, aes(x = Season, y = FavTemp, color = BirthMonth)) 
 
 # this plot is still kind of hard to interpret. what if we split up the data somehow?
 
-ggplot(quack_responses_clean, aes(x = BirthMonth, y = FavTemp, color = Season)) +
+ggplot(movie_data, aes(x = BirthMonth, y = FavTemp, color = Season)) +
   geom_point(size = 3) +
   facet_wrap(~ Season) +
   labs(title = "Favorite Temperature by Birth Month, Split by Season", x = "Birth Month", y = "Favorite Temperature") +
@@ -326,7 +325,7 @@ ggplot(quack_responses_clean, aes(x = BirthMonth, y = FavTemp, color = Season)) 
 
 # lets save this plot to a variable in case we want to use it later (we will in about 30 seconds)
 
-facet_plot <- ggplot(quack_responses_clean, aes(x = BirthMonth, y = FavTemp, color = Season)) +
+facet_plot <- ggplot(movie_data, aes(x = BirthMonth, y = FavTemp, color = Season)) +
   geom_point(size = 3) +
   facet_wrap(~ Season) +
   labs(title = "Favorite Temperature by Birth Month, Split by Season", x = "Birth Month", y = "Favorite Temperature") +
