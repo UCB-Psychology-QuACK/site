@@ -1,0 +1,348 @@
+---
+title: "Quack Fall 2026"
+author: "Alyson Wong & Nina Schoener"
+date: "2026-10-15"
+output: html_document
+---
+
+Today, we will be going over the Quack 2026_Week4_Practice where we put together all the skills we have learned so far!
+
+We have two datasets:
+(1) winter_fruit_vegetable_servings.csv 
+(2) summer_fruit_vegetable_servings.csv
+
+Each dataset contains information about how many servings of fruits and vegetables a participant eats per meal. The “winter” survey data was collected in the winter, and the “summer” data was collected later that same year in the summer.
+
+We want to see whether people eat more fruits and vegetables in one season than the other.
+
+#Load Packages
+```{r}
+library(ggplot2)
+library(tidyverse)
+```
+
+
+#Q1
+
+1. Load in both datasets.How many participants are in the “winter” dataset? How many are in the “summer” dataset? Did all participants complete both surveys?
+
+```{r}
+# Load the datasets
+
+summer_veggies <- read_csv("summer_fruit_vegetable_servings.csv")
+winter_veggies <- read_csv("winter_fruit_vegetable_servings.csv")
+
+# How many participants are in summer?
+
+nrow(summer_veggies)
+
+# How many participants completed both surveys?
+
+veggies_combined <- inner_join(summer_veggies, winter_veggies, by = "PID", suffix = c(".summer", ".winter"))
+nrow(veggies_combined)
+```
+
+#Q2
+
+2. Summarize the results from these participants to see differences between seasons. Is there a difference in the servings of fruits and vegetables eaten in the winter vs. summer? Is there a difference in the servings of fruits and vegetables eaten across the two seasons and the different meals? (Hint: you will need to join and reshape the data)
+
+```{r}
+#Reshape the data
+
+## First Method
+### Reshape both winter and summer veggies to long format
+summer_veggies_long <- pivot_longer(summer_veggies, cols = starts_with("Meal"), names_to = "Meal", values_to = "Servings") %>%
+  mutate(Meal = str_remove(Meal, "Meal")) %>%
+  mutate(Meal = factor(Meal, levels = c("Breakfast", "Lunch", "Dinner", "Dessert")))
+
+winter_veggies_long <- pivot_longer(winter_veggies, cols = starts_with("Meal"), names_to = "Meal", values_to = "Servings") %>%
+  mutate(Meal = str_remove(Meal, "Meal")) %>%
+  mutate(Meal = factor(Meal, levels = c("Breakfast", "Lunch", "Dinner", "Dessert")))
+
+### Combine both long format dataframes
+veggies_combined_long <- inner_join(summer_veggies_long, winter_veggies_long, by = c("PID", "Meal"), suffix = c(".summer", ".winter"))
+
+### Reshape the combined dataframe
+veggies_combined_longer <- pivot_longer(veggies_combined_long, cols = starts_with("Servings"), names_to = "Season", values_to = "Servings") %>%
+  mutate(Season = str_remove(Season, "Servings."))
+
+
+## Second Method
+veggies_long <- pivot_longer(veggies_combined, cols = starts_with("Meal"), names_to = c("Meal", "Season"), names_pattern = "Meal(.*)\\.(.*)", values_to = "Servings") %>%
+  mutate(Meal = factor(Meal, levels = c("Breakfast", "Lunch", "Dinner", "Dessert")))
+
+#Summarize the data
+veggies_long %>%
+  group_by(Meal, Season) %>%
+  dplyr::summarize(mean_servings = mean(Servings, na.rm = TRUE))
+```
+
+#Q3
+
+3. Create a plot of the data to demonstrate any differences between fruits and vegetables eaten during the two seasons.
+
+```{r}
+# Generate dataframe with means for each season
+
+seasons_data <- veggies_long %>%
+  group_by(Season) %>%
+  dplyr::summarize(mean_servings = mean(Servings, na.rm = TRUE))
+
+# Plot the data we just generated
+
+seasons_plot <- ggplot(seasons_data, aes(x = Season,
+                         y = mean_servings)) +
+  geom_bar(stat = "identity")+
+  labs(
+    x = "Season",
+    y = "Mean Servings of Fruits / Vegetables"
+  ) + 
+  ggtitle("Servings per Season")
+
+```
+
+#Q4
+
+4. Now, what about across the different meals? Create a plot to demonstrate any differences between seasons and meals. (Hint: a nice way of doing this is to use the facet_wrap() function on your ggplot object).
+
+```{r}
+# Generate dataframe with means for each season
+
+meals_data <- veggies_long %>%
+  group_by(Season, Meal) %>%
+  dplyr::summarize(mean_servings = mean(Servings, na.rm = TRUE))
+
+# Plot the data we just generated
+
+meals_plot <- ggplot(meals_data, aes(x = Season,
+                         y = mean_servings,
+                       fill = Meal)) +
+  geom_bar(stat = "identity")+
+  facet_wrap(~ Meal, ncol = 4)+
+  labs(
+    x = "Season",
+    y = "Mean Servings of Fruits / Vegetables"
+  ) + 
+  ggtitle("Servings per Season")
+
+```
+
+#For Loops
+```{r}
+# Let's change both plots to use theme_classic() instead of the default R theme.
+# We can do this using a for loop!
+
+plots <- list(seasons_plot, meals_plot)
+
+for (plot in 1:length(plots)) {
+  plots[[plot]] <- plots[[plot]] + theme_classic()
+}
+
+plots
+
+```
+
+## Helpful R Markdown Formatting {.tabset}
+
+### YAML {.tabset}
+
+#### Basic YAML info {.tabset}
+
+title: "Graduate Student Data Wrangling Review"
+
+subtitle: "Pivoting, Wrangling, and Simpson’s Paradox"
+
+author: "Your Name"
+
+date: "`r Sys.Date()`" (gives system date), if you want an actual date, you can put an 
+actual date in there
+
+abstract: "A fun exploration of R data wrangling techniques using psych grad student data."
+
+keywords: ["pivot_longer", "pivot_wider", "Simpson's paradox", "tidyverse"]
+
+lang: en
+
+These are not all required
+
+#### Output formats {.tabset}
+
+##### HTML {.tabset}
+ html_document: 
+ 
+    theme: flatly # HTML theme (options: cosmo, journal, united, etc.) 
+    
+    toc: true # include a table of contents 
+    
+    toc_float: true # floating TOC sidebar number_sections: 
+    
+    true # numbered section headers 
+    
+    highlight: tango # syntax highlighting style 
+    
+    code_folding: show # collapsible code blocks 
+    
+    df_print: paged # interactive paged data frames 
+    
+    self_contained: true # embed all dependencies (portable HTML)
+
+    
+##### PDF {.tabset}
+  pdf_document:
+
+    toc: true
+
+    toc_depth: 3
+
+    number_sections: true
+
+    latex_engine: xelatex   # or pdflatex if xelatex unavailable
+
+    geometry: "margin=1in"  # page margins
+    
+##### Word {.tabset}
+  word_document:
+
+    toc: true
+
+    reference_docx: "template.docx"  # optional custom Word style
+
+#### Table of Contents {.tabset}
+  
+  table of contents: 
+  
+    toc: true
+
+    toc_depth: 3
+
+    number_sections: true
+
+    anchor_sections: true
+
+### R Chunk Headers {.tabset}
+
+These are the things between the squigglies that start with r
+
+Here are some common options (you separate them with commas)
+
+#### Visibility and output control {.tabset}
+
+| Option | What it does | Example |
+|---------|---------------|----------|
+| `echo = FALSE` | Hides the code, shows only output | `echo = FALSE` |
+| `eval = FALSE` | Shows the code but doesn’t run it | `eval = FALSE` |
+| `include = FALSE` | Runs the code, hides both code *and* output | `include = FALSE` |
+| `message = FALSE` | Suppresses messages | `message = FALSE` |
+| `warning = FALSE` | Suppresses warnings | `warning = FALSE` |
+| `error = TRUE` | Keeps knitting even if an error occurs | `error = TRUE` |
+| `results = "hide"` | Runs code but hides textual results | `results = "hide"` |
+| `results = "asis"` | Renders raw markdown output (great for tables) | `results = "asis"` |
+| `comment = ""` | Removes the `##` prefix in output | `comment = ""` |
+
+#### Formatting & layout {.tabset}
+
+| Option | Purpose | Example |
+|---------|----------|----------|
+| `fig.width` / `fig.height` | Size of figure (in inches) | `fig.width = 6, fig.height = 4` |
+| `fig.align` | Figure alignment (`left`, `center`, `right`) | `fig.align = "center"` |
+| `fig.cap` | Add a caption to the figure | `fig.cap = "Caffeine trends over semesters"` |
+| `out.width`, `out.height` | Output size in HTML/PDF | `out.width = "80%"` |
+| `dpi` | Image resolution | `dpi = 300` |
+
+#### Plotting & caching {.tabset}
+
+| Option | What it does | Example |
+|---------|---------------|----------|
+| `fig.show = "hold"` | Displays multiple plots together | `fig.show = "hold"` |
+| `cache = TRUE` | Saves results for faster re-knit | `cache = TRUE` |
+| `cache.lazy = FALSE` | Forces recalculation on dependency change | `cache.lazy = FALSE` |
+| `dev = "png"` | Choose graphics device (`png`, `pdf`, etc.) | `dev = "png"` |
+
+#### Code folding & collapsing (HTML only) {.tabset}
+
+| Option | Description | Example |
+|---------|--------------|----------|
+| `collapse = TRUE` | Collapse input/output together | `collapse = TRUE` |
+| `class.source` | Add HTML class to code block | `class.source = "fold-show"` |
+| `code_folding: show` | Set globally in YAML, but can override here |  |
+
+#### Advanced options {.tabset}
+
+| Option | What it controls | Example |
+|---------|------------------|----------|
+| `tidy = TRUE` | Auto-formats code | `tidy = TRUE` |
+| `child = "filename.Rmd"` | Inserts another Rmd file | `child = "methods.Rmd"` |
+| `ref.label` | Reuses results from another chunk | `ref.label = "data-cleaning"` |
+
+### R Chunk Squigglies i.e. Tabset {.tabset}
+
+| Attribute       | Description                                                       | Common Use                                     |
+| --------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
+| `.tabset`       | Turns subheadings into clickable tabs.                            | Show multiple plots or summaries side-by-side. |
+| `.tabset-fade`  | Adds a fade-in/fade-out animation between tab transitions.        | Smooth visual effect for tabbed sections.      |
+| `.tabset-pills` | Displays tabs as rounded Bootstrap “pills” instead of rectangles. | Visual style tweak for tabsets.                |
+| `.collapse`     | Makes the section collapsible (click to expand/hide).             | Hide lengthy explanations or code.             |
+| `.unlisted`     | Removes the section from the table of contents (TOC).             | Keep TOC concise while retaining the section.  |
+| `.hidden`       | Hides the section entirely from the rendered output.              | Include instructor notes or draft sections.    |
+| `.appendix`     | Marks the section as part of the appendix (affects numbering).    | Differentiate appendices from main text.       |
+| `.levelX`       | Sets a custom TOC nesting level for the section.                  | Manually control TOC hierarchy.                |
+
+### R Mardown Text Formatting {.tabset}
+
+#### Headings {.tabset}
+
+As you may have noticed, hashtags make the headings, one more hashtag means one more level of hashtags
+
+#### Bold and Italics {.tabset}
+
+We use * (star) for bolds
+
+*One star on each side of the text for italics* 
+
+**Two stars on each side for bold**
+
+***Three if you want bold and italics***
+
+#### Bullet points {.tabset}
+
+Here you're going to use the dash (-). Don't forget to add a space between the dash and your first word
+
+- First item
+
+- Second item
+
+ - sub item (this is a space from where the other one started)
+ 
+ - sub item
+ 
+A single star with no pair makes another bullet
+
+#### Numbered List {.tabset}
+Make lists with 1. 2. 3., so on, if you want to do a sub list, similarly add an item
+
+#### Horizontal Lines {.tabset}
+
+To make horizontal lines, you can do --- on a empty line, *** on an empty line, or _______ 
+
+#### Blockquotes {.tabset}
+> This is a blockquote.
+> You can have multiple lines.
+
+Do a  greater-than sign to start a block quote
+
+#### Tables {.tabset}
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| A        | B        | C        |
+| 1        | 2        | 3        |
+
+Use dashes and | to make your rows and columns
+
+#### Math Equations {.tabset}
+Use dollar signs to frame your math chunk
+
+$$
+y = \frac{a}{b} + c
+$$
+
