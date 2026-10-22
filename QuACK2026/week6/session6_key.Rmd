@@ -134,8 +134,8 @@ meals_plot <- ggplot(meals_data, aes(x = Season,
 
 plots <- list(seasons_plot, meals_plot)
 
-for (plot in 1:length(plots)) {
-  plots[[plot]] <- plots[[plot]] + theme_classic()
+for (i in 1:length(plots)) {
+  plots[[i]] <- plots[[i]] + theme_classic()
 }
 
 plots
