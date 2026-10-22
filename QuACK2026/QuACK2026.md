@@ -40,11 +40,11 @@ As you will see, the sessions build on each other. If you miss a session, we enc
 | Week 3 (9/24) |Intro to the tidyverse and data wrangling - Part 2|[w3_materials](week3/week3.zip)|[w3_key](week3/session3.Rmd)|[w3_slides](week3/Quack_Session3_F2026.pdf)
 | Week 4 (10/1) |Intro to data visualization (ggplot) - Part 1|[w4_materials](week4/week4.zip)|[w4_key](week4/session4.Rmd)|[w4_slides](week4/Quack_Session4_F2026.pdf)
 | Week 5 (10/8) |Intro to data visualization (ggplot) - Part 2|[w5_materials](week5/week5.zip)|[w5_key](week5/session5_key.rmd)|[w5_slides](week5/Quack_Session5_F2026.pdf)
-| Week 6 (10/15) |Review/Q&A|[w6_materials](week6/week6.zip)
-| Week 7 (10/22) |Intro to Basic Stats - Part 1|
-| Week 8 (10/29) |Intro to Basic Stats - Part 2|
-| Week 9 (11/5) |Putting it all together|
-| Week 10 (11/12) | **NO CLASS** |
+| Week 6 (10/15) | **NO CLASS** |
+| Week 7 (10/22) |Review/Q&A|[w7_materials](week7/week7.zip)
+| Week 8 (10/29) |Intro to Basic Stats - Part 1|
+| Week 9 (11/5) |Intro to Basic Stats - Part 2|
+| Week 10 (11/12) |Putting it all together|
 | Week 11 (11/19) |Open-Science, Github & Git|
 
 
