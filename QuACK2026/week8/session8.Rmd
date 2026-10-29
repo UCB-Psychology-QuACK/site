@@ -1,0 +1,142 @@
+---
+title: "Fall 2026 Quack Bootcamp Session 8"
+author: "Nina Schoener & Alyson Wong"
+date: "2026-10-29"
+output: html_document
+---
+
+Adapted from Fall 2025 Quack Session 8 by Sophie Regan & Victoria Keating
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidylog)
+```
+
+
+# Warm Up Activity
+```{r}
+# Load in the data
+GradLife <- read.csv("PsychGradLife_SemWide8.csv")
+
+# Look at columns in dataset
+names(GradLife)
+
+# Number of respondents in the dataset
+n<-nrow(GradLife)
+
+#mean, median, range
+mean(GradLife$selfcare_score_S3)
+
+median(GradLife$selfcare_score_S3)
+
+range(GradLife$selfcare_score_S3)
+
+# Just for Cognition and Social, compare first caffeine usage
+GradLife_CogSoc<-GradLife%>%
+  filter(area %in% c("Cognitive","Social"))%>%
+  group_by(area)
+
+ggplot(GradLife_CogSoc, aes(x=area,y=caffeine_mg_S1))+
+  geom_boxplot()
+
+```
+
+
+First, we're interested in whether there is a difference in self care between developmental and clinical lab members. To do this, we can use a t-test.
+```{r}
+
+# View average self-care by area
+GradLife %>%
+  group_by(area) %>%
+  summarise(mean_selfcare_S3 = mean(selfcare_score_S3, na.rm = TRUE),
+            sd_selfcare_S3 = sd(selfcare_score_S3, na.rm = TRUE),
+            n = n())
+
+# Filter only clinical and developmental lab members
+GradLife_ClinDev<-GradLife%>%
+  filter(area %in% c("Clinical","Developmental"))%>%
+  group_by(area)
+
+# Check how many people per lab
+table(GradLife_ClinDev$area)
+
+# Run the t-test
+t_test_result <- t.test(selfcare_score_S3 ~ area, data = GradLife_ClinDev)
+print(t_test_result)
+
+# Plot the data
+GradLife %>% 
+  filter(area == "Developmental" | area == "Clinical") %>% 
+  ggplot(aes(x = area, y = selfcare_score_S3)) +
+    geom_boxplot(fill = "lightblue") +
+    labs(title = "Self-Care Across Areas", y = "Self-Care Score", x = "Area")
+```
+
+When you want to compare means across more than two groups, a t-test isn't enough — that's where ANOVA (Analysis of Variance) comes in.
+
+ANOVA checks if there is any significant difference in means across the groups. It doesn't tell you which groups differ — just whether at least one group is different. You can follow up with post-hoc tests if needed.
+
+In our example, if we want to look at differences in self-care across more than two areas, we can use an ANOVA. We can also treat this as a linear regression, but we will go over that later. 
+
+```{r}
+# Check how many areas are in the dataset
+table(GradLife$area)
+
+# Fit ANOVA model
+aov_model <- aov(selfcare_score_S3 ~ area, data = GradLife)
+summary(aov_model)
+
+# Plot the means with boxplots
+ggplot(GradLife, aes(x = area, y = selfcare_score_S3)) +
+  geom_boxplot(fill = "lightblue") +
+  labs(title = "Self-Care Across Areas", y = "Self-Care Score", x = "Area")
+
+# Which one is actually significant?
+TukeyHSD(aov_model)
+
+```
+
+In order to find the relationship between two variables without attempting to predict one from the other, we can do a Pearson's correlation. Pearson's correlation is the default, but you can change it to be a Spearman's or other kind of correlation if you need it. 
+
+Let's see if there is a relationship between caffeine intake and minutes spent on TikTok.
+```{r}
+# Plot the relationship
+ggplot(GradLife, aes(x = caffeine_mg_S1, y = tiktok_min_S1)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Caffeine T1 vs Tiktok T1")
+
+# Correlation test
+cor.test(GradLife$caffeine_mg_S1, GradLife$tiktok_min_S1)
+
+```
+
+As an example for linear regression, we can look at differences in self-care across areas. This is the same as what we did as the example for the ANOVA, just to demonstrate that multiple analyses can apply to the same questions. 
+```{r}
+# Run the regression
+lm_model1 <- lm(selfcare_score_S3 ~ area, data = GradLife)
+summary(lm_model1)
+
+# Let's look at a linear model with two predictor variables
+lm_model2 <- lm(selfcare_score_S3 ~ area + hours_contemplating_other_paths_S1, data = GradLife)
+summary(lm_model2)
+
+```
+
+Lastly, as an example for logistic regression, we can look at whether people were more likely to submit a grant if they spent less time on TikTok and ingested more caffeine. 
+```{r}
+log_model<-glm(submitted_grant~tiktok_min_S2 + caffeine_mg_S2, data=GradLife,family="binomial")
+
+summary(log_model)
+
+# Predict probabilities
+GradLife$predicted_prob <- predict(log_model, type = "response")
+
+# Plot
+ggplot(GradLife, aes(x = tiktok_min_S2, y = submitted_grant)) +
+  geom_jitter(height = 0.05) +
+  geom_smooth(method = "glm", method.args = list(family = "binomial")) +
+  labs(title = "Grant Submission by TikTok Minutes")
+
+```
