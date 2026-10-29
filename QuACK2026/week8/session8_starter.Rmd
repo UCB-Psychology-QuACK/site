@@ -1,0 +1,109 @@
+---
+title: "Fall 2026 Quack Bootcamp Session 8"
+author: "Nina Schoener & Alyson Wong"
+date: "2026-10-29"
+output: html_document
+---
+
+Adapted from Fall 2025 Quack Session 8 by Sophie Regan & Victoria Keating
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidylog)
+```
+
+
+# Warm Up Activity
+```{r}
+# Load in the data
+
+
+# Look at columns in dataset
+
+
+# Number of respondents in the dataset
+
+
+#mean, median, range
+
+
+# Just for Cognition and Social, compare first caffeine usage
+
+
+```
+
+
+First, we're interested in whether there is a difference in self care between developmental and clinical lab members. To do this, we can use a t-test.
+```{r}
+
+# View average self-care by area
+
+
+# Filter only clinical and developmental lab members
+
+# Check how many people per lab
+
+
+# Run the t-test
+
+
+# Plot the data
+
+```
+
+When you want to compare means across more than two groups, a t-test isn't enough — that's where ANOVA (Analysis of Variance) comes in.
+
+ANOVA checks if there is any significant difference in means across the groups. It doesn't tell you which groups differ — just whether at least one group is different. You can follow up with post-hoc tests if needed.
+
+In our example, if we want to look at differences in self-care across more than two areas, we can use an ANOVA. We can also treat this as a linear regression, but we will go over that later. 
+
+```{r}
+# Check how many areas are in the dataset
+
+
+# Fit ANOVA model
+
+
+# Plot the means with boxplots
+
+
+# Which one is actually significant?
+
+
+```
+
+In order to find the relationship between two variables without attempting to predict one from the other, we can do a Pearson's correlation. Pearson's correlation is the default, but you can change it to be a Spearman's or other kind of correlation if you need it. 
+
+Let's see if there is a relationship between caffeine intake and minutes spent on TikTok.
+```{r}
+# Plot the relationship
+
+
+# Correlation test
+
+
+```
+
+As an example for linear regression, we can look at differences in self-care across areas. This is the same as what we did as the example for the ANOVA, just to demonstrate that multiple analyses can apply to the same questions. 
+```{r}
+# Run the regression
+
+# Let's look at a linear model with two predictor variables
+
+
+```
+
+Lastly, as an example for logistic regression, we can look at whether people were more likely to submit a grant if they spent less time on TikTok and ingested more caffeine. 
+```{r}
+log_model<-glm(submitted_grant~tiktok_min_S2 + caffeine_mg_S2, data=GradLife,family="binomial")
+
+summary(log_model)
+
+# Predict probabilities
+
+
+# Plot
+
+
+```
