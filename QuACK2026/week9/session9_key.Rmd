@@ -1,0 +1,140 @@
+---
+title: "quack_session9_2026"
+author: "Alyson Wong & Nina Schoener"
+output: html_document
+date: "2026-11-05"
+---
+
+## Warm-Up
+```{r}
+gradlife <- read_csv("PsychGradLife_SemWide8.csv")
+
+gradlife_s1 <- gradlife %>%
+  select(1:3, ends_with("S1"))
+
+plot.df <- gradlife_s1 %>%
+  group_by(area) %>%
+  summarise(mean = mean(caffeine_mg_S1))
+
+ggplot(plot.df, aes(x = area, y = mean, fill = area)) +
+  geom_bar(stat="identity") +
+  theme(legend.position = "none")
+
+mod1 <- lm(selfcare_score_S1 ~ caffeine_mg_S1, data = gradlife_s1)
+summary(mod1)
+
+aov_model <- aov(selfcare_score_S1 ~ area, data = gradlife_s1)
+summary(aov_model)
+
+TukeyHSD(aov_model)
+```
+
+## Loading our packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidylog)
+```
+
+Let's also install and load the "lme4" package, which has functions for running mixed-effects models
+```{r}
+#install.packages("lme4")
+library(lme4)
+```
+
+## Load our data
+
+We are going to continue using the fake "PsychGradLife" data from last week. This dataset has survey responses about wellbeing / habits from grad students across three time points (let's say, beginning of semester, middle of semester, end of semester).
+
+```{r}
+gradlife <- read_csv("PsychGradLife_SemWide8.csv")
+```
+
+## Wrangling our data
+
+In order to run mixed-effects models, our data need to be in long format. Let's reshape our data from wide format to long format.
+
+```{r}
+gradlife_long <- gradlife %>% pivot_longer(
+  cols = c(caffeine_mg_S1, 
+           caffeine_mg_S2,
+           caffeine_mg_S3,
+           tiktok_min_S1,
+           tiktok_min_S2,
+           tiktok_min_S3,
+           hours_contemplating_other_paths_S1,
+           hours_contemplating_other_paths_S2,
+           hours_contemplating_other_paths_S3,
+           selfcare_score_S1,
+           selfcare_score_S2,
+           selfcare_score_S3),
+  names_pattern = "(.*)_(S[1-3])",
+  names_to = c(".value", "timepoint"),
+  values_to = c("caffeine_mg", "tiktok_min", "hours_contemplating_other_paths", "selfcare_score")
+)
+```
+
+## Linear-Mixed Effects Models
+
+### Random intercepts
+
+Let's look at the first model we went over in the slides. We want to see if selfcare_score predicts hours_contemplating_other_paths.
+
+Since we have multiple rows / data points per participant for our DV and IV, we want to account for the fact that participants may vary in their base starting level in the DV but may show similar slopes based on the IV.
+
+In other words, we want to account for "random intercepts" that may vary across participants (i.e., variation in starting baseline levels between different participants) by adding a random effect to our model.
+
+```{r}
+selfcare_mod1 <- lmer(hours_contemplating_other_paths ~ selfcare_score + (1|participant), data = gradlife_long)
+summary(selfcare_mod1)
+```
+
+### Interactions
+
+We might also want to account for the fact that the relationship between hours contemplating and self care may vary based on area 
+
+We can account for this difference by adding in an interaction effect.
+```{r}
+selfcare_mod2 <- lmer(hours_contemplating_other_paths ~ selfcare_score * area + (1|participant), data = gradlife_long)
+summary(selfcare_mod2)
+```
+
+### Random slopes
+
+In addition to accounting for interactions and random intercept effects, we can also account for random slopes. 
+
+For example, we could expect random differences in the slope between selfcare_score and hours_contemplating_other_paths depending on the area and time point. One area might have a really strong positive relationship (slope) between these two variables across all timepoints. Other areas might start off with a weak relationship between the two variables at S1 but then get stronger by S3. Others might have no relationship or a weaker positive relationship. 
+
+To account for this random variation in slopes between areas, we can add a random slope to our model. 
+
+```{r}
+# let's first convert the timepoint variable into a numeric variable instead of character
+gradlife_long <- gradlife_long %>%
+  mutate(
+    timepoint_numeric = case_when(
+      str_detect(timepoint, "1") ~ 1,
+      str_detect(timepoint, "2") ~ 2,
+      str_detect(timepoint, "3") ~ 3
+    )
+  )
+
+selfcare_mod3 <- lmer(hours_contemplating_other_paths ~ selfcare_score + (1 + timepoint | area) + (1 | participant), data = gradlife_long)
+summary(selfcare_mod3)
+```
+
+## Generalized-Linear Mixed Effects Models
+
+Remember that when our DV is binary, we want to run generalized linear models (glm) or generalized linear mixed effects models (glmer) for data with repeated measures.
+
+To demonstrate this, let's look at the submitted_grant and tiktok_min variables. submitted_grant is a binary variable (only has 1s or 0s for submitted grant or did not submit grant), which means we need to run a glmer().
+
+```{r}
+grant_mod1 <- glmer(submitted_grant ~ tiktok_min + (1|participant), data = gradlife_long, family = "binomial")
+summary(grant_mod1)
+
+# Maybe caffeine better predicts grant submission?
+
+grant_mod2 <- glmer(submitted_grant ~ caffeine_mg + (1|participant), data = gradlife_long, family = "binomial")
+summary(grant_mod2)
+
+```
